@@ -43495,13 +43495,19 @@
         edgeParams.edge.target.data.conditionNodeId = edgeParams.edge.source.data.id;
       }
 
+      var lastConnectedNodeId = null;
+
+      if (edgeParams.addedByMouse) {
+        lastConnectedNodeId = edgeParams.edge.target.data.id;
+      }
+
       var exportData = JSON.stringify(toolkit.exportData());
       transferGraphData([{
         name: "exportData",
         value: exportData
       }, {
         name: "lastConnectedNodeId",
-        value: edgeParams.edge.target.data.id
+        value: lastConnectedNodeId
       }]);
       /*     onEdgeAdded([{ name: "originNodeId", value:  edgeParams.edge.source.data.id }, { name: "targetNodeId", value:  edgeParams.edge.target.data.id }]); */
     });
