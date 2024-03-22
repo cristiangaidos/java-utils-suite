@@ -43262,23 +43262,16 @@
 
         return false;
       },
-      doNotUpdateOriginalData: false,
-      autoSave: true,
-
+      doNotUpdateOriginalData: false
       /* autoSaveDebounceTimeout:100, */
-      autoSaveHandler: function autoSaveHandler(toolkitInstance) {
-        toolkit.graph.nodes;
-        toolkit.graph.edges;
-        var exportData = JSON.stringify(toolkit.exportData());
-        console.log(exportData);
-        transferGraphData([{
-          name: "exportData",
-          value: exportData
-        }, {
-          name: "lastConnectedNodeId",
-          value: null
-        }]);
-      }
+
+      /*    autoSave: true,    
+          autoSaveHandler: (toolkitInstance) => {
+            const exportData = JSON.stringify(toolkitInstance.exportData());
+            console.log(exportData);
+            transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
+          },*/
+
     });
     window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
@@ -43538,15 +43531,9 @@
 
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
-      var exportData = JSON.stringify(toolkit.exportData());
-      transferGraphData([{
-        name: "exportData",
-        value: exportData
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-      console.log("Dataload End Event");
+      /*     const exportData = JSON.stringify(toolkit.exportData());
+           transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
+           console.log("Dataload End Event"); */
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
@@ -43563,15 +43550,11 @@
 
       /*   url: "./copyright.json", */
       onload: function onload() {
+        toolkit.clear();
+        toolkit.setDoNotUpdateOriginalData(false);
         renderer.zoomToFit();
-        var exportData = JSON.stringify(toolkit.exportData());
-        transferGraphData([{
-          name: "exportData",
-          value: exportData
-        }, {
-          name: "lastConnectedNodeId",
-          value: null
-        }]);
+        /*    const exportData = JSON.stringify(toolkit.exportData());
+            transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]); */
       }
     }); // listener for mode change on renderer.
 
