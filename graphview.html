@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <title>TMWB GraphView</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <!-- CSS -->
+         <link rel="stylesheet" href="./graphview.css">
+        <!-- /CSS -->
+
+    </head>
+    <body>
+
+    <!-- content -->
+
+    <script type="jtk" id="tmplCondition">
+        <div style=\"width:${w}px;height:${h}px;\" class=\"flowchart-object flowchart-question ui-diagram-element ui-diagram-condition\" data-jtk-target=\"true\" data-jtk-target-port-type="\target\">
+               <span>${text}</span>
+               <div class=\"node-edit node-action\"/>
+               <div class=\"node-delete node-action delete\"/>
+               <div class=\"drag-start connect\" data-jtk-source=\"true\" data-jtk-port-type=\"source\"></div>
+           </div>
+    </script>
+
+    <script type="jtk" id="tmplBranch">
+        <div style="width:${w}px;height:${h}px;" class="flowchart-object flowchart-question ui-diagram-element" data-jtk-target="true" data-jtk-target-port-type="target">
+               <span>${text}</span>
+               <div class="node-edit node-action"/>
+               <div class="node-delete node-action delete"/>
+               <div class="drag-start connect" data-jtk-source="true" data-jtk-port-type="source"></div>
+           </div>
+    </script>
+
+    <script type="jtk" id="tmplJournal">
+        <div style="width:${w}px;height:${h}px;" class="flowchart-object flowchart-question ui-diagram-element ui-diagram-tariff" data-jtk-target="true" data-jtk-target-port-type="target">
+               <span>${text}</span>
+               <div class="node-edit node-action"></div>
+               <div class="node-delete node-action delete"></div>
+               <div class="drag-start connect" data-jtk-source="true" data-jtk-port-type="source"></div>
+           </div>
+    </script>
+
+    <script type="jtk" id="tmplTariff">
+        <div style="width:${w}px;height:${h}px;" class="flowchart-object flowchart-question ui-diagram-element ui-diagram-tariff" data-jtk-target="true" data-jtk-target-port-type="target">
+               <span>${text}</span>
+               <div class="node-edit node-action"/>
+               <div class="node-delete node-action delete"/>
+               <div class="drag-start connect" data-jtk-source="true" data-jtk-port-type="source"></div>
+           </div>
+    </script>
+
+    <script type="jtk" id="tmplCairTariff">
+        <div style="width:${w}px;height:${h}px;" class="flowchart-object flowchart-question ui-diagram-element ui-diagram-tariff" data-jtk-target="true" data-jtk-target-port-type="target">
+               <span>${text}</span>
+               <div class="node-edit node-action"/>
+               <div class="node-delete node-action delete"/>
+               <div class="drag-start connect" data-jtk-source="true" data-jtk-port-type="source"></div>
+           </div>
+    </script>
+
+    <!-- The Help Modal -->
+<div id="help-modal" class="modal-help">
+
+    <!-- Help Modal content -->
+    <div class="modal-help-content">
+      <span class="close-help">&times;</span>
+      <div class="description">
+        <p>
+            This TMWB GraphView application Window. Conditions, branches and tariffs are supported.
+        </p>
+        <ul>
+            <li>Drag from the right palette onto the workspace to add nodes</li>
+            <li>Drag from the arrow icon on any node that has one to any other node to establish a link, then provide a description for the link's label</li>
+            <li>Click a link to edit its label.</li>
+            <li>Click the 'Pencil' icon to enter 'select' mode, then select several nodes. Click the canvas to exit.</li>
+            <li>Click the 'Home' icon to zoom out and see all the nodes.</li>
+        </ul>
+        <p>
+            This control bar offers the following operations. 
+        </p>
+        <ul>
+            <li>Pan Mode - Click and drag to move around the graph.</li>
+            <li>Select Mode - Click and select multiple nodes and edges.</li>
+            <li>Zoom to fit - Adjust the zoom level so all the graph is visible.</li>
+            <li>Undo last action - Reverts the last action.</li>
+            <li>Redo last action - Reapplies the last action.</li>
+            <li>Clear flowchart - Deletes all nodes and edges from the graph.</li>
+            <li>Refresh Layout - Realigns all nodes in a hierarchical format.</li>
+            <li>Open Help - Opens the graphView Documentation.</li>
+        </ul>
+
+    </div>
+    </div>
+  
+  </div>
+
+    <div class="jtk-graphview-main" id="jtk-graphview-flowchart">
+
+
+            <!-- this is the main drawing area -->
+            <div class="jtk-graphview-canvas">
+                <!-- controls -->
+                <div class="controls" can-undo="false" can-redo="false">
+                    <i class="fa fa-arrows selected-mode" mode="pan" title="Pan Mode"></i>
+                    <i class="fa fa-pencil" mode="select" title="Select Mode"></i>
+                    <i class="fa fa-home" reset title="Zoom To Fit"></i>
+                    <i class="fa fa-undo" undo title="Undo last action"></i>
+                    <i class="fa fa-repeat" redo title="Redo last action"></i>
+                    <i class="fa fa-times" clear title="Clear flowchart"></i>
+                    <i class="fa fa-layout" layout title="Refresh layout"></i>
+                    <i class="fa fa-help" help title="Open Help"></i>
+                </div>
+                <!-- miniview -->
+                <div class="miniview"></div>
+            </div>
+            <div class="jtk-graphview-rhs">
+                <!-- the node palette -->
+                <div class="sidebar node-palette">
+                    <div data-node-type="condition" title="Drag to add new" class="sidebar-item" data-width="240" data-height="160">
+                        <i class="icon-eye-open"></i>Condition
+                    </div>
+                    <div data-node-type="branch" title="Drag to add new" class="sidebar-item" data-width="240" data-height="160">
+                        <i class="icon-eye-open"></i>Branch
+                    </div>
+                    <div data-node-type="tariff" title="Drag to add new" class="sidebar-item" data-width="240" data-height="160">
+                        <i class="icon-eye-open"></i>Tariff
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- /content -->
+
+        <script src="_build/graphview.umd.js"></script>
+
+    </body>
+</html>

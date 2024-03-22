@@ -43129,6 +43129,7 @@
   var CONDITION = "condition";
   var BRANCH = "branch";
   var TARIFF = "tariff";
+  var CAIR_TARIFF = "cairTariff";
   var PRICING_PRODUCT = "pricingProduct";
   var JOUNAL_NODE = "journalNode";
 
@@ -43156,20 +43157,6 @@
         }
       }
     });
-
-    function showEdgeEditDialog(data, continueFunction, abortFunction) {
-      continueFunction({
-        label: data.text || ""
-      });
-      var exportData = JSON.stringify(toolkit.exportData());
-      transferGraphData([{
-        name: "exportData",
-        value: exportData
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-    }
     // get the various dom elements
 
 
@@ -43216,6 +43203,15 @@
           });
         }
 
+        if (data.type === CAIR_TARIFF) {
+          createTariffNodeWithCallback(function (nodeId, text, ruleNumber) {
+            data.id = nodeId;
+            data.text = text;
+            data.ruleNumber = ruleNumber;
+            continueCallback(data);
+          });
+        }
+
         if (data.type === JOUNAL_NODE) {
           data.id = uuid();
           continueCallback(data);
@@ -43228,8 +43224,8 @@
         return true;
       },
       edgeFactory: function edgeFactory(type, data, continueCallback, abortCallback) {
-        continueCallback(data);
-        showEdgeEditDialog(data, continueCallback);
+        continueCallback(data); //showEdgeEditDialog(data, continueCallback, abortCallback);
+
         return true;
       },
       beforeConnect: function beforeConnect(source, target, edgeType) {
@@ -43248,7 +43244,7 @@
           return true;
         }
 
-        if (source.data.type === BRANCH && target.data.type === TARIFF) {
+        if (source.data.type === BRANCH && (target.data.type === TARIFF || target.data.type === CAIR_TARIFF)) {
           return true;
         }
 
@@ -43325,6 +43321,18 @@
         }), _defineProperty$i(_nodes, TARIFF, {
           parent: SELECTABLE,
           templateId: "tmplTariff",
+          events: {
+            dblclick: function dblclick(params) {
+              console.log("Inside call edit tariff dialog");
+              openEditTariffView([{
+                name: "tariffNodeId",
+                value: params.obj.data.id
+              }]);
+            }
+          }
+        }), _defineProperty$i(_nodes, CAIR_TARIFF, {
+          parent: SELECTABLE,
+          templateId: "tmplCairTariff",
           events: {
             dblclick: function dblclick(params) {
               console.log("Inside call edit tariff dialog");
@@ -43641,7 +43649,7 @@
           }]);
         }
 
-        if (info.obj.data.type === TARIFF) {
+        if (info.obj.data.type === TARIFF || info.obj.data.type === CAIR_TARIFF) {
           openEditTariffView([{
             name: "tariffNodeId",
             value: info.obj.data.id
