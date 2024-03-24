@@ -43157,8 +43157,25 @@
         }
       }
     });
-    // get the various dom elements
+    /*   function showEdgeEditDialog(
+        data: ObjectData,
+        continueFunction: Function,
+        abortFunction?: CancelFunction
+      ) {
+        continueFunction({ label: data.text || "" });
+        const exportData = JSON.stringify(toolkit.exportData());
+        transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
+    
+      } */
 
+    /*   function customNodeId() {
+        // This function could calculate the ID based on external data
+        // For example, you could use data from a JSF remote command
+        return "node_" + Math.floor(Math.random() * 1000); // Example: Generate a random ID
+    }
+     */
+    // ------------------------- / dialogs ----------------------------------
+    // get the various dom elements
 
     var mainElement = document.querySelector("#jtk-graphview-flowchart"),
         canvasElement = mainElement.querySelector(".jtk-graphview-canvas"),
@@ -43262,16 +43279,22 @@
 
         return false;
       },
-      doNotUpdateOriginalData: false
+      doNotUpdateOriginalData: false,
+
       /* autoSaveDebounceTimeout:100, */
-
-      /*    autoSave: true,    
-          autoSaveHandler: (toolkitInstance) => {
-            const exportData = JSON.stringify(toolkitInstance.exportData());
-            console.log(exportData);
-            transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
-          },*/
-
+      autoSave: true,
+      autoSaveHandler: function autoSaveHandler(toolkitInstance) {
+        var exportData = JSON.stringify(toolkitInstance.exportData());
+        console.log(exportData);
+        console.log('Other export' + JSON.stringify(toolkit.exportData));
+        transferGraphData([{
+          name: "exportData",
+          value: exportData
+        }, {
+          name: "lastConnectedNodeId",
+          value: null
+        }]);
+      }
     });
     window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
@@ -43547,8 +43570,6 @@
 
     toolkit.load({
       data: loadGraphData(),
-
-      /*   url: "./copyright.json", */
       onload: function onload() {
         toolkit.clear();
         toolkit.setDoNotUpdateOriginalData(false);
@@ -43556,7 +43577,15 @@
         /*    const exportData = JSON.stringify(toolkit.exportData());
             transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]); */
       }
-    }); // listener for mode change on renderer.
+    }); // Load the data.
+
+    /*    toolkit.load({
+        url: `./copyright.json?q=${uuid()}`,
+        onload:() => {
+            renderer.zoomToFit()
+        }
+    }) */
+    // listener for mode change on renderer.
 
     renderer.bind(EVENT_SURFACE_MODE_CHANGED, function (mode) {
       forEach(controls.querySelectorAll("[mode]"), function (e) {
@@ -43682,6 +43711,9 @@
       callDOMReady(canEdit);
     });
   }
+  /*   ready(() => {
+      callDOMReady(true);
+    }); */
 
   exports.initJsPlumb = initJsPlumb;
 
