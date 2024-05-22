@@ -43301,11 +43301,56 @@
               console.log('Other export' + JSON.stringify(toolkit.exportData)); */
       }
     });
-    window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
+    window.toolkit = toolkit;
+
+    function resizeTextOnNodes() {
+      var nodes = toolkit.getNodes();
+      nodes.forEach(function (node) {
+        var nodeElement = renderer.getRenderedElement(node.id);
+
+        if (nodeElement) {
+          // Function to check if text overflows
+          var isOverflowing = function isOverflowing(element) {
+            if (element) {
+              return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+            }
+
+            return false;
+          }; // Adjust font size until both elements fit within the node
+
+
+          var ruleNumberSpan = nodeElement.querySelector('.node-rule-number');
+          var textSpan = nodeElement.querySelector('.node-text');
+          var fontSize = 16; // Initial font size
+
+          if (ruleNumberSpan) {
+            ruleNumberSpan.style.fontSize = fontSize + 'px';
+          }
+
+          if (textSpan) {
+            textSpan.style.fontSize = fontSize + 'px';
+          }
+
+          while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
+            // Minimum font size of 6px
+            fontSize--;
+
+            if (ruleNumberSpan) {
+              ruleNumberSpan.style.fontSize = fontSize + 'px';
+            }
+
+            if (textSpan) {
+              textSpan.style.fontSize = fontSize + 'px';
+            }
+          }
+        }
+      });
+    } // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
     // Instruct the toolkit to render to the 'canvas' element. We pass in a view of nodes, edges and ports, which
     // together define the look and feel and behaviour of this renderer.  Note that we can have 0 - N renderers
     // assigned to one instance of the Toolkit..
+
 
     var renderer = toolkit.render(canvasElement, {
       view: {
@@ -43607,6 +43652,7 @@
     renderer.on(controls, EVENT_TAP, "[reset]", function (e, eventTarget) {
       toolkit.clearSelection();
       renderer.zoomToFit();
+      toolkit.getNodeAt(0).set;
     }); // on clear button, perhaps clear the Toolkit
 
     renderer.on(controls, EVENT_TAP, "[clear]", function (e, eventTarget) {
@@ -43696,30 +43742,6 @@
     // register a handler in the client side. the server will look for the handler with this ID.
 
     registerHandler(renderer, "graphview-print");
-  }
-
-  function resizeTextOnNodes() {
-    var nodes = document.querySelectorAll('.flowchart-object');
-    nodes.forEach(function (node) {
-      var ruleNumberSpan = node.querySelector('.node-rule-number');
-      var textSpan = node.querySelector('.node-text');
-      var fontSize = 16; // Initial font size
-
-      ruleNumberSpan.style.fontSize = fontSize + 'px';
-      textSpan.style.fontSize = fontSize + 'px'; // Function to check if text overflows
-
-      function isOverflowing(element) {
-        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-      } // Adjust font size until both elements fit within the node
-
-
-      while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
-        // Minimum font size of 6px
-        fontSize--;
-        ruleNumberSpan.style.fontSize = fontSize + 'px';
-        textSpan.style.fontSize = fontSize + 'px';
-      }
-    });
   }
 
   function initJsPlumb(canEdit) {
