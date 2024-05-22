@@ -43616,19 +43616,7 @@
       console.log("CanEdit is now ", canEdit);
       renderer.bindModelEvent(EVENT_TAP, ".node-delete", function (event, eventTarget, info) {
         console.log("Inside delete node");
-        dialogs.show({
-          id: "dlgConfirm",
-          data: {
-            msg: "Delete '" + info.obj.data.text + "'"
-          },
-          onOK: function onOK() {
-            onNodeDeleted([{
-              name: "deletedNodeId",
-              value: info.obj.data.id
-            }]);
-            toolkit.removeNode(info.obj);
-          }
-        });
+        showGraphViewConfirmationDialog(info.obj);
       }); //
       // change a question or action's label
       //

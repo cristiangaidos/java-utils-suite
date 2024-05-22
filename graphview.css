@@ -1,0 +1,713 @@
+@import "./node_modules/@jsplumbtoolkit/browser-ui/css/jsplumbtoolkit.css";
+@import "./node_modules/@jsplumbtoolkit/dialogs/css/jsplumbtoolkit-dialogs.css";
+@import "./node_modules/@jsplumbtoolkit/connector-editors/css/jsplumbtoolkit-connector-editors.css";
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* --- page structure --------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+.jtk-graphview-main {
+  display: flex;
+  height: 100vh;
+}
+
+.jtk-graphview-inner {
+  display: flex;
+}
+
+.jtk-graphview-main .description {
+  font-size: 13px;
+  padding: 13px;
+}
+
+.jtk-graphview-main .description ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.jtk-graphview-main .description li {
+  list-style-type: disc !important;
+  margin: 3px 0;
+}
+
+.jtk-graphview-canvas {
+  background-color: white;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.jtk-graphview-rhs {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #f9f9f9;
+  flex: 0 0 250px;
+  padding: 20px 5px 0 5px;
+}
+
+.canvas-wide {
+  margin-left: 0;
+}
+
+.miniview {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 100;
+}
+
+.jtk-graphview-dataset {
+  overflow: auto;
+  font-size: 12px;
+  font-family: Courier, monospace;
+}
+
+.jtk-graphview-dataset pre {
+  white-space: pre-wrap;
+}
+
+.graphview-title {
+  float: left;
+  font-size: 18px;
+}
+
+.controls {
+  top: 25px;
+  color: #fff;
+  margin-right: 10px;
+  position: absolute;
+  left: 25px;
+  z-index: 1;
+  display: flex;
+  font-size: 14px;
+}
+
+.controls i {
+  background-color: #5184a0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 4px;
+  border: 1px solid white;
+  font-size: 22px;
+  font-style: normal;
+  width: 24px;
+  height: 24px;
+}
+
+.controls i:not(.selected-mode):hover {
+  background-color: white;
+  color: #5184a0;
+  border: 1px solid #5184a0;
+}
+
+.controls i:not(.selected-mode):active {
+  color: white;
+  background-color: #1d9ea0;
+  border: 1px solid white;
+}
+
+[undo],
+[redo] {
+  background-color: darkgray !important;
+}
+[undo]:hover,
+[redo]:hover {
+  background-color: darkgray !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+[can-undo="true"] [undo],
+[can-redo="true"] [redo] {
+  background-color: #3e7e9c !important;
+}
+[can-undo="true"] [undo]:hover,
+[can-redo="true"] [redo]:hover {
+  background-color: white !important;
+  color: #5184a0 !important;
+  border: 1px solid #5184a0 !important;
+}
+
+/* ------------------------ node palette -------------------- */
+
+.node-palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jtk-graphview-sidebar {
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-item {
+  background-color: #ccc;
+  border-radius: 11px;
+  color: #585858;
+  cursor: move;
+  padding: 8px;
+  width: 128px;
+  text-align: center;
+  margin: 10px;
+  outline: none;
+}
+
+.sidebar-item.katavorio-clone-drag {
+  margin: 0;
+  border: 1px solid white;
+}
+
+.sidebar-item:hover,
+.sidebar-item.katavorio-clone-drag {
+  background-color: #5184a0;
+  color: white;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+/* --- jsPlumb setup ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+.jtk-connector {
+  z-index: 9;
+}
+
+.jtk-connector:hover,
+.jtk-connector.jtk-hover {
+  z-index: 10;
+}
+
+.jtk-endpoint {
+  z-index: 12;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.jtk-overlay {
+  background-color: white;
+  color: #434343;
+  font-weight: 400;
+  padding: 4px;
+  z-index: 10;
+}
+
+.jtk-overlay.jtk-hover {
+  color: #434343;
+}
+
+path {
+  cursor: pointer;
+}
+
+.edit:hover {
+  color: #ff8000;
+}
+
+.selected-mode {
+  color: #e4f013;
+}
+
+.connect {
+  width: 10px;
+  height: 10px;
+  background-color: #f76258;
+  position: absolute;
+  bottom: 13px;
+  right: 5px;
+}
+
+/* header styles */
+
+.graphview-links {
+  position: fixed;
+  right: 0;
+  top: 57px;
+  font-size: 11px;
+  background-color: white;
+  opacity: 0.8;
+  padding-right: 10px;
+  padding-left: 5px;
+  text-transform: uppercase;
+  z-index: 100001;
+}
+
+.graphview-links div {
+  display: inline;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+.graphview-links i {
+  padding: 4px;
+}
+/*
+.jtk-node {
+  border:1px solid;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  position: absolute;
+  z-index: 11;
+  overflow: hidden;
+  min-width:80px;
+  min-height:30px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.jtk-node .name {
+  cursor: move;
+  font-size: 13px;
+  text-align: center;
+}
+
+.jtk-node .name span {
+  cursor:pointer;
+}
+
+*/
+
+/* icons */
+
+.jtk-node .add,
+.jtk-node .delete,
+.jtk-node .node-edit {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 10px;
+  padding-bottom: 2px;
+}
+
+.jtk-node .add:hover,
+.jtk-node .delete:hover,
+.jtk-node .node-edit,
+.jtk-node .add.constant,
+.jtk-node .delete.constant {
+  color: white;
+}
+
+.jtk-node .add {
+  right: 3px;
+}
+
+.jtk-node .add:after {
+  content: "+";
+}
+
+.jtk-node .add:hover,
+.jtk-node .add.constant {
+  background-color: #4ea758;
+}
+
+.jtk-node .delete {
+  left: 3px;
+}
+
+.jtk-node .delete:after {
+  content: "x";
+}
+
+.jtk-node .delete:hover,
+.jtk-node .delete.constant {
+  background-color: #d83f3f;
+}
+
+.jtk-node .node-edit:after {
+  content: "✎";
+}
+
+.fa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+}
+
+.fa-plus:after {
+  content: "+";
+  margin-bottom: 0.2rem;
+}
+
+.fa-home:after {
+  content: "⌂";
+  margin-bottom: 0.4rem;
+}
+
+.fa-pencil:after {
+  content: "✎";
+}
+
+.fa-arrows:after {
+  content: "✥";
+}
+
+.fa-undo:after {
+  content: "↺";
+}
+
+.fa-repeat:after {
+  content: "↻";
+}
+
+.fa-times:after {
+  content: "x";
+}
+
+/* ------------------------ local ----------------------------*/
+
+.jtk-graphview-main {
+  display: flex;
+  height: 100vh;
+}
+
+.jtk-graphview-canvas {
+  background-color: white;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.jtk-graphview-rhs {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #f9f9f9;
+  flex: 0 0 250px;
+  padding: 20px 5px 0 5px;
+}
+
+.node-palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-item {
+  background-color: #ccc;
+  border-radius: 11px;
+  color: #585858;
+  cursor: move;
+  padding: 8px;
+  width: 128px;
+  text-align: center;
+  margin: 10px;
+  outline: none;
+}
+
+.miniview {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 100;
+}
+
+.jtk-graphview-main .description {
+  font-size: 13px;
+  padding: 13px;
+}
+
+.jtk-graphview-main .description ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.jtk-graphview-main .description li {
+  list-style-type: disc !important;
+  margin: 3px 0;
+}
+
+/* ------------------------ dialogs ----------------------------*/
+
+/* ------------------------ dialogs ----------------------------*/
+
+/* ----------------------- drag/drop interactions -------------- */
+.drop-hover {
+  background-color: #fccccc !important;
+}
+
+/* ----------------------- node styles ------------------------- */
+
+.flowchart-object {
+  z-index: 10;
+  border: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.jtk-node svg {
+  position: absolute;
+  stroke: #ccc;
+  stroke-width: 2px;
+  fill: white;
+  left: 0;
+  top: 0;
+}
+
+.flowchart-object span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.flowchart-object .node-action {
+  display: none;
+  position: absolute;
+  top: -14px;
+  cursor: pointer;
+  z-index: 10000;
+  left: auto;
+  color: white;
+  transition: transform 0.1s;
+  font-family: sans-serif;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.flowchart-object .node-action:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.flowchart-object .node-edit {
+  right: 25px;
+  background-color: #4ea758;
+}
+
+.flowchart-object .node-delete {
+  right: 4px;
+  background-color: #d83f3f;
+}
+
+.flowchart-object.jtk-surface-selected-element .node-action {
+  display: block;
+  width: 15px;
+  height: 15px;
+  top: -20px;
+  cursor: pointer;
+  line-height: 15px;
+}
+
+.flowchart-object .connect {
+  position: absolute;
+  left: 50%;
+  margin-left: -7.5px;
+  background-color: rgb(132, 172, 179);
+  transition: transform 0.1s;
+}
+
+.flowchart-object .connect:hover {
+  transform: scale(1.2, 1.2);
+  opacity: 1;
+}
+
+.flowchart-action .connect {
+  bottom: 18px;
+}
+
+.flowchart-question .connect {
+  bottom: 28px;
+}
+
+.flowchart-start .connect {
+  right: 17px;
+  left: auto;
+  top: 50%;
+  margin-top: -7.5px;
+}
+
+.connect {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+}
+
+.connect:after {
+  content: "→";
+}
+
+.connection-drop svg {
+  fill: #ccc;
+}
+
+.connection-drop text {
+  fill: black;
+}
+
+.jtk-overlay {
+  z-index: 11;
+}
+
+/* --------------------- edge styles ----------------------------------- */
+
+/*
+    style for the delete button. this is in fact supplied in the editable connectors css as a default but on our own site
+    the cascade conspires to elide the background color and foreground color. Without wanting to mark the style as `!important` in our defaults stylesheet,
+    we instead supply them again here.
+ */
+.jtk-edge-delete {
+  background-color: orangered;
+  color: white;
+}
+
+/* styles for drag + drop */
+
+.jtk-surface.jtk-drag-drop-active {
+  outline: 6px dotted #4ea758 !important;
+}
+
+.jtk-surface.jtk-drag-drop-hover {
+  outline: 6px solid #f7a45d !important;
+}
+
+svg.jtk-drag-drop-hover,
+svg.jtk-drag-drop-active {
+  outline: none !important;
+}
+
+svg.jtk-drag-drop-active path {
+  stroke: #4ea758;
+  stroke-width: 3px;
+  stroke-dasharray: 2 0 2 5;
+}
+
+svg.jtk-drag-drop-hover path {
+  stroke: #f7a45d;
+  stroke-width: 4px;
+  stroke-dasharray: 0;
+}
+
+.fa-times:after {
+  content: "✖";
+}
+
+.fa-layout:after {
+  content: "⇌";
+}
+
+.fa-help:after {
+  content: "?";
+}
+
+/* --------------------- TMWB Node styles ----------------------------------- */
+
+.ui-diagram-element {
+  width: 14em;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-color: #4982de;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+.ui-diagram-tariff {
+  background-color: #eaf525;
+  color: #000000 !important;
+  font-weight: bold;
+  border-color: #7ab02c;
+}
+
+.ui-diagram-condition {
+  background-color: #c34a2c;
+  color: #ffffff !important;
+}
+
+.flow-label {
+  font-size: 24px;
+  font-weight: bold;
+  color: #816a51;
+  font-weight: bold;
+}
+
+/* --------------------- Help Modal Dialog styles ----------------------------------- */
+
+/* The Modal (background) */
+.modal-help {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-help-content {
+  background-color: #e0f2fa;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close-help {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-help:hover,
+.close-help:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-help-content .description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 10;
+  padding: 13px;
+}
+
+.modal-help-content .description ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.modal-help-content .description li {
+  list-style-type: disc !important;
+  margin: 3px 0;
+}
+
+.node-rule-number, .node-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px; /* Starting font size */
+}
+
+.node-rule-number {
+  margin-bottom: 4px; /* Space between rule number and text */
+}
