@@ -43288,7 +43288,14 @@
       /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
-        JSON.stringify(toolkitInstance.exportData());
+        var exportData = JSON.stringify(toolkitInstance.exportData());
+        transferGraphData([{
+          name: "exportData",
+          value: exportData
+        }, {
+          name: "lastConnectedNodeId",
+          value: null
+        }]);
         /*       console.log(exportData);
               console.log('Other export' + JSON.stringify(toolkit.exportData)); */
       }
@@ -43613,7 +43620,7 @@
       /*  console.log("CanEdit is now ", canEdit); */
       renderer.bindModelEvent(EVENT_TAP, ".node-delete", function (event, eventTarget, info) {
         /* console.log("Inside delete node"); */
-        showGraphViewConfirmaDialog(info.obj);
+        showGraphViewConfirmDialog(info.obj);
       }); //
       // change a question or action's label
       //
