@@ -43193,6 +43193,7 @@
             name: "conditionDialogNodeId",
             value: data.id
           }]);
+          return true;
         }
 
         if (data.type === PRICING_PRODUCT) {
@@ -43201,6 +43202,7 @@
             data.text = text;
             continueCallback(data);
           });
+          return true;
         }
 
         if (data.type === BRANCH) {
@@ -43210,6 +43212,7 @@
             name: "branchNodeId",
             value: data.id
           }]);
+          return true;
         }
 
         if (data.type === TARIFF) {
@@ -43218,6 +43221,7 @@
             data.text = text;
             continueCallback(data);
           });
+          return true;
         }
 
         if (data.type === CAIR_TARIFF) {
@@ -43227,6 +43231,7 @@
             data.ruleNumber = ruleNumber;
             continueCallback(data);
           });
+          return true;
         }
 
         if (data.type === JOUNAL_NODE) {
@@ -43236,9 +43241,8 @@
             name: "journalNodeId",
             value: data.id
           }]);
+          return true;
         }
-
-        return true;
       },
       edgeFactory: function edgeFactory(type, data, continueCallback, abortCallback) {
         continueCallback(data); //showEdgeEditDialog(data, continueCallback, abortCallback);
@@ -43284,16 +43288,9 @@
       /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
-        var exportData = JSON.stringify(toolkitInstance.exportData());
-        console.log(exportData);
-        console.log('Other export' + JSON.stringify(toolkit.exportData));
-        transferGraphData([{
-          name: "exportData",
-          value: exportData
-        }, {
-          name: "lastConnectedNodeId",
-          value: null
-        }]);
+        JSON.stringify(toolkitInstance.exportData());
+        /*       console.log(exportData);
+              console.log('Other export' + JSON.stringify(toolkit.exportData)); */
       }
     });
     window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
@@ -43315,7 +43312,7 @@
           templateId: "tmplCondition",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit condition dialog");
+              /*               console.log("Inside call edit condition dialog"); */
               openEditConditionDialog([{
                 name: "conditionDialogNodeId",
                 value: params.obj.data.id
@@ -43339,7 +43336,7 @@
           templateId: "tmplTariff",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit tariff dialog");
+              /*         console.log("Inside call edit tariff dialog"); */
               openEditTariffView([{
                 name: "tariffNodeId",
                 value: params.obj.data.id
@@ -43351,7 +43348,7 @@
           templateId: "tmplCairTariff",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit tariff dialog");
+              /* console.log("Inside call edit tariff dialog"); */
               openEditTariffView([{
                 name: "tariffNodeId",
                 value: params.obj.data.id
@@ -43363,7 +43360,7 @@
           templateId: "tmplPricingProduct",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit pricing product dialog");
+              /* console.log("Inside call edit pricing product dialog"); */
               openEditPricingProductView([{
                 name: "pricingProductNodeId",
                 value: params.obj.data.id
@@ -43375,7 +43372,7 @@
           templateId: "tmplJournal",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit tmplJournal dialog");
+              /* console.log("Inside call edit tmplJournal dialog"); */
               openEditJournalView([{
                 name: "journalNodeId",
                 value: params.obj.data.id
@@ -43613,10 +43610,10 @@
     //
 
     if (canEdit) {
-      console.log("CanEdit is now ", canEdit);
+      /*  console.log("CanEdit is now ", canEdit); */
       renderer.bindModelEvent(EVENT_TAP, ".node-delete", function (event, eventTarget, info) {
-        console.log("Inside delete node");
-        showGraphViewConfirmationDialog(info.obj);
+        /* console.log("Inside delete node"); */
+        showGraphViewConfirmaDialog(info.obj);
       }); //
       // change a question or action's label
       //
@@ -43626,8 +43623,7 @@
       //
 
       renderer.bindModelEvent(EVENT_TAP, ".node-edit", function (event, eventTarget, info) {
-        console.log("Inside edit node button action");
-
+        /* console.log("Inside edit node button action"); */
         if (info.obj.data.type === CONDITION) {
           openEditConditionDialog([{
             name: "conditionDialogNodeId",
