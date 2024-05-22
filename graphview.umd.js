@@ -43289,6 +43289,7 @@
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
         var exportData = JSON.stringify(toolkitInstance.exportData());
+        resizeTextOnNodes();
         transferGraphData([{
           name: "exportData",
           value: exportData
@@ -43695,6 +43696,30 @@
     // register a handler in the client side. the server will look for the handler with this ID.
 
     registerHandler(renderer, "graphview-print");
+  }
+
+  function resizeTextOnNodes() {
+    var nodes = document.querySelectorAll('.flowchart-object');
+    nodes.forEach(function (node) {
+      var ruleNumberSpan = node.querySelector('.node-rule-number');
+      var textSpan = node.querySelector('.node-text');
+      var fontSize = 16; // Initial font size
+
+      ruleNumberSpan.style.fontSize = fontSize + 'px';
+      textSpan.style.fontSize = fontSize + 'px'; // Function to check if text overflows
+
+      function isOverflowing(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+      } // Adjust font size until both elements fit within the node
+
+
+      while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
+        // Minimum font size of 6px
+        fontSize--;
+        ruleNumberSpan.style.fontSize = fontSize + 'px';
+        textSpan.style.fontSize = fontSize + 'px';
+      }
+    });
   }
 
   function initJsPlumb(canEdit) {
