@@ -43702,24 +43702,7 @@
         // Function to check if text overflows
         var isOverflowing = function isOverflowing(element) {
           if (element) {
-            // Create a temporary element
-            var tempElement = document.createElement('div');
-            tempElement.style.position = 'absolute';
-            tempElement.style.visibility = 'hidden';
-            tempElement.style.height = 'auto';
-            tempElement.style.width = element.clientWidth + 'px';
-            tempElement.style.fontSize = element.style.fontSize;
-            tempElement.style.whiteSpace = element.style.whiteSpace;
-            tempElement.style.textOverflow = element.style.textOverflow;
-            tempElement.innerHTML = element.innerHTML; // Append to the body to calculate dimensions
-
-            document.body.appendChild(tempElement);
-
-            var _isOverflowing = tempElement.scrollHeight > element.clientHeight || tempElement.scrollWidth > element.clientWidth; // Remove the temporary element
-
-
-            document.body.removeChild(tempElement);
-            return _isOverflowing;
+            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
           }
 
           return false;
@@ -43732,6 +43715,9 @@
             fontSize--;
             ruleNumberSpan.style.fontSize = fontSize + "px";
             textSpan.style.fontSize = fontSize + "px";
+            toolkit.updateNode(nodeId, {
+              w: '180'
+            });
           }
         };
 
