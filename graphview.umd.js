@@ -43689,17 +43689,9 @@
     registerHandler(renderer, "graphview-print");
 
     function adjustFontSizeOnAllNodes() {
-      var backUpEdges = toolkit.getEdges();
       var nodes = toolkit.getNodes();
       nodes.forEach(function (node) {
         adjustFontSize(node.id);
-        toolkit.removeNode(node);
-      });
-      nodes.forEach(function (node) {
-        toolkit.addNode(node);
-      });
-      backUpEdges.forEach(function (edge) {
-        toolkit.addEdge(edge);
       });
     }
 
@@ -43710,7 +43702,24 @@
         // Function to check if text overflows
         var isOverflowing = function isOverflowing(element) {
           if (element) {
-            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+            // Create a temporary element
+            var tempElement = document.createElement('div');
+            tempElement.style.position = 'absolute';
+            tempElement.style.visibility = 'hidden';
+            tempElement.style.height = 'auto';
+            tempElement.style.width = element.clientWidth + 'px';
+            tempElement.style.fontSize = element.style.fontSize;
+            tempElement.style.whiteSpace = element.style.whiteSpace;
+            tempElement.style.textOverflow = element.style.textOverflow;
+            tempElement.innerHTML = element.innerHTML; // Append to the body to calculate dimensions
+
+            document.body.appendChild(tempElement);
+
+            var _isOverflowing = tempElement.scrollHeight > element.clientHeight || tempElement.scrollWidth > element.clientWidth; // Remove the temporary element
+
+
+            document.body.removeChild(tempElement);
+            return _isOverflowing;
           }
 
           return false;
