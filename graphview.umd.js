@@ -43597,6 +43597,7 @@
 
     renderer.on(controls, EVENT_TAP, "[reset]", function (e, eventTarget) {
       toolkit.clearSelection();
+      renderer.zoomToFit();
     }); // on clear button, perhaps clear the Toolkit
 
     renderer.on(controls, EVENT_TAP, "[clear]", function (e, eventTarget) {
@@ -43688,9 +43689,17 @@
     registerHandler(renderer, "graphview-print");
 
     function adjustFontSizeOnAllNodes() {
+      var backUpEdges = toolkit.getEdges();
       var nodes = toolkit.getNodes();
       nodes.forEach(function (node) {
         adjustFontSize(node.id);
+        toolkit.removeNode(node);
+      });
+      nodes.forEach(function (node) {
+        toolkit.addNode(node);
+      });
+      backUpEdges.forEach(function (edge) {
+        toolkit.addEdge(edge);
       });
     }
 
@@ -43715,8 +43724,7 @@
             ruleNumberSpan.style.fontSize = fontSize + "px";
             textSpan.style.fontSize = fontSize + "px";
           }
-        }; // Use requestAnimationFrame to ensure the elements are fully rendered before checking for overflow
-
+        };
 
         var ruleNumberSpan = nodeElement.querySelector(".node-rule-number");
         var textSpan = nodeElement.querySelector(".node-text");
@@ -43730,7 +43738,7 @@
           textSpan.style.fontSize = fontSize + "px";
         }
 
-        requestAnimationFrame(resizeText);
+        resizeText();
       }
     }
   }
