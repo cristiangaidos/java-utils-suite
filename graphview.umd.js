@@ -43282,7 +43282,7 @@
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
         var exportData = JSON.stringify(toolkitInstance.exportData());
-        resizeTextOnNodes();
+        adjustFontSizeOnAllNodes();
         transferGraphData([{
           name: "exportData",
           value: exportData
@@ -43294,60 +43294,11 @@
               console.log('Other export' + JSON.stringify(toolkit.exportData)); */
       }
     });
-    window.toolkit = toolkit;
-
-    function resizeTextOnNodes() {
-      var nodes = toolkit.getNodes();
-      nodes.forEach(function (node) {
-        resizeTextOnNode(node.id);
-      });
-    }
-
-    function resizeTextOnNode(nodeId) {
-      var nodeElement = renderer.getRenderedElement(nodeId);
-
-      if (nodeElement) {
-        // Function to check if text overflows
-        var isOverflowing = function isOverflowing(element) {
-          if (element) {
-            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-          }
-
-          return false;
-        }; // Adjust font size until both elements fit within the node
-
-
-        var ruleNumberSpan = nodeElement.querySelector('.node-rule-number');
-        var textSpan = nodeElement.querySelector('.node-text');
-        var fontSize = 16; // Initial font size
-
-        if (ruleNumberSpan) {
-          ruleNumberSpan.style.fontSize = fontSize + 'px';
-        }
-
-        if (textSpan) {
-          textSpan.style.fontSize = fontSize + 'px';
-        }
-
-        while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
-          // Minimum font size of 6px
-          fontSize--;
-
-          if (ruleNumberSpan) {
-            ruleNumberSpan.style.fontSize = fontSize + 'px';
-          }
-
-          if (textSpan) {
-            textSpan.style.fontSize = fontSize + 'px';
-          }
-        }
-      }
-    } // ------------------------ / toolkit setup ------------------------------------
+    window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
     // Instruct the toolkit to render to the 'canvas' element. We pass in a view of nodes, edges and ports, which
     // together define the look and feel and behaviour of this renderer.  Note that we can have 0 - N renderers
     // assigned to one instance of the Toolkit..
-
 
     var renderer = toolkit.render(canvasElement, {
       view: {
@@ -43601,21 +43552,7 @@
 
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
-      /*     const exportData = JSON.stringify(toolkit.exportData());
-           transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
-           console.log("Dataload End Event"); */
-      toolkit.eachNode(function (nodeId, node) {
-        var element = renderer.getRenderedElement(node);
-
-        if (element) {
-          var currentLeft = parseInt(element.style.left, 10);
-          element.style.left = currentLeft - 1 + "px";
-          toolkit.updateNode(node.id, {
-            left: currentLeft - 1
-          });
-        }
-      });
-      renderer.repaintEverything(); // Ensure all connections are redrawn correctly
+      adjustFontSizeOnAllNodes();
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
@@ -43749,6 +43686,53 @@
     // register a handler in the client side. the server will look for the handler with this ID.
 
     registerHandler(renderer, "graphview-print");
+
+    function adjustFontSizeOnAllNodes() {
+      var nodes = toolkit.getNodes();
+      nodes.forEach(function (node) {
+        adjustFontSize(node.id);
+      });
+    }
+
+    function adjustFontSize(nodeId) {
+      var nodeElement = renderer.getRenderedElement(nodeId);
+
+      if (nodeElement) {
+        // Function to check if text overflows
+        var isOverflowing = function isOverflowing(element) {
+          if (element) {
+            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+          }
+
+          return false;
+        }; // Adjust font size until both elements fit within the node
+
+
+        var resizeText = function resizeText() {
+          while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
+            // Minimum font size of 6px
+            fontSize--;
+            ruleNumberSpan.style.fontSize = fontSize + "px";
+            textSpan.style.fontSize = fontSize + "px";
+          }
+        }; // Use requestAnimationFrame to ensure the elements are fully rendered before checking for overflow
+
+
+        var ruleNumberSpan = nodeElement.querySelector(".node-rule-number");
+        var textSpan = nodeElement.querySelector(".node-text");
+        var fontSize = 16; // Initial font size
+
+        if (ruleNumberSpan) {
+          ruleNumberSpan.style.fontSize = fontSize + "px";
+        }
+
+        if (textSpan) {
+          textSpan.style.fontSize = fontSize + "px";
+        }
+
+        requestAnimationFrame(resizeText);
+      }
+    }
   }
 
   function initJsPlumb(canEdit) {
