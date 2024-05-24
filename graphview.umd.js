@@ -43167,13 +43167,6 @@
         transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
     
       } */
-
-    /*   function customNodeId() {
-        // This function could calculate the ID based on external data
-        // For example, you could use data from a JSF remote command
-        return "node_" + Math.floor(Math.random() * 1000); // Example: Generate a random ID
-    }
-     */
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
 
@@ -43306,22 +43299,39 @@
     function resizeTextOnNodes() {
       var nodes = toolkit.getNodes();
       nodes.forEach(function (node) {
-        var nodeElement = renderer.getRenderedElement(node.id);
+        resizeTextOnNode(node.id);
+      });
+    }
 
-        if (nodeElement) {
-          // Function to check if text overflows
-          var isOverflowing = function isOverflowing(element) {
-            if (element) {
-              return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-            }
+    function resizeTextOnNode(nodeId) {
+      var nodeElement = renderer.getRenderedElement(nodeId);
 
-            return false;
-          }; // Adjust font size until both elements fit within the node
+      if (nodeElement) {
+        // Function to check if text overflows
+        var isOverflowing = function isOverflowing(element) {
+          if (element) {
+            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+          }
+
+          return false;
+        }; // Adjust font size until both elements fit within the node
 
 
-          var ruleNumberSpan = nodeElement.querySelector('.node-rule-number');
-          var textSpan = nodeElement.querySelector('.node-text');
-          var fontSize = 16; // Initial font size
+        var ruleNumberSpan = nodeElement.querySelector('.node-rule-number');
+        var textSpan = nodeElement.querySelector('.node-text');
+        var fontSize = 16; // Initial font size
+
+        if (ruleNumberSpan) {
+          ruleNumberSpan.style.fontSize = fontSize + 'px';
+        }
+
+        if (textSpan) {
+          textSpan.style.fontSize = fontSize + 'px';
+        }
+
+        while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
+          // Minimum font size of 6px
+          fontSize--;
 
           if (ruleNumberSpan) {
             ruleNumberSpan.style.fontSize = fontSize + 'px';
@@ -43330,21 +43340,8 @@
           if (textSpan) {
             textSpan.style.fontSize = fontSize + 'px';
           }
-
-          while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
-            // Minimum font size of 6px
-            fontSize--;
-
-            if (ruleNumberSpan) {
-              ruleNumberSpan.style.fontSize = fontSize + 'px';
-            }
-
-            if (textSpan) {
-              textSpan.style.fontSize = fontSize + 'px';
-            }
-          }
         }
-      });
+      }
     } // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
     // Instruct the toolkit to render to the 'canvas' element. We pass in a view of nodes, edges and ports, which
@@ -43607,6 +43604,18 @@
       /*     const exportData = JSON.stringify(toolkit.exportData());
            transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
            console.log("Dataload End Event"); */
+      toolkit.eachNode(function (nodeId, node) {
+        var element = renderer.getRenderedElement(node);
+
+        if (element) {
+          var currentLeft = parseInt(element.style.left, 10);
+          element.style.left = currentLeft - 1 + "px";
+          toolkit.updateNode(node.id, {
+            left: currentLeft - 1
+          });
+        }
+      });
+      renderer.repaintEverything(); // Ensure all connections are redrawn correctly
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
@@ -43651,8 +43660,6 @@
 
     renderer.on(controls, EVENT_TAP, "[reset]", function (e, eventTarget) {
       toolkit.clearSelection();
-      renderer.zoomToFit();
-      toolkit.getNodeAt(0).set;
     }); // on clear button, perhaps clear the Toolkit
 
     renderer.on(controls, EVENT_TAP, "[clear]", function (e, eventTarget) {
