@@ -43726,7 +43726,7 @@
           }
         };
 
-        var ruleNumberSpan = nodeElement.querySelector(".node-rule-number");
+        var ruleNumberSpan = nodeElement.querySelector(".node-expression");
         var textSpan = nodeElement.querySelector(".node-text");
         var fontSize = 16; // Initial font size
 
