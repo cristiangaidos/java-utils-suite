@@ -43389,7 +43389,8 @@
           connector: {
             type: OrthogonalConnector.type,
             options: {
-              cornerRadius: 3
+              cornerRadius: 3,
+              alwaysRespectStubs: true
             }
           },
           paintStyle: {
@@ -43552,6 +43553,11 @@
 
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
+      toolkit.getNodes().forEach(function (node) {
+        toolkit.updateNode(node.id, {
+          w: '180'
+        });
+      });
       adjustFontSizeOnAllNodes();
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
@@ -43710,27 +43716,39 @@
 
 
         var resizeText = function resizeText() {
-          while ((isOverflowing(ruleNumberSpan) || isOverflowing(textSpan)) && fontSize > 6) {
-            // Minimum font size of 6px
-            fontSize--;
-            ruleNumberSpan.style.fontSize = fontSize + "px";
-            textSpan.style.fontSize = fontSize + "px";
-            toolkit.updateNode(nodeId, {
-              w: '180'
-            });
+          while (fontSizeText > 6 || fontSizeExpression > 6) {
+            var textToBig = false;
+
+            if (isOverflowing(textSpan) && fontSizeText > 6) {
+              fontSizeText--;
+              textSpan.style.fontSize = fontSizeText + "px";
+              textToBig = true;
+            }
+
+            if (isOverflowing(expressionSpan) && fontSizeExpression > 6) {
+              fontSizeExpression--;
+              expressionSpan.style.fontSize = fontSizeExpression + "px";
+              textToBig = true;
+            }
+
+            if (!textToBig) {
+              break;
+            }
           }
         };
 
-        var ruleNumberSpan = nodeElement.querySelector(".node-expression");
+        var expressionSpan = nodeElement.querySelector(".node-expression");
         var textSpan = nodeElement.querySelector(".node-text");
-        var fontSize = 16; // Initial font size
+        var fontSizeText = 16; // Initial font size
 
-        if (ruleNumberSpan) {
-          ruleNumberSpan.style.fontSize = fontSize + "px";
+        var fontSizeExpression = 16; // Initial font size
+
+        if (expressionSpan) {
+          expressionSpan.style.fontSize = fontSizeText + "px";
         }
 
         if (textSpan) {
-          textSpan.style.fontSize = fontSize + "px";
+          textSpan.style.fontSize = fontSizeExpression + "px";
         }
 
         resizeText();
