@@ -43706,9 +43706,11 @@
 
       if (nodeElement) {
         // Function to check if text overflows
-        var isOverflowing = function isOverflowing(element) {
-          if (element) {
-            return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+        var isOverflowing = function isOverflowing(textElement, expressionElement) {
+          if (textElement && expressionElement) {
+            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.clientHeight + expressionElement.clientHeight || textElement.scrollWidth + expressionElement.scrollWidth > textElement.clientWidth + expressionElement.clientWidth;
+          } else if (textElement) {
+            return textElement.scrollHeight > textElement.clientHeight || textElement.scrollWidth > textElement.clientWidth;
           }
 
           return false;
@@ -43716,18 +43718,17 @@
 
 
         var resizeText = function resizeText() {
-          while (fontSizeText > 6 || fontSizeExpression > 6) {
+          while (fontSize > 6) {
             var textToBig = false;
 
-            if (isOverflowing(textSpan) && fontSizeText > 6) {
-              fontSizeText--;
-              textSpan.style.fontSize = fontSizeText + "px";
-              textToBig = true;
-            }
+            if (isOverflowing(textSpan, expressionSpan) && fontSize > 6) {
+              fontSize--;
+              textSpan.style.fontSize = fontSize + "px";
 
-            if (isOverflowing(expressionSpan) && fontSizeExpression > 6) {
-              fontSizeExpression--;
-              expressionSpan.style.fontSize = fontSizeExpression + "px";
+              if (expressionSpan) {
+                expressionSpan.style.fontSize = fontSize + "px";
+              }
+
               textToBig = true;
             }
 
@@ -43739,16 +43740,14 @@
 
         var expressionSpan = nodeElement.querySelector(".node-expression");
         var textSpan = nodeElement.querySelector(".node-text");
-        var fontSizeText = 16; // Initial font size
-
-        var fontSizeExpression = 16; // Initial font size
+        var fontSize = 16; // Initial font size
 
         if (expressionSpan) {
-          expressionSpan.style.fontSize = fontSizeText + "px";
+          expressionSpan.style.fontSize = fontSize + "px";
         }
 
         if (textSpan) {
-          textSpan.style.fontSize = fontSizeExpression + "px";
+          textSpan.style.fontSize = fontSize + "px";
         }
 
         resizeText();
