@@ -43787,6 +43787,8 @@
 
         if (event.ctrlKey && event.code === "KeyV") {
           console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
+
+          copySelectedNodes();
         }
       });
     }
@@ -43809,14 +43811,20 @@
         };
 
         if (nodeData.type === TARIFF) {
-          copyTariffNodeWithCallback(originData.id, function (nodeId, text) {
+          copyTariffNodeWithCallback({
+            name: "nodeId",
+            value: originData.id
+          }, function (nodeId, text) {
             nodeData.id = nodeId;
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === CAIR_TARIFF) {
-          copyTariffNodeWithCallback(originData.id, function (nodeId, text, ruleNumber) {
+          copyTariffNodeWithCallback({
+            name: "nodeId",
+            value: originData.id
+          }, function (nodeId, text, ruleNumber) {
             nodeData.id = nodeId;
             nodeData.text = text;
             nodeData.ruleNumber = ruleNumber;
@@ -43824,7 +43832,10 @@
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === PRICING_PRODUCT) {
-          copyProductNodeWithCallback(originData.id, function (nodeId, text) {
+          copyProductNodeWithCallback({
+            name: "nodeId",
+            value: originData.id
+          }, function (nodeId, text) {
             nodeData.id = nodeId;
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
@@ -43842,7 +43853,6 @@
       callDOMReady(true);
     }); */
 
-  exports.copySelectedNodes = copySelectedNodes;
   exports.initJsPlumb = initJsPlumb;
 
   Object.defineProperty(exports, '__esModule', { value: true });
