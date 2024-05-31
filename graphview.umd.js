@@ -43789,6 +43789,7 @@
           console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
 
           copySelectedNodes();
+          jsToolkit.getSelection().clear();
         }
       });
     }
@@ -43803,11 +43804,11 @@
         // Retrieve and modify the position
 
         var originalPosition = jsRenderer.getCoordinates(originData.id);
-        jsRenderer.setPosition;
         var newPosition = {
-          x: originalPosition.x + 10,
+          x: originalPosition.x + 15,
           // Shift 10 pixels to the right
-          y: originalPosition.y + 10
+          y: originalPosition.y + 15 // Shift 10 pixels down
+
         };
 
         if (nodeData.type === TARIFF) {
