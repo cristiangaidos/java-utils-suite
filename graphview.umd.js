@@ -43134,7 +43134,7 @@
   var JOUNAL_NODE = "journalNode";
   var jsToolkit;
   var jsRenderer;
-  var copiedNodes;
+  var copiedNodes = [];
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -43772,9 +43772,17 @@
       document.addEventListener("keydown", function (event) {
         if (event.ctrlKey && event.code === "KeyC") {
           console.log("CTRL+C was pressed"); // Custom logic for CTRL+C
-          // Deep copy using JSON methods
+          // Clear the clipboard if nodes selected
 
-          copiedNodes = JSON.parse(JSON.stringify(jsToolkit.getSelection().getNodes()));
+          if (jsToolkit.getSelection().getNodes().length > 0) {
+            copiedNodes = [];
+          } // Deep copy nodes data to clipboard
+
+
+          jsToolkit.getSelection().getNodes().forEach(function (node) {
+            var nodeData = Object.assign({}, node.data);
+            copiedNodes.push(nodeData);
+          });
         }
 
         if (event.ctrlKey && event.code === "KeyV") {
@@ -43786,13 +43794,13 @@
 
   function copySelectedNodes() {
     if (copiedNodes && copiedNodes.length > 0) {
-      copiedNodes.forEach(function (node) {
+      copiedNodes.forEach(function (originData) {
         // Copy the node data (excluding the ID, which should be unique)
-        var nodeData = Object.assign({}, node.data);
+        var nodeData = Object.assign({}, originData);
         delete nodeData.id; // Ensure the new node gets a unique ID
         // Retrieve and modify the position
 
-        var originalPosition = jsRenderer.getCoordinates(node.data.id);
+        var originalPosition = jsRenderer.getCoordinates(originData.id);
         jsRenderer.setPosition;
         var newPosition = {
           x: originalPosition.x + 10,
@@ -43801,14 +43809,14 @@
         };
 
         if (nodeData.type === TARIFF) {
-          copyTariffNodeWithCallback(node.data.id, function (nodeId, text) {
+          copyTariffNodeWithCallback(originData.id, function (nodeId, text) {
             nodeData.id = nodeId;
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === CAIR_TARIFF) {
-          copyTariffNodeWithCallback(node.data.id, function (nodeId, text, ruleNumber) {
+          copyTariffNodeWithCallback(originData.id, function (nodeId, text, ruleNumber) {
             nodeData.id = nodeId;
             nodeData.text = text;
             nodeData.ruleNumber = ruleNumber;
@@ -43816,7 +43824,7 @@
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === PRICING_PRODUCT) {
-          copyProductNodeWithCallback(node.data.id, function (nodeId, text) {
+          copyProductNodeWithCallback(originData.id, function (nodeId, text) {
             nodeData.id = nodeId;
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
