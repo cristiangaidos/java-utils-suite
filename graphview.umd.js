@@ -43132,6 +43132,8 @@
   var CAIR_TARIFF = "cairTariff";
   var PRICING_PRODUCT = "pricingProduct";
   var JOUNAL_NODE = "journalNode";
+  var jsToolkit;
+  var jsRenderer;
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -43294,7 +43296,8 @@
               console.log('Other export' + JSON.stringify(toolkit.exportData)); */
       }
     });
-    window.toolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
+    window.toolkit = toolkit;
+    jsToolkit = toolkit; // ------------------------ / toolkit setup ------------------------------------
     // ------------------------ rendering ------------------------------------
     // Instruct the toolkit to render to the 'canvas' element. We pass in a view of nodes, edges and ports, which
     // together define the look and feel and behaviour of this renderer.  Note that we can have 0 - N renderers
@@ -43599,7 +43602,8 @@
     renderer.on(controls, EVENT_TAP, "[mode]", function (e, eventTarget) {
       renderer.setMode(eventTarget.getAttribute("mode"));
     });
-    window.renderer = renderer; // on home button click, zoom content to fit.
+    window.renderer = renderer;
+    jsRenderer = renderer; // on home button click, zoom content to fit.
 
     renderer.on(controls, EVENT_TAP, "[reset]", function (e, eventTarget) {
       toolkit.clearSelection();
@@ -43708,9 +43712,9 @@
         // Function to check if text overflows
         var isOverflowing = function isOverflowing(textElement, expressionElement) {
           if (textElement && expressionElement) {
-            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.clientHeight + expressionElement.clientHeight || textElement.scrollWidth + expressionElement.scrollWidth > textElement.clientWidth + expressionElement.clientWidth;
+            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.parentElement.clientHeight || textElement.scrollWidth + expressionElement.scrollWidth > textElement.parentElement.clientWidth;
           } else if (textElement) {
-            return textElement.scrollHeight > textElement.clientHeight || textElement.scrollWidth > textElement.clientWidth;
+            return textElement.scrollHeight > textElement.parentElement.clientHeight || textElement.scrollWidth > textElement.parentElement.clientWidth;
           }
 
           return false;
@@ -43758,12 +43762,73 @@
   function initJsPlumb(canEdit) {
     ready(function () {
       callDOMReady(canEdit);
+      addCopyPasteListeners(canEdit);
+    });
+  }
+
+  function addCopyPasteListeners(canEdit) {
+    if (canEdit) {
+      document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.code === "KeyC") {
+          console.log("CTRL+C was pressed"); // Custom logic for CTRL+C
+        }
+
+        if (event.ctrlKey && event.code === "KeyV") {
+          console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
+        }
+      });
+    }
+  }
+
+  function copySelectedNodes() {
+    jsToolkit.getSelection().getNodes().forEach(function (node) {
+      // Copy the node data (excluding the ID, which should be unique)
+      var nodeData = Object.assign({}, node.data);
+      delete nodeData.id; // Ensure the new node gets a unique ID
+      // Retrieve and modify the position
+
+      var originalPosition = jsRenderer.getCoordinates(node.data.id);
+      jsRenderer.setPosition;
+      var newPosition = {
+        x: originalPosition.x + 10,
+        // Shift 10 pixels to the right
+        y: originalPosition.y
+      };
+
+      if (nodeData.type === TARIFF) {
+        createTariffNodeWithCallback(function (nodeId, text) {
+          nodeData.id = nodeId;
+          nodeData.text = text;
+          var newNode = jsToolkit.addNode(nodeData);
+          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+        });
+      } else if (nodeData.type === CAIR_TARIFF) {
+        createTariffNodeWithCallback(function (nodeId, text, ruleNumber) {
+          nodeData.id = nodeId;
+          nodeData.text = text;
+          nodeData.ruleNumber = ruleNumber;
+          var newNode = jsToolkit.addNode(nodeData);
+          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+        });
+      } else if (nodeData.type === PRICING_PRODUCT) {
+        createProductNodeWithCallback(function (nodeId, text) {
+          nodeData.id = nodeId;
+          nodeData.text = text;
+          var newNode = jsToolkit.addNode(nodeData);
+          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+        });
+      } else {
+        nodeData.id = uuid();
+        var newNode = jsToolkit.addNode(nodeData);
+        jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+      }
     });
   }
   /*   ready(() => {
       callDOMReady(true);
     }); */
 
+  exports.copySelectedNodes = copySelectedNodes;
   exports.initJsPlumb = initJsPlumb;
 
   Object.defineProperty(exports, '__esModule', { value: true });
