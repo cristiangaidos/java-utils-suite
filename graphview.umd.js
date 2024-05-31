@@ -43712,9 +43712,9 @@
         // Function to check if text overflows
         var isOverflowing = function isOverflowing(textElement, expressionElement) {
           if (textElement && expressionElement) {
-            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.parentElement.clientHeight || textElement.scrollWidth + expressionElement.scrollWidth > textElement.parentElement.clientWidth;
+            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.parentElement.clientHeight - 15 || textElement.scrollWidth + expressionElement.scrollWidth > textElement.parentElement.clientWidth;
           } else if (textElement) {
-            return textElement.scrollHeight > textElement.parentElement.clientHeight || textElement.scrollWidth > textElement.parentElement.clientWidth;
+            return textElement.scrollHeight > textElement.parentElement.clientHeight - 15 || textElement.scrollWidth > textElement.parentElement.clientWidth;
           }
 
           return false;
@@ -43792,18 +43792,18 @@
       var newPosition = {
         x: originalPosition.x + 10,
         // Shift 10 pixels to the right
-        y: originalPosition.y
+        y: originalPosition.y + 10
       };
 
       if (nodeData.type === TARIFF) {
-        createTariffNodeWithCallback(function (nodeId, text) {
+        copyTariffNodeWithCallback(node.data.id, function (nodeId, text) {
           nodeData.id = nodeId;
           nodeData.text = text;
           var newNode = jsToolkit.addNode(nodeData);
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
         });
       } else if (nodeData.type === CAIR_TARIFF) {
-        createTariffNodeWithCallback(function (nodeId, text, ruleNumber) {
+        copyTariffNodeWithCallback(node.data.id, function (nodeId, text, ruleNumber) {
           nodeData.id = nodeId;
           nodeData.text = text;
           nodeData.ruleNumber = ruleNumber;
@@ -43811,7 +43811,7 @@
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
         });
       } else if (nodeData.type === PRICING_PRODUCT) {
-        createProductNodeWithCallback(function (nodeId, text) {
+        copyProductNodeWithCallback(node.data.id, function (nodeId, text) {
           nodeData.id = nodeId;
           nodeData.text = text;
           var newNode = jsToolkit.addNode(nodeData);
