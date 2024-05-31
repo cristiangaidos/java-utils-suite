@@ -43134,6 +43134,7 @@
   var JOUNAL_NODE = "journalNode";
   var jsToolkit;
   var jsRenderer;
+  var copiedNodes;
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -43712,7 +43713,7 @@
         // Function to check if text overflows
         var isOverflowing = function isOverflowing(textElement, expressionElement) {
           if (textElement && expressionElement) {
-            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.parentElement.clientHeight - 15 || textElement.scrollWidth + expressionElement.scrollWidth > textElement.parentElement.clientWidth;
+            return textElement.scrollHeight + expressionElement.scrollHeight > textElement.parentElement.clientHeight - 15 || Math.max(textElement.scrollWidth, expressionElement.scrollWidth) > textElement.parentElement.clientWidth;
           } else if (textElement) {
             return textElement.scrollHeight > textElement.parentElement.clientHeight - 15 || textElement.scrollWidth > textElement.parentElement.clientWidth;
           }
@@ -43771,6 +43772,9 @@
       document.addEventListener("keydown", function (event) {
         if (event.ctrlKey && event.code === "KeyC") {
           console.log("CTRL+C was pressed"); // Custom logic for CTRL+C
+          // Deep copy using JSON methods
+
+          copiedNodes = JSON.parse(JSON.stringify(jsToolkit.getSelection().getNodes()));
         }
 
         if (event.ctrlKey && event.code === "KeyV") {
@@ -43781,48 +43785,50 @@
   }
 
   function copySelectedNodes() {
-    jsToolkit.getSelection().getNodes().forEach(function (node) {
-      // Copy the node data (excluding the ID, which should be unique)
-      var nodeData = Object.assign({}, node.data);
-      delete nodeData.id; // Ensure the new node gets a unique ID
-      // Retrieve and modify the position
+    if (copiedNodes && copiedNodes.length > 0) {
+      copiedNodes.forEach(function (node) {
+        // Copy the node data (excluding the ID, which should be unique)
+        var nodeData = Object.assign({}, node.data);
+        delete nodeData.id; // Ensure the new node gets a unique ID
+        // Retrieve and modify the position
 
-      var originalPosition = jsRenderer.getCoordinates(node.data.id);
-      jsRenderer.setPosition;
-      var newPosition = {
-        x: originalPosition.x + 10,
-        // Shift 10 pixels to the right
-        y: originalPosition.y + 10
-      };
+        var originalPosition = jsRenderer.getCoordinates(node.data.id);
+        jsRenderer.setPosition;
+        var newPosition = {
+          x: originalPosition.x + 10,
+          // Shift 10 pixels to the right
+          y: originalPosition.y + 10
+        };
 
-      if (nodeData.type === TARIFF) {
-        copyTariffNodeWithCallback(node.data.id, function (nodeId, text) {
-          nodeData.id = nodeId;
-          nodeData.text = text;
+        if (nodeData.type === TARIFF) {
+          copyTariffNodeWithCallback(node.data.id, function (nodeId, text) {
+            nodeData.id = nodeId;
+            nodeData.text = text;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          });
+        } else if (nodeData.type === CAIR_TARIFF) {
+          copyTariffNodeWithCallback(node.data.id, function (nodeId, text, ruleNumber) {
+            nodeData.id = nodeId;
+            nodeData.text = text;
+            nodeData.ruleNumber = ruleNumber;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          });
+        } else if (nodeData.type === PRICING_PRODUCT) {
+          copyProductNodeWithCallback(node.data.id, function (nodeId, text) {
+            nodeData.id = nodeId;
+            nodeData.text = text;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          });
+        } else {
+          nodeData.id = uuid();
           var newNode = jsToolkit.addNode(nodeData);
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        });
-      } else if (nodeData.type === CAIR_TARIFF) {
-        copyTariffNodeWithCallback(node.data.id, function (nodeId, text, ruleNumber) {
-          nodeData.id = nodeId;
-          nodeData.text = text;
-          nodeData.ruleNumber = ruleNumber;
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        });
-      } else if (nodeData.type === PRICING_PRODUCT) {
-        copyProductNodeWithCallback(node.data.id, function (nodeId, text) {
-          nodeData.id = nodeId;
-          nodeData.text = text;
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        });
-      } else {
-        nodeData.id = uuid();
-        var newNode = jsToolkit.addNode(nodeData);
-        jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-      }
-    });
+        }
+      });
+    }
   }
   /*   ready(() => {
       callDOMReady(true);
