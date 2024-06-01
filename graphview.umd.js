@@ -43788,9 +43788,11 @@
         if (event.ctrlKey && event.code === "KeyV") {
           console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
 
-          var dialogElement = document.getElementsByClassName("ui-dialog-mask");
+          var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
+          var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
+          var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
 
-          if (!dialogElement) {
+          if (!(dialogBranch || dialogCondition || dialogJournal)) {
             copySelectedNodes();
             jsToolkit.getSelection().clear();
           }
