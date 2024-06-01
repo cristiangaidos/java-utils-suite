@@ -43788,8 +43788,12 @@
         if (event.ctrlKey && event.code === "KeyV") {
           console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
 
-          copySelectedNodes();
-          jsToolkit.getSelection().clear();
+          var dialogElement = document.getElementsByClassName("ui-dialog-mask");
+
+          if (!dialogElement) {
+            copySelectedNodes();
+            jsToolkit.getSelection().clear();
+          }
         }
       });
     }
