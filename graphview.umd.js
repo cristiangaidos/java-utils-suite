@@ -43824,15 +43824,18 @@
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === CAIR_TARIFF) {
+          console.log("Start cair copy tariff " + new Date().toLocaleString());
           copyTariffNodeWithCallback({
             name: "nodeId",
             value: originData.id
           }, function (nodeId, text, ruleNumber) {
+            console.log("Callback cair copy tariff " + new Date().toLocaleString());
             nodeData.id = nodeId;
             nodeData.text = text;
             nodeData.ruleNumber = ruleNumber;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            console.log("Finished cair copy tariff " + new Date().toLocaleString());
           });
         } else if (nodeData.type === PRICING_PRODUCT) ; else {
           nodeData.id = uuid();
