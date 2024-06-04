@@ -43139,7 +43139,8 @@
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
 
-    // ------------------------- dialogs -------------------------------------
+    var isLoading = true; // ------------------------- dialogs -------------------------------------
+
     console.log("Inside initJsPlumb. CanEdit is ", canEdit);
     var dialogs = newInstance$1({
       dialogs: {
@@ -43284,17 +43285,17 @@
       /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
-        var exportData = JSON.stringify(toolkitInstance.exportData());
-        adjustFontSizeOnAllNodes();
-        transferGraphData([{
-          name: "exportData",
-          value: exportData
-        }, {
-          name: "lastConnectedNodeId",
-          value: null
-        }]);
-        /*       console.log(exportData);
-              console.log('Other export' + JSON.stringify(toolkit.exportData)); */
+        if (!isLoading) {
+          var exportData = JSON.stringify(toolkitInstance.exportData()); // adjustFontSizeOnAllNodes();
+
+          transferGraphData([{
+            name: "exportData",
+            value: exportData
+          }, {
+            name: "lastConnectedNodeId",
+            value: null
+          }]);
+        }
       }
     });
     window.toolkit = toolkit;
@@ -43394,7 +43395,8 @@
             type: OrthogonalConnector.type,
             options: {
               cornerRadius: 3,
-              alwaysRespectStubs: true
+              alwaysRespectStubs: true,
+              stub: [30, 30]
             }
           },
           paintStyle: {
@@ -43563,6 +43565,7 @@
         });
       });
       adjustFontSizeOnAllNodes();
+      isLoading = false;
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
@@ -43580,8 +43583,6 @@
         toolkit.clear();
         toolkit.setDoNotUpdateOriginalData(false);
         renderer.zoomToFit();
-        /*    const exportData = JSON.stringify(toolkit.exportData());
-            transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]); */
       }
     }); // Load the data.
 
@@ -43843,10 +43844,10 @@
             name: "nodeId",
             value: originData.id
           }, function (nodeId, text) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            /*         nodeData.id = nodeId;
+                    nodeData.text = text;
+                    let newNode = jsToolkit.addNode(nodeData);
+                    jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   */
           });
         } else {
           nodeData.id = uuid();
