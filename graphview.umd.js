@@ -43834,17 +43834,7 @@
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
-        } else if (nodeData.type === PRICING_PRODUCT) {
-          copyProductNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text) {
-            /*         nodeData.id = nodeId;
-                    nodeData.text = text;
-                    let newNode = jsToolkit.addNode(nodeData);
-                    jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   */
-          });
-        } else {
+        } else if (nodeData.type === PRICING_PRODUCT) ; else {
           nodeData.id = uuid();
           var newNode = jsToolkit.addNode(nodeData);
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
