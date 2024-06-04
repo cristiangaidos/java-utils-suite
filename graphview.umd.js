@@ -43318,7 +43318,6 @@
           templateId: "tmplCondition",
           events: {
             dblclick: function dblclick(params) {
-              /*               console.log("Inside call edit condition dialog"); */
               openEditConditionDialog([{
                 name: "conditionDialogNodeId",
                 value: params.obj.data.id
@@ -43330,7 +43329,6 @@
           templateId: "tmplBranch",
           events: {
             dblclick: function dblclick(params) {
-              console.log("Inside call edit branch dialog");
               openEditBranchView([{
                 name: "branchNodeId",
                 value: params.obj.data.id
@@ -43342,7 +43340,6 @@
           templateId: "tmplTariff",
           events: {
             dblclick: function dblclick(params) {
-              /*         console.log("Inside call edit tariff dialog"); */
               openEditTariffView([{
                 name: "tariffNodeId",
                 value: params.obj.data.id
@@ -43354,7 +43351,6 @@
           templateId: "tmplCairTariff",
           events: {
             dblclick: function dblclick(params) {
-              /* console.log("Inside call edit tariff dialog"); */
               openEditTariffView([{
                 name: "tariffNodeId",
                 value: params.obj.data.id
@@ -43366,7 +43362,6 @@
           templateId: "tmplPricingProduct",
           events: {
             dblclick: function dblclick(params) {
-              /* console.log("Inside call edit pricing product dialog"); */
               openEditPricingProductView([{
                 name: "pricingProductNodeId",
                 value: params.obj.data.id
@@ -43378,7 +43373,6 @@
           templateId: "tmplJournal",
           events: {
             dblclick: function dblclick(params) {
-              /* console.log("Inside call edit tmplJournal dialog"); */
               openEditJournalView([{
                 name: "journalNodeId",
                 value: params.obj.data.id
@@ -43389,7 +43383,7 @@
         // There are two edge types defined - 'yes' and 'no', sharing a common
         // parent.
         edges: (_edges = {}, _defineProperty$i(_edges, DEFAULT$1, {
-          anchor: AnchorLocations.AutoDefault,
+          anchor: AnchorLocations.Top,
           endpoint: BlankEndpoint.type,
           connector: {
             type: OrthogonalConnector.type,
@@ -43623,7 +43617,6 @@
     if (canEdit) {
       /*  console.log("CanEdit is now ", canEdit); */
       renderer.bindModelEvent(EVENT_TAP, ".node-delete", function (event, eventTarget, info) {
-        /* console.log("Inside delete node"); */
         showGraphViewConfirmDialog(info.obj);
       }); //
       // change a question or action's label
@@ -43634,7 +43627,6 @@
       //
 
       renderer.bindModelEvent(EVENT_TAP, ".node-edit", function (event, eventTarget, info) {
-        /* console.log("Inside edit node button action"); */
         if (info.obj.data.type === CONDITION) {
           openEditConditionDialog([{
             name: "conditionDialogNodeId",
@@ -43772,7 +43764,7 @@
     if (canEdit) {
       document.addEventListener("keydown", function (event) {
         if (event.ctrlKey && event.code === "KeyC") {
-          console.log("CTRL+C was pressed"); // Custom logic for CTRL+C
+          console.log("CTRL+C was pressed " + new Date().toLocaleString()); // Custom logic for CTRL+C
           // Clear the clipboard if nodes selected
 
           if (jsToolkit.getSelection().getNodes().length > 0) {
@@ -43784,10 +43776,11 @@
             var nodeData = Object.assign({}, node.data);
             copiedNodes.push(nodeData);
           });
+          console.log("Nodes copied " + new Date().toLocaleString());
         }
 
         if (event.ctrlKey && event.code === "KeyV") {
-          console.log("CTRL+V was pressed"); // Custom logic for CTRL+V
+          console.log("CTRL+V was pressed " + new Date().toLocaleString()); // Custom logic for CTRL+V
 
           var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
           var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
@@ -43797,6 +43790,8 @@
             copySelectedNodes();
             jsToolkit.getSelection().clear();
           }
+
+          console.log("Nodes pasted " + new Date().toLocaleString());
         }
       });
     }
