@@ -43286,6 +43286,8 @@
       /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
+        console.log("Autosave called");
+
         if (!isLoading) {
           var exportData = JSON.stringify(toolkitInstance.exportData()); // adjustFontSizeOnAllNodes();
 
@@ -43458,7 +43460,7 @@
         }
       },
       refreshLayoutOnEdgeConnect: false,
-      refreshAutomatically: false,
+      refreshAutomatically: true,
       elementsDraggable: true,
       grid: {
         size: {
@@ -43557,16 +43559,24 @@
       if (ignoreFirstLoadCall) {
         ignoreFirstLoadCall = false;
       } else {
-        toolkit.getNodes().forEach(function (node) {
-          toolkit.updateNode(node.id, {
-            w: '180'
-          });
-        });
-        adjustFontSizeOnAllNodes();
+        /*       toolkit.getNodes().forEach(node => {
+                toolkit.updateNode(node.id, {w:'180'});
+              }); */
+        adjustFontSizeOnAllNodes(true);
         console.log("Load finished " + new Date().toLocaleString());
         isLoading = false;
       }
-    });
+    }); // Define a function to handle node updates
+
+    function onNodeUpdate(params) {
+      var updatedNode = params.obj;
+      adjustFontSize(updatedNode.id, true);
+      console.log("Updating node " + updatedNode.id); // Perform your desired operation here
+      // For example, updating the node's style, logging the update, etc.
+    } // Listen for the dataUpdated event on the toolkit
+
+
+    toolkit.bind(EVENT_NODE_UPDATED, onNodeUpdate);
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
     });
@@ -43699,14 +43709,14 @@
 
     registerHandler(renderer, "graphview-print");
 
-    function adjustFontSizeOnAllNodes() {
+    function adjustFontSizeOnAllNodes(resetFont) {
       var nodes = toolkit.getNodes();
       nodes.forEach(function (node) {
-        adjustFontSize(node.id);
+        adjustFontSize(node.id, resetFont);
       });
     }
 
-    function adjustFontSize(nodeId) {
+    function adjustFontSize(nodeId, resetFont) {
       var nodeElement = renderer.getRenderedElement(nodeId);
 
       if (nodeElement) {
@@ -43747,12 +43757,20 @@
         var textSpan = nodeElement.querySelector(".node-text");
         var fontSize = 16; // Initial font size
 
-        if (expressionSpan) {
-          expressionSpan.style.fontSize = fontSize + "px";
+        if (textSpan) {
+          if (!resetFont) {
+            fontSize = Number(textSpan.style.fontSize);
+          } else {
+            textSpan.style.fontSize = fontSize + "px";
+          }
         }
 
-        if (textSpan) {
-          textSpan.style.fontSize = fontSize + "px";
+        if (expressionSpan) {
+          if (!resetFont) {
+            fontSize = Number(expressionSpan.style.fontSize);
+          } else {
+            expressionSpan.style.fontSize = fontSize + "px";
+          }
         }
 
         resizeText();
