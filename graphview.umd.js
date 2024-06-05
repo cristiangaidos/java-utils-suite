@@ -43383,7 +43383,7 @@
         // There are two edge types defined - 'yes' and 'no', sharing a common
         // parent.
         edges: (_edges = {}, _defineProperty$i(_edges, DEFAULT$1, {
-          anchor: AnchorLocations.Top,
+          anchor: AnchorLocations.ContinuousTopBottom,
           endpoint: BlankEndpoint.type,
           connector: {
             type: OrthogonalConnector.type,
@@ -43559,6 +43559,7 @@
         });
       });
       adjustFontSizeOnAllNodes();
+      console.log("Load finished " + new Date().toLocaleString());
       isLoading = false;
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
@@ -43577,6 +43578,7 @@
         toolkit.clear();
         toolkit.setDoNotUpdateOriginalData(false);
         renderer.zoomToFit();
+        console.log("Load started " + new Date().toLocaleString());
       }
     }); // Load the data.
 
@@ -43824,18 +43826,15 @@
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
           });
         } else if (nodeData.type === CAIR_TARIFF) {
-          console.log("Start cair copy tariff " + new Date().toLocaleString());
           copyTariffNodeWithCallback({
             name: "nodeId",
             value: originData.id
           }, function (nodeId, text, ruleNumber) {
-            console.log("Callback cair copy tariff " + new Date().toLocaleString());
             nodeData.id = nodeId;
             nodeData.text = text;
             nodeData.ruleNumber = ruleNumber;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-            console.log("Finished cair copy tariff " + new Date().toLocaleString());
           });
         } else if (nodeData.type === PRICING_PRODUCT) ; else {
           nodeData.id = uuid();
@@ -43843,6 +43842,16 @@
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
         }
       });
+
+      var _exportData2 = JSON.stringify(jsToolkit.exportData());
+
+      transferGraphData([{
+        name: "exportData",
+        value: _exportData2
+      }, {
+        name: "lastConnectedNodeId",
+        value: null
+      }]);
     }
   }
   /*   ready(() => {
