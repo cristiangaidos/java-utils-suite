@@ -43139,7 +43139,8 @@
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
 
-    var isLoading = true; // ------------------------- dialogs -------------------------------------
+    var isLoading = true;
+    var ignoreFirstLoadCall = true; // ------------------------- dialogs -------------------------------------
 
     console.log("Inside initJsPlumb. CanEdit is ", canEdit);
     var dialogs = newInstance$1({
@@ -43553,14 +43554,18 @@
 
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
-      toolkit.getNodes().forEach(function (node) {
-        toolkit.updateNode(node.id, {
-          w: '180'
+      if (ignoreFirstLoadCall) {
+        ignoreFirstLoadCall = false;
+      } else {
+        toolkit.getNodes().forEach(function (node) {
+          toolkit.updateNode(node.id, {
+            w: '180'
+          });
         });
-      });
-      adjustFontSizeOnAllNodes();
-      console.log("Load finished " + new Date().toLocaleString());
-      isLoading = false;
+        adjustFontSizeOnAllNodes();
+        console.log("Load finished " + new Date().toLocaleString());
+        isLoading = false;
+      }
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
