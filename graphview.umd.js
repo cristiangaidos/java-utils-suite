@@ -43286,9 +43286,8 @@
       /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
-        console.log("Autosave called");
-
         if (!isLoading) {
+          console.log("Autosave called");
           var exportData = JSON.stringify(toolkitInstance.exportData()); // adjustFontSizeOnAllNodes();
 
           transferGraphData([{
@@ -43527,26 +43526,28 @@
         lastConnectedNodeId = edgeParams.edge.target.data.id;
       }
 
-      var exportData = JSON.stringify(toolkit.exportData());
-      transferGraphData([{
-        name: "exportData",
-        value: exportData
-      }, {
-        name: "lastConnectedNodeId",
-        value: lastConnectedNodeId
-      }]);
-      /*     onEdgeAdded([{ name: "originNodeId", value:  edgeParams.edge.source.data.id }, { name: "targetNodeId", value:  edgeParams.edge.target.data.id }]); */
+      if (!isLoading) {
+        var _exportData = JSON.stringify(toolkit.exportData());
+
+        transferGraphData([{
+          name: "exportData",
+          value: _exportData
+        }, {
+          name: "lastConnectedNodeId",
+          value: lastConnectedNodeId
+        }]);
+      }
     });
     toolkit.bind(EVENT_EDGE_REMOVED, function (edgeParams) {
       if (edgeParams.edge.target.data.type === BRANCH) {
         edgeParams.edge.target.data.parentCondition = null;
         edgeParams.edge.target.data.conditionNodeId = null;
 
-        var _exportData = JSON.stringify(toolkit.exportData());
+        var _exportData2 = JSON.stringify(toolkit.exportData());
 
         transferGraphData([{
           name: "exportData",
-          value: _exportData
+          value: _exportData2
         }, {
           name: "lastConnectedNodeId",
           value: null
@@ -43569,10 +43570,8 @@
     }); // Define a function to handle node updates
 
     function onNodeUpdate(params) {
-      var updatedNode = params.obj;
-      adjustFontSize(updatedNode.id, true);
-      console.log("Updating node " + updatedNode.id); // Perform your desired operation here
-      // For example, updating the node's style, logging the update, etc.
+      var updatedNodeId = params.originalId;
+      adjustFontSize(updatedNodeId, true);
     } // Listen for the dataUpdated event on the toolkit
 
 
@@ -43789,9 +43788,9 @@
     if (canEdit) {
       document.addEventListener("keydown", function (event) {
         if (event.ctrlKey && event.code === "KeyC") {
-          console.log("CTRL+C was pressed " + new Date().toLocaleString()); // Custom logic for CTRL+C
+          /* console.log("CTRL+C was pressed " + new Date().toLocaleString()); */
+          // Custom logic for CTRL+C
           // Clear the clipboard if nodes selected
-
           if (jsToolkit.getSelection().getNodes().length > 0) {
             copiedNodes = [];
           } // Deep copy nodes data to clipboard
@@ -43801,12 +43800,12 @@
             var nodeData = Object.assign({}, node.data);
             copiedNodes.push(nodeData);
           });
-          console.log("Nodes copied " + new Date().toLocaleString());
+          /* console.log("Nodes copied " + new Date().toLocaleString()); */
         }
 
         if (event.ctrlKey && event.code === "KeyV") {
-          console.log("CTRL+V was pressed " + new Date().toLocaleString()); // Custom logic for CTRL+V
-
+          /* console.log("CTRL+V was pressed " + new Date().toLocaleString()); */
+          // Custom logic for CTRL+V
           var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
           var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
           var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
@@ -43815,8 +43814,8 @@
             copySelectedNodes();
             jsToolkit.getSelection().clear();
           }
+          /* console.log("Nodes pasted " + new Date().toLocaleString()); */
 
-          console.log("Nodes pasted " + new Date().toLocaleString());
         }
       });
     }
@@ -43866,11 +43865,11 @@
         }
       });
 
-      var _exportData2 = JSON.stringify(jsToolkit.exportData());
+      var _exportData3 = JSON.stringify(jsToolkit.exportData());
 
       transferGraphData([{
         name: "exportData",
-        value: _exportData2
+        value: _exportData3
       }, {
         name: "lastConnectedNodeId",
         value: null
