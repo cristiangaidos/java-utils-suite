@@ -4,6 +4,42 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.QPSCoreGraphView = {}));
 })(this, (function (exports) { 'use strict';
 
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+      var info = gen[key](arg);
+      var value = info.value;
+    } catch (error) {
+      reject(error);
+      return;
+    }
+
+    if (info.done) {
+      resolve(value);
+    } else {
+      Promise.resolve(value).then(_next, _throw);
+    }
+  }
+
+  function _asyncToGenerator(fn) {
+    return function () {
+      var self = this,
+          args = arguments;
+      return new Promise(function (resolve, reject) {
+        var gen = fn.apply(self, args);
+
+        function _next(value) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+        }
+
+        function _throw(err) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+        }
+
+        _next(undefined);
+      });
+    };
+  }
+
   function _defineProperty$i(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -43786,99 +43822,147 @@
 
   function addCopyPasteListeners(canEdit) {
     if (canEdit) {
-      document.addEventListener("keydown", function (event) {
-        if (event.ctrlKey && event.code === "KeyC") {
-          /* console.log("CTRL+C was pressed " + new Date().toLocaleString()); */
-          // Custom logic for CTRL+C
-          // Clear the clipboard if nodes selected
-          if (jsToolkit.getSelection().getNodes().length > 0) {
-            copiedNodes = [];
-          } // Deep copy nodes data to clipboard
+      document.addEventListener("keydown", /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(event) {
+          var dialogBranch, dialogCondition, dialogJournal;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  if (event.ctrlKey && event.code === "KeyC") {
+                    /* console.log("CTRL+C was pressed " + new Date().toLocaleString()); */
+                    // Custom logic for CTRL+C
+                    // Clear the clipboard if nodes selected
+                    if (jsToolkit.getSelection().getNodes().length > 0) {
+                      copiedNodes = [];
+                    } // Deep copy nodes data to clipboard
 
 
-          jsToolkit.getSelection().getNodes().forEach(function (node) {
-            var nodeData = Object.assign({}, node.data);
-            copiedNodes.push(nodeData);
-          });
-          /* console.log("Nodes copied " + new Date().toLocaleString()); */
-        }
+                    jsToolkit.getSelection().getNodes().forEach(function (node) {
+                      var nodeData = Object.assign({}, node.data);
+                      copiedNodes.push(nodeData);
+                    });
+                    /* console.log("Nodes copied " + new Date().toLocaleString()); */
+                  }
 
-        if (event.ctrlKey && event.code === "KeyV") {
-          /* console.log("CTRL+V was pressed " + new Date().toLocaleString()); */
-          // Custom logic for CTRL+V
-          var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
-          var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
-          var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
+                  if (!(event.ctrlKey && event.code === "KeyV")) {
+                    _context.next = 10;
+                    break;
+                  }
 
-          if (!(dialogBranch || dialogCondition || dialogJournal)) {
-            copySelectedNodes();
-            jsToolkit.getSelection().clear();
-          }
-          /* console.log("Nodes pasted " + new Date().toLocaleString()); */
+                  /* console.log("CTRL+V was pressed " + new Date().toLocaleString()); */
+                  // Custom logic for CTRL+V
+                  dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
+                  dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
+                  dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
 
-        }
-      });
+                  if (dialogBranch || dialogCondition || dialogJournal) {
+                    _context.next = 10;
+                    break;
+                  }
+
+                  _context.next = 8;
+                  return copySelectedNodes();
+
+                case 8:
+                  jsToolkit.getSelection().clear();
+
+                case 10:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
     }
   }
 
   function copySelectedNodes() {
-    if (copiedNodes && copiedNodes.length > 0) {
-      copiedNodes.forEach(function (originData) {
-        // Copy the node data (excluding the ID, which should be unique)
-        var nodeData = Object.assign({}, originData);
-        delete nodeData.id; // Ensure the new node gets a unique ID
-        // Retrieve and modify the position
-
-        var originalPosition = jsRenderer.getCoordinates(originData.id);
-        var newPosition = {
-          x: originalPosition.x + 15,
-          // Shift 10 pixels to the right
-          y: originalPosition.y + 15 // Shift 10 pixels down
-
-        };
-
-        if (nodeData.type === TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === CAIR_TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text, ruleNumber) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.ruleNumber = ruleNumber;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === PRICING_PRODUCT) ; else {
-          nodeData.id = uuid();
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        }
-      });
-
-      var _exportData3 = JSON.stringify(jsToolkit.exportData());
-
-      transferGraphData([{
-        name: "exportData",
-        value: _exportData3
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-    }
+    return _copySelectedNodes.apply(this, arguments);
   }
   /*   ready(() => {
       callDOMReady(true);
     }); */
+
+
+  function _copySelectedNodes() {
+    _copySelectedNodes = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              return _context2.abrupt("return", new Promise(function (resolve) {
+                if (copiedNodes && copiedNodes.length > 0) {
+                  copiedNodes.forEach(function (originData) {
+                    // Copy the node data (excluding the ID, which should be unique)
+                    var nodeData = Object.assign({}, originData);
+                    delete nodeData.id; // Ensure the new node gets a unique ID
+                    // Retrieve and modify the position
+
+                    // Ensure the new node gets a unique ID
+                    // Retrieve and modify the position
+                    var originalPosition = jsRenderer.getCoordinates(originData.id);
+                    var newPosition = {
+                      x: originalPosition.x + 15,
+                      // Shift 10 pixels to the right
+                      y: originalPosition.y + 15 // Shift 10 pixels down
+
+                    };
+
+                    if (nodeData.type === TARIFF) {
+                      copyTariffNodeWithCallback({
+                        name: "nodeId",
+                        value: originData.id
+                      }, function (nodeId, text) {
+                        nodeData.id = nodeId;
+                        nodeData.text = text;
+                        var newNode = jsToolkit.addNode(nodeData);
+                        jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+                      });
+                    } else if (nodeData.type === CAIR_TARIFF) {
+                      copyTariffNodeWithCallback({
+                        name: "nodeId",
+                        value: originData.id
+                      }, function (nodeId, text, ruleNumber) {
+                        nodeData.id = nodeId;
+                        nodeData.text = text;
+                        nodeData.ruleNumber = ruleNumber;
+                        var newNode = jsToolkit.addNode(nodeData);
+                        jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+                      });
+                    } else if (nodeData.type === PRICING_PRODUCT) ; else {
+                      nodeData.id = uuid();
+                      var newNode = jsToolkit.addNode(nodeData);
+                      jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+                    }
+                  });
+
+                  var _exportData3 = JSON.stringify(jsToolkit.exportData());
+
+                  transferGraphData([{
+                    name: "exportData",
+                    value: _exportData3
+                  }, {
+                    name: "lastConnectedNodeId",
+                    value: null
+                  }]);
+                }
+              }));
+
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _copySelectedNodes.apply(this, arguments);
+  }
 
   exports.initJsPlumb = initJsPlumb;
 
