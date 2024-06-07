@@ -4,7 +4,7 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.QPSCoreGraphView = {}));
 })(this, (function (exports) { 'use strict';
 
-  function _defineProperty$i(obj, key, value) {
+  function _defineProperty$h(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -525,13 +525,13 @@
     }
   }
 
-  function _classCallCheck$i(instance, Constructor) {
+  function _classCallCheck$h(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties$i(target, props) {
+  function _defineProperties$h(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -541,13 +541,13 @@
     }
   }
 
-  function _createClass$i(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$i(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$i(Constructor, staticProps);
+  function _createClass$h(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$h(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$h(Constructor, staticProps);
     return Constructor;
   }
 
-  function _defineProperty$h(obj, key, value) {
+  function _defineProperty$g(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -643,16 +643,16 @@
 
   var EventGenerator = function () {
     function EventGenerator() {
-      _classCallCheck$i(this, EventGenerator);
-      _defineProperty$h(this, "_listeners", {});
-      _defineProperty$h(this, "eventsSuspended", false);
-      _defineProperty$h(this, "tick", false);
-      _defineProperty$h(this, "eventsToDieOn", {
+      _classCallCheck$h(this, EventGenerator);
+      _defineProperty$g(this, "_listeners", {});
+      _defineProperty$g(this, "eventsSuspended", false);
+      _defineProperty$g(this, "tick", false);
+      _defineProperty$g(this, "eventsToDieOn", {
         "ready": true
       });
-      _defineProperty$h(this, "queue", []);
+      _defineProperty$g(this, "queue", []);
     }
-    _createClass$i(EventGenerator, [{
+    _createClass$h(EventGenerator, [{
       key: "fire",
       value: function fire(event, value, originalEvent) {
         var ret = null;
@@ -766,10 +766,10 @@
     _inherits$b(OptimisticEventGenerator, _EventGenerator);
     var _super = _createSuper$b(OptimisticEventGenerator);
     function OptimisticEventGenerator() {
-      _classCallCheck$i(this, OptimisticEventGenerator);
+      _classCallCheck$h(this, OptimisticEventGenerator);
       return _super.apply(this, arguments);
     }
-    _createClass$i(OptimisticEventGenerator, [{
+    _createClass$h(OptimisticEventGenerator, [{
       key: "shouldFireEvent",
       value: function shouldFireEvent(event, value, originalEvent) {
         return true;
@@ -988,13 +988,13 @@
     AnchorLocations["TopRight"] = "TopRight";
   })(AnchorLocations || (AnchorLocations = {}));
 
-  function _classCallCheck$h(instance, Constructor) {
+  function _classCallCheck$g(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties$h(target, props) {
+  function _defineProperties$g(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -1004,13 +1004,13 @@
     }
   }
 
-  function _createClass$h(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$h(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$h(Constructor, staticProps);
+  function _createClass$g(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$g(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$g(Constructor, staticProps);
     return Constructor;
   }
 
-  function _defineProperty$g(obj, key, value) {
+  function _defineProperty$f(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -1047,20 +1047,20 @@
   }
   var AbstractSegment = function () {
     function AbstractSegment(params) {
-      _classCallCheck$h(this, AbstractSegment);
+      _classCallCheck$g(this, AbstractSegment);
       this.params = params;
-      _defineProperty$g(this, "x1", void 0);
-      _defineProperty$g(this, "x2", void 0);
-      _defineProperty$g(this, "y1", void 0);
-      _defineProperty$g(this, "y2", void 0);
-      _defineProperty$g(this, "extents", EMPTY_BOUNDS());
-      _defineProperty$g(this, "type", void 0);
+      _defineProperty$f(this, "x1", void 0);
+      _defineProperty$f(this, "x2", void 0);
+      _defineProperty$f(this, "y1", void 0);
+      _defineProperty$f(this, "y2", void 0);
+      _defineProperty$f(this, "extents", EMPTY_BOUNDS());
+      _defineProperty$f(this, "type", void 0);
       this.x1 = params.x1;
       this.y1 = params.y1;
       this.x2 = params.x2;
       this.y2 = params.y2;
     }
-    _createClass$h(AbstractSegment, [{
+    _createClass$g(AbstractSegment, [{
       key: "findClosestPointOnPath",
       value: function findClosestPointOnPath(x, y) {
         return noSuchPoint();
@@ -1095,13 +1095,13 @@
   var FALSE$1 = "false";
   var WILDCARD = "*";
 
-  function _classCallCheck$g(instance, Constructor) {
+  function _classCallCheck$f(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties$g(target, props) {
+  function _defineProperties$f(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -1111,13 +1111,13 @@
     }
   }
 
-  function _createClass$g(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$g(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$g(Constructor, staticProps);
+  function _createClass$f(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$f(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$f(Constructor, staticProps);
     return Constructor;
   }
 
-  function _defineProperty$f(obj, key, value) {
+  function _defineProperty$e(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -1351,18 +1351,18 @@
 
   var EndpointRepresentation = function () {
     function EndpointRepresentation(endpoint, params) {
-      _classCallCheck$g(this, EndpointRepresentation);
+      _classCallCheck$f(this, EndpointRepresentation);
       this.endpoint = endpoint;
-      _defineProperty$f(this, "typeId", void 0);
-      _defineProperty$f(this, "x", void 0);
-      _defineProperty$f(this, "y", void 0);
-      _defineProperty$f(this, "w", void 0);
-      _defineProperty$f(this, "h", void 0);
-      _defineProperty$f(this, "computedValue", void 0);
-      _defineProperty$f(this, "bounds", EMPTY_BOUNDS());
-      _defineProperty$f(this, "classes", []);
-      _defineProperty$f(this, "instance", void 0);
-      _defineProperty$f(this, "type", void 0);
+      _defineProperty$e(this, "typeId", void 0);
+      _defineProperty$e(this, "x", void 0);
+      _defineProperty$e(this, "y", void 0);
+      _defineProperty$e(this, "w", void 0);
+      _defineProperty$e(this, "h", void 0);
+      _defineProperty$e(this, "computedValue", void 0);
+      _defineProperty$e(this, "bounds", EMPTY_BOUNDS());
+      _defineProperty$e(this, "classes", []);
+      _defineProperty$e(this, "instance", void 0);
+      _defineProperty$e(this, "type", void 0);
       params = params || {};
       this.instance = endpoint.instance;
       if (endpoint.cssClass) {
@@ -1372,7 +1372,7 @@
         this.classes.push(params.cssClass);
       }
     }
-    _createClass$g(EndpointRepresentation, [{
+    _createClass$f(EndpointRepresentation, [{
       key: "addClass",
       value: function addClass(c) {
         this.classes.push(c);
@@ -1409,12 +1409,12 @@
     var _super = _createSuper$a(DotEndpoint);
     function DotEndpoint(endpoint, params) {
       var _this;
-      _classCallCheck$g(this, DotEndpoint);
+      _classCallCheck$f(this, DotEndpoint);
       _this = _super.call(this, endpoint, params);
-      _defineProperty$f(_assertThisInitialized$a(_this), "radius", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaultOffset", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaultInnerRadius", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", DotEndpoint.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "radius", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaultOffset", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaultInnerRadius", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", DotEndpoint.type);
       params = params || {};
       _this.radius = params.radius || 5;
       _this.defaultOffset = 0.5 * _this.radius;
@@ -1423,7 +1423,7 @@
     }
     return DotEndpoint;
   }(EndpointRepresentation);
-  _defineProperty$f(DotEndpoint, "type", "Dot");
+  _defineProperty$e(DotEndpoint, "type", "Dot");
   var DotEndpointHandler = {
     type: DotEndpoint.type,
     cls: DotEndpoint,
@@ -1457,14 +1457,14 @@
     var _super = _createSuper$a(BlankEndpoint);
     function BlankEndpoint(endpoint, params) {
       var _this;
-      _classCallCheck$g(this, BlankEndpoint);
+      _classCallCheck$f(this, BlankEndpoint);
       _this = _super.call(this, endpoint, params);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", BlankEndpoint.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", BlankEndpoint.type);
       return _this;
     }
     return BlankEndpoint;
   }(EndpointRepresentation);
-  _defineProperty$f(BlankEndpoint, "type", "Blank");
+  _defineProperty$e(BlankEndpoint, "type", "Blank");
   var BlankEndpointHandler = {
     type: BlankEndpoint.type,
     cls: BlankEndpoint,
@@ -1485,17 +1485,17 @@
     var _super = _createSuper$a(RectangleEndpoint);
     function RectangleEndpoint(endpoint, params) {
       var _this;
-      _classCallCheck$g(this, RectangleEndpoint);
+      _classCallCheck$f(this, RectangleEndpoint);
       _this = _super.call(this, endpoint, params);
-      _defineProperty$f(_assertThisInitialized$a(_this), "width", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "height", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", RectangleEndpoint.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "width", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "height", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", RectangleEndpoint.type);
       params = params || {};
       _this.width = params.width || 10;
       _this.height = params.height || 10;
       return _this;
     }
-    _createClass$g(RectangleEndpoint, null, [{
+    _createClass$f(RectangleEndpoint, null, [{
       key: "_getParams",
       value: function _getParams(ep) {
         return {
@@ -1506,7 +1506,7 @@
     }]);
     return RectangleEndpoint;
   }(EndpointRepresentation);
-  _defineProperty$f(RectangleEndpoint, "type", "Rectangle");
+  _defineProperty$e(RectangleEndpoint, "type", "Rectangle");
   var RectangleEndpointHandler = {
     type: RectangleEndpoint.type,
     cls: RectangleEndpoint,
@@ -1531,33 +1531,33 @@
 
   var AbstractConnector = function () {
     function AbstractConnector(connection, params) {
-      _classCallCheck$g(this, AbstractConnector);
+      _classCallCheck$f(this, AbstractConnector);
       this.connection = connection;
-      _defineProperty$f(this, "type", void 0);
-      _defineProperty$f(this, "edited", false);
-      _defineProperty$f(this, "stub", void 0);
-      _defineProperty$f(this, "sourceStub", void 0);
-      _defineProperty$f(this, "targetStub", void 0);
-      _defineProperty$f(this, "maxStub", void 0);
-      _defineProperty$f(this, "typeId", void 0);
-      _defineProperty$f(this, "gap", void 0);
-      _defineProperty$f(this, "sourceGap", void 0);
-      _defineProperty$f(this, "targetGap", void 0);
-      _defineProperty$f(this, "segments", []);
-      _defineProperty$f(this, "totalLength", 0);
-      _defineProperty$f(this, "segmentProportions", []);
-      _defineProperty$f(this, "segmentProportionalLengths", []);
-      _defineProperty$f(this, "paintInfo", null);
-      _defineProperty$f(this, "strokeWidth", void 0);
-      _defineProperty$f(this, "x", void 0);
-      _defineProperty$f(this, "y", void 0);
-      _defineProperty$f(this, "w", void 0);
-      _defineProperty$f(this, "h", void 0);
-      _defineProperty$f(this, "segment", void 0);
-      _defineProperty$f(this, "bounds", EMPTY_BOUNDS());
-      _defineProperty$f(this, "cssClass", void 0);
-      _defineProperty$f(this, "hoverClass", void 0);
-      _defineProperty$f(this, "geometry", void 0);
+      _defineProperty$e(this, "type", void 0);
+      _defineProperty$e(this, "edited", false);
+      _defineProperty$e(this, "stub", void 0);
+      _defineProperty$e(this, "sourceStub", void 0);
+      _defineProperty$e(this, "targetStub", void 0);
+      _defineProperty$e(this, "maxStub", void 0);
+      _defineProperty$e(this, "typeId", void 0);
+      _defineProperty$e(this, "gap", void 0);
+      _defineProperty$e(this, "sourceGap", void 0);
+      _defineProperty$e(this, "targetGap", void 0);
+      _defineProperty$e(this, "segments", []);
+      _defineProperty$e(this, "totalLength", 0);
+      _defineProperty$e(this, "segmentProportions", []);
+      _defineProperty$e(this, "segmentProportionalLengths", []);
+      _defineProperty$e(this, "paintInfo", null);
+      _defineProperty$e(this, "strokeWidth", void 0);
+      _defineProperty$e(this, "x", void 0);
+      _defineProperty$e(this, "y", void 0);
+      _defineProperty$e(this, "w", void 0);
+      _defineProperty$e(this, "h", void 0);
+      _defineProperty$e(this, "segment", void 0);
+      _defineProperty$e(this, "bounds", EMPTY_BOUNDS());
+      _defineProperty$e(this, "cssClass", void 0);
+      _defineProperty$e(this, "hoverClass", void 0);
+      _defineProperty$e(this, "geometry", void 0);
       this.stub = params.stub || this.getDefaultStubs();
       this.sourceStub = Array.isArray(this.stub) ? this.stub[0] : this.stub;
       this.targetStub = Array.isArray(this.stub) ? this.stub[1] : this.stub;
@@ -1568,7 +1568,7 @@
       this.cssClass = params.cssClass || "";
       this.hoverClass = params.hoverClass || "";
     }
-    _createClass$g(AbstractConnector, [{
+    _createClass$f(AbstractConnector, [{
       key: "getTypeDescriptor",
       value: function getTypeDescriptor() {
         return "connector";
@@ -1898,12 +1898,12 @@
     var _super = _createSuper$a(StraightSegment);
     function StraightSegment(params) {
       var _this;
-      _classCallCheck$g(this, StraightSegment);
+      _classCallCheck$f(this, StraightSegment);
       _this = _super.call(this, params);
-      _defineProperty$f(_assertThisInitialized$a(_this), "length", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "m", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "m2", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", StraightSegment.segmentType);
+      _defineProperty$e(_assertThisInitialized$a(_this), "length", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "m", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "m2", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", StraightSegment.segmentType);
       _this._setCoordinates({
         x1: params.x1,
         y1: params.y1,
@@ -1912,7 +1912,7 @@
       });
       return _this;
     }
-    _createClass$g(StraightSegment, [{
+    _createClass$f(StraightSegment, [{
       key: "getPath",
       value: function getPath(isFirstSegment) {
         return (isFirstSegment ? "M " + this.x1 + " " + this.y1 + " " : "") + "L " + this.x2 + " " + this.y2;
@@ -2136,22 +2136,22 @@
     }]);
     return StraightSegment;
   }(AbstractSegment);
-  _defineProperty$f(StraightSegment, "segmentType", "Straight");
+  _defineProperty$e(StraightSegment, "segmentType", "Straight");
 
   var StraightConnector = function (_AbstractConnector) {
     _inherits$a(StraightConnector, _AbstractConnector);
     var _super = _createSuper$a(StraightConnector);
     function StraightConnector() {
       var _this;
-      _classCallCheck$g(this, StraightConnector);
+      _classCallCheck$f(this, StraightConnector);
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
         args[_key] = arguments[_key];
       }
       _this = _super.call.apply(_super, [this].concat(args));
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", StraightConnector.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", StraightConnector.type);
       return _this;
     }
-    _createClass$g(StraightConnector, [{
+    _createClass$f(StraightConnector, [{
       key: "getDefaultStubs",
       value: function getDefaultStubs() {
         return [0, 0];
@@ -2193,7 +2193,7 @@
     }]);
     return StraightConnector;
   }(AbstractConnector);
-  _defineProperty$f(StraightConnector, "type", "Straight");
+  _defineProperty$e(StraightConnector, "type", "Straight");
 
   var connectorMap = {};
   var Connectors = {
@@ -2315,17 +2315,17 @@
     var _super = _createSuper$a(Overlay);
     function Overlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, Overlay);
+      _classCallCheck$f(this, Overlay);
       _this = _super.call(this);
       _this.instance = instance;
       _this.component = component;
-      _defineProperty$f(_assertThisInitialized$a(_this), "id", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cssClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "visible", true);
-      _defineProperty$f(_assertThisInitialized$a(_this), "location", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "events", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "attributes", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "id", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cssClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "visible", true);
+      _defineProperty$e(_assertThisInitialized$a(_this), "location", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "events", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "attributes", void 0);
       p = p || {};
       _this.id = p.id || uuid();
       _this.cssClass = p.cssClass || "";
@@ -2337,7 +2337,7 @@
       }
       return _this;
     }
-    _createClass$g(Overlay, [{
+    _createClass$f(Overlay, [{
       key: "shouldFireEvent",
       value: function shouldFireEvent(event, value, originalEvent) {
         return true;
@@ -2379,21 +2379,21 @@
     var _super = _createSuper$a(LabelOverlay);
     function LabelOverlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, LabelOverlay);
+      _classCallCheck$f(this, LabelOverlay);
       _this = _super.call(this, instance, component, p);
       _this.instance = instance;
       _this.component = component;
-      _defineProperty$f(_assertThisInitialized$a(_this), "label", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "labelText", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", LabelOverlay.type);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cachedDimensions", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "label", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "labelText", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", LabelOverlay.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cachedDimensions", void 0);
       p = p || {
         label: ""
       };
       _this.setLabel(p.label);
       return _this;
     }
-    _createClass$g(LabelOverlay, [{
+    _createClass$f(LabelOverlay, [{
       key: "getLabel",
       value: function getLabel() {
         if (isFunction(this.label)) {
@@ -2427,7 +2427,7 @@
     }]);
     return LabelOverlay;
   }(Overlay);
-  _defineProperty$f(LabelOverlay, "type", "Label");
+  _defineProperty$e(LabelOverlay, "type", "Label");
   function isLabelOverlay(o) {
     return o.type === LabelOverlay.type;
   }
@@ -2526,39 +2526,39 @@
     var _super = _createSuper$a(Component);
     function Component(instance, params) {
       var _this;
-      _classCallCheck$g(this, Component);
+      _classCallCheck$f(this, Component);
       _this = _super.call(this);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaultLabelLocation", 0.5);
-      _defineProperty$f(_assertThisInitialized$a(_this), "overlays", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "overlayPositions", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "overlayPlacements", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "clone", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "deleted", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "segment", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "x", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "y", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "w", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "h", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "id", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "visible", true);
-      _defineProperty$f(_assertThisInitialized$a(_this), "typeId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "params", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "paintStyle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "hoverPaintStyle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "paintStyleInUse", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_hover", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "lastPaintedAt", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "data", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_defaultType", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "events", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "parameters", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_types", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_typeCache", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cssClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "hoverClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "beforeDetach", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "beforeDrop", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaultLabelLocation", 0.5);
+      _defineProperty$e(_assertThisInitialized$a(_this), "overlays", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "overlayPositions", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "overlayPlacements", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "clone", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "deleted", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "segment", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "x", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "y", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "w", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "h", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "id", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "visible", true);
+      _defineProperty$e(_assertThisInitialized$a(_this), "typeId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "params", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "paintStyle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "hoverPaintStyle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "paintStyleInUse", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_hover", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "lastPaintedAt", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "data", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_defaultType", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "events", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "parameters", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_types", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_typeCache", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cssClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "hoverClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "beforeDetach", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "beforeDrop", void 0);
       params = params || {};
       _this.cssClass = params.cssClass || "";
       _this.hoverClass = params.hoverClass || instance.defaults.hoverClass;
@@ -2611,7 +2611,7 @@
       }
       return _this;
     }
-    _createClass$g(Component, [{
+    _createClass$f(Component, [{
       key: "isDetachAllowed",
       value: function isDetachAllowed(connection) {
         var r = true;
@@ -3086,21 +3086,21 @@
   var Y_AXIS_FACES = [TOP$2, BOTTOM$1];
   var LightweightFloatingAnchor = function () {
     function LightweightFloatingAnchor(instance, element) {
-      _classCallCheck$g(this, LightweightFloatingAnchor);
+      _classCallCheck$f(this, LightweightFloatingAnchor);
       this.instance = instance;
       this.element = element;
-      _defineProperty$f(this, "isFloating", true);
-      _defineProperty$f(this, "isContinuous", void 0);
-      _defineProperty$f(this, "isDynamic", void 0);
-      _defineProperty$f(this, "locations", []);
-      _defineProperty$f(this, "currentLocation", 0);
-      _defineProperty$f(this, "locked", false);
-      _defineProperty$f(this, "cssClass", '');
-      _defineProperty$f(this, "timestamp", null);
-      _defineProperty$f(this, "type", "Floating");
-      _defineProperty$f(this, "id", uuid());
-      _defineProperty$f(this, "orientation", [0, 0]);
-      _defineProperty$f(this, "size", void 0);
+      _defineProperty$e(this, "isFloating", true);
+      _defineProperty$e(this, "isContinuous", void 0);
+      _defineProperty$e(this, "isDynamic", void 0);
+      _defineProperty$e(this, "locations", []);
+      _defineProperty$e(this, "currentLocation", 0);
+      _defineProperty$e(this, "locked", false);
+      _defineProperty$e(this, "cssClass", '');
+      _defineProperty$e(this, "timestamp", null);
+      _defineProperty$e(this, "type", "Floating");
+      _defineProperty$e(this, "id", uuid());
+      _defineProperty$e(this, "orientation", [0, 0]);
+      _defineProperty$e(this, "size", void 0);
       this.size = instance.getSize(element);
       this.locations.push({
         x: 0.5,
@@ -3114,7 +3114,7 @@
         cls: ''
       });
     }
-    _createClass$g(LightweightFloatingAnchor, [{
+    _createClass$f(LightweightFloatingAnchor, [{
       key: "_updateOrientationInRouter",
       value: function _updateOrientationInRouter() {
         this.instance.router.setAnchorOrientation(this, [this.locations[0].ox, this.locations[0].oy]);
@@ -3138,9 +3138,9 @@
     }]);
     return LightweightFloatingAnchor;
   }();
-  var opposites = (_opposites = {}, _defineProperty$f(_opposites, TOP$2, BOTTOM$1), _defineProperty$f(_opposites, RIGHT$1, LEFT$2), _defineProperty$f(_opposites, LEFT$2, RIGHT$1), _defineProperty$f(_opposites, BOTTOM$1, TOP$2), _opposites);
-  var clockwiseOptions = (_clockwiseOptions = {}, _defineProperty$f(_clockwiseOptions, TOP$2, RIGHT$1), _defineProperty$f(_clockwiseOptions, RIGHT$1, BOTTOM$1), _defineProperty$f(_clockwiseOptions, LEFT$2, TOP$2), _defineProperty$f(_clockwiseOptions, BOTTOM$1, LEFT$2), _clockwiseOptions);
-  var antiClockwiseOptions = (_antiClockwiseOptions = {}, _defineProperty$f(_antiClockwiseOptions, TOP$2, LEFT$2), _defineProperty$f(_antiClockwiseOptions, RIGHT$1, TOP$2), _defineProperty$f(_antiClockwiseOptions, LEFT$2, BOTTOM$1), _defineProperty$f(_antiClockwiseOptions, BOTTOM$1, RIGHT$1), _antiClockwiseOptions);
+  var opposites = (_opposites = {}, _defineProperty$e(_opposites, TOP$2, BOTTOM$1), _defineProperty$e(_opposites, RIGHT$1, LEFT$2), _defineProperty$e(_opposites, LEFT$2, RIGHT$1), _defineProperty$e(_opposites, BOTTOM$1, TOP$2), _opposites);
+  var clockwiseOptions = (_clockwiseOptions = {}, _defineProperty$e(_clockwiseOptions, TOP$2, RIGHT$1), _defineProperty$e(_clockwiseOptions, RIGHT$1, BOTTOM$1), _defineProperty$e(_clockwiseOptions, LEFT$2, TOP$2), _defineProperty$e(_clockwiseOptions, BOTTOM$1, LEFT$2), _clockwiseOptions);
+  var antiClockwiseOptions = (_antiClockwiseOptions = {}, _defineProperty$e(_antiClockwiseOptions, TOP$2, LEFT$2), _defineProperty$e(_antiClockwiseOptions, RIGHT$1, TOP$2), _defineProperty$e(_antiClockwiseOptions, LEFT$2, BOTTOM$1), _defineProperty$e(_antiClockwiseOptions, BOTTOM$1, RIGHT$1), _antiClockwiseOptions);
   function getDefaultFace(a) {
     return a.faces.length === 0 ? TOP$2 : a.faces[0];
   }
@@ -3569,39 +3569,39 @@
     var _super = _createSuper$a(Connection);
     function Connection(instance, params) {
       var _this;
-      _classCallCheck$g(this, Connection);
+      _classCallCheck$f(this, Connection);
       _this = _super.call(this, instance, params);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "connector", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaultLabelLocation", 0.5);
-      _defineProperty$f(_assertThisInitialized$a(_this), "scope", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "typeId", "_jsplumb_connection");
-      _defineProperty$f(_assertThisInitialized$a(_this), "previousConnection", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "sourceId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "targetId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "source", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "target", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "detachable", true);
-      _defineProperty$f(_assertThisInitialized$a(_this), "reattach", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "uuids", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cost", 1);
-      _defineProperty$f(_assertThisInitialized$a(_this), "directed", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpoints", [null, null]);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointStyles", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointSpec", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointsSpec", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointStyle", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointHoverStyle", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointHoverStyles", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "suspendedEndpoint", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "suspendedIndex", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "suspendedElement", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "suspendedElementId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "suspendedElementType", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_forceReattach", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_forceDetach", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "proxies", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "pending", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connector", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaultLabelLocation", 0.5);
+      _defineProperty$e(_assertThisInitialized$a(_this), "scope", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "typeId", "_jsplumb_connection");
+      _defineProperty$e(_assertThisInitialized$a(_this), "previousConnection", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "sourceId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "targetId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "source", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "target", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "detachable", true);
+      _defineProperty$e(_assertThisInitialized$a(_this), "reattach", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "uuids", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cost", 1);
+      _defineProperty$e(_assertThisInitialized$a(_this), "directed", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpoints", [null, null]);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointStyles", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointSpec", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointsSpec", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointStyle", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointHoverStyle", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointHoverStyles", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "suspendedEndpoint", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "suspendedIndex", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "suspendedElement", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "suspendedElementId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "suspendedElementType", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_forceReattach", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_forceDetach", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "proxies", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "pending", false);
       _this.id = params.id;
       _this.previousConnection = params.previousConnection;
       _this.source = params.source;
@@ -3699,7 +3699,7 @@
       }
       return _this;
     }
-    _createClass$g(Connection, [{
+    _createClass$f(Connection, [{
       key: "getIdPrefix",
       value: function getIdPrefix() {
         return "_jsPlumb_c";
@@ -3921,7 +3921,7 @@
     }]);
     return Connection;
   }(Component);
-  _defineProperty$f(Connection, "type", "connection");
+  _defineProperty$e(Connection, "type", "connection");
 
   var typeParameters = ["connectorStyle", "connectorHoverStyle", "connectorOverlays", "connector", "connectionType", "connectorClass", "connectorHoverClass"];
   var Endpoint = function (_Component) {
@@ -3929,41 +3929,41 @@
     var _super = _createSuper$a(Endpoint);
     function Endpoint(instance, params) {
       var _this;
-      _classCallCheck$g(this, Endpoint);
+      _classCallCheck$f(this, Endpoint);
       _this = _super.call(this, instance, params);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "connections", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpoint", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "element", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "elementId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "dragAllowedWhenFull", true);
-      _defineProperty$f(_assertThisInitialized$a(_this), "timestamp", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "portId", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "maxConnections", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "proxiedBy", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorHoverClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "finalEndpoint", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "enabled", true);
-      _defineProperty$f(_assertThisInitialized$a(_this), "isSource", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "isTarget", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "isTemporarySource", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectionCost", 1);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectionsDirected", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectionsDetachable", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "reattachConnections", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "currentAnchorClass", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "referenceEndpoint", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "edgeType", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connector", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorOverlays", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorStyle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorHoverStyle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "deleteOnEmpty", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "uuid", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "scope", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_anchor", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaultLabelLocation", [0.5, 0.5]);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connections", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpoint", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "element", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "elementId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "dragAllowedWhenFull", true);
+      _defineProperty$e(_assertThisInitialized$a(_this), "timestamp", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "portId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "maxConnections", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "proxiedBy", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorHoverClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "finalEndpoint", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "enabled", true);
+      _defineProperty$e(_assertThisInitialized$a(_this), "isSource", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "isTarget", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "isTemporarySource", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectionCost", 1);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectionsDirected", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectionsDetachable", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "reattachConnections", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "currentAnchorClass", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "referenceEndpoint", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "edgeType", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connector", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorOverlays", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorStyle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorHoverStyle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "deleteOnEmpty", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "uuid", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "scope", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_anchor", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaultLabelLocation", [0.5, 0.5]);
       _this.appendToDefaultType({
         edgeType: params.edgeType,
         maxConnections: params.maxConnections == null ? _this.instance.defaults.maxConnections : params.maxConnections,
@@ -4021,7 +4021,7 @@
       _this.addType(type, params.data);
       return _this;
     }
-    _createClass$g(Endpoint, [{
+    _createClass$f(Endpoint, [{
       key: "getIdPrefix",
       value: function getIdPrefix() {
         return "_jsplumb_e";
@@ -4280,40 +4280,40 @@
   }(Component);
 
   var UINode = function UINode(instance, el) {
-    _classCallCheck$g(this, UINode);
+    _classCallCheck$f(this, UINode);
     this.instance = instance;
     this.el = el;
-    _defineProperty$f(this, "group", void 0);
+    _defineProperty$e(this, "group", void 0);
   };
   var UIGroup = function (_UINode) {
     _inherits$a(UIGroup, _UINode);
     var _super = _createSuper$a(UIGroup);
     function UIGroup(instance, el, options) {
       var _this;
-      _classCallCheck$g(this, UIGroup);
+      _classCallCheck$f(this, UIGroup);
       _this = _super.call(this, instance, el);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "children", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "collapsed", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "droppable", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "enabled", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "orphan", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "constrain", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "proxied", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "ghost", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "revert", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "prune", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "dropOverride", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "anchor", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpoint", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connections", {
+      _defineProperty$e(_assertThisInitialized$a(_this), "children", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "collapsed", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "droppable", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "enabled", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "orphan", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "constrain", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "proxied", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "ghost", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "revert", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "prune", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "dropOverride", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "anchor", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpoint", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connections", {
         source: [],
         target: [],
         internal: []
       });
-      _defineProperty$f(_assertThisInitialized$a(_this), "manager", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "id", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "elId", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "manager", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "id", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "elId", void 0);
       var jel = _this.el;
       jel._isJsPlumbGroup = true;
       jel._jsPlumbGroup = _assertThisInitialized$a(_this);
@@ -4334,7 +4334,7 @@
       instance.setAttribute(el, ATTRIBUTE_GROUP, "");
       return _this;
     }
-    _createClass$g(UIGroup, [{
+    _createClass$f(UIGroup, [{
       key: "overrideDrop",
       value: function overrideDrop(el, targetGroup) {
         return this.dropOverride && (this.revert || this.prune || this.orphan);
@@ -4533,11 +4533,11 @@
   var GroupManager = function () {
     function GroupManager(instance) {
       var _this = this;
-      _classCallCheck$g(this, GroupManager);
+      _classCallCheck$f(this, GroupManager);
       this.instance = instance;
-      _defineProperty$f(this, "groupMap", {});
-      _defineProperty$f(this, "_connectionSourceMap", {});
-      _defineProperty$f(this, "_connectionTargetMap", {});
+      _defineProperty$e(this, "groupMap", {});
+      _defineProperty$e(this, "_connectionSourceMap", {});
+      _defineProperty$e(this, "_connectionTargetMap", {});
       instance.bind(EVENT_INTERNAL_CONNECTION, function (p) {
         var sourceGroup = _this.getGroupFor(p.source);
         var targetGroup = _this.getGroupFor(p.target);
@@ -4594,7 +4594,7 @@
         }
       });
     }
-    _createClass$g(GroupManager, [{
+    _createClass$f(GroupManager, [{
       key: "_cleanupDetachedConnection",
       value: function _cleanupDetachedConnection(conn) {
         conn.proxies.length = 0;
@@ -5169,11 +5169,11 @@
 
   var SelectionBase = function () {
     function SelectionBase(instance, entries) {
-      _classCallCheck$g(this, SelectionBase);
+      _classCallCheck$f(this, SelectionBase);
       this.instance = instance;
       this.entries = entries;
     }
-    _createClass$g(SelectionBase, [{
+    _createClass$f(SelectionBase, [{
       key: "length",
       get: function get() {
         return this.entries.length;
@@ -5383,10 +5383,10 @@
     _inherits$a(EndpointSelection, _SelectionBase);
     var _super = _createSuper$a(EndpointSelection);
     function EndpointSelection() {
-      _classCallCheck$g(this, EndpointSelection);
+      _classCallCheck$f(this, EndpointSelection);
       return _super.apply(this, arguments);
     }
-    _createClass$g(EndpointSelection, [{
+    _createClass$f(EndpointSelection, [{
       key: "setEnabled",
       value: function setEnabled(e) {
         this.each(function (ep) {
@@ -5428,10 +5428,10 @@
     _inherits$a(ConnectionSelection, _SelectionBase);
     var _super = _createSuper$a(ConnectionSelection);
     function ConnectionSelection() {
-      _classCallCheck$g(this, ConnectionSelection);
+      _classCallCheck$f(this, ConnectionSelection);
       return _super.apply(this, arguments);
     }
-    _createClass$g(ConnectionSelection, [{
+    _createClass$f(ConnectionSelection, [{
       key: "setDetachable",
       value: function setDetachable(d) {
         this.each(function (c) {
@@ -5478,8 +5478,8 @@
   }(SelectionBase);
 
   var Transaction = function Transaction() {
-    _classCallCheck$g(this, Transaction);
-    _defineProperty$f(this, "affectedElements", new Set());
+    _classCallCheck$f(this, Transaction);
+    _defineProperty$e(this, "affectedElements", new Set());
   };
   function EMPTY_POSITION() {
     return {
@@ -5575,19 +5575,19 @@
     var _super = _createSuper$a(Viewport);
     function Viewport(instance) {
       var _this;
-      _classCallCheck$g(this, Viewport);
+      _classCallCheck$f(this, Viewport);
       _this = _super.call(this);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "_currentTransaction", null);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_sortedElements", {
+      _defineProperty$e(_assertThisInitialized$a(_this), "_currentTransaction", null);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_sortedElements", {
         xmin: [],
         xmax: [],
         ymin: [],
         ymax: []
       });
-      _defineProperty$f(_assertThisInitialized$a(_this), "_elementMap", new Map());
-      _defineProperty$f(_assertThisInitialized$a(_this), "_transformedElementMap", new Map());
-      _defineProperty$f(_assertThisInitialized$a(_this), "_bounds", {
+      _defineProperty$e(_assertThisInitialized$a(_this), "_elementMap", new Map());
+      _defineProperty$e(_assertThisInitialized$a(_this), "_transformedElementMap", new Map());
+      _defineProperty$e(_assertThisInitialized$a(_this), "_bounds", {
         minx: 0,
         maxx: 0,
         miny: 0,
@@ -5595,7 +5595,7 @@
       });
       return _this;
     }
-    _createClass$g(Viewport, [{
+    _createClass$f(Viewport, [{
       key: "_updateBounds",
       value: function _updateBounds(id, updatedElement, doNotRecalculateBounds) {
         if (updatedElement != null) {
@@ -5833,14 +5833,14 @@
   var ConnectionDragSelector = function () {
     function ConnectionDragSelector(selector, def) {
       var exclude = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-      _classCallCheck$g(this, ConnectionDragSelector);
+      _classCallCheck$f(this, ConnectionDragSelector);
       this.selector = selector;
       this.def = def;
       this.exclude = exclude;
-      _defineProperty$f(this, "id", void 0);
+      _defineProperty$e(this, "id", void 0);
       this.id = uuid();
     }
-    _createClass$g(ConnectionDragSelector, [{
+    _createClass$f(ConnectionDragSelector, [{
       key: "setEnabled",
       value: function setEnabled(enabled) {
         this.def.enabled = enabled;
@@ -5860,10 +5860,10 @@
     var _super = _createSuper$a(SourceSelector);
     function SourceSelector(selector, def, exclude) {
       var _this;
-      _classCallCheck$g(this, SourceSelector);
+      _classCallCheck$f(this, SourceSelector);
       _this = _super.call(this, selector, def, exclude);
       _this.def = def;
-      _defineProperty$f(_assertThisInitialized$a(_this), "redrop", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "redrop", void 0);
       _this.redrop = def.def.redrop || REDROP_POLICY_STRICT;
       return _this;
     }
@@ -5874,7 +5874,7 @@
     var _super2 = _createSuper$a(TargetSelector);
     function TargetSelector(selector, def, exclude) {
       var _this2;
-      _classCallCheck$g(this, TargetSelector);
+      _classCallCheck$f(this, TargetSelector);
       _this2 = _super2.call(this, selector, def, exclude);
       _this2.def = def;
       return _this2;
@@ -5926,7 +5926,7 @@
         p2 = b.theta < 0 ? -Math.PI - b.theta : Math.PI - b.theta;
     return p1 - p2;
   }
-  var edgeSortFunctions = (_edgeSortFunctions = {}, _defineProperty$f(_edgeSortFunctions, TOP$2, _leftAndTopSort), _defineProperty$f(_edgeSortFunctions, RIGHT$1, _rightAndBottomSort), _defineProperty$f(_edgeSortFunctions, BOTTOM$1, _rightAndBottomSort), _defineProperty$f(_edgeSortFunctions, LEFT$2, _leftAndTopSort), _edgeSortFunctions);
+  var edgeSortFunctions = (_edgeSortFunctions = {}, _defineProperty$e(_edgeSortFunctions, TOP$2, _leftAndTopSort), _defineProperty$e(_edgeSortFunctions, RIGHT$1, _rightAndBottomSort), _defineProperty$e(_edgeSortFunctions, BOTTOM$1, _rightAndBottomSort), _defineProperty$e(_edgeSortFunctions, LEFT$2, _leftAndTopSort), _edgeSortFunctions);
   function isContinuous(a) {
     return a.isContinuous === true;
   }
@@ -5942,10 +5942,10 @@
   var LightweightRouter = function () {
     function LightweightRouter(instance) {
       var _this = this;
-      _classCallCheck$g(this, LightweightRouter);
+      _classCallCheck$f(this, LightweightRouter);
       this.instance = instance;
-      _defineProperty$f(this, "anchorLists", new Map());
-      _defineProperty$f(this, "anchorLocations", new Map());
+      _defineProperty$e(this, "anchorLists", new Map());
+      _defineProperty$e(this, "anchorLocations", new Map());
       instance.bind(EVENT_INTERNAL_CONNECTION_DETACHED, function (p) {
         if (p.sourceEndpoint._anchor.isContinuous) {
           _this._removeEndpointFromAnchorLists(p.sourceEndpoint);
@@ -5958,7 +5958,7 @@
         _this._removeEndpointFromAnchorLists(ep);
       });
     }
-    _createClass$g(LightweightRouter, [{
+    _createClass$f(LightweightRouter, [{
       key: "getAnchorOrientation",
       value: function getAnchorOrientation(anchor) {
         var loc = this.anchorLocations.get(anchor.id);
@@ -6483,16 +6483,16 @@
         (function (types, dim) {
           for (var i = 0; i < types.length; i++) {
             var _midpoints$types$i;
-            midpoints[types[i]] = (_midpoints$types$i = {}, _defineProperty$f(_midpoints$types$i, LEFT$2, {
+            midpoints[types[i]] = (_midpoints$types$i = {}, _defineProperty$e(_midpoints$types$i, LEFT$2, {
               x: dim[i][0].x,
               y: dim[i][0].c.y
-            }), _defineProperty$f(_midpoints$types$i, RIGHT$1, {
+            }), _defineProperty$e(_midpoints$types$i, RIGHT$1, {
               x: dim[i][0].x + dim[i][0].w,
               y: dim[i][0].c.y
-            }), _defineProperty$f(_midpoints$types$i, TOP$2, {
+            }), _defineProperty$e(_midpoints$types$i, TOP$2, {
               x: dim[i][0].c.x,
               y: dim[i][0].y
-            }), _defineProperty$f(_midpoints$types$i, BOTTOM$1, {
+            }), _defineProperty$e(_midpoints$types$i, BOTTOM$1, {
               x: dim[i][0].c.x,
               y: dim[i][0].y + dim[i][0].h
             }), _midpoints$types$i);
@@ -6520,7 +6520,7 @@
             return 1;
           } else {
             var _axisIndices;
-            var axisIndices = (_axisIndices = {}, _defineProperty$f(_axisIndices, LEFT$2, 0), _defineProperty$f(_axisIndices, TOP$2, 1), _defineProperty$f(_axisIndices, RIGHT$1, 2), _defineProperty$f(_axisIndices, BOTTOM$1, 3), _axisIndices),
+            var axisIndices = (_axisIndices = {}, _defineProperty$e(_axisIndices, LEFT$2, 0), _defineProperty$e(_axisIndices, TOP$2, 1), _defineProperty$e(_axisIndices, RIGHT$1, 2), _defineProperty$e(_axisIndices, BOTTOM$1, 3), _axisIndices),
                 ais = axisIndices[a.source],
                 bis = axisIndices[b.source],
                 ait = axisIndices[a.target],
@@ -6721,42 +6721,42 @@
     var _super = _createSuper$a(JsPlumbInstance);
     function JsPlumbInstance(_instanceIndex, defaults) {
       var _this;
-      _classCallCheck$g(this, JsPlumbInstance);
+      _classCallCheck$f(this, JsPlumbInstance);
       _this = _super.call(this);
       _this._instanceIndex = _instanceIndex;
-      _defineProperty$f(_assertThisInitialized$a(_this), "defaults", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_initialDefaults", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "isConnectionBeingDragged", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "currentlyDragging", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "hoverSuspended", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_suspendDrawing", false);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_suspendedAt", null);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorClass", CLASS_CONNECTOR);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectorOutlineClass", CLASS_CONNECTOR_OUTLINE);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connectedClass", CLASS_CONNECTED);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointClass", CLASS_ENDPOINT);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointConnectedClass", CLASS_ENDPOINT_CONNECTED);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointFullClass", CLASS_ENDPOINT_FULL);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointDropAllowedClass", CLASS_ENDPOINT_DROP_ALLOWED);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointDropForbiddenClass", CLASS_ENDPOINT_DROP_FORBIDDEN);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointAnchorClassPrefix", CLASS_ENDPOINT_ANCHOR_PREFIX);
-      _defineProperty$f(_assertThisInitialized$a(_this), "overlayClass", CLASS_OVERLAY);
-      _defineProperty$f(_assertThisInitialized$a(_this), "connections", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointsByElement", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "endpointsByUUID", new Map());
-      _defineProperty$f(_assertThisInitialized$a(_this), "sourceSelectors", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "targetSelectors", []);
-      _defineProperty$f(_assertThisInitialized$a(_this), "allowNestedGroups", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_curIdStamp", 1);
-      _defineProperty$f(_assertThisInitialized$a(_this), "viewport", new Viewport(_assertThisInitialized$a(_this)));
-      _defineProperty$f(_assertThisInitialized$a(_this), "router", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "groupManager", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_connectionTypes", new Map());
-      _defineProperty$f(_assertThisInitialized$a(_this), "_endpointTypes", new Map());
-      _defineProperty$f(_assertThisInitialized$a(_this), "_container", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_managedElements", {});
-      _defineProperty$f(_assertThisInitialized$a(_this), "DEFAULT_SCOPE", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "_zoom", 1);
+      _defineProperty$e(_assertThisInitialized$a(_this), "defaults", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_initialDefaults", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "isConnectionBeingDragged", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "currentlyDragging", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "hoverSuspended", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_suspendDrawing", false);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_suspendedAt", null);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorClass", CLASS_CONNECTOR);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectorOutlineClass", CLASS_CONNECTOR_OUTLINE);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connectedClass", CLASS_CONNECTED);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointClass", CLASS_ENDPOINT);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointConnectedClass", CLASS_ENDPOINT_CONNECTED);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointFullClass", CLASS_ENDPOINT_FULL);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointDropAllowedClass", CLASS_ENDPOINT_DROP_ALLOWED);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointDropForbiddenClass", CLASS_ENDPOINT_DROP_FORBIDDEN);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointAnchorClassPrefix", CLASS_ENDPOINT_ANCHOR_PREFIX);
+      _defineProperty$e(_assertThisInitialized$a(_this), "overlayClass", CLASS_OVERLAY);
+      _defineProperty$e(_assertThisInitialized$a(_this), "connections", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointsByElement", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "endpointsByUUID", new Map());
+      _defineProperty$e(_assertThisInitialized$a(_this), "sourceSelectors", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "targetSelectors", []);
+      _defineProperty$e(_assertThisInitialized$a(_this), "allowNestedGroups", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_curIdStamp", 1);
+      _defineProperty$e(_assertThisInitialized$a(_this), "viewport", new Viewport(_assertThisInitialized$a(_this)));
+      _defineProperty$e(_assertThisInitialized$a(_this), "router", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "groupManager", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_connectionTypes", new Map());
+      _defineProperty$e(_assertThisInitialized$a(_this), "_endpointTypes", new Map());
+      _defineProperty$e(_assertThisInitialized$a(_this), "_container", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_managedElements", {});
+      _defineProperty$e(_assertThisInitialized$a(_this), "DEFAULT_SCOPE", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "_zoom", 1);
       _this.defaults = {
         anchor: AnchorLocations.Bottom,
         anchors: [null, null],
@@ -6795,7 +6795,7 @@
       _this.setContainer(_this._initialDefaults.container);
       return _this;
     }
-    _createClass$g(JsPlumbInstance, [{
+    _createClass$f(JsPlumbInstance, [{
       key: "defaultScope",
       get: function get() {
         return this.DEFAULT_SCOPE;
@@ -8223,19 +8223,19 @@
     var _super = _createSuper$a(ArcSegment);
     function ArcSegment(params) {
       var _this;
-      _classCallCheck$g(this, ArcSegment);
+      _classCallCheck$f(this, ArcSegment);
       _this = _super.call(this, params);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", ArcSegment.segmentType);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cx", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cy", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "radius", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "anticlockwise", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "startAngle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "endAngle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "sweep", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "length", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "circumference", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "frac", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", ArcSegment.segmentType);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cx", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cy", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "radius", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "anticlockwise", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "startAngle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "endAngle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "sweep", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "length", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "circumference", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "frac", void 0);
       _this.cx = params.cx;
       _this.cy = params.cy;
       _this.radius = params.r;
@@ -8273,7 +8273,7 @@
       };
       return _this;
     }
-    _createClass$g(ArcSegment, [{
+    _createClass$f(ArcSegment, [{
       key: "_calcAngle",
       value: function _calcAngle(_x, _y) {
         return theta({
@@ -8367,7 +8367,7 @@
     }]);
     return ArcSegment;
   }(AbstractSegment);
-  _defineProperty$f(ArcSegment, "segmentType", "Arc");
+  _defineProperty$e(ArcSegment, "segmentType", "Arc");
 
   var DEFAULT_WIDTH = 20;
   var DEFAULT_LENGTH = 20;
@@ -8376,18 +8376,18 @@
     var _super = _createSuper$a(ArrowOverlay);
     function ArrowOverlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, ArrowOverlay);
+      _classCallCheck$f(this, ArrowOverlay);
       _this = _super.call(this, instance, component, p);
       _this.instance = instance;
       _this.component = component;
-      _defineProperty$f(_assertThisInitialized$a(_this), "width", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "length", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "foldback", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "direction", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "location", 0.5);
-      _defineProperty$f(_assertThisInitialized$a(_this), "paintStyle", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", ArrowOverlay.type);
-      _defineProperty$f(_assertThisInitialized$a(_this), "cachedDimensions", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "width", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "length", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "foldback", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "direction", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "location", 0.5);
+      _defineProperty$e(_assertThisInitialized$a(_this), "paintStyle", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", ArrowOverlay.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "cachedDimensions", void 0);
       p = p || {};
       _this.width = p.width || DEFAULT_WIDTH;
       _this.length = p.length || DEFAULT_LENGTH;
@@ -8399,7 +8399,7 @@
       _this.location = p.location == null ? _this.location : Array.isArray(p.location) ? p.location[0] : p.location;
       return _this;
     }
-    _createClass$g(ArrowOverlay, [{
+    _createClass$f(ArrowOverlay, [{
       key: "draw",
       value: function draw(component, currentConnectionPaintStyle, absolutePosition) {
         if (component instanceof AbstractConnector) {
@@ -8462,7 +8462,7 @@
     }]);
     return ArrowOverlay;
   }(Overlay);
-  _defineProperty$f(ArrowOverlay, "type", "Arrow");
+  _defineProperty$e(ArrowOverlay, "type", "Arrow");
   function isArrowOverlay(o) {
     return o.type === ArrowOverlay.type;
   }
@@ -8473,16 +8473,16 @@
     var _super = _createSuper$a(PlainArrowOverlay);
     function PlainArrowOverlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, PlainArrowOverlay);
+      _classCallCheck$f(this, PlainArrowOverlay);
       _this = _super.call(this, instance, component, p);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", PlainArrowOverlay.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", PlainArrowOverlay.type);
       _this.foldback = 1;
       return _this;
     }
     return PlainArrowOverlay;
   }(ArrowOverlay);
-  _defineProperty$f(PlainArrowOverlay, "type", "PlainArrow");
+  _defineProperty$e(PlainArrowOverlay, "type", "PlainArrow");
   function isPlainArrowOverlay(o) {
     return o.type === PlainArrowOverlay.type;
   }
@@ -8493,17 +8493,17 @@
     var _super = _createSuper$a(DiamondOverlay);
     function DiamondOverlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, DiamondOverlay);
+      _classCallCheck$f(this, DiamondOverlay);
       _this = _super.call(this, instance, component, p);
       _this.instance = instance;
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", DiamondOverlay.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", DiamondOverlay.type);
       _this.length = _this.length / 2;
       _this.foldback = 2;
       return _this;
     }
     return DiamondOverlay;
   }(ArrowOverlay);
-  _defineProperty$f(DiamondOverlay, "type", "Diamond");
+  _defineProperty$e(DiamondOverlay, "type", "Diamond");
   function isDiamondOverlay(o) {
     return o.type === DiamondOverlay.type;
   }
@@ -8514,22 +8514,22 @@
     var _super = _createSuper$a(CustomOverlay);
     function CustomOverlay(instance, component, p) {
       var _this;
-      _classCallCheck$g(this, CustomOverlay);
+      _classCallCheck$f(this, CustomOverlay);
       _this = _super.call(this, instance, component, p);
       _this.instance = instance;
       _this.component = component;
-      _defineProperty$f(_assertThisInitialized$a(_this), "create", void 0);
-      _defineProperty$f(_assertThisInitialized$a(_this), "type", CustomOverlay.type);
+      _defineProperty$e(_assertThisInitialized$a(_this), "create", void 0);
+      _defineProperty$e(_assertThisInitialized$a(_this), "type", CustomOverlay.type);
       _this.create = p.create;
       return _this;
     }
-    _createClass$g(CustomOverlay, [{
+    _createClass$f(CustomOverlay, [{
       key: "updateFrom",
       value: function updateFrom(d) {}
     }]);
     return CustomOverlay;
   }(Overlay);
-  _defineProperty$f(CustomOverlay, "type", "Custom");
+  _defineProperty$e(CustomOverlay, "type", "Custom");
   function isCustomOverlay(o) {
     return o.type === CustomOverlay.type;
   }
@@ -8556,13 +8556,13 @@
     return _typeof$1(obj);
   }
 
-  function _classCallCheck$f(instance, Constructor) {
+  function _classCallCheck$e(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties$f(target, props) {
+  function _defineProperties$e(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -8572,13 +8572,13 @@
     }
   }
 
-  function _createClass$f(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$f(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$f(Constructor, staticProps);
+  function _createClass$e(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$e(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$e(Constructor, staticProps);
     return Constructor;
   }
 
-  function _defineProperty$e(obj, key, value) {
+  function _defineProperty$d(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -8648,8 +8648,6 @@
   function _possibleConstructorReturn$9(self, call) {
     if (call && (typeof call === "object" || typeof call === "function")) {
       return call;
-    } else if (call !== void 0) {
-      throw new TypeError("Derived constructors may only return object or undefined");
     }
 
     return _assertThisInitialized$9(self);
@@ -8704,16 +8702,5244 @@
     return _get$3(target, property, receiver || target);
   }
 
+  function _slicedToArray$3(arr, i) {
+    return _arrayWithHoles$3(arr) || _iterableToArrayLimit$3(arr, i) || _unsupportedIterableToArray$3(arr, i) || _nonIterableRest$3();
+  }
+
+  function _arrayWithHoles$3(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArrayLimit$3(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+
+    var _s, _e;
+
+    try {
+      for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _unsupportedIterableToArray$3(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray$3(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$3(o, minLen);
+  }
+
+  function _arrayLikeToArray$3(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _nonIterableRest$3() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function matchesSelector$1(el, selector, ctx) {
+    ctx = ctx || el.parentNode;
+    var possibles = ctx.querySelectorAll(selector);
+    for (var i = 0; i < possibles.length; i++) {
+      if (possibles[i] === el) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function consume(e, doNotPreventDefault) {
+    if (e.stopPropagation) {
+      e.stopPropagation();
+    } else {
+      e.returnValue = false;
+    }
+    if (!doNotPreventDefault && e.preventDefault) {
+      e.preventDefault();
+    }
+  }
+  function findParent(el, selector, container, matchOnElementAlso) {
+    if (matchOnElementAlso && matchesSelector$1(el, selector, container)) {
+      return el;
+    } else {
+      el = el.parentNode;
+    }
+    while (el != null && el !== container) {
+      if (matchesSelector$1(el, selector)) {
+        return el;
+      } else {
+        el = el.parentNode;
+      }
+    }
+  }
+  function getEventSource(e) {
+    return e.srcElement || e.target;
+  }
+  function _setClassName(el, cn, classList) {
+    cn = fastTrim(cn);
+    if (typeof el.className.baseVal !== "undefined") {
+      el.className.baseVal = cn;
+    } else {
+      el.className = cn;
+    }
+    try {
+      var cl = el.classList;
+      if (cl != null) {
+        while (cl.length > 0) {
+          cl.remove(cl.item(0));
+        }
+        for (var i = 0; i < classList.length; i++) {
+          if (classList[i]) {
+            cl.add(classList[i]);
+          }
+        }
+      }
+    } catch (e) {
+      log("JSPLUMB: cannot set class list", e);
+    }
+  }
+  function _getClassName(el) {
+    return el.className != null ? typeof el.className.baseVal === "undefined" ? el.className : el.className.baseVal : "";
+  }
+  function _classManip(el, classesToAdd, classesToRemove) {
+    var cta = classesToAdd == null ? [] : Array.isArray(classesToAdd) ? classesToAdd : classesToAdd.split(/\s+/);
+    var ctr = classesToRemove == null ? [] : Array.isArray(classesToRemove) ? classesToRemove : classesToRemove.split(/\s+/);
+    var className = _getClassName(el),
+        curClasses = className.split(/\s+/);
+    var _oneSet = function _oneSet(add, classes) {
+      for (var i = 0; i < classes.length; i++) {
+        if (add) {
+          if (curClasses.indexOf(classes[i]) === -1) {
+            curClasses.push(classes[i]);
+          }
+        } else {
+          var idx = curClasses.indexOf(classes[i]);
+          if (idx !== -1) {
+            curClasses.splice(idx, 1);
+          }
+        }
+      }
+    };
+    _oneSet(true, cta);
+    _oneSet(false, ctr);
+    _setClassName(el, curClasses.join(" "), curClasses);
+  }
+  function isNodeList(el) {
+    return !isString(el) && !Array.isArray(el) && el.length != null && el.documentElement == null && el.nodeType == null;
+  }
+  function isArrayLike(el) {
+    return !isString(el) && (Array.isArray(el) || isNodeList(el));
+  }
+  function getClass(el) {
+    return _getClassName(el);
+  }
+  function addClass(el, clazz) {
+    var _one = function _one(el, clazz) {
+      if (el != null && clazz != null && clazz.length > 0) {
+        if (el.classList) {
+          var parts = fastTrim(clazz).split(/\s+/);
+          forEach(parts, function (part) {
+            el.classList.add(part);
+          });
+        } else {
+          _classManip(el, clazz);
+        }
+      }
+    };
+    if (isNodeList(el)) {
+      forEach(el, function (el) {
+        return _one(el, clazz);
+      });
+    } else {
+      _one(el, clazz);
+    }
+  }
+  function hasClass(el, clazz) {
+    if (el.classList) {
+      return el.classList.contains(clazz);
+    } else {
+      return _getClassName(el).indexOf(clazz) !== -1;
+    }
+  }
+  function removeClass(el, clazz) {
+    var _one = function _one(el, clazz) {
+      if (el != null && clazz != null && clazz.length > 0) {
+        if (el.classList) {
+          var parts = fastTrim(clazz).split(/\s+/);
+          parts.forEach(function (part) {
+            el.classList.remove(part);
+          });
+        } else {
+          _classManip(el, null, clazz);
+        }
+      }
+    };
+    if (isNodeList(el)) {
+      forEach(el, function (el) {
+        return _one(el, clazz);
+      });
+    } else {
+      _one(el, clazz);
+    }
+  }
+  function toggleClass(el, clazz) {
+    var _this = this;
+    var _one = function _one(el, clazz) {
+      if (el != null && clazz != null && clazz.length > 0) {
+        if (el.classList) {
+          el.classList.toggle(clazz);
+        } else {
+          if (_this.hasClass(el, clazz)) {
+            _this.removeClass(el, clazz);
+          } else {
+            _this.addClass(el, clazz);
+          }
+        }
+      }
+    };
+    if (isNodeList(el)) {
+      forEach(el, function (el) {
+        return _one(el, clazz);
+      });
+    } else {
+      _one(el, clazz);
+    }
+  }
+  function createElement(tag, style, clazz, atts) {
+    return createElementNS(null, tag, style, clazz, atts);
+  }
+  function createElementNS(ns, tag, style, clazz, atts) {
+    var e = ns == null ? document.createElement(tag) : document.createElementNS(ns, tag);
+    var i;
+    style = style || {};
+    for (i in style) {
+      e.style[i] = style[i];
+    }
+    if (clazz) {
+      e.className = clazz;
+    }
+    atts = atts || {};
+    for (i in atts) {
+      e.setAttribute(i, "" + atts[i]);
+    }
+    return e;
+  }
+  function offsetRelativeToRoot(el) {
+    var box = el.getBoundingClientRect(),
+        body = document.body,
+        docElem = document.documentElement,
+    scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+        scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
+    clientTop = docElem.clientTop || body.clientTop || 0,
+        clientLeft = docElem.clientLeft || body.clientLeft || 0,
+    top = box.top + scrollTop - clientTop,
+        left = box.left + scrollLeft - clientLeft;
+    return {
+      x: Math.round(left),
+      y: Math.round(top)
+    };
+  }
+  function size(el) {
+    return {
+      w: el.offsetWidth,
+      h: el.offsetHeight
+    };
+  }
+
+  var svgAttributeMap = {
+    "stroke-linejoin": "stroke-linejoin",
+    "stroke-dashoffset": "stroke-dashoffset",
+    "stroke-linecap": "stroke-linecap"
+  };
+  var STROKE_DASHARRAY = "stroke-dasharray";
+  var DASHSTYLE = "dashstyle";
+  var FILL = "fill";
+  var STROKE = "stroke";
+  var STROKE_WIDTH = "stroke-width";
+  var LINE_WIDTH = "strokeWidth";
+  var ELEMENT_SVG = "svg";
+  var ELEMENT_PATH = "path";
+  var ns = {
+    svg: "http://www.w3.org/2000/svg"
+  };
+  function _attr(node, attributes) {
+    for (var i in attributes) {
+      node.setAttribute(i, "" + attributes[i]);
+    }
+  }
+  function _node(name, attributes) {
+    attributes = attributes || {};
+    attributes.version = "1.1";
+    attributes.xmlns = ns.svg;
+    return createElementNS(ns.svg, name, null, null, attributes);
+  }
+  function _pos(d) {
+    return "position:absolute;left:" + d[0] + "px;top:" + d[1] + "px";
+  }
+  function _applyStyles(parent, node, style) {
+    node.setAttribute(FILL, style.fill ? style.fill : NONE$1);
+    node.setAttribute(STROKE, style.stroke ? style.stroke : NONE$1);
+    if (style.strokeWidth) {
+      node.setAttribute(STROKE_WIDTH, style.strokeWidth);
+    }
+    if (style[DASHSTYLE] && style[LINE_WIDTH] && !style[STROKE_DASHARRAY]) {
+      var sep = style[DASHSTYLE].indexOf(",") === -1 ? " " : ",",
+          parts = style[DASHSTYLE].split(sep),
+          styleToUse = "";
+      forEach(parts, function (p) {
+        styleToUse += Math.floor(p * style.strokeWidth) + sep;
+      });
+      node.setAttribute(STROKE_DASHARRAY, styleToUse);
+    } else if (style[STROKE_DASHARRAY]) {
+      node.setAttribute(STROKE_DASHARRAY, style[STROKE_DASHARRAY]);
+    }
+    for (var i in svgAttributeMap) {
+      if (style[i]) {
+        node.setAttribute(svgAttributeMap[i], style[i]);
+      }
+    }
+  }
+  function _appendAtIndex(svg, path, idx) {
+    if (svg.childNodes.length > idx) {
+      svg.insertBefore(path, svg.childNodes[idx]);
+    } else {
+      svg.appendChild(path);
+    }
+  }
+  function _size(svg, x, y, w, h) {
+    svg.style.width = w + "px";
+    svg.style.height = h + "px";
+    svg.style.left = x + "px";
+    svg.style.top = y + "px";
+    svg.height = h;
+    svg.width = w;
+  }
+
+  function compoundEvent(stem, event, subevent) {
+    var a = [stem, event];
+    if (subevent) {
+      a.push(subevent);
+    }
+    return a.join(":");
+  }
+  var ATTRIBUTE_CONTAINER = "data-jtk-container";
+  var ATTRIBUTE_GROUP_CONTENT = "data-jtk-group-content";
+  var ATTRIBUTE_JTK_ENABLED = "data-jtk-enabled";
+  var ATTRIBUTE_JTK_SCOPE = "data-jtk-scope";
+  var ENDPOINT = "endpoint";
+  var ELEMENT = "element";
+  var CONNECTION = "connection";
+  var ELEMENT_DIV = "div";
+  var EVENT_CLICK = "click";
+  var EVENT_CONTEXTMENU = "contextmenu";
+  var EVENT_DBL_CLICK = "dblclick";
+  var EVENT_DBL_TAP = "dbltap";
+  var EVENT_FOCUS = "focus";
+  var EVENT_MOUSEDOWN = "mousedown";
+  var EVENT_MOUSEENTER = "mouseenter";
+  var EVENT_MOUSEEXIT = "mouseexit";
+  var EVENT_MOUSEMOVE = "mousemove";
+  var EVENT_MOUSEUP = "mouseup";
+  var EVENT_MOUSEOUT = "mouseout";
+  var EVENT_MOUSEOVER = "mouseover";
+  var EVENT_TAP = "tap";
+  var EVENT_DRAG_MOVE = "drag:move";
+  var EVENT_DRAG_STOP = "drag:stop";
+  var EVENT_DRAG_START = "drag:start";
+  var EVENT_REVERT = "revert";
+  var EVENT_CONNECTION_ABORT = "connection:abort";
+  var EVENT_CONNECTION_DRAG = "connection:drag";
+  var EVENT_ELEMENT_CLICK = compoundEvent(ELEMENT, EVENT_CLICK);
+  var EVENT_ELEMENT_DBL_CLICK = compoundEvent(ELEMENT, EVENT_DBL_CLICK);
+  var EVENT_ELEMENT_DBL_TAP = compoundEvent(ELEMENT, EVENT_DBL_TAP);
+  var EVENT_ELEMENT_MOUSE_OUT = compoundEvent(ELEMENT, EVENT_MOUSEOUT);
+  var EVENT_ELEMENT_MOUSE_OVER = compoundEvent(ELEMENT, EVENT_MOUSEOVER);
+  var EVENT_ELEMENT_MOUSE_MOVE = compoundEvent(ELEMENT, EVENT_MOUSEMOVE);
+  var EVENT_ELEMENT_MOUSE_UP = compoundEvent(ELEMENT, EVENT_MOUSEUP);
+  var EVENT_ELEMENT_MOUSE_DOWN = compoundEvent(ELEMENT, EVENT_MOUSEDOWN);
+  var EVENT_ELEMENT_CONTEXTMENU = compoundEvent(ELEMENT, EVENT_CONTEXTMENU);
+  var EVENT_ELEMENT_TAP = compoundEvent(ELEMENT, EVENT_TAP);
+  var EVENT_ENDPOINT_CLICK = compoundEvent(ENDPOINT, EVENT_CLICK);
+  var EVENT_ENDPOINT_DBL_CLICK = compoundEvent(ENDPOINT, EVENT_DBL_CLICK);
+  compoundEvent(ENDPOINT, EVENT_DBL_TAP);
+  var EVENT_ENDPOINT_MOUSEOUT = compoundEvent(ENDPOINT, EVENT_MOUSEOUT);
+  var EVENT_ENDPOINT_MOUSEOVER = compoundEvent(ENDPOINT, EVENT_MOUSEOVER);
+  var EVENT_ENDPOINT_MOUSEUP = compoundEvent(ENDPOINT, EVENT_MOUSEUP);
+  var EVENT_ENDPOINT_MOUSEDOWN = compoundEvent(ENDPOINT, EVENT_MOUSEDOWN);
+  compoundEvent(ENDPOINT, EVENT_TAP);
+  var EVENT_CONNECTION_CLICK = compoundEvent(CONNECTION, EVENT_CLICK);
+  var EVENT_CONNECTION_DBL_CLICK = compoundEvent(CONNECTION, EVENT_DBL_CLICK);
+  var EVENT_CONNECTION_DBL_TAP = compoundEvent(CONNECTION, EVENT_DBL_TAP);
+  var EVENT_CONNECTION_MOUSEOUT = compoundEvent(CONNECTION, EVENT_MOUSEOUT);
+  var EVENT_CONNECTION_MOUSEOVER = compoundEvent(CONNECTION, EVENT_MOUSEOVER);
+  var EVENT_CONNECTION_MOUSEUP = compoundEvent(CONNECTION, EVENT_MOUSEUP);
+  var EVENT_CONNECTION_MOUSEDOWN = compoundEvent(CONNECTION, EVENT_MOUSEDOWN);
+  var EVENT_CONNECTION_CONTEXTMENU = compoundEvent(CONNECTION, EVENT_CONTEXTMENU);
+  var EVENT_CONNECTION_TAP = compoundEvent(CONNECTION, EVENT_TAP);
+  var PROPERTY_POSITION = "position";
+  var SELECTOR_CONNECTOR = cls(CLASS_CONNECTOR);
+  var SELECTOR_ENDPOINT = cls(CLASS_ENDPOINT);
+  var SELECTOR_GROUP = att(ATTRIBUTE_GROUP);
+  var SELECTOR_GROUP_CONTAINER = att(ATTRIBUTE_GROUP_CONTENT);
+  var SELECTOR_OVERLAY = cls(CLASS_OVERLAY);
+
+  function _touch(target, pageX, pageY, screenX, screenY, clientX, clientY) {
+    return new Touch({
+      target: target,
+      identifier: uuid(),
+      pageX: pageX,
+      pageY: pageY,
+      screenX: screenX,
+      screenY: screenY,
+      clientX: clientX || screenX,
+      clientY: clientY || screenY
+    });
+  }
+  function _touchList() {
+    var list = [];
+    list.push.apply(list, arguments);
+    list.item = function (index) {
+      return this[index];
+    };
+    return list;
+  }
+  function _touchAndList(target, pageX, pageY, screenX, screenY, clientX, clientY) {
+    return _touchList(_touch(target, pageX, pageY, screenX, screenY, clientX, clientY));
+  }
+  function matchesSelector(el, selector, ctx) {
+    ctx = ctx || el.parentNode;
+    var possibles = ctx.querySelectorAll(selector);
+    for (var i = 0; i < possibles.length; i++) {
+      if (possibles[i] === el) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function _t(e) {
+    return e.srcElement || e.target;
+  }
+  function _pi(e, target, obj, doCompute) {
+    if (!doCompute) return {
+      path: [target],
+      end: 1
+    };else if (typeof e.path !== "undefined" && e.path.indexOf) {
+      return {
+        path: e.path,
+        end: e.path.indexOf(obj)
+      };
+    } else {
+      var out = {
+        path: [],
+        end: -1
+      },
+          _one = function _one(el) {
+        out.path.push(el);
+        if (el === obj) {
+          out.end = out.path.length - 1;
+        } else if (el.parentNode != null) {
+          _one(el.parentNode);
+        }
+      };
+      _one(target);
+      return out;
+    }
+  }
+  function _d(l, fn) {
+    var i = 0,
+        j;
+    for (i = 0, j = l.length; i < j; i++) {
+      if (l[i][0] === fn) {
+        break;
+      }
+    }
+    if (i < l.length) {
+      l.splice(i, 1);
+    }
+  }
+  var guid = 1;
+  function isTouchDevice$1() {
+    return "ontouchstart" in document.documentElement || navigator.maxTouchPoints != null && navigator.maxTouchPoints > 0;
+  }
+  function isMouseDevice() {
+    return "onmousedown" in document.documentElement;
+  }
+  var touchMap = {
+    "mousedown": "touchstart",
+    "mouseup": "touchend",
+    "mousemove": "touchmove"
+  };
+  var PAGE = "page";
+  var SCREEN = "screen";
+  var CLIENT = "client";
+  function _genLoc(e, prefix) {
+    if (e == null) return {
+      x: 0,
+      y: 0
+    };
+    var ts = touches(e),
+        t = getTouch(ts, 0);
+    return {
+      x: t[prefix + "X"],
+      y: t[prefix + "Y"]
+    };
+  }
+  function pageLocation(e) {
+    return _genLoc(e, PAGE);
+  }
+  function screenLocation(e) {
+    return _genLoc(e, SCREEN);
+  }
+  function clientLocation(e) {
+    return _genLoc(e, CLIENT);
+  }
+  function getTouch(touches, idx) {
+    return touches.item ? touches.item(idx) : touches[idx];
+  }
+  function touches(e) {
+    return e.touches && e.touches.length > 0 ? e.touches : e.changedTouches && e.changedTouches.length > 0 ? e.changedTouches : e.targetTouches && e.targetTouches.length > 0 ? e.targetTouches : [e];
+  }
+  function touchCount(e) {
+    return touches(e).length;
+  }
+  function _bind$1(obj, type, fn, originalFn, options) {
+    _store(obj, type, fn);
+    originalFn.__tauid = fn.__tauid;
+    if (obj.addEventListener) {
+      obj.addEventListener(type, fn, false, options);
+    } else if (obj.attachEvent) {
+      var key = type + fn.__tauid;
+      obj["e" + key] = fn;
+      obj[key] = function () {
+        obj["e" + key] && obj["e" + key](window.event);
+      };
+      obj.attachEvent("on" + type, obj[key]);
+    }
+  }
+  function _unbind(obj, type, fn) {
+    var _this = this;
+    if (fn == null) return;
+    _each$1(obj, function (_el) {
+      _unstore(_el, type, fn);
+      if (fn.__tauid != null) {
+        if (_el.removeEventListener) {
+          _el.removeEventListener(type, fn, false);
+          if (isTouchDevice$1() && touchMap[type]) _el.removeEventListener(touchMap[type], fn, false);
+        } else if (_this.detachEvent) {
+          var key = type + fn.__tauid;
+          _el[key] && _el.detachEvent("on" + type, _el[key]);
+          _el[key] = null;
+          _el["e" + key] = null;
+        }
+      }
+      if (fn.__taTouchProxy) {
+        _unbind(obj, fn.__taTouchProxy[1], fn.__taTouchProxy[0]);
+      }
+    });
+  }
+  function _each$1(obj, fn) {
+    if (obj == null) return;
+    var entries = typeof obj === "string" ? document.querySelectorAll(obj) : obj.length != null ? obj : [obj];
+    for (var i = 0; i < entries.length; i++) {
+      fn(entries[i]);
+    }
+  }
+  function _store(obj, event, fn) {
+    var g = guid++;
+    obj.__ta = obj.__ta || {};
+    obj.__ta[event] = obj.__ta[event] || {};
+    obj.__ta[event][g] = fn;
+    fn.__tauid = g;
+    return g;
+  }
+  function _unstore(obj, event, fn) {
+    obj.__ta && obj.__ta[event] && delete obj.__ta[event][fn.__tauid];
+    if (fn.__taExtra) {
+      for (var i = 0; i < fn.__taExtra.length; i++) {
+        _unbind(obj, fn.__taExtra[i][0], fn.__taExtra[i][1]);
+      }
+      fn.__taExtra.length = 0;
+    }
+    fn.__taUnstore && fn.__taUnstore();
+  }
+  var NOT_SELECTOR_REGEX = /:not\(([^)]+)\)/;
+  function _curryChildFilter(children, obj, fn, evt) {
+    if (children == null) {
+      return fn;
+    } else {
+      var c = children.split(","),
+          pc = [],
+          nc = [];
+      forEach(c, function (sel) {
+        var m = sel.match(NOT_SELECTOR_REGEX);
+        if (m != null) {
+          nc.push(m[1]);
+        } else {
+          pc.push(sel);
+        }
+      });
+      if (nc.length > 0 && pc.length === 0) {
+        pc.push(WILDCARD);
+      }
+      var _fn = function _fn(e) {
+        _fn.__tauid = fn.__tauid;
+        var t = _t(e);
+        var done = false;
+        var target = t;
+        var pathInfo = _pi(e, t, obj, children != null);
+        if (pathInfo.end != -1) {
+          for (var p = 0; !done && p < pathInfo.end; p++) {
+            target = pathInfo.path[p];
+            for (var i = 0; i < nc.length; i++) {
+              if (matchesSelector(target, nc[i], obj)) {
+                return;
+              }
+            }
+            for (var _i = 0; !done && _i < pc.length; _i++) {
+              if (matchesSelector(target, pc[_i], obj)) {
+                fn.apply(target, [e, target]);
+                done = true;
+                break;
+              }
+            }
+          }
+        }
+      };
+      registerExtraFunction(fn, evt, _fn);
+      return _fn;
+    }
+  }
+  function registerExtraFunction(fn, evt, newFn) {
+    fn.__taExtra = fn.__taExtra || [];
+    fn.__taExtra.push([evt, newFn]);
+  }
+  var DefaultHandler = function DefaultHandler(obj, evt, fn, children, options) {
+    if (isTouchDevice$1() && touchMap[evt]) {
+      var tfn = _curryChildFilter(children, obj, fn, touchMap[evt]);
+      _bind$1(obj, touchMap[evt], tfn, fn, options);
+    }
+    if (evt === EVENT_FOCUS && obj.getAttribute(ATTRIBUTE_TABINDEX) == null) {
+      obj.setAttribute(ATTRIBUTE_TABINDEX, "1");
+    }
+    _bind$1(obj, evt, _curryChildFilter(children, obj, fn, evt), fn, options);
+  };
+  var _tapProfiles = {
+    "tap": {
+      touches: 1,
+      taps: 1
+    },
+    "dbltap": {
+      touches: 1,
+      taps: 2
+    },
+    "contextmenu": {
+      touches: 2,
+      taps: 1
+    }
+  };
+  function meeHelper(type, evt, obj, target) {
+    for (var i in obj.__tamee[type]) {
+      if (obj.__tamee[type].hasOwnProperty(i)) {
+        obj.__tamee[type][i].apply(target, [evt]);
+      }
+    }
+  }
+  var TapHandler = function () {
+    function TapHandler() {
+      _classCallCheck$e(this, TapHandler);
+    }
+    _createClass$e(TapHandler, null, [{
+      key: "generate",
+      value: function generate(clickThreshold, dblClickThreshold) {
+        return function (obj, evt, fn, children) {
+          if (evt == EVENT_CONTEXTMENU && isMouseDevice()) DefaultHandler(obj, evt, fn, children);else {
+            if (obj.__taTapHandler == null) {
+              var tt = obj.__taTapHandler = {
+                tap: [],
+                dbltap: [],
+                down: false,
+                taps: 0,
+                downSelectors: []
+              };
+              var down = function down(e) {
+                var target = _t(e),
+                    pathInfo = _pi(e, target, obj, children != null),
+                    finished = false;
+                for (var p = 0; p < pathInfo.end; p++) {
+                  if (finished) return;
+                  target = pathInfo.path[p];
+                  for (var i = 0; i < tt.downSelectors.length; i++) {
+                    if (tt.downSelectors[i] == null || matchesSelector(target, tt.downSelectors[i], obj)) {
+                      tt.down = true;
+                      setTimeout(clearSingle, clickThreshold);
+                      setTimeout(clearDouble, dblClickThreshold);
+                      finished = true;
+                      break;
+                    }
+                  }
+                }
+              },
+                  up = function up(e) {
+                if (tt.down) {
+                  var target = _t(e),
+                      currentTarget,
+                      pathInfo;
+                  tt.taps++;
+                  var tc = touchCount(e);
+                  for (var eventId in _tapProfiles) {
+                    if (_tapProfiles.hasOwnProperty(eventId)) {
+                      var p = _tapProfiles[eventId];
+                      if (p.touches === tc && (p.taps === 1 || p.taps === tt.taps)) {
+                        for (var i = 0; i < tt[eventId].length; i++) {
+                          pathInfo = _pi(e, target, obj, tt[eventId][i][1] != null);
+                          for (var pLoop = 0; pLoop < pathInfo.end; pLoop++) {
+                            currentTarget = pathInfo.path[pLoop];
+                            if (tt[eventId][i][1] == null || matchesSelector(currentTarget, tt[eventId][i][1], obj)) {
+                              tt[eventId][i][0].apply(currentTarget, [e, currentTarget]);
+                              break;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+                  clearSingle = function clearSingle() {
+                tt.down = false;
+              },
+                  clearDouble = function clearDouble() {
+                tt.taps = 0;
+              };
+              obj.__taTapHandler.downHandler = down;
+              obj.__taTapHandler.upHandler = up;
+              DefaultHandler(obj, EVENT_MOUSEDOWN, down);
+              DefaultHandler(obj, EVENT_MOUSEUP, up);
+            }
+            obj.__taTapHandler.downSelectors.push(children);
+            obj.__taTapHandler[evt].push([fn, children]);
+            fn.__taUnstore = function () {
+              if (obj.__taTapHandler != null) {
+                removeWithFunction(obj.__taTapHandler.downSelectors, function (ds) {
+                  return ds === children;
+                });
+                _d(obj.__taTapHandler[evt], fn);
+                if (obj.__taTapHandler.downSelectors.length === 0) {
+                  _unbind(obj, EVENT_MOUSEDOWN, obj.__taTapHandler.downHandler);
+                  _unbind(obj, EVENT_MOUSEUP, obj.__taTapHandler.upHandler);
+                  delete obj.__taTapHandler;
+                }
+              }
+            };
+          }
+        };
+      }
+    }]);
+    return TapHandler;
+  }();
+  var MouseEnterExitHandler = function () {
+    function MouseEnterExitHandler() {
+      _classCallCheck$e(this, MouseEnterExitHandler);
+    }
+    _createClass$e(MouseEnterExitHandler, null, [{
+      key: "generate",
+      value: function generate() {
+        var activeElements = [];
+        return function (obj, evt, fn, children) {
+          if (!obj.__tamee) {
+            obj.__tamee = {
+              over: false,
+              mouseenter: [],
+              mouseexit: []
+            };
+            var over = function over(e) {
+              var t = _t(e);
+              if (children == null && t == obj && !obj.__tamee.over || matchesSelector(t, children, obj) && (t.__tamee == null || !t.__tamee.over)) {
+                meeHelper(EVENT_MOUSEENTER, e, obj, t);
+                t.__tamee = t.__tamee || {};
+                t.__tamee.over = true;
+                activeElements.push(t);
+              }
+            },
+                out = function out(e) {
+              var t = _t(e);
+              for (var i = 0; i < activeElements.length; i++) {
+                if (t == activeElements[i] && !matchesSelector(e.relatedTarget || e.toElement, "*", t)) {
+                  t.__tamee.over = false;
+                  activeElements.splice(i, 1);
+                  meeHelper(EVENT_MOUSEEXIT, e, obj, t);
+                }
+              }
+            };
+            _bind$1(obj, EVENT_MOUSEOVER, _curryChildFilter(children, obj, over, EVENT_MOUSEOVER), over);
+            _bind$1(obj, EVENT_MOUSEOUT, _curryChildFilter(children, obj, out, EVENT_MOUSEOUT), out);
+          }
+          fn.__taUnstore = function () {
+            delete obj.__tamee[evt][fn.__tauid];
+          };
+          _store(obj, evt, fn);
+          obj.__tamee[evt][fn.__tauid] = fn;
+        };
+      }
+    }]);
+    return MouseEnterExitHandler;
+  }();
+  var EventManager = function () {
+    function EventManager(params) {
+      _classCallCheck$e(this, EventManager);
+      _defineProperty$d(this, "clickThreshold", void 0);
+      _defineProperty$d(this, "dblClickThreshold", void 0);
+      _defineProperty$d(this, "tapHandler", void 0);
+      _defineProperty$d(this, "mouseEnterExitHandler", void 0);
+      params = params || {};
+      this.clickThreshold = params.clickThreshold || 250;
+      this.dblClickThreshold = params.dblClickThreshold || 450;
+      this.mouseEnterExitHandler = MouseEnterExitHandler.generate();
+      this.tapHandler = TapHandler.generate(this.clickThreshold, this.dblClickThreshold);
+    }
+    _createClass$e(EventManager, [{
+      key: "_doBind",
+      value: function _doBind(el, evt, fn, children, options) {
+        if (fn == null) return;
+        var jel = el;
+        if (evt === EVENT_TAP || evt === EVENT_DBL_TAP || evt === EVENT_CONTEXTMENU) {
+          this.tapHandler(jel, evt, fn, children, options);
+        } else if (evt === EVENT_MOUSEENTER || evt == EVENT_MOUSEEXIT) this.mouseEnterExitHandler(jel, evt, fn, children, options);else {
+          DefaultHandler(jel, evt, fn, children, options);
+        }
+      }
+    }, {
+      key: "on",
+      value: function on(el, event, children, fn, options) {
+        var _c = fn == null ? null : children,
+            _f = fn == null ? children : fn;
+        this._doBind(el, event, _f, _c, options);
+        return this;
+      }
+    }, {
+      key: "off",
+      value: function off(el, event, fn) {
+        _unbind(el, event, fn);
+        return this;
+      }
+    }, {
+      key: "trigger",
+      value: function trigger(el, event, originalEvent, payload, detail) {
+        var originalIsMouse = isMouseDevice() && (typeof MouseEvent === "undefined" || originalEvent == null || originalEvent.constructor === MouseEvent);
+        var eventToBind = isTouchDevice$1() && !isMouseDevice() && touchMap[event] ? touchMap[event] : event,
+            bindingAMouseEvent = !(isTouchDevice$1() && !isMouseDevice() && touchMap[event]);
+        var pl = pageLocation(originalEvent),
+            sl = screenLocation(originalEvent),
+            cl = clientLocation(originalEvent);
+        _each$1(el, function (_el) {
+          var evt;
+          originalEvent = originalEvent || {
+            screenX: sl.x,
+            screenY: sl.y,
+            clientX: cl.x,
+            clientY: cl.y
+          };
+          var _decorate = function _decorate(_evt) {
+            if (payload) {
+              _evt.payload = payload;
+            }
+          };
+          var eventGenerators = {
+            "TouchEvent": function TouchEvent(evt) {
+              var touchList = _touchAndList(_el, pl.x, pl.y, sl.x, sl.y, cl.x, cl.y),
+                  init = evt.initTouchEvent || evt.initEvent;
+              init(eventToBind, true, true, window, null, sl.x, sl.y, cl.x, cl.y, false, false, false, false, touchList, touchList, touchList, 1, 0);
+            },
+            "MouseEvents": function MouseEvents(evt) {
+              evt.initMouseEvent(eventToBind, true, true, window, detail == null ? 1 : detail, sl.x, sl.y, cl.x, cl.y, false, false, false, false, 1, _el);
+            }
+          };
+          var ite = !bindingAMouseEvent && !originalIsMouse && isTouchDevice$1() && touchMap[event],
+              evtName = ite ? "TouchEvent" : "MouseEvents";
+          evt = document.createEvent(evtName);
+          eventGenerators[evtName](evt);
+          _decorate(evt);
+          _el.dispatchEvent(evt);
+        });
+        return this;
+      }
+    }]);
+    return EventManager;
+  }();
+
+  function findDelegateElement(parentElement, childElement, selector) {
+    if (matchesSelector$1(childElement, selector, parentElement)) {
+      return childElement;
+    } else {
+      var currentParent = childElement.parentNode;
+      while (currentParent != null && currentParent !== parentElement) {
+        if (matchesSelector$1(currentParent, selector, parentElement)) {
+          return currentParent;
+        } else {
+          currentParent = currentParent.parentNode;
+        }
+      }
+    }
+  }
+  function _getPosition(el) {
+    return {
+      x: el.offsetLeft,
+      y: el.offsetTop
+    };
+  }
+  function _getSize(el) {
+    return {
+      w: el.offsetWidth,
+      h: el.offsetHeight
+    };
+  }
+  function _setPosition(el, pos) {
+    el.style.left = pos.x + "px";
+    el.style.top = pos.y + "px";
+  }
+  function _assignId(obj) {
+    if (typeof obj === "function") {
+      obj._katavorioId = uuid();
+      return obj._katavorioId;
+    } else {
+      return obj;
+    }
+  }
+  function isInsideParent(instance, _el, pos) {
+    var p = _el.parentNode,
+        s = instance.getSize(p),
+        ss = instance.getSize(_el),
+        leftEdge = pos.x,
+        rightEdge = leftEdge + ss.w,
+        topEdge = pos.y,
+        bottomEdge = topEdge + ss.h;
+    return rightEdge > 0 && leftEdge < s.w && bottomEdge > 0 && topEdge < s.h;
+  }
+  function findMatchingSelector(availableSelectors, parentElement, childElement) {
+    var el = null;
+    var draggableId = parentElement.getAttribute("katavorio-draggable"),
+        prefix = draggableId != null ? "[katavorio-draggable='" + draggableId + "'] " : "";
+    for (var i = 0; i < availableSelectors.length; i++) {
+      el = findDelegateElement(parentElement, childElement, prefix + availableSelectors[i].selector);
+      if (el != null) {
+        if (availableSelectors[i].filter) {
+          var matches = matchesSelector$1(childElement, availableSelectors[i].filter, el),
+              exclude = availableSelectors[i].filterExclude === true;
+          if (exclude && !matches || matches) {
+            return null;
+          }
+        }
+        return [availableSelectors[i], el];
+      }
+    }
+    return null;
+  }
+  var EVENT_START = "start";
+  var EVENT_BEFORE_START = "beforeStart";
+  var EVENT_DRAG = "drag";
+  var EVENT_DROP = "drop";
+  var EVENT_OVER = "over";
+  var EVENT_OUT = "out";
+  var EVENT_STOP = "stop";
+  var ATTRIBUTE_DRAGGABLE = "katavorio-draggable";
+  var CLASS_DRAGGABLE$1 = ATTRIBUTE_DRAGGABLE;
+  var DEFAULT_GRID_X = 10;
+  var DEFAULT_GRID_Y = 10;
+  var TRUE = function TRUE() {
+    return true;
+  };
+  var FALSE = function FALSE() {
+    return false;
+  };
+  var _classes = {
+    delegatedDraggable: "katavorio-delegated-draggable",
+    draggable: CLASS_DRAGGABLE$1,
+    drag: "katavorio-drag",
+    selected: "katavorio-drag-selected",
+    noSelect: "katavorio-drag-no-select",
+    ghostProxy: "katavorio-ghost-proxy",
+    clonedDrag: "katavorio-clone-drag"
+  };
+  var _events = [EVENT_STOP, EVENT_START, EVENT_DRAG, EVENT_DROP, EVENT_OVER, EVENT_OUT, EVENT_BEFORE_START];
+  var _devNull = function _devNull() {};
+  var _each = function _each(obj, fn) {
+    if (obj == null) return;
+    obj = !isString(obj) && obj.tagName == null && obj.length != null ? obj : [obj];
+    for (var i = 0; i < obj.length; i++) {
+      fn.apply(obj[i], [obj[i]]);
+    }
+  };
+  var _inputFilter = function _inputFilter(e, el, collicat) {
+    var t = e.srcElement || e.target;
+    return !matchesSelector$1(t, collicat.getInputFilterSelector(), el);
+  };
+  var Base$1 = function () {
+    function Base(el, k) {
+      _classCallCheck$e(this, Base);
+      this.el = el;
+      this.k = k;
+      _defineProperty$d(this, "_class", void 0);
+      _defineProperty$d(this, "uuid", uuid());
+      _defineProperty$d(this, "enabled", true);
+      _defineProperty$d(this, "scopes", []);
+    }
+    _createClass$e(Base, [{
+      key: "setEnabled",
+      value: function setEnabled(e) {
+        this.enabled = e;
+      }
+    }, {
+      key: "isEnabled",
+      value: function isEnabled() {
+        return this.enabled;
+      }
+    }, {
+      key: "toggleEnabled",
+      value: function toggleEnabled() {
+        this.enabled = !this.enabled;
+      }
+    }, {
+      key: "addScope",
+      value: function addScope(scopes) {
+        var m = {};
+        _each(this.scopes, function (s) {
+          m[s] = true;
+        });
+        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
+          m[s] = true;
+        });
+        this.scopes.length = 0;
+        for (var i in m) {
+          this.scopes.push(i);
+        }
+      }
+    }, {
+      key: "removeScope",
+      value: function removeScope(scopes) {
+        var m = {};
+        _each(this.scopes, function (s) {
+          m[s] = true;
+        });
+        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
+          delete m[s];
+        });
+        this.scopes.length = 0;
+        for (var i in m) {
+          this.scopes.push(i);
+        }
+      }
+    }, {
+      key: "toggleScope",
+      value: function toggleScope(scopes) {
+        var m = {};
+        _each(this.scopes, function (s) {
+          m[s] = true;
+        });
+        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
+          if (m[s]) delete m[s];else m[s] = true;
+        });
+        this.scopes.length = 0;
+        for (var i in m) {
+          this.scopes.push(i);
+        }
+      }
+    }]);
+    return Base;
+  }();
+  function getConstrainingRectangle(el) {
+    return {
+      w: el.parentNode.offsetWidth + el.parentNode.scrollLeft,
+      h: el.parentNode.offsetHeight + el.parentNode.scrollTop
+    };
+  }
+  var ContainmentType;
+  (function (ContainmentType) {
+    ContainmentType["notNegative"] = "notNegative";
+    ContainmentType["parent"] = "parent";
+    ContainmentType["parentEnclosed"] = "parentEnclosed";
+  })(ContainmentType || (ContainmentType = {}));
+  var Drag = function (_Base) {
+    _inherits$9(Drag, _Base);
+    var _super = _createSuper$9(Drag);
+    function Drag(el, params, k) {
+      var _this;
+      _classCallCheck$e(this, Drag);
+      _this = _super.call(this, el, k);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_class", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "rightButtonCanDrag", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "consumeStartEvent", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "clone", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "scroll", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "trackScroll", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_downAt", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_posAtDown", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_pagePosAtDown", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_pageDelta", {
+        x: 0,
+        y: 0
+      });
+      _defineProperty$d(_assertThisInitialized$9(_this), "_moving", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_lastPosition", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_lastScrollValues", {
+        x: 0,
+        y: 0
+      });
+      _defineProperty$d(_assertThisInitialized$9(_this), "_initialScroll", {
+        x: 0,
+        y: 0
+      });
+      _defineProperty$d(_assertThisInitialized$9(_this), "_size", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_currentParentPosition", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostParentPosition", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_dragEl", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_multipleDrop", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostProxyOffsets", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostDx", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostDy", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_isConstrained", false);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostProxyParent", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_useGhostProxy", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ghostProxyFunction", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_activeSelectorParams", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_availableSelectors", []);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_canDrag", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_consumeFilteredEvents", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_parent", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_ignoreZoom", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_filters", {});
+      _defineProperty$d(_assertThisInitialized$9(_this), "_constrainRect", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementToDrag", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "downListener", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "moveListener", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "upListener", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "scrollTracker", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "listeners", {
+        "start": [],
+        "drag": [],
+        "stop": [],
+        "over": [],
+        "out": [],
+        "beforeStart": [],
+        "revert": []
+      });
+      _this._class = _this.k.css.draggable;
+      addClass(_this.el, _this._class);
+      _this.downListener = _this._downListener.bind(_assertThisInitialized$9(_this));
+      _this.upListener = _this._upListener.bind(_assertThisInitialized$9(_this));
+      _this.moveListener = _this._moveListener.bind(_assertThisInitialized$9(_this));
+      _this.rightButtonCanDrag = params.rightButtonCanDrag === true;
+      _this.consumeStartEvent = params.consumeStartEvent !== false;
+      _this._dragEl = _this.el;
+      _this.clone = params.clone === true;
+      _this.scroll = params.scroll === true;
+      _this.trackScroll = params.trackScroll !== false;
+      _this._multipleDrop = params.multipleDrop !== false;
+      _this._canDrag = params.canDrag || TRUE;
+      _this._consumeFilteredEvents = params.consumeFilteredEvents;
+      _this._parent = params.parent;
+      _this._ignoreZoom = params.ignoreZoom === true;
+      _this._ghostProxyParent = params.ghostProxyParent;
+      if (_this.trackScroll) {
+        _this.scrollTracker = _this._trackScroll.bind(_assertThisInitialized$9(_this));
+        document.addEventListener("scroll", _this.scrollTracker);
+      }
+      if (params.ghostProxy === true) {
+        _this._useGhostProxy = TRUE;
+      } else {
+        if (params.ghostProxy && typeof params.ghostProxy === "function") {
+          _this._useGhostProxy = params.ghostProxy;
+        } else {
+          _this._useGhostProxy = function (container, dragEl) {
+            if (_this._activeSelectorParams && _this._activeSelectorParams.useGhostProxy) {
+              return _this._activeSelectorParams.useGhostProxy(container, dragEl);
+            } else {
+              return false;
+            }
+          };
+        }
+      }
+      if (params.makeGhostProxy) {
+        _this._ghostProxyFunction = params.makeGhostProxy;
+      } else {
+        _this._ghostProxyFunction = function (el) {
+          if (_this._activeSelectorParams && _this._activeSelectorParams.makeGhostProxy) {
+            return _this._activeSelectorParams.makeGhostProxy(el);
+          } else {
+            return el.cloneNode(true);
+          }
+        };
+      }
+      if (params.selector) {
+        var draggableId = _this.el.getAttribute(ATTRIBUTE_DRAGGABLE);
+        if (draggableId == null) {
+          draggableId = "" + new Date().getTime();
+          _this.el.setAttribute("katavorio-draggable", draggableId);
+        }
+        _this._availableSelectors.push(params);
+      }
+      _this.k.eventManager.on(_this.el, EVENT_MOUSEDOWN, _this.downListener);
+      return _this;
+    }
+    _createClass$e(Drag, [{
+      key: "_trackScroll",
+      value: function _trackScroll(e) {
+        if (this._moving) {
+          var currentScrollValues = {
+            x: document.documentElement.scrollLeft,
+            y: document.documentElement.scrollTop
+          },
+              dsx = currentScrollValues.x - this._lastScrollValues.x,
+              dsy = currentScrollValues.y - this._lastScrollValues.y,
+              _pos = {
+            x: dsx + this._lastPosition.x,
+            y: dsy + this._lastPosition.y
+          },
+          dx = _pos.x - this._downAt.x,
+              dy = _pos.y - this._downAt.y,
+              _z = this._ignoreZoom ? 1 : this.k.getZoom();
+          if (this._dragEl && this._dragEl.parentNode) {
+            dx += this._dragEl.parentNode.scrollLeft - this._initialScroll.x;
+            dy += this._dragEl.parentNode.scrollTop - this._initialScroll.y;
+          }
+          dx /= _z;
+          dy /= _z;
+          this.moveBy(dx, dy, e);
+          this._lastPosition = _pos;
+          this._lastScrollValues = currentScrollValues;
+        }
+      }
+    }, {
+      key: "on",
+      value: function on(evt, fn) {
+        if (this.listeners[evt]) {
+          this.listeners[evt].push(fn);
+        }
+      }
+    }, {
+      key: "off",
+      value: function off(evt, fn) {
+        if (this.listeners[evt]) {
+          var l = [];
+          for (var i = 0; i < this.listeners[evt].length; i++) {
+            if (this.listeners[evt][i] !== fn) {
+              l.push(this.listeners[evt][i]);
+            }
+          }
+          this.listeners[evt] = l;
+        }
+      }
+    }, {
+      key: "_upListener",
+      value: function _upListener(e) {
+        if (this._downAt) {
+          this._downAt = null;
+          this.k.eventManager.off(document, EVENT_MOUSEMOVE, this.moveListener);
+          this.k.eventManager.off(document, EVENT_MOUSEUP, this.upListener);
+          removeClass(document.body, _classes.noSelect);
+          this.unmark(e);
+          this.stop(e);
+          this._moving = false;
+          if (this.clone) {
+            this._dragEl && this._dragEl.parentNode && this._dragEl.parentNode.removeChild(this._dragEl);
+            this._dragEl = null;
+          } else {
+            if (this._activeSelectorParams && this._activeSelectorParams.revertFunction) {
+              if (this._activeSelectorParams.revertFunction(this._dragEl, _getPosition(this._dragEl)) === true) {
+                _setPosition(this._dragEl, this._posAtDown);
+                this._dispatch(EVENT_REVERT, this._dragEl);
+              }
+            }
+          }
+        }
+      }
+    }, {
+      key: "_downListener",
+      value: function _downListener(e) {
+        if (e.defaultPrevented) {
+          return;
+        }
+        var isNotRightClick = this.rightButtonCanDrag || e.which !== 3 && e.button !== 2;
+        if (isNotRightClick && this.isEnabled() && this._canDrag()) {
+          var _f = this._testFilter(e) && _inputFilter(e, this.el, this.k);
+          if (_f) {
+            this._activeSelectorParams = null;
+            this._elementToDrag = null;
+            if (this._availableSelectors.length === 0) {
+              console.log("JSPLUMB: no available drag selectors");
+            }
+            var eventTarget = e.target || e.srcElement;
+            var match = findMatchingSelector(this._availableSelectors, this.el, eventTarget);
+            if (match != null) {
+              this._activeSelectorParams = match[0];
+              this._elementToDrag = match[1];
+            }
+            if (this._activeSelectorParams == null || this._elementToDrag == null) {
+              return;
+            }
+            var initial = this._activeSelectorParams.dragInit ? this._activeSelectorParams.dragInit(this._elementToDrag) : null;
+            if (initial != null) {
+              this._elementToDrag = initial;
+            }
+            if (this.clone) {
+              this._dragEl = this._elementToDrag.cloneNode(true);
+              addClass(this._dragEl, _classes.clonedDrag);
+              this._dragEl.setAttribute("id", null);
+              this._dragEl.style.position = "absolute";
+              if (this._parent != null) {
+                var _p2 = _getPosition(this.el);
+                this._dragEl.style.left = _p2.x + "px";
+                this._dragEl.style.top = _p2.y + "px";
+                this._parent.appendChild(this._dragEl);
+              } else {
+                var b = offsetRelativeToRoot(this._elementToDrag);
+                this._dragEl.style.left = b.x + "px";
+                this._dragEl.style.top = b.y + "px";
+                document.body.appendChild(this._dragEl);
+              }
+            } else {
+              this._dragEl = this._elementToDrag;
+            }
+            if (this.consumeStartEvent) {
+              consume(e);
+            }
+            this._downAt = pageLocation(e);
+            if (this._dragEl && this._dragEl.parentNode) {
+              this._initialScroll = {
+                x: this._dragEl.parentNode.scrollLeft,
+                y: this._dragEl.parentNode.scrollTop
+              };
+            }
+            this._posAtDown = _getPosition(this._dragEl);
+            this._pagePosAtDown = offsetRelativeToRoot(this._dragEl);
+            this._pageDelta = {
+              x: this._pagePosAtDown.x - this._posAtDown.x,
+              y: this._pagePosAtDown.y - this._posAtDown.y
+            };
+            this._size = _getSize(this._dragEl);
+            this.k.eventManager.on(document, EVENT_MOUSEMOVE, this.moveListener);
+            this.k.eventManager.on(document, EVENT_MOUSEUP, this.upListener);
+            addClass(document.body, _classes.noSelect);
+            this._dispatch(EVENT_BEFORE_START, {
+              el: this.el,
+              pos: this._posAtDown,
+              e: e,
+              drag: this,
+              size: this._size
+            });
+          } else if (this._consumeFilteredEvents) {
+            consume(e);
+          }
+        }
+      }
+    }, {
+      key: "_moveListener",
+      value: function _moveListener(e) {
+        if (this._downAt) {
+          if (!this._moving) {
+            var dispatchResult = this._dispatch(EVENT_START, {
+              el: this.el,
+              pos: this._posAtDown,
+              e: e,
+              drag: this,
+              size: this._size
+            });
+            if (dispatchResult !== false) {
+              if (!this._downAt) {
+                return;
+              }
+              this.mark(dispatchResult);
+              this._moving = true;
+            } else {
+              this.abort();
+            }
+          }
+          if (this._downAt) {
+            var _pos2 = pageLocation(e),
+                dx = _pos2.x - this._downAt.x,
+                dy = _pos2.y - this._downAt.y,
+                _z2 = this._ignoreZoom ? 1 : this.k.getZoom();
+            this._lastPosition = {
+              x: _pos2.x,
+              y: _pos2.y
+            };
+            this._lastScrollValues = {
+              x: document.documentElement.scrollLeft,
+              y: document.documentElement.scrollTop
+            };
+            if (this._dragEl && this._dragEl.parentNode) {
+              dx += this._dragEl.parentNode.scrollLeft - this._initialScroll.x;
+              dy += this._dragEl.parentNode.scrollTop - this._initialScroll.y;
+            }
+            dx /= _z2;
+            dy /= _z2;
+            this.moveBy(dx, dy, e);
+          }
+        }
+      }
+    }, {
+      key: "mark",
+      value: function mark(payload) {
+        this._posAtDown = _getPosition(this._dragEl);
+        this._pagePosAtDown = offsetRelativeToRoot(this._dragEl);
+        this._pageDelta = {
+          x: this._pagePosAtDown.x - this._posAtDown.x,
+          y: this._pagePosAtDown.y - this._posAtDown.y
+        };
+        this._size = _getSize(this._dragEl);
+        addClass(this._dragEl, this.k.css.drag);
+        this._constrainRect = getConstrainingRectangle(this._dragEl);
+        this._ghostDx = 0;
+        this._ghostDy = 0;
+      }
+    }, {
+      key: "unmark",
+      value: function unmark(e) {
+        if (this._isConstrained && this._useGhostProxy(this._elementToDrag, this._dragEl)) {
+          this._ghostProxyOffsets = {
+            x: this._dragEl.offsetLeft - this._ghostDx,
+            y: this._dragEl.offsetTop - this._ghostDy
+          };
+          this._dragEl.parentNode.removeChild(this._dragEl);
+          this._dragEl = this._elementToDrag;
+        } else {
+          this._ghostProxyOffsets = null;
+        }
+        removeClass(this._dragEl, this.k.css.drag);
+        this._isConstrained = false;
+      }
+    }, {
+      key: "moveBy",
+      value: function moveBy(dx, dy, e) {
+        var desiredLoc = this.toGrid({
+          x: this._posAtDown.x + dx,
+          y: this._posAtDown.y + dy
+        }),
+            cPos = this._doConstrain(desiredLoc, this._dragEl, this._constrainRect, this._size);
+        if (this._useGhostProxy(this.el, this._dragEl)) {
+          if (desiredLoc.x !== cPos.x || desiredLoc.y !== cPos.y) {
+            if (!this._isConstrained) {
+              var gp = this._ghostProxyFunction(this._elementToDrag);
+              addClass(gp, _classes.ghostProxy);
+              if (this._ghostProxyParent) {
+                this._ghostProxyParent.appendChild(gp);
+                this._currentParentPosition = offsetRelativeToRoot(this._elementToDrag.parentNode);
+                this._ghostParentPosition = offsetRelativeToRoot(this._ghostProxyParent);
+                this._ghostDx = this._currentParentPosition.x - this._ghostParentPosition.x;
+                this._ghostDy = this._currentParentPosition.y - this._ghostParentPosition.y;
+              } else {
+                this._elementToDrag.parentNode.appendChild(gp);
+              }
+              this._dragEl = gp;
+              this._isConstrained = true;
+            }
+            cPos = desiredLoc;
+          } else {
+            if (this._isConstrained) {
+              this._dragEl.parentNode.removeChild(this._dragEl);
+              this._dragEl = this._elementToDrag;
+              this._isConstrained = false;
+              this._currentParentPosition = null;
+              this._ghostParentPosition = null;
+              this._ghostDx = 0;
+              this._ghostDy = 0;
+            }
+          }
+        }
+        _setPosition(this._dragEl, {
+          x: cPos.x + this._ghostDx,
+          y: cPos.y + this._ghostDy
+        });
+        this._dispatch(EVENT_DRAG, {
+          el: this.el,
+          pos: cPos,
+          e: e,
+          drag: this,
+          size: this._size,
+          originalPos: this._posAtDown
+        });
+      }
+    }, {
+      key: "abort",
+      value: function abort() {
+        if (this._downAt != null) {
+          this._upListener();
+        }
+      }
+    }, {
+      key: "getDragElement",
+      value: function getDragElement(retrieveOriginalElement) {
+        return retrieveOriginalElement ? this._elementToDrag || this.el : this._dragEl || this.el;
+      }
+    }, {
+      key: "stop",
+      value: function stop(e, force) {
+        if (force || this._moving) {
+          var positions = [],
+              dPos = _getPosition(this._dragEl);
+          positions.push([this._dragEl, dPos, this, this._size]);
+          this._dispatch(EVENT_STOP, {
+            el: this._dragEl,
+            pos: this._ghostProxyOffsets || dPos,
+            finalPos: dPos,
+            e: e,
+            drag: this,
+            selection: positions,
+            size: this._size,
+            originalPos: {
+              x: this._posAtDown.x,
+              y: this._posAtDown.y
+            }
+          });
+        } else if (!this._moving) {
+          this._activeSelectorParams.dragAbort ? this._activeSelectorParams.dragAbort(this._elementToDrag) : null;
+        }
+      }
+    }, {
+      key: "_dispatch",
+      value: function _dispatch(evt, value) {
+        var result = null;
+        if (this._activeSelectorParams && this._activeSelectorParams[evt]) {
+          result = this._activeSelectorParams[evt](value);
+        } else if (this.listeners[evt]) {
+          for (var i = 0; i < this.listeners[evt].length; i++) {
+            try {
+              var v = this.listeners[evt][i](value);
+              if (v != null) {
+                result = v;
+              }
+            } catch (e) {}
+          }
+        }
+        return result;
+      }
+    }, {
+      key: "resolveGrid",
+      value: function resolveGrid() {
+        var out = {
+          grid: null,
+          thresholdX: DEFAULT_GRID_X / 2,
+          thresholdY: DEFAULT_GRID_Y / 2
+        };
+        if (this._activeSelectorParams != null && this._activeSelectorParams.grid != null) {
+          out.grid = this._activeSelectorParams.grid;
+          if (this._activeSelectorParams.snapThreshold != null) {
+            out.thresholdX = this._activeSelectorParams.snapThreshold;
+            out.thresholdY = this._activeSelectorParams.snapThreshold;
+          }
+        }
+        return out;
+      }
+    }, {
+      key: "toGrid",
+      value: function toGrid(pos) {
+        var _this$resolveGrid = this.resolveGrid(),
+            grid = _this$resolveGrid.grid,
+            thresholdX = _this$resolveGrid.thresholdX,
+            thresholdY = _this$resolveGrid.thresholdY;
+        if (grid == null) {
+          return pos;
+        } else {
+          var tx = grid ? grid.w / 2 : thresholdX,
+              ty = grid ? grid.h / 2 : thresholdY;
+          return snapToGrid(pos, grid, tx, ty);
+        }
+      }
+    }, {
+      key: "setUseGhostProxy",
+      value: function setUseGhostProxy(val) {
+        this._useGhostProxy = val ? TRUE : FALSE;
+      }
+    }, {
+      key: "_doConstrain",
+      value: function _doConstrain(pos, dragEl, _constrainRect, _size) {
+        if (this._activeSelectorParams != null && this._activeSelectorParams.constrainFunction && typeof this._activeSelectorParams.constrainFunction === "function") {
+          return this._activeSelectorParams.constrainFunction(pos, dragEl, _constrainRect, _size);
+        } else {
+          return pos;
+        }
+      }
+    }, {
+      key: "_testFilter",
+      value: function _testFilter(e) {
+        for (var key in this._filters) {
+          var f = this._filters[key];
+          var rv = f[0](e);
+          if (f[1]) {
+            rv = !rv;
+          }
+          if (!rv) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }, {
+      key: "addFilter",
+      value: function addFilter(f, _exclude) {
+        var _this2 = this;
+        if (f) {
+          var key = _assignId(f);
+          this._filters[key] = [function (e) {
+            var t = e.srcElement || e.target;
+            var m;
+            if (isString(f)) {
+              m = matchesSelector$1(t, f, _this2.el);
+            } else if (typeof f === "function") {
+              m = f(e, _this2.el);
+            }
+            return m;
+          }, _exclude !== false];
+        }
+      }
+    }, {
+      key: "removeFilter",
+      value: function removeFilter(f) {
+        var key = typeof f === "function" ? f._katavorioId : f;
+        delete this._filters[key];
+      }
+    }, {
+      key: "clearAllFilters",
+      value: function clearAllFilters() {
+        this._filters = {};
+      }
+    }, {
+      key: "addSelector",
+      value: function addSelector(params, atStart) {
+        if (params.selector) {
+          if (atStart) {
+            this._availableSelectors.unshift(params);
+          } else {
+            this._availableSelectors.push(params);
+          }
+        }
+      }
+    }, {
+      key: "destroy",
+      value: function destroy() {
+        this.k.eventManager.off(this.el, EVENT_MOUSEDOWN, this.downListener);
+        this.k.eventManager.off(document, EVENT_MOUSEMOVE, this.moveListener);
+        this.k.eventManager.off(document, EVENT_MOUSEUP, this.upListener);
+        this.downListener = null;
+        this.upListener = null;
+        this.moveListener = null;
+        if (this.scrollTracker != null) {
+          document.removeEventListener("scroll", this.scrollTracker);
+        }
+      }
+    }]);
+    return Drag;
+  }(Base$1);
+  var DEFAULT_INPUTS = ["input", "textarea", "select", "button", "option"];
+  var DEFAULT_INPUT_FILTER_SELECTOR = DEFAULT_INPUTS.join(",");
+  var Collicat = function () {
+    function Collicat(options) {
+      _classCallCheck$e(this, Collicat);
+      _defineProperty$d(this, "eventManager", void 0);
+      _defineProperty$d(this, "zoom", 1);
+      _defineProperty$d(this, "css", {});
+      _defineProperty$d(this, "inputFilterSelector", void 0);
+      options = options || {};
+      this.inputFilterSelector = options.inputFilterSelector || DEFAULT_INPUT_FILTER_SELECTOR;
+      this.eventManager = new EventManager();
+      this.zoom = options.zoom || 1;
+      var _c = options.css || {};
+      extend(this.css, _c);
+    }
+    _createClass$e(Collicat, [{
+      key: "getZoom",
+      value: function getZoom() {
+        return this.zoom;
+      }
+    }, {
+      key: "setZoom",
+      value: function setZoom(z) {
+        this.zoom = z;
+      }
+    }, {
+      key: "_prepareParams",
+      value: function _prepareParams(p) {
+        p = p || {};
+        var _p = {
+          events: {}
+        },
+            i;
+        for (i in p) {
+          _p[i] = p[i];
+        }
+        for (i = 0; i < _events.length; i++) {
+          _p.events[_events[i]] = p[_events[i]] || _devNull;
+        }
+        return _p;
+      }
+    }, {
+      key: "getInputFilterSelector",
+      value: function getInputFilterSelector() {
+        return this.inputFilterSelector;
+      }
+    }, {
+      key: "setInputFilterSelector",
+      value: function setInputFilterSelector(selector) {
+        this.inputFilterSelector = selector;
+        return this;
+      }
+    }, {
+      key: "draggable",
+      value: function draggable(el, params) {
+        if (el._katavorioDrag == null) {
+          var _p3 = this._prepareParams(params);
+          var d = new Drag(el, _p3, this);
+          addClass(el, _classes.delegatedDraggable);
+          el._katavorioDrag = d;
+          return d;
+        } else {
+          return el._katavorioDrag;
+        }
+      }
+    }, {
+      key: "destroyDraggable",
+      value: function destroyDraggable(el) {
+        if (el._katavorioDrag) {
+          el._katavorioDrag.destroy();
+          delete el._katavorioDrag;
+        }
+      }
+    }]);
+    return Collicat;
+  }();
+
+  var CLASS_DRAG_SELECTED = "jtk-drag-selected";
+  var DragSelection = function () {
+    function DragSelection(instance) {
+      _classCallCheck$e(this, DragSelection);
+      this.instance = instance;
+      _defineProperty$d(this, "_dragSelection", []);
+      _defineProperty$d(this, "_dragSizes", new Map());
+      _defineProperty$d(this, "_dragElements", new Map());
+      _defineProperty$d(this, "_dragElementStartPositions", new Map());
+      _defineProperty$d(this, "_dragElementPositions", new Map());
+      _defineProperty$d(this, "__activeSet", void 0);
+    }
+    _createClass$e(DragSelection, [{
+      key: "_activeSet",
+      get: function get() {
+        if (this.__activeSet == null) {
+          return this._dragSelection;
+        } else {
+          return this.__activeSet;
+        }
+      }
+    }, {
+      key: "length",
+      get: function get() {
+        return this._dragSelection.length;
+      }
+    }, {
+      key: "filterActiveSet",
+      value: function filterActiveSet(fn) {
+        var _this = this;
+        this.__activeSet = [];
+        forEach(this._dragSelection, function (p) {
+          if (fn(p)) {
+            _this.__activeSet.push(p);
+          }
+        });
+      }
+    }, {
+      key: "clear",
+      value: function clear() {
+        var _this2 = this;
+        this.reset();
+        forEach(this._dragSelection, function (p) {
+          return _this2.instance.removeClass(p.jel, CLASS_DRAG_SELECTED);
+        });
+        this._dragSelection.length = 0;
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        this._dragElementStartPositions.clear();
+        this._dragElementPositions.clear();
+        this._dragSizes.clear();
+        this._dragElements.clear();
+        this.__activeSet = null;
+      }
+    }, {
+      key: "initialisePositions",
+      value: function initialisePositions() {
+        var _this3 = this;
+        forEach(this._activeSet, function (p) {
+          var off = {
+            x: parseInt("" + p.jel.offsetLeft, 10),
+            y: parseInt("" + p.jel.offsetTop, 10)
+          };
+          _this3._dragElementStartPositions.set(p.id, off);
+          _this3._dragElementPositions.set(p.id, off);
+          _this3._dragSizes.set(p.id, _this3.instance.getSize(p.jel));
+        });
+      }
+    }, {
+      key: "updatePositions",
+      value: function updatePositions(currentPosition, originalPosition, callback) {
+        var _this4 = this;
+        var dx = currentPosition.x - originalPosition.x,
+            dy = currentPosition.y - originalPosition.y;
+        forEach(this._activeSet, function (p) {
+          var op = _this4._dragElementStartPositions.get(p.id);
+          if (op) {
+            var x = op.x + dx,
+                y = op.y + dy;
+            var _s = _this4._dragSizes.get(p.id);
+            var _b = {
+              x: x,
+              y: y,
+              w: _s.w,
+              h: _s.h
+            };
+            if (p.jel._jsPlumbParentGroup && p.jel._jsPlumbParentGroup.constrain) {
+              var constrainRect = {
+                w: p.jel.parentNode.offsetWidth + p.jel.parentNode.scrollLeft,
+                h: p.jel.parentNode.offsetHeight + p.jel.parentNode.scrollTop
+              };
+              _b.x = Math.max(_b.x, 0);
+              _b.y = Math.max(_b.y, 0);
+              _b.x = Math.min(_b.x, constrainRect.w - _s.w);
+              _b.y = Math.min(_b.y, constrainRect.h - _s.h);
+            }
+            _this4._dragElementPositions.set(p.id, {
+              x: x,
+              y: y
+            });
+            p.jel.style.left = _b.x + "px";
+            p.jel.style.top = _b.y + "px";
+            callback(p.jel, p.id, _s, _b);
+          }
+        });
+      }
+    }, {
+      key: "each",
+      value: function each(f) {
+        var _this5 = this;
+        forEach(this._activeSet, function (p) {
+          var s = _this5._dragSizes.get(p.id);
+          var o = _this5._dragElementPositions.get(p.id);
+          var orig = _this5._dragElementStartPositions.get(p.id);
+          f(p.jel, p.id, o, s, orig);
+        });
+      }
+    }, {
+      key: "add",
+      value: function add(el, id) {
+        var jel = el;
+        id = id || this.instance.getId(jel);
+        var idx = findWithFunction(this._dragSelection, function (p) {
+          return p.id === id;
+        });
+        if (idx === -1) {
+          this.instance.addClass(el, CLASS_DRAG_SELECTED);
+          this._dragSelection.push({
+            id: id,
+            jel: jel
+          });
+        }
+      }
+    }, {
+      key: "remove",
+      value: function remove(el) {
+        var _this6 = this;
+        var jel = el;
+        this._dragSelection = this._dragSelection.filter(function (p) {
+          var out = p.jel !== jel;
+          if (!out) {
+            _this6.instance.removeClass(p.jel, CLASS_DRAG_SELECTED);
+          }
+          return out;
+        });
+      }
+    }, {
+      key: "toggle",
+      value: function toggle(el) {
+        var jel = el;
+        var idx = findWithFunction(this._dragSelection, function (p) {
+          return p.jel === jel;
+        });
+        if (idx !== -1) {
+          this.remove(jel);
+        } else {
+          this.add(el);
+        }
+      }
+    }]);
+    return DragSelection;
+  }();
+
+  var CLASS_DELEGATED_DRAGGABLE = "jtk-delegated-draggable";
+  var CLASS_DRAGGABLE = "jtk-draggable";
+  var CLASS_DRAG_CONTAINER = "jtk-drag";
+  var CLASS_GHOST_PROXY = "jtk-ghost-proxy";
+  var CLASS_DRAG_ACTIVE = "jtk-drag-active";
+  var CLASS_DRAGGED = "jtk-dragged";
+  var CLASS_DRAG_HOVER = "jtk-drag-hover";
+  var DragManager = function () {
+    function DragManager(instance, dragSelection, options) {
+      var _this = this;
+      _classCallCheck$e(this, DragManager);
+      this.instance = instance;
+      this.dragSelection = dragSelection;
+      _defineProperty$d(this, "collicat", void 0);
+      _defineProperty$d(this, "drag", void 0);
+      _defineProperty$d(this, "_draggables", {});
+      _defineProperty$d(this, "_dlist", []);
+      _defineProperty$d(this, "_elementsWithEndpoints", {});
+      _defineProperty$d(this, "_draggablesForElements", {});
+      _defineProperty$d(this, "handlers", []);
+      _defineProperty$d(this, "_trackScroll", void 0);
+      _defineProperty$d(this, "_filtersToAdd", []);
+      this.collicat = new Collicat({
+        zoom: this.instance.currentZoom,
+        css: {
+          noSelect: this.instance.dragSelectClass,
+          delegatedDraggable: CLASS_DELEGATED_DRAGGABLE,
+          draggable: CLASS_DRAGGABLE,
+          drag: CLASS_DRAG_CONTAINER,
+          selected: CLASS_DRAG_SELECTED,
+          active: CLASS_DRAG_ACTIVE,
+          hover: CLASS_DRAG_HOVER,
+          ghostProxy: CLASS_GHOST_PROXY
+        }
+      });
+      this.instance.bind(EVENT_ZOOM, function (z) {
+        _this.collicat.setZoom(z);
+      });
+      options = options || {};
+      this._trackScroll = options.trackScroll !== false;
+    }
+    _createClass$e(DragManager, [{
+      key: "addHandler",
+      value: function addHandler(handler, dragOptions) {
+        var _this2 = this;
+        var o = extend({
+          selector: handler.selector
+        }, dragOptions || {});
+        o.start = wrap(o.start, function (p) {
+          return handler.onStart(p);
+        }, false);
+        o.drag = wrap(o.drag, function (p) {
+          return handler.onDrag(p);
+        });
+        o.stop = wrap(o.stop, function (p) {
+          return handler.onStop(p);
+        });
+        var handlerBeforeStart = (handler.onBeforeStart || function (p) {}).bind(handler);
+        o.beforeStart = wrap(o.beforeStart, function (p) {
+          return handlerBeforeStart(p);
+        });
+        o.dragInit = function (el) {
+          return handler.onDragInit(el);
+        };
+        o.dragAbort = function (el) {
+          return handler.onDragAbort(el);
+        };
+        if (handler.useGhostProxy) {
+          o.useGhostProxy = handler.useGhostProxy;
+          o.makeGhostProxy = handler.makeGhostProxy;
+        }
+        if (o.constrainFunction == null && o.containment != null) {
+          switch (o.containment) {
+            case ContainmentType.notNegative:
+              {
+                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
+                  return {
+                    x: Math.max(0, Math.min(pos.x)),
+                    y: Math.max(0, Math.min(pos.y))
+                  };
+                };
+                break;
+              }
+            case ContainmentType.parent:
+              {
+                var padding = o.containmentPadding || 5;
+                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
+                  var x = pos.x < 0 ? 0 : pos.x > _constrainRect.w - padding ? _constrainRect.w - padding : pos.x;
+                  var y = pos.y < 0 ? 0 : pos.y > _constrainRect.h - padding ? _constrainRect.h - padding : pos.y;
+                  return {
+                    x: x,
+                    y: y
+                  };
+                };
+                break;
+              }
+            case ContainmentType.parentEnclosed:
+              {
+                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
+                  var x = pos.x < 0 ? 0 : pos.x + _size.w > _constrainRect.w ? _constrainRect.w - _size.w : pos.x;
+                  var y = pos.y < 0 ? 0 : pos.y + _size.h > _constrainRect.h ? _constrainRect.h - _size.h : pos.y;
+                  return {
+                    x: x,
+                    y: y
+                  };
+                };
+                break;
+              }
+          }
+        }
+        if (this.drag == null) {
+          o.trackScroll = this._trackScroll;
+          this.drag = this.collicat.draggable(this.instance.getContainer(), o);
+          forEach(this._filtersToAdd, function (filterToAdd) {
+            return _this2.drag.addFilter(filterToAdd[0], filterToAdd[1]);
+          });
+          this.drag.on(EVENT_REVERT, function (el) {
+            _this2.instance.revalidate(el);
+          });
+        } else {
+          this.drag.addSelector(o);
+        }
+        this.handlers.push({
+          handler: handler,
+          options: o
+        });
+        handler.init(this.drag);
+      }
+    }, {
+      key: "addSelector",
+      value: function addSelector(params, atStart) {
+        this.drag && this.drag.addSelector(params, atStart);
+      }
+    }, {
+      key: "addFilter",
+      value: function addFilter(filter, exclude) {
+        if (this.drag == null) {
+          this._filtersToAdd.push([filter, exclude === true]);
+        } else {
+          this.drag.addFilter(filter, exclude);
+        }
+      }
+    }, {
+      key: "removeFilter",
+      value: function removeFilter(filter) {
+        if (this.drag != null) {
+          this.drag.removeFilter(filter);
+        }
+      }
+    }, {
+      key: "setFilters",
+      value: function setFilters(filters) {
+        var _this3 = this;
+        forEach(filters, function (f) {
+          _this3.drag.addFilter(f[0], f[1]);
+        });
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        var out = [];
+        forEach(this.handlers, function (p) {
+          p.handler.reset();
+        });
+        this.handlers.length = 0;
+        if (this.drag != null) {
+          var currentFilters = this.drag._filters;
+          for (var f in currentFilters) {
+            out.push([f, currentFilters[f][1]]);
+          }
+          this.collicat.destroyDraggable(this.instance.getContainer());
+        }
+        delete this.drag;
+        return out;
+      }
+    }, {
+      key: "setOption",
+      value: function setOption(handler, options) {
+        var handlerAndOptions = getWithFunction(this.handlers, function (p) {
+          return p.handler === handler;
+        });
+        if (handlerAndOptions != null) {
+          extend(handlerAndOptions.options, options || {});
+        }
+      }
+    }]);
+    return DragManager;
+  }();
+
+  function decodeDragGroupSpec(instance, spec) {
+    if (isString(spec)) {
+      return {
+        id: spec,
+        active: true
+      };
+    } else {
+      return {
+        id: instance.getId(spec),
+        active: spec.active
+      };
+    }
+  }
+  function isActiveDragGroupMember(dragGroup, el) {
+    var details = getFromSetWithFunction(dragGroup.members, function (m) {
+      return m.el === el;
+    });
+    if (details !== null) {
+      return details.active === true;
+    } else {
+      return false;
+    }
+  }
+  function getAncestors(el) {
+    var ancestors = [];
+    var p = el._jsPlumbParentGroup;
+    while (p != null) {
+      ancestors.push(p.el);
+      p = p.group;
+    }
+    return ancestors;
+  }
+  var ElementDragHandler = function () {
+    function ElementDragHandler(instance, _dragSelection) {
+      _classCallCheck$e(this, ElementDragHandler);
+      this.instance = instance;
+      this._dragSelection = _dragSelection;
+      _defineProperty$d(this, "selector", "> " + SELECTOR_MANAGED_ELEMENT + ":not(" + cls(CLASS_OVERLAY) + ")");
+      _defineProperty$d(this, "_dragOffset", null);
+      _defineProperty$d(this, "_groupLocations", []);
+      _defineProperty$d(this, "_intersectingGroups", []);
+      _defineProperty$d(this, "_currentDragParentGroup", null);
+      _defineProperty$d(this, "_dragGroupByElementIdMap", {});
+      _defineProperty$d(this, "_dragGroupMap", {});
+      _defineProperty$d(this, "_currentDragGroup", null);
+      _defineProperty$d(this, "_currentDragGroupOffsets", new Map());
+      _defineProperty$d(this, "_currentDragGroupSizes", new Map());
+      _defineProperty$d(this, "_dragPayload", null);
+      _defineProperty$d(this, "drag", void 0);
+      _defineProperty$d(this, "originalPosition", void 0);
+    }
+    _createClass$e(ElementDragHandler, [{
+      key: "onDragInit",
+      value: function onDragInit(el) {
+        return null;
+      }
+    }, {
+      key: "onDragAbort",
+      value: function onDragAbort(el) {
+        return null;
+      }
+    }, {
+      key: "getDropGroup",
+      value: function getDropGroup() {
+        var dropGroup = null;
+        if (this._intersectingGroups.length > 0) {
+          var targetGroup = this._intersectingGroups[0].groupLoc.group;
+          var intersectingElement = this._intersectingGroups[0].intersectingElement;
+          var currentGroup = intersectingElement._jsPlumbParentGroup;
+          if (currentGroup !== targetGroup) {
+            if (currentGroup == null || !currentGroup.overrideDrop(intersectingElement, targetGroup)) {
+              dropGroup = this._intersectingGroups[0];
+            }
+          }
+        }
+        return dropGroup;
+      }
+    }, {
+      key: "onStop",
+      value: function onStop(params) {
+        var _this = this;
+        var jel = params.drag.getDragElement();
+        var dropGroup = this.getDropGroup();
+        var elementsToProcess = [];
+        elementsToProcess.push({
+          el: jel,
+          id: this.instance.getId(jel),
+          pos: params.finalPos,
+          originalGroup: jel._jsPlumbParentGroup,
+          redrawResult: null,
+          originalPos: params.originalPos,
+          reverted: false,
+          dropGroup: dropGroup != null ? dropGroup.groupLoc.group : null
+        });
+        this._dragSelection.each(function (el, id, o, s, orig) {
+          if (el !== params.el) {
+            var pp = {
+              x: o.x,
+              y: o.y
+            };
+            var x = pp.x,
+                y = pp.y;
+            if (el._jsPlumbParentGroup && el._jsPlumbParentGroup.constrain) {
+              var constrainRect = {
+                w: el.parentNode.offsetWidth + el.parentNode.scrollLeft,
+                h: el.parentNode.offsetHeight + el.parentNode.scrollTop
+              };
+              x = Math.max(x, 0);
+              y = Math.max(y, 0);
+              x = Math.min(x, constrainRect.w - s.w);
+              y = Math.min(y, constrainRect.h - s.h);
+              pp.x = x;
+              pp.y = y;
+            }
+            elementsToProcess.push({
+              el: el,
+              id: id,
+              pos: pp,
+              originalPos: orig,
+              originalGroup: el._jsPlumbParentGroup,
+              redrawResult: null,
+              reverted: false,
+              dropGroup: dropGroup != null ? dropGroup.groupLoc.group : null
+            });
+          }
+        });
+        forEach(elementsToProcess, function (p) {
+          var wasInGroup = p.originalGroup != null,
+              isInOriginalGroup = wasInGroup && isInsideParent(_this.instance, p.el, p.pos),
+              parentOffset = {
+            x: 0,
+            y: 0
+          };
+          if (wasInGroup && !isInOriginalGroup) {
+            if (dropGroup == null) {
+              var orphanedPosition = _this._pruneOrOrphan(p, true, true);
+              if (orphanedPosition.pos != null) {
+                p.pos = orphanedPosition.pos.pos;
+              } else {
+                if (!orphanedPosition.pruned && p.originalGroup.revert) {
+                  p.pos = p.originalPos;
+                  p.reverted = true;
+                }
+              }
+            }
+          } else if (wasInGroup && isInOriginalGroup) {
+            parentOffset = _this.instance.viewport.getPosition(p.originalGroup.elId);
+          }
+          if (dropGroup != null && !isInOriginalGroup) {
+            _this.instance.groupManager.addToGroup(dropGroup.groupLoc.group, false, p.el);
+          } else {
+            p.dropGroup = null;
+          }
+          if (p.reverted) {
+            _this.instance.setPosition(p.el, p.pos);
+          }
+          p.redrawResult = _this.instance.setElementPosition(p.el, p.pos.x + parentOffset.x, p.pos.y + parentOffset.y);
+          _this.instance.removeClass(p.el, CLASS_DRAGGED);
+          _this.instance.select({
+            source: p.el
+          }).removeClass(_this.instance.elementDraggingClass + " " + _this.instance.sourceElementDraggingClass, true);
+          _this.instance.select({
+            target: p.el
+          }).removeClass(_this.instance.elementDraggingClass + " " + _this.instance.targetElementDraggingClass, true);
+        });
+        if (elementsToProcess[0].originalGroup != null) {
+          var currentGroup = jel._jsPlumbParentGroup;
+          if (currentGroup !== elementsToProcess[0].originalGroup) {
+            var originalElement = params.drag.getDragElement(true);
+            if (elementsToProcess[0].originalGroup.ghost) {
+              var o1 = this.instance.getOffset(this.instance.getGroupContentArea(currentGroup));
+              var o2 = this.instance.getOffset(this.instance.getGroupContentArea(elementsToProcess[0].originalGroup));
+              var o = {
+                x: o2.x + params.pos.x - o1.x,
+                y: o2.y + params.pos.y - o1.y
+              };
+              originalElement.style.left = o.x + "px";
+              originalElement.style.top = o.y + "px";
+              this.instance.revalidate(originalElement);
+            }
+          }
+        }
+        this.instance.fire(EVENT_DRAG_STOP, {
+          elements: elementsToProcess,
+          e: params.e,
+          el: jel,
+          payload: this._dragPayload
+        });
+        this._cleanup();
+      }
+    }, {
+      key: "_cleanup",
+      value: function _cleanup() {
+        var _this2 = this;
+        forEach(this._groupLocations, function (groupLoc) {
+          _this2.instance.removeClass(groupLoc.el, CLASS_DRAG_ACTIVE);
+          _this2.instance.removeClass(groupLoc.el, CLASS_DRAG_HOVER);
+        });
+        this._currentDragParentGroup = null;
+        this._groupLocations.length = 0;
+        this.instance.hoverSuspended = false;
+        this._dragOffset = null;
+        this._dragSelection.reset();
+        this._dragPayload = null;
+        this._currentDragGroupOffsets.clear();
+        this._currentDragGroupSizes.clear();
+        this._currentDragGroup = null;
+      }
+    }, {
+      key: "reset",
+      value: function reset() {}
+    }, {
+      key: "init",
+      value: function init(drag) {
+        this.drag = drag;
+      }
+    }, {
+      key: "onDrag",
+      value: function onDrag(params) {
+        var _this3 = this;
+        var el = params.drag.getDragElement();
+        var finalPos = params.pos;
+        var elSize = this.instance.getSize(el);
+        var ui = {
+          x: finalPos.x,
+          y: finalPos.y
+        };
+        this._intersectingGroups.length = 0;
+        if (this._dragOffset != null) {
+          ui.x += this._dragOffset.x;
+          ui.y += this._dragOffset.y;
+        }
+        var _one = function _one(el, bounds, findIntersectingGroups) {
+          if (findIntersectingGroups) {
+            var ancestorsOfIntersectingGroups = new Set();
+            forEach(_this3._groupLocations, function (groupLoc) {
+              if (!ancestorsOfIntersectingGroups.has(groupLoc.group.id) && intersects(bounds, groupLoc.r)) {
+                if (groupLoc.group !== _this3._currentDragParentGroup) {
+                  _this3.instance.addClass(groupLoc.el, CLASS_DRAG_HOVER);
+                }
+                _this3._intersectingGroups.push({
+                  groupLoc: groupLoc,
+                  intersectingElement: params.drag.getDragElement(true),
+                  d: 0
+                });
+                forEach(_this3.instance.groupManager.getAncestors(groupLoc.group), function (g) {
+                  return ancestorsOfIntersectingGroups.add(g.id);
+                });
+              } else {
+                _this3.instance.removeClass(groupLoc.el, CLASS_DRAG_HOVER);
+              }
+            });
+          }
+          _this3.instance.setElementPosition(el, bounds.x, bounds.y);
+          _this3.instance.fire(EVENT_DRAG_MOVE, {
+            el: el,
+            e: params.e,
+            pos: {
+              x: bounds.x,
+              y: bounds.y
+            },
+            originalPosition: _this3.originalPosition,
+            payload: _this3._dragPayload
+          });
+        };
+        var elBounds = {
+          x: ui.x,
+          y: ui.y,
+          w: elSize.w,
+          h: elSize.h
+        };
+        _one(el, elBounds, true);
+        this._dragSelection.updatePositions(finalPos, this.originalPosition, function (el, id, s, b) {
+          _one(el, b, false);
+        });
+        this._currentDragGroupOffsets.forEach(function (v, k) {
+          var s = _this3._currentDragGroupSizes.get(k);
+          var _b = {
+            x: elBounds.x + v[0].x,
+            y: elBounds.y + v[0].y,
+            w: s.w,
+            h: s.h
+          };
+          v[1].style.left = _b.x + "px";
+          v[1].style.top = _b.y + "px";
+          _one(v[1], _b, false);
+        });
+      }
+    }, {
+      key: "onStart",
+      value: function onStart(params) {
+        var _this4 = this;
+        var el = params.drag.getDragElement();
+        var elOffset = this.instance.getOffset(el);
+        this.originalPosition = {
+          x: params.pos.x,
+          y: params.pos.y
+        };
+        if (el._jsPlumbParentGroup) {
+          this._dragOffset = this.instance.getOffset(el.offsetParent);
+          this._currentDragParentGroup = el._jsPlumbParentGroup;
+        }
+        var cont = true;
+        var nd = el.getAttribute(ATTRIBUTE_NOT_DRAGGABLE);
+        if (this.instance.elementsDraggable === false || nd != null && nd !== FALSE$1) {
+          cont = false;
+        }
+        if (cont) {
+          this._groupLocations.length = 0;
+          this._intersectingGroups.length = 0;
+          this.instance.hoverSuspended = true;
+          var originalElement = params.drag.getDragElement(true),
+              descendants = originalElement.querySelectorAll(SELECTOR_MANAGED_ELEMENT),
+              ancestors = getAncestors(originalElement),
+              a = [];
+          Array.prototype.push.apply(a, descendants);
+          Array.prototype.push.apply(a, ancestors);
+          this._dragSelection.filterActiveSet(function (p) {
+            return a.indexOf(p.jel) === -1;
+          });
+          this._dragSelection.initialisePositions();
+          var _one = function _one(_el) {
+            if (!_el._isJsPlumbGroup || _this4.instance.allowNestedGroups) {
+              var isNotInAGroup = !_el._jsPlumbParentGroup;
+              var membersAreDroppable = isNotInAGroup || _el._jsPlumbParentGroup.dropOverride !== true;
+              var isGhostOrNotConstrained = !isNotInAGroup && (_el._jsPlumbParentGroup.ghost || _el._jsPlumbParentGroup.constrain !== true);
+              if (isNotInAGroup || membersAreDroppable && isGhostOrNotConstrained) {
+                forEach(_this4.instance.groupManager.getGroups(), function (group) {
+                  var elementGroup = _el._jsPlumbGroup;
+                  if (group.droppable !== false && group.enabled !== false && _el._jsPlumbGroup !== group && !_this4.instance.groupManager.isDescendant(group, elementGroup)) {
+                    var groupEl = group.el,
+                        s = _this4.instance.getSize(groupEl),
+                        o = _this4.instance.getOffset(groupEl),
+                        boundingRect = {
+                      x: o.x,
+                      y: o.y,
+                      w: s.w,
+                      h: s.h
+                    };
+                    var groupLocation = {
+                      el: groupEl,
+                      r: boundingRect,
+                      group: group
+                    };
+                    _this4._groupLocations.push(groupLocation);
+                    if (group !== _this4._currentDragParentGroup) {
+                      _this4.instance.addClass(groupEl, CLASS_DRAG_ACTIVE);
+                    }
+                  }
+                });
+                _this4._groupLocations.sort(function (a, b) {
+                  if (_this4.instance.groupManager.isDescendant(a.group, b.group)) {
+                    return -1;
+                  } else if (_this4.instance.groupManager.isAncestor(b.group, a.group)) {
+                    return 1;
+                  } else {
+                    return 0;
+                  }
+                });
+              }
+            }
+            _this4.instance.select({
+              source: _el
+            }).addClass(_this4.instance.elementDraggingClass + " " + _this4.instance.sourceElementDraggingClass, true);
+            _this4.instance.select({
+              target: _el
+            }).addClass(_this4.instance.elementDraggingClass + " " + _this4.instance.targetElementDraggingClass, true);
+            return _this4.instance.fire(EVENT_DRAG_START, {
+              el: _el,
+              e: params.e,
+              originalPosition: _this4.originalPosition,
+              pos: _this4.originalPosition
+            });
+          };
+          var elId = this.instance.getId(el);
+          this._currentDragGroup = this._dragGroupByElementIdMap[elId];
+          if (this._currentDragGroup && !isActiveDragGroupMember(this._currentDragGroup, el)) {
+            this._currentDragGroup = null;
+          }
+          var dragStartReturn = _one(el);
+          if (dragStartReturn === false) {
+            this._cleanup();
+            return false;
+          } else {
+            this._dragPayload = dragStartReturn;
+          }
+          if (this._currentDragGroup != null) {
+            this._currentDragGroupOffsets.clear();
+            this._currentDragGroupSizes.clear();
+            this._currentDragGroup.members.forEach(function (jel) {
+              var off = _this4.instance.getOffset(jel.el);
+              _this4._currentDragGroupOffsets.set(jel.elId, [{
+                x: off.x - elOffset.x,
+                y: off.y - elOffset.y
+              }, jel.el]);
+              _this4._currentDragGroupSizes.set(jel.elId, _this4.instance.getSize(jel.el));
+              _one(jel.el);
+            });
+          }
+        }
+        return cont;
+      }
+    }, {
+      key: "addToDragGroup",
+      value: function addToDragGroup(spec) {
+        var _this5 = this;
+        var details = decodeDragGroupSpec(this.instance, spec);
+        var dragGroup = this._dragGroupMap[details.id];
+        if (dragGroup == null) {
+          dragGroup = {
+            id: details.id,
+            members: new Set()
+          };
+          this._dragGroupMap[details.id] = dragGroup;
+        }
+        for (var _len = arguments.length, els = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          els[_key - 1] = arguments[_key];
+        }
+        this.removeFromDragGroup.apply(this, els);
+        forEach(els, function (el) {
+          var elId = _this5.instance.getId(el);
+          dragGroup.members.add({
+            elId: elId,
+            el: el,
+            active: details.active
+          });
+          _this5._dragGroupByElementIdMap[elId] = dragGroup;
+        });
+      }
+    }, {
+      key: "removeFromDragGroup",
+      value: function removeFromDragGroup() {
+        var _this6 = this;
+        for (var _len2 = arguments.length, els = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          els[_key2] = arguments[_key2];
+        }
+        forEach(els, function (el) {
+          var id = _this6.instance.getId(el);
+          var dragGroup = _this6._dragGroupByElementIdMap[id];
+          if (dragGroup != null) {
+            var s = new Set();
+            dragGroup.members.forEach(function (member) {
+              if (member.el !== el) {
+                s.add(member);
+              }
+            });
+            dragGroup.members = s;
+            delete _this6._dragGroupByElementIdMap[id];
+          }
+        });
+      }
+    }, {
+      key: "setDragGroupState",
+      value: function setDragGroupState(state) {
+        var _this7 = this;
+        for (var _len3 = arguments.length, els = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+          els[_key3 - 1] = arguments[_key3];
+        }
+        var elementIds = els.map(function (el) {
+          return _this7.instance.getId(el);
+        });
+        forEach(elementIds, function (id) {
+          var dragGroup = _this7._dragGroupByElementIdMap[id];
+          if (dragGroup != null) {
+            var member = getFromSetWithFunction(dragGroup.members, function (m) {
+              return m.elId === id;
+            });
+            if (member != null) {
+              member.active = state;
+            }
+          }
+        });
+      }
+    }, {
+      key: "_pruneOrOrphan",
+      value: function _pruneOrOrphan(params, doNotTransferToAncestor, isDefinitelyNotInsideParent) {
+        var jel = params.el;
+        var orphanedPosition = {
+          pruned: false,
+          pos: null
+        };
+        if (isDefinitelyNotInsideParent || !isInsideParent(this.instance, jel, params.pos)) {
+          var group = jel._jsPlumbParentGroup;
+          if (group.prune) {
+            if (jel._isJsPlumbGroup) {
+              this.instance.removeGroup(jel._jsPlumbGroup);
+            } else {
+              group.remove(params.el, true);
+            }
+            orphanedPosition.pruned = true;
+          } else if (group.orphan) {
+            orphanedPosition.pos = this.instance.groupManager.orphan(params.el, doNotTransferToAncestor);
+            if (jel._isJsPlumbGroup) {
+              group.removeGroup(jel._jsPlumbGroup);
+            } else {
+              group.remove(params.el);
+            }
+          }
+        }
+        return orphanedPosition;
+      }
+    }]);
+    return ElementDragHandler;
+  }();
+
+  function _makeFloatingEndpoint(ep, endpoint, referenceCanvas, sourceElement, instance) {
+    var floatingAnchor = createFloatingAnchor(instance, sourceElement);
+    var p = {
+      paintStyle: ep.getPaintStyle(),
+      preparedAnchor: floatingAnchor,
+      element: sourceElement,
+      scope: ep.scope
+    };
+    if (endpoint != null) {
+      if (isAssignableFrom(endpoint, EndpointRepresentation)) {
+        p.existingEndpoint = endpoint;
+      } else {
+        p.endpoint = endpoint;
+      }
+    }
+    var actualEndpoint = instance._internal_newEndpoint(p);
+    instance._paintEndpoint(actualEndpoint, {});
+    return actualEndpoint;
+  }
+  function selectorFilter(evt, _el, selector, _instance, negate) {
+    var t = evt.target || evt.srcElement,
+        ok = false,
+        sel = _instance.getSelector(_el, selector);
+    for (var j = 0; j < sel.length; j++) {
+      if (sel[j] === t) {
+        ok = true;
+        break;
+      }
+    }
+    return negate ? !ok : ok;
+  }
+  var SELECTOR_DRAG_ACTIVE_OR_HOVER = cls(CLASS_DRAG_ACTIVE, CLASS_DRAG_HOVER);
+  var SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA = "sourceSelectorEndpoint";
+  var EndpointDragHandler = function () {
+    function EndpointDragHandler(instance) {
+      _classCallCheck$e(this, EndpointDragHandler);
+      this.instance = instance;
+      _defineProperty$d(this, "jpc", void 0);
+      _defineProperty$d(this, "existingJpc", void 0);
+      _defineProperty$d(this, "_originalAnchorSpec", void 0);
+      _defineProperty$d(this, "ep", void 0);
+      _defineProperty$d(this, "endpointRepresentation", void 0);
+      _defineProperty$d(this, "canvasElement", void 0);
+      _defineProperty$d(this, "_activeDefinition", void 0);
+      _defineProperty$d(this, "placeholderInfo", {
+        id: null,
+        element: null
+      });
+      _defineProperty$d(this, "floatingIndex", void 0);
+      _defineProperty$d(this, "floatingId", void 0);
+      _defineProperty$d(this, "floatingElement", void 0);
+      _defineProperty$d(this, "floatingEndpoint", void 0);
+      _defineProperty$d(this, "floatingAnchor", void 0);
+      _defineProperty$d(this, "_stopped", void 0);
+      _defineProperty$d(this, "inPlaceCopy", void 0);
+      _defineProperty$d(this, "endpointDropTargets", []);
+      _defineProperty$d(this, "currentDropTarget", null);
+      _defineProperty$d(this, "payload", void 0);
+      _defineProperty$d(this, "floatingConnections", {});
+      _defineProperty$d(this, "_forceReattach", void 0);
+      _defineProperty$d(this, "_forceDetach", void 0);
+      _defineProperty$d(this, "mousedownHandler", void 0);
+      _defineProperty$d(this, "mouseupHandler", void 0);
+      _defineProperty$d(this, "selector", cls(CLASS_ENDPOINT));
+      var container = instance.getContainer();
+      this.mousedownHandler = this._mousedownHandler.bind(this);
+      this.mouseupHandler = this._mouseupHandler.bind(this);
+      instance.on(container, EVENT_MOUSEDOWN, SELECTOR_MANAGED_ELEMENT, this.mousedownHandler);
+      instance.on(container, EVENT_MOUSEUP, [SELECTOR_MANAGED_ELEMENT, cls(CLASS_ENDPOINT)].join(","), this.mouseupHandler);
+    }
+    _createClass$e(EndpointDragHandler, [{
+      key: "_resolveDragParent",
+      value: function _resolveDragParent(def, eventTarget) {
+        var container = this.instance.getContainer();
+        var parent = findParent(eventTarget, SELECTOR_MANAGED_ELEMENT, container, true);
+        if (def.parentSelector != null) {
+          var child = findParent(eventTarget, def.parentSelector, container, true);
+          if (child != null) {
+            parent = findParent(child.parentNode, SELECTOR_MANAGED_ELEMENT, container, false);
+          }
+          return child || parent;
+        } else {
+          return parent;
+        }
+      }
+    }, {
+      key: "_mousedownHandler",
+      value: function _mousedownHandler(e) {
+        var sourceEl;
+        var sourceSelector;
+        if (e.which === 3 || e.button === 2) {
+          return;
+        }
+        var eventTarget = e.target || e.srcElement;
+        sourceSelector = this._getSourceDefinition(e);
+        if (sourceSelector != null) {
+          sourceEl = this._resolveDragParent(sourceSelector.def.def, eventTarget);
+          if (sourceEl == null || sourceEl.getAttribute(ATTRIBUTE_JTK_ENABLED) === FALSE$1) {
+            return;
+          }
+        }
+        if (sourceSelector) {
+          var sourceElement = e.currentTarget,
+              def;
+          if (eventTarget.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
+            consume(e);
+            this._activeDefinition = sourceSelector;
+            def = sourceSelector.def.def;
+            if (def.canAcceptNewConnection != null && !def.canAcceptNewConnection(sourceEl, e)) {
+              return false;
+            }
+            var elxy = getPositionOnElement(e, sourceEl, this.instance.currentZoom);
+            var tempEndpointParams = {
+              element: sourceEl
+            };
+            extend(tempEndpointParams, def);
+            tempEndpointParams.isTemporarySource = true;
+            if (def.scope) {
+              tempEndpointParams.scope = def.scope;
+            } else {
+              var scopeFromElement = eventTarget.getAttribute(ATTRIBUTE_JTK_SCOPE);
+              if (scopeFromElement != null) {
+                tempEndpointParams.scope = scopeFromElement;
+              }
+            }
+            var extractedParameters = def.parameterExtractor ? def.parameterExtractor(sourceEl, eventTarget, e) : {};
+            tempEndpointParams = merge(tempEndpointParams, extractedParameters);
+            if (tempEndpointParams.maxConnections != null && tempEndpointParams.maxConnections >= 0) {
+              var sourceCount = this.instance.select({
+                source: sourceEl
+              }).length;
+              if (sourceCount >= tempEndpointParams.maxConnections) {
+                consume(e);
+                if (def.onMaxConnections) {
+                  def.onMaxConnections({
+                    element: sourceEl,
+                    maxConnections: tempEndpointParams.maxConnections
+                  }, e);
+                }
+                e.stopImmediatePropagation && e.stopImmediatePropagation();
+                return false;
+              }
+            }
+            if (def.anchorPositionFinder) {
+              var maybeAnchorSpec = def.anchorPositionFinder(sourceEl, elxy, def, e);
+              if (maybeAnchorSpec != null) {
+                tempEndpointParams.anchor = maybeAnchorSpec;
+              }
+            }
+            this._originalAnchorSpec = tempEndpointParams.anchor || (this.instance.areDefaultAnchorsSet() ? this.instance.defaults.anchors[0] : this.instance.defaults.anchor);
+            var _originalAnchor = this.instance.router.prepareAnchor(this._originalAnchorSpec);
+            var anchorSpecToUse = [elxy.x, elxy.y, 0, 0];
+            if (_originalAnchor.locations.length > 0) {
+              anchorSpecToUse[2] = _originalAnchor.locations[0].ox;
+              anchorSpecToUse[3] = _originalAnchor.locations[0].oy;
+            } else if (_originalAnchor.isContinuous) {
+              var dx = elxy.x < 0.5 ? elxy.x : 1 - elxy.x;
+              var dy = elxy.y < 0.5 ? elxy.y : 1 - elxy.y;
+              anchorSpecToUse[2] = dx < dy ? elxy.x < 0.5 ? -1 : 1 : 0;
+              anchorSpecToUse[3] = dy < dx ? elxy.y < 0.5 ? -1 : 1 : 0;
+            }
+            tempEndpointParams.anchor = anchorSpecToUse;
+            tempEndpointParams.deleteOnEmpty = true;
+            this.ep = this.instance._internal_newEndpoint(tempEndpointParams);
+            var payload = {};
+            if (def.extract) {
+              for (var att in def.extract) {
+                var v = eventTarget.getAttribute(att);
+                if (v) {
+                  payload[def.extract[att]] = v;
+                }
+              }
+              this.ep.mergeParameters(payload);
+            }
+            if (tempEndpointParams.uniqueEndpoint) {
+              var elementId = this.ep.elementId;
+              var existingUniqueEndpoint = this.instance.getManagedData(elementId, SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA, sourceSelector.id);
+              if (existingUniqueEndpoint == null) {
+                this.instance.setManagedData(elementId, SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA, sourceSelector.id, this.ep);
+                this.ep.deleteOnEmpty = false;
+              } else {
+                this.ep.finalEndpoint = existingUniqueEndpoint;
+              }
+            }
+            sourceElement._jsPlumbOrphanedEndpoints = sourceElement._jsPlumbOrphanedEndpoints || [];
+            sourceElement._jsPlumbOrphanedEndpoints.push(this.ep);
+            this.instance.trigger(this.ep.endpoint.canvas, EVENT_MOUSEDOWN, e, payload);
+          }
+        }
+      }
+    }, {
+      key: "_mouseupHandler",
+      value: function _mouseupHandler(e) {
+        var el = e.currentTarget || e.srcElement;
+        if (el._jsPlumbOrphanedEndpoints) {
+          each(el._jsPlumbOrphanedEndpoints, this.instance._maybePruneEndpoint.bind(this.instance));
+          el._jsPlumbOrphanedEndpoints.length = 0;
+        }
+        this._activeDefinition = null;
+      }
+    }, {
+      key: "onDragInit",
+      value: function onDragInit(el) {
+        var ipco = this.instance.getOffset(el),
+            ips = this.instance.getSize(el);
+        this._makeDraggablePlaceholder(ipco, ips);
+        this.placeholderInfo.element.jtk = el.jtk;
+        return this.placeholderInfo.element;
+      }
+    }, {
+      key: "onDragAbort",
+      value: function onDragAbort(el) {
+        this._cleanupDraggablePlaceholder();
+      }
+    }, {
+      key: "_makeDraggablePlaceholder",
+      value: function _makeDraggablePlaceholder(ipco, ips) {
+        this.placeholderInfo = this.placeholderInfo || {};
+        var n = createElement(ELEMENT_DIV, {
+          position: "absolute"
+        });
+        this.instance._appendElement(n, this.instance.getContainer());
+        var id = this.instance.getId(n);
+        this.instance.setPosition(n, ipco);
+        n.style.width = ips.w + "px";
+        n.style.height = ips.h + "px";
+        this.instance.manage(n);
+        this.placeholderInfo.id = id;
+        this.placeholderInfo.element = n;
+        return n;
+      }
+    }, {
+      key: "_cleanupDraggablePlaceholder",
+      value: function _cleanupDraggablePlaceholder() {
+        if (this.placeholderInfo.element) {
+          this.instance.unmanage(this.placeholderInfo.element, true);
+          delete this.placeholderInfo.element;
+          delete this.placeholderInfo.id;
+        }
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        var c = this.instance.getContainer();
+        this.instance.off(c, EVENT_MOUSEUP, this.mouseupHandler);
+        this.instance.off(c, EVENT_MOUSEDOWN, this.mousedownHandler);
+      }
+    }, {
+      key: "init",
+      value: function init(drag) {}
+    }, {
+      key: "startNewConnectionDrag",
+      value: function startNewConnectionDrag(scope, data) {
+        this.jpc = this.instance._newConnection({
+          sourceEndpoint: this.ep,
+          targetEndpoint: this.floatingEndpoint,
+          source: this.ep.element,
+          target: this.placeholderInfo.element,
+          paintStyle: this.ep.connectorStyle,
+          hoverPaintStyle: this.ep.connectorHoverStyle,
+          connector: this.ep.connector,
+          overlays: this.ep.connectorOverlays,
+          type: this.ep.edgeType,
+          cssClass: this.ep.connectorClass,
+          hoverClass: this.ep.connectorHoverClass,
+          scope: scope,
+          data: data
+        });
+        this.jpc.pending = true;
+        this.jpc.addClass(this.instance.draggingClass);
+        this.floatingEndpoint.addClass(this.instance.draggingClass);
+        this.instance.fire(EVENT_CONNECTION_DRAG, this.jpc);
+      }
+    }, {
+      key: "startExistingConnectionDrag",
+      value: function startExistingConnectionDrag() {
+        this.existingJpc = true;
+        this.instance.setHover(this.jpc, false);
+        var anchorIdx = this.jpc.endpoints[0].id === this.ep.id ? 0 : 1;
+        this.ep.detachFromConnection(this.jpc, null, true);
+        this.floatingEndpoint.addConnection(this.jpc);
+        this.floatingEndpoint.addClass(this.instance.draggingClass);
+        this.instance.fire(EVENT_CONNECTION_DRAG, this.jpc);
+        this.instance.sourceOrTargetChanged(this.jpc.endpoints[anchorIdx].elementId, this.placeholderInfo.id, this.jpc, this.placeholderInfo.element, anchorIdx);
+        this.jpc.suspendedEndpoint = this.jpc.endpoints[anchorIdx];
+        this.jpc.suspendedElement = this.jpc.endpoints[anchorIdx].element;
+        this.jpc.suspendedElementId = this.jpc.endpoints[anchorIdx].elementId;
+        this.jpc.suspendedElementType = anchorIdx === 0 ? SOURCE$1 : TARGET$1;
+        this.instance.setHover(this.jpc.suspendedEndpoint, false);
+        this.floatingEndpoint.referenceEndpoint = this.jpc.suspendedEndpoint;
+        this.floatingEndpoint.mergeParameters(this.jpc.suspendedEndpoint.parameters);
+        this.jpc.endpoints[anchorIdx] = this.floatingEndpoint;
+        this.jpc.addClass(this.instance.draggingClass);
+        this.floatingId = this.placeholderInfo.id;
+        this.floatingIndex = anchorIdx;
+      }
+    }, {
+      key: "_shouldStartDrag",
+      value: function _shouldStartDrag() {
+        var _continue = true;
+        if (!this.ep.enabled) {
+          _continue = false;
+        }
+        if (this.jpc == null && !this.ep.isSource && !this.ep.isTemporarySource) {
+          _continue = false;
+        }
+        if (this.ep.isSource && this.ep.isFull() && !(this.jpc != null && this.ep.dragAllowedWhenFull)) {
+          _continue = false;
+        }
+        if (this.jpc != null && !this.jpc.isDetachable(this.ep)) {
+          if (this.ep.isFull()) {
+            _continue = false;
+          } else {
+            this.jpc = null;
+          }
+        }
+        var payload = {};
+        var beforeDrag = this.instance.checkCondition(this.jpc == null ? INTERCEPT_BEFORE_DRAG : INTERCEPT_BEFORE_START_DETACH, {
+          endpoint: this.ep,
+          source: this.ep.element,
+          sourceId: this.ep.elementId,
+          connection: this.jpc
+        });
+        if (beforeDrag === false) {
+          _continue = false;
+        }
+        else if (_typeof$1(beforeDrag) === "object") {
+          payload = beforeDrag;
+          extend(payload, this.payload || {});
+        } else {
+          payload = this.payload || {};
+        }
+        return [_continue, payload];
+      }
+    }, {
+      key: "_createFloatingEndpoint",
+      value: function _createFloatingEndpoint(canvasElement) {
+        var endpointToFloat = this.ep.endpoint;
+        if (this.ep.edgeType != null) {
+          var aae = this.instance._deriveEndpointAndAnchorSpec(this.ep.edgeType);
+          endpointToFloat = aae.endpoints[1];
+        }
+        this.floatingEndpoint = _makeFloatingEndpoint(this.ep, endpointToFloat, canvasElement, this.placeholderInfo.element, this.instance);
+        this.floatingAnchor = this.floatingEndpoint._anchor;
+        this.floatingEndpoint.deleteOnEmpty = true;
+        this.floatingElement = this.floatingEndpoint.endpoint.canvas;
+        this.floatingId = this.instance.getId(this.floatingElement);
+      }
+    }, {
+      key: "_populateTargets",
+      value: function _populateTargets(canvasElement, eventTarget, event) {
+        var _this = this;
+        var isSourceDrag = this.jpc && this.jpc.endpoints[0] === this.ep;
+        var boundingRect;
+        var matchingEndpoints = this.instance.getContainer().querySelectorAll([".", CLASS_ENDPOINT, "[", ATTRIBUTE_SCOPE_PREFIX, this.ep.scope, "]"].join(""));
+        forEach(matchingEndpoints, function (candidate) {
+          if ((_this.jpc != null || candidate !== canvasElement) && candidate !== _this.floatingElement && !candidate.jtk.endpoint.isFull()) {
+            if (isSourceDrag && candidate.jtk.endpoint.isSource || !isSourceDrag && candidate.jtk.endpoint.isTarget) {
+              var o = _this.instance.getOffset(candidate),
+                  s = _this.instance.getSize(candidate);
+              boundingRect = {
+                x: o.x,
+                y: o.y,
+                w: s.w,
+                h: s.h
+              };
+              _this.endpointDropTargets.push({
+                el: candidate,
+                targetEl: candidate,
+                r: boundingRect,
+                endpoint: candidate.jtk.endpoint,
+                def: null
+              });
+              _this.instance.addClass(candidate, CLASS_DRAG_ACTIVE);
+            }
+          }
+        });
+        if (isSourceDrag) {
+          var sourceDef = getWithFunction(this.instance.sourceSelectors, function (sSel) {
+            return sSel.isEnabled() && (sSel.def.def.scope == null || sSel.def.def.scope === _this.ep.scope);
+          });
+          if (sourceDef != null) {
+            var targetZones = this.instance.getContainer().querySelectorAll(sourceDef.redrop === REDROP_POLICY_ANY ? SELECTOR_MANAGED_ELEMENT : sourceDef.selector);
+            forEach(targetZones, function (el) {
+              if (el.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
+                var scopeFromElement = el.getAttribute(ATTRIBUTE_JTK_SCOPE);
+                if (scopeFromElement != null && scopeFromElement !== _this.ep.scope) {
+                  return;
+                }
+                var d = {
+                  r: null,
+                  el: el
+                };
+                d.targetEl = findParent(el, SELECTOR_MANAGED_ELEMENT, _this.instance.getContainer(), true);
+                var o = _this.instance.getOffset(d.el),
+                    s = _this.instance.getSize(d.el);
+                d.r = {
+                  x: o.x,
+                  y: o.y,
+                  w: s.w,
+                  h: s.h
+                };
+                if (sourceDef.def.def.rank != null) {
+                  d.rank = sourceDef.def.def.rank;
+                }
+                d.def = sourceDef;
+                _this.endpointDropTargets.push(d);
+                _this.instance.addClass(d.targetEl, CLASS_DRAG_ACTIVE);
+              }
+            });
+          }
+        } else {
+          var targetDefs = getAllWithFunction(this.instance.targetSelectors, function (tSel) {
+            return tSel.isEnabled();
+          });
+          targetDefs.forEach(function (targetDef) {
+            var targetZones = _this.instance.getContainer().querySelectorAll(targetDef.selector);
+            forEach(targetZones, function (el) {
+              if (el.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
+                var scopeFromElement = el.getAttribute(ATTRIBUTE_JTK_SCOPE);
+                if (scopeFromElement != null && scopeFromElement !== _this.ep.scope) {
+                  return;
+                }
+                var d = {
+                  r: null,
+                  el: el
+                };
+                if (targetDef.def.def.parentSelector != null) {
+                  d.targetEl = findParent(el, targetDef.def.def.parentSelector, _this.instance.getContainer(), true);
+                }
+                if (d.targetEl == null) {
+                  d.targetEl = findParent(el, SELECTOR_MANAGED_ELEMENT, _this.instance.getContainer(), true);
+                }
+                if (targetDef.def.def.allowLoopback === false || _this._activeDefinition && _this._activeDefinition.def.def.allowLoopback === false) {
+                  if (d.targetEl === _this.ep.element) {
+                    return;
+                  }
+                }
+                if (targetDef.def.def.canAcceptNewConnection != null && !targetDef.def.def.canAcceptNewConnection(d.targetEl, event)) {
+                  return;
+                }
+                var maxConnections = targetDef.def.def.maxConnections;
+                if (maxConnections != null && maxConnections !== -1) {
+                  if (_this.instance.select({
+                    target: d.targetEl
+                  }).length >= maxConnections) {
+                    return;
+                  }
+                }
+                var o = _this.instance.getOffset(el),
+                    s = _this.instance.getSize(el);
+                d.r = {
+                  x: o.x,
+                  y: o.y,
+                  w: s.w,
+                  h: s.h
+                };
+                d.def = targetDef.def;
+                if (targetDef.def.def.rank != null) {
+                  d.rank = targetDef.def.def.rank;
+                }
+                _this.endpointDropTargets.push(d);
+                _this.instance.addClass(d.targetEl, CLASS_DRAG_ACTIVE);
+              }
+            });
+          });
+        }
+        this.endpointDropTargets.sort(function (a, b) {
+          if (a.targetEl._isJsPlumbGroup && !b.targetEl._isJsPlumbGroup) {
+            return 1;
+          } else if (!a.targetEl._isJsPlumbGroup && b.targetEl._isJsPlumbGroup) {
+            return -1;
+          } else {
+            if (a.targetEl._isJsPlumbGroup && b.targetEl._isJsPlumbGroup) {
+              if (_this.instance.groupManager.isAncestor(a.targetEl._jsPlumbGroup, b.targetEl._jsPlumbGroup)) {
+                return -1;
+              } else if (_this.instance.groupManager.isAncestor(b.targetEl._jsPlumbGroup, a.targetEl._jsPlumbGroup)) {
+                return 1;
+              }
+            } else {
+              if (a.rank != null && b.rank != null) {
+                if (a.rank > b.rank) {
+                  return -1;
+                } else if (a.rank < b.rank) {
+                  return 1;
+                } else ;
+              } else {
+                return 0;
+              }
+            }
+          }
+        });
+      }
+    }, {
+      key: "onStart",
+      value: function onStart(p) {
+        this.endpointDropTargets.length = 0;
+        this.currentDropTarget = null;
+        this._stopped = false;
+        var dragEl = p.drag.getDragElement();
+        this.ep = dragEl.jtk.endpoint;
+        var eventTarget = p.e.srcElement || p.e.target;
+        if (!this.ep) {
+          return false;
+        }
+        this.endpointRepresentation = this.ep.endpoint;
+        this.canvasElement = this.endpointRepresentation.canvas;
+        this.jpc = this.ep.connectorSelector();
+        var _this$_shouldStartDra = this._shouldStartDrag(),
+            _this$_shouldStartDra2 = _slicedToArray$3(_this$_shouldStartDra, 2),
+            _continue = _this$_shouldStartDra2[0],
+            payload = _this$_shouldStartDra2[1];
+        if (_continue === false) {
+          this._stopped = true;
+          return false;
+        }
+        this.instance.setHover(this.ep, false);
+        this.instance.isConnectionBeingDragged = true;
+        if (this.jpc && !this.ep.isFull() && this.ep.isSource) {
+          this.jpc = null;
+        }
+        this._createFloatingEndpoint(this.canvasElement);
+        this._populateTargets(this.canvasElement, eventTarget, p.e);
+        if (this.jpc == null) {
+          this.startNewConnectionDrag(this.ep.scope, payload);
+        } else {
+          this.startExistingConnectionDrag();
+        }
+        this._registerFloatingConnection(this.placeholderInfo, this.jpc, this.floatingEndpoint);
+        this.instance.currentlyDragging = true;
+      }
+    }, {
+      key: "onBeforeStart",
+      value: function onBeforeStart(beforeStartParams) {
+        this.payload = beforeStartParams.e.payload || {};
+      }
+    }, {
+      key: "onDrag",
+      value: function onDrag(params) {
+        if (this._stopped) {
+          return true;
+        }
+        if (this.placeholderInfo.element) {
+          var floatingElementSize = this.instance.getSize(this.floatingElement);
+          this.instance.setElementPosition(this.placeholderInfo.element, params.pos.x, params.pos.y);
+          var boundingRect = {
+            x: params.pos.x,
+            y: params.pos.y,
+            w: floatingElementSize.w,
+            h: floatingElementSize.h
+          },
+              newDropTarget,
+              idx,
+              _cont;
+          for (var i = 0; i < this.endpointDropTargets.length; i++) {
+            if (intersects(boundingRect, this.endpointDropTargets[i].r)) {
+              newDropTarget = this.endpointDropTargets[i];
+              break;
+            }
+          }
+          if (newDropTarget !== this.currentDropTarget && this.currentDropTarget != null) {
+            idx = this._getFloatingAnchorIndex();
+            this.instance.removeClass(this.currentDropTarget.el, CLASS_DRAG_HOVER);
+            if (this.currentDropTarget.endpoint) {
+              this.currentDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropAllowedClass);
+              this.currentDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropForbiddenClass);
+            }
+            this.floatingAnchor.out();
+          }
+          if (newDropTarget != null) {
+            this.instance.addClass(newDropTarget.el, CLASS_DRAG_HOVER);
+            idx = this._getFloatingAnchorIndex();
+            if (newDropTarget.endpoint != null) {
+              _cont = newDropTarget.endpoint.isSource && idx === 0 || newDropTarget.endpoint.isTarget && idx !== 0 || this.jpc.suspendedEndpoint && newDropTarget.endpoint.referenceEndpoint && newDropTarget.endpoint.referenceEndpoint.id === this.jpc.suspendedEndpoint.id;
+              if (_cont) {
+                var bb = this.instance.checkCondition(CHECK_DROP_ALLOWED, {
+                  sourceEndpoint: this.jpc.endpoints[idx],
+                  targetEndpoint: newDropTarget.endpoint.endpoint,
+                  connection: this.jpc
+                });
+                if (bb) {
+                  newDropTarget.endpoint.endpoint.addClass(this.instance.endpointDropAllowedClass);
+                  newDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropForbiddenClass);
+                } else {
+                  newDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropAllowedClass);
+                  newDropTarget.endpoint.endpoint.addClass(this.instance.endpointDropForbiddenClass);
+                }
+                this.floatingAnchor.over(newDropTarget.endpoint);
+                this.instance._paintConnection(this.jpc);
+              } else {
+                newDropTarget = null;
+              }
+            }
+          }
+          this.currentDropTarget = newDropTarget;
+        }
+      }
+    }, {
+      key: "_maybeCleanup",
+      value: function _maybeCleanup(ep) {
+        if (ep._mtNew && ep.connections.length === 0) {
+          this.instance.deleteEndpoint(ep);
+        } else {
+          delete ep._mtNew;
+        }
+      }
+    }, {
+      key: "_reattachOrDiscard",
+      value: function _reattachOrDiscard(originalEvent) {
+        var existingConnection = this.jpc.suspendedEndpoint != null;
+        var idx = this._getFloatingAnchorIndex();
+        if (existingConnection && this._shouldReattach(originalEvent)) {
+          if (idx === 0) {
+            this.jpc.source = this.jpc.suspendedElement;
+            this.jpc.sourceId = this.jpc.suspendedElementId;
+          } else {
+            this.jpc.target = this.jpc.suspendedElement;
+            this.jpc.targetId = this.jpc.suspendedElementId;
+          }
+          this._doForceReattach(idx);
+          return true;
+        } else {
+          this._discard(idx, originalEvent);
+          return false;
+        }
+      }
+    }, {
+      key: "onStop",
+      value: function onStop(p) {
+        var _this2 = this;
+        var originalEvent = p.e;
+        this.instance.isConnectionBeingDragged = false;
+        this.instance.currentlyDragging = false;
+        var classesToRemove = classList(CLASS_DRAG_HOVER, CLASS_DRAG_ACTIVE);
+        var matchingSelectors = this.instance.getContainer().querySelectorAll(SELECTOR_DRAG_ACTIVE_OR_HOVER);
+        forEach(matchingSelectors, function (el) {
+          _this2.instance.removeClass(el, classesToRemove);
+        });
+        if (this.jpc && this.jpc.endpoints != null) {
+          var existingConnection = this.jpc.suspendedEndpoint != null;
+          var idx = this._getFloatingAnchorIndex();
+          var suspendedEndpoint = this.jpc.suspendedEndpoint;
+          var dropEndpoint;
+          if (this.currentDropTarget != null) {
+            dropEndpoint = this._getDropEndpoint(p, this.jpc);
+            if (dropEndpoint == null) {
+              !this._reattachOrDiscard(p.e);
+            } else {
+              if (suspendedEndpoint && suspendedEndpoint.id === dropEndpoint.id) {
+                this._doForceReattach(idx);
+              } else {
+                if (!dropEndpoint.enabled) {
+                  this._reattachOrDiscard(p.e);
+                } else if (dropEndpoint.isFull()) {
+                  dropEndpoint.fire(EVENT_MAX_CONNECTIONS, {
+                    endpoint: this,
+                    connection: this.jpc,
+                    maxConnections: this.instance.defaults.maxConnections
+                  }, originalEvent);
+                  this._reattachOrDiscard(p.e);
+                } else {
+                  if (idx === 0) {
+                    this.jpc.source = dropEndpoint.element;
+                    this.jpc.sourceId = dropEndpoint.elementId;
+                  } else {
+                    this.jpc.target = dropEndpoint.element;
+                    this.jpc.targetId = dropEndpoint.elementId;
+                  }
+                  var _doContinue = true;
+                  if (existingConnection && this.jpc.suspendedEndpoint.id !== dropEndpoint.id) {
+                    if (!this.jpc.isDetachAllowed(this.jpc) || !this.jpc.endpoints[idx].isDetachAllowed(this.jpc) || !this.jpc.suspendedEndpoint.isDetachAllowed(this.jpc) || !this.instance.checkCondition("beforeDetach", this.jpc)) {
+                      _doContinue = false;
+                    }
+                  }
+                  _doContinue = _doContinue && dropEndpoint.isDropAllowed(this.jpc.sourceId, this.jpc.targetId, this.jpc.scope, this.jpc, dropEndpoint);
+                  if (_doContinue) {
+                    this._drop(dropEndpoint, idx, originalEvent, _doContinue);
+                  } else {
+                    this._reattachOrDiscard(p.e);
+                  }
+                }
+              }
+            }
+          } else {
+            this._reattachOrDiscard(p.e);
+          }
+          this.instance._refreshEndpoint(this.ep);
+          this.ep.removeClass(this.instance.draggingClass);
+          this._cleanupDraggablePlaceholder();
+          this.jpc.removeClass(this.instance.draggingClass);
+          delete this.jpc.suspendedEndpoint;
+          delete this.jpc.suspendedElement;
+          delete this.jpc.suspendedElementType;
+          delete this.jpc.suspendedElementId;
+          delete this.jpc.suspendedIndex;
+          delete this.floatingId;
+          delete this.floatingIndex;
+          delete this.floatingElement;
+          delete this.floatingEndpoint;
+          delete this.floatingAnchor;
+          delete this.jpc.pending;
+          if (dropEndpoint != null) {
+            this._maybeCleanup(dropEndpoint);
+          }
+        }
+      }
+    }, {
+      key: "_getSourceDefinition",
+      value: function _getSourceDefinition(evt) {
+        var selector;
+        for (var i = 0; i < this.instance.sourceSelectors.length; i++) {
+          selector = this.instance.sourceSelectors[i];
+          if (selector.isEnabled()) {
+            var r = selectorFilter(evt, this.instance.getContainer(), selector.selector, this.instance, selector.exclude);
+            if (r !== false) {
+              return selector;
+            }
+          }
+        }
+      }
+    }, {
+      key: "_getDropEndpoint",
+      value: function _getDropEndpoint(p, jpc) {
+        var dropEndpoint;
+        if (this.currentDropTarget.endpoint == null) {
+          var targetDefinition = this.currentDropTarget.def;
+          var eventTarget = p.e.target || p.e.srcElement;
+          if (targetDefinition == null) {
+            return null;
+          }
+          var targetElement = this.currentDropTarget.targetEl;
+          var elxy = getPositionOnElement(p.e, targetElement, this.instance.currentZoom);
+          var eps = this.instance._deriveEndpointAndAnchorSpec(jpc.getType().join(" "), true);
+          var pp = eps.endpoints ? extend(p, {
+            endpoint: targetDefinition.def.endpoint || eps.endpoints[1]
+          }) : p;
+          var anchorsToUse = this.instance.validAnchorsSpec(eps.anchors) ? eps.anchors : this.instance.areDefaultAnchorsSet() ? this.instance.defaults.anchors : null;
+          var anchorFromDef = targetDefinition.def.anchor;
+          var anchorFromPositionFinder = targetDefinition.def.anchorPositionFinder ? targetDefinition.def.anchorPositionFinder(targetElement, elxy, targetDefinition.def, p.e) : null;
+          var dropAnchor = anchorFromPositionFinder != null ? anchorFromPositionFinder : anchorFromDef != null ? anchorFromDef : anchorsToUse != null && anchorsToUse[1] != null ? anchorsToUse[1] : null;
+          if (dropAnchor != null) {
+            pp = extend(pp, {
+              anchor: dropAnchor
+            });
+          }
+          if (targetDefinition.def.portId != null) {
+            pp.portId = targetDefinition.def.portId;
+          }
+          var extractedParameters = targetDefinition.def.parameterExtractor ? targetDefinition.def.parameterExtractor(this.currentDropTarget.el, eventTarget, p.e) : {};
+          pp = merge(pp, extractedParameters);
+          pp.element = targetElement;
+          dropEndpoint = this.instance._internal_newEndpoint(pp);
+          dropEndpoint._mtNew = true;
+          dropEndpoint.deleteOnEmpty = true;
+          if (targetDefinition.def.parameters) {
+            dropEndpoint.mergeParameters(targetDefinition.def.parameters);
+          }
+          if (targetDefinition.def.extract) {
+            var tpayload = {};
+            for (var att in targetDefinition.def.extract) {
+              var v = this.currentDropTarget.el.getAttribute(att);
+              if (v) {
+                tpayload[targetDefinition.def.extract[att]] = v;
+              }
+            }
+            dropEndpoint.mergeParameters(tpayload);
+          }
+        } else {
+          dropEndpoint = this.currentDropTarget.endpoint;
+        }
+        if (dropEndpoint) {
+          dropEndpoint.removeClass(this.instance.endpointDropAllowedClass);
+          dropEndpoint.removeClass(this.instance.endpointDropForbiddenClass);
+        }
+        return dropEndpoint;
+      }
+    }, {
+      key: "_doForceReattach",
+      value: function _doForceReattach(idx) {
+        this.floatingEndpoint.detachFromConnection(this.jpc, null, true);
+        this.jpc.endpoints[idx] = this.jpc.suspendedEndpoint;
+        this.instance.setHover(this.jpc, false);
+        this.jpc._forceDetach = true;
+        this.jpc.suspendedEndpoint.addConnection(this.jpc);
+        this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.suspendedEndpoint.elementId, this.jpc, this.jpc.suspendedEndpoint.element, idx);
+        this.instance.deleteEndpoint(this.floatingEndpoint);
+        this.instance.repaint(this.jpc.source);
+        delete this.jpc._forceDetach;
+      }
+    }, {
+      key: "_shouldReattach",
+      value: function _shouldReattach(originalEvent) {
+        return this.jpc.isReattach() || this.jpc._forceReattach || !functionChain(true, false, [[this.jpc.endpoints[0], IS_DETACH_ALLOWED, [this.jpc]], [this.jpc.endpoints[1], IS_DETACH_ALLOWED, [this.jpc]], [this.jpc, IS_DETACH_ALLOWED, [this.jpc]], [this.instance, CHECK_CONDITION, [INTERCEPT_BEFORE_DETACH, this.jpc]]]);
+      }
+    }, {
+      key: "_discard",
+      value: function _discard(idx, originalEvent) {
+        if (this.jpc.pending) {
+          this.instance.fire(EVENT_CONNECTION_ABORT, this.jpc, originalEvent);
+        } else {
+          if (idx === 0) {
+            this.jpc.source = this.jpc.suspendedEndpoint.element;
+            this.jpc.sourceId = this.jpc.suspendedEndpoint.elementId;
+          } else {
+            this.jpc.target = this.jpc.suspendedEndpoint.element;
+            this.jpc.targetId = this.jpc.suspendedEndpoint.elementId;
+          }
+          this.jpc.endpoints[idx] = this.jpc.suspendedEndpoint;
+        }
+        if (this.floatingEndpoint) {
+          this.floatingEndpoint.detachFromConnection(this.jpc);
+        }
+        this.instance.deleteConnection(this.jpc, {
+          originalEvent: originalEvent,
+          force: true
+        });
+      }
+    }, {
+      key: "_drop",
+      value: function _drop(dropEndpoint, idx, originalEvent, optionalData) {
+        this.jpc.endpoints[idx].detachFromConnection(this.jpc);
+        if (this.jpc.suspendedEndpoint) {
+          this.jpc.suspendedEndpoint.detachFromConnection(this.jpc);
+        }
+        this.jpc.endpoints[idx] = dropEndpoint;
+        dropEndpoint.addConnection(this.jpc);
+        if (this.jpc.suspendedEndpoint) {
+          var suspendedElementId = this.jpc.suspendedEndpoint.elementId;
+          this.instance.fireMoveEvent({
+            index: idx,
+            originalSourceId: idx === 0 ? suspendedElementId : this.jpc.sourceId,
+            newSourceId: idx === 0 ? dropEndpoint.elementId : this.jpc.sourceId,
+            originalTargetId: idx === 1 ? suspendedElementId : this.jpc.targetId,
+            newTargetId: idx === 1 ? dropEndpoint.elementId : this.jpc.targetId,
+            originalEndpoint: this.jpc.suspendedEndpoint,
+            connection: this.jpc,
+            newEndpoint: dropEndpoint
+          }, originalEvent);
+        }
+        if (idx === 1) {
+          this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.targetId, this.jpc, this.jpc.target, 1);
+        } else {
+          this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.sourceId, this.jpc, this.jpc.source, 0);
+        }
+        if (this.jpc.endpoints[0].finalEndpoint) {
+          var _toDelete = this.jpc.endpoints[0];
+          _toDelete.detachFromConnection(this.jpc);
+          this.jpc.endpoints[0] = this.jpc.endpoints[0].finalEndpoint;
+          this.jpc.endpoints[0].addConnection(this.jpc);
+        }
+        if (isObject(optionalData)) {
+          this.jpc.mergeData(optionalData);
+        }
+        if (this._originalAnchorSpec) {
+          this.jpc.endpoints[0].setAnchor(this._originalAnchorSpec);
+          this._originalAnchorSpec = null;
+        }
+        this.instance._finaliseConnection(this.jpc, null, originalEvent);
+        this.instance.setHover(this.jpc, false);
+        this.instance.revalidate(this.jpc.endpoints[0].element);
+      }
+    }, {
+      key: "_registerFloatingConnection",
+      value: function _registerFloatingConnection(info, conn, ep) {
+        this.floatingConnections[info.id] = conn;
+        addToDictionary(this.instance.endpointsByElement, info.id, ep);
+      }
+    }, {
+      key: "_getFloatingAnchorIndex",
+      value: function _getFloatingAnchorIndex() {
+        return this.floatingIndex == null ? 1 : this.floatingIndex;
+      }
+    }]);
+    return EndpointDragHandler;
+  }();
+
+  var GroupDragHandler = function (_ElementDragHandler) {
+    _inherits$9(GroupDragHandler, _ElementDragHandler);
+    var _super = _createSuper$9(GroupDragHandler);
+    function GroupDragHandler(instance, dragSelection) {
+      var _this;
+      _classCallCheck$e(this, GroupDragHandler);
+      _this = _super.call(this, instance, dragSelection);
+      _this.instance = instance;
+      _this.dragSelection = dragSelection;
+      _defineProperty$d(_assertThisInitialized$9(_this), "selector", [">", SELECTOR_GROUP, SELECTOR_MANAGED_ELEMENT].join(" "));
+      _defineProperty$d(_assertThisInitialized$9(_this), "doRevalidate", void 0);
+      _this.doRevalidate = _this._revalidate.bind(_assertThisInitialized$9(_this));
+      return _this;
+    }
+    _createClass$e(GroupDragHandler, [{
+      key: "reset",
+      value: function reset() {
+        this.drag.off(EVENT_REVERT, this.doRevalidate);
+      }
+    }, {
+      key: "_revalidate",
+      value: function _revalidate(el) {
+        this.instance.revalidate(el);
+      }
+    }, {
+      key: "init",
+      value: function init(drag) {
+        this.drag = drag;
+        drag.on(EVENT_REVERT, this.doRevalidate);
+      }
+    }, {
+      key: "useGhostProxy",
+      value: function useGhostProxy(container, dragEl) {
+        var group = dragEl._jsPlumbParentGroup;
+        return group == null ? false : group.ghost === true;
+      }
+    }, {
+      key: "makeGhostProxy",
+      value: function makeGhostProxy(el) {
+        var jel = el;
+        var newEl = jel.cloneNode(true);
+        newEl._jsPlumbParentGroup = jel._jsPlumbParentGroup;
+        return newEl;
+      }
+    }]);
+    return GroupDragHandler;
+  }(ElementDragHandler);
+
+  var HTMLElementOverlay = function () {
+    function HTMLElementOverlay(instance, overlay) {
+      _classCallCheck$e(this, HTMLElementOverlay);
+      this.instance = instance;
+      this.overlay = overlay;
+      _defineProperty$d(this, "htmlElementOverlay", void 0);
+      this.htmlElementOverlay = overlay;
+    }
+    _createClass$e(HTMLElementOverlay, null, [{
+      key: "getElement",
+      value: function getElement(o, component, elementCreator) {
+        if (o.canvas == null) {
+          if (elementCreator && component) {
+            o.canvas = elementCreator(component);
+            var cls = o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : "");
+            o.instance.addClass(o.canvas, cls);
+          } else {
+            o.canvas = createElement(ELEMENT_DIV, {}, o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : ""));
+          }
+          o.instance.setAttribute(o.canvas, "jtk-overlay-id", o.id);
+          for (var att in o.attributes) {
+            o.instance.setAttribute(o.canvas, att, o.attributes[att]);
+          }
+          o.canvas.style.position = ABSOLUTE$1;
+          o.instance._appendElement(o.canvas, o.instance.getContainer());
+          o.instance.getId(o.canvas);
+          var ts = "translate(-50%, -50%)";
+          o.canvas.style.webkitTransform = ts;
+          o.canvas.style.mozTransform = ts;
+          o.canvas.style.msTransform = ts;
+          o.canvas.style.oTransform = ts;
+          o.canvas.style.transform = ts;
+          if (!o.isVisible()) {
+            o.canvas.style.display = NONE$1;
+          }
+          o.canvas.jtk = {
+            overlay: o
+          };
+        }
+        return o.canvas;
+      }
+    }, {
+      key: "destroy",
+      value: function destroy(o) {
+        o.canvas && o.canvas.parentNode && o.canvas.parentNode.removeChild(o.canvas);
+        delete o.canvas;
+        delete o.cachedDimensions;
+      }
+    }, {
+      key: "_getDimensions",
+      value: function _getDimensions(o, forceRefresh) {
+        if (o.cachedDimensions == null || forceRefresh) {
+          o.cachedDimensions = {
+            w: 1,
+            h: 1
+          };
+        }
+        return o.cachedDimensions;
+      }
+    }]);
+    return HTMLElementOverlay;
+  }();
+
+  var SVGElementOverlay = function (_Overlay) {
+    _inherits$9(SVGElementOverlay, _Overlay);
+    var _super = _createSuper$9(SVGElementOverlay);
+    function SVGElementOverlay() {
+      var _this;
+      _classCallCheck$e(this, SVGElementOverlay);
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      _this = _super.call.apply(_super, [this].concat(args));
+      _defineProperty$d(_assertThisInitialized$9(_this), "path", void 0);
+      return _this;
+    }
+    _createClass$e(SVGElementOverlay, null, [{
+      key: "ensurePath",
+      value: function ensurePath(o) {
+        if (o.path == null) {
+          var atts = extend({
+            "jtk-overlay-id": o.id
+          }, o.attributes);
+          o.path = _node(ELEMENT_PATH, atts);
+          var parent = null;
+          if (o.component instanceof Connection) {
+            var connector = o.component.connector;
+            parent = connector != null ? connector.canvas : null;
+          } else if (o.component instanceof Endpoint) {
+            var endpoint = o.component.endpoint;
+            parent = endpoint != null ? endpoint.svg : endpoint;
+          }
+          if (parent != null) {
+            _appendAtIndex(parent, o.path, 1);
+          }
+          var cls = o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : "");
+          o.instance.addClass(o.path, cls);
+          o.path.jtk = {
+            overlay: o
+          };
+        }
+        return o.path;
+      }
+    }, {
+      key: "paint",
+      value: function paint(o, path, params, extents) {
+        this.ensurePath(o);
+        var offset = [0, 0];
+        if (extents.xmin < 0) {
+          offset[0] = -extents.xmin;
+        }
+        if (extents.ymin < 0) {
+          offset[1] = -extents.ymin;
+        }
+        var a = {
+          "d": path,
+          stroke: params.stroke ? params.stroke : null,
+          fill: params.fill ? params.fill : null,
+          transform: "translate(" + offset[0] + "," + offset[1] + ")",
+          "pointer-events": "visibleStroke"
+        };
+        _attr(o.path, a);
+      }
+    }, {
+      key: "destroy",
+      value: function destroy(o, force) {
+        var _o = o;
+        if (_o.path != null && _o.path.parentNode != null) {
+          _o.path.parentNode.removeChild(_o.path);
+        }
+        if (_o.bgPath != null && _o.bgPath.parentNode != null) {
+          _o.bgPath.parentNode.removeChild(_o.bgPath);
+        }
+        delete _o.path;
+        delete _o.bgPath;
+      }
+    }]);
+    return SVGElementOverlay;
+  }(Overlay);
+
+  var SvgComponent = function () {
+    function SvgComponent() {
+      _classCallCheck$e(this, SvgComponent);
+    }
+    _createClass$e(SvgComponent, null, [{
+      key: "paint",
+      value: function paint(connector, useDivWrapper, paintStyle, extents) {
+        if (paintStyle != null) {
+          var xy = [connector.x, connector.y],
+              wh = [connector.w, connector.h],
+              p;
+          if (extents != null) {
+            if (extents.xmin < 0) {
+              xy[0] += extents.xmin;
+            }
+            if (extents.ymin < 0) {
+              xy[1] += extents.ymin;
+            }
+            wh[0] = extents.xmax + (extents.xmin < 0 ? -extents.xmin : 0);
+            wh[1] = extents.ymax + (extents.ymin < 0 ? -extents.ymin : 0);
+          }
+          if (isFinite(wh[0]) && isFinite(wh[1])) {
+            if (useDivWrapper) {
+              _size(connector.canvas, xy[0], xy[1], wh[0], wh[1]);
+              xy[0] = 0;
+              xy[1] = 0;
+              p = _pos([0, 0]);
+              _attr(connector.svg, {
+                "style": p,
+                "width": "" + (wh[0] || 0),
+                "height": "" + (wh[1] || 0)
+              });
+            } else {
+              p = _pos([xy[0], xy[1]]);
+              _attr(connector.canvas, {
+                "style": p,
+                "width": "" + (wh[0] || 0),
+                "height": "" + (wh[1] || 0)
+              });
+            }
+          }
+        }
+      }
+    }]);
+    return SvgComponent;
+  }();
+
+  function paintSvgConnector(instance, connector, paintStyle, extents) {
+    getConnectorElement(instance, connector);
+    SvgComponent.paint(connector, false, paintStyle, extents);
+    var p = "",
+        offset = [0, 0];
+    if (extents.xmin < 0) {
+      offset[0] = -extents.xmin;
+    }
+    if (extents.ymin < 0) {
+      offset[1] = -extents.ymin;
+    }
+    if (connector.segments.length > 0) {
+      p = instance.getPathData(connector);
+      var a = {
+        d: p,
+        transform: "translate(" + offset[0] + "," + offset[1] + ")",
+        "pointer-events": "visibleStroke"
+      },
+          outlineStyle = null;
+      if (paintStyle.outlineStroke) {
+        var outlineWidth = paintStyle.outlineWidth || 1,
+            outlineStrokeWidth = paintStyle.strokeWidth + 2 * outlineWidth;
+        outlineStyle = extend({}, paintStyle);
+        outlineStyle.stroke = paintStyle.outlineStroke;
+        outlineStyle.strokeWidth = outlineStrokeWidth;
+        if (connector.bgPath == null) {
+          connector.bgPath = _node(ELEMENT_PATH, a);
+          instance.addClass(connector.bgPath, instance.connectorOutlineClass);
+          _appendAtIndex(connector.canvas, connector.bgPath, 0);
+        } else {
+          _attr(connector.bgPath, a);
+        }
+        _applyStyles(connector.canvas, connector.bgPath, outlineStyle);
+      }
+      var cany = connector;
+      if (cany.path == null) {
+        cany.path = _node(ELEMENT_PATH, a);
+        _appendAtIndex(cany.canvas, cany.path, paintStyle.outlineStroke ? 1 : 0);
+      } else {
+        if (cany.path.parentNode !== cany.canvas) {
+          _appendAtIndex(cany.canvas, cany.path, paintStyle.outlineStroke ? 1 : 0);
+        }
+        _attr(connector.path, a);
+      }
+      _applyStyles(connector.canvas, connector.path, paintStyle);
+    }
+  }
+  function getConnectorElement(instance, c) {
+    if (c.canvas != null) {
+      return c.canvas;
+    } else {
+      var svg = _node(ELEMENT_SVG, {
+        "style": "",
+        "width": "0",
+        "height": "0",
+        "pointer-events": NONE$1,
+        "position": ABSOLUTE$1
+      });
+      c.canvas = svg;
+      instance._appendElement(c.canvas, instance.getContainer());
+      if (c.cssClass != null) {
+        instance.addClass(svg, c.cssClass);
+      }
+      instance.addClass(svg, instance.connectorClass);
+      svg.jtk = svg.jtk || {};
+      svg.jtk.connector = c;
+      return svg;
+    }
+  }
+
+  var SvgEndpoint = function () {
+    function SvgEndpoint() {
+      _classCallCheck$e(this, SvgEndpoint);
+    }
+    _createClass$e(SvgEndpoint, null, [{
+      key: "getEndpointElement",
+      value: function getEndpointElement(ep) {
+        if (ep.canvas != null) {
+          return ep.canvas;
+        } else {
+          var svg = _node(ELEMENT_SVG, {
+            "style": "",
+            "width": "0",
+            "height": "0",
+            "pointer-events": NONE$1,
+            "position": ABSOLUTE$1
+          });
+          ep.svg = svg;
+          var canvas = createElement(ELEMENT_DIV, {
+            position: ABSOLUTE$1
+          });
+          ep.canvas = canvas;
+          var classes = ep.classes.join(" ");
+          ep.instance.addClass(canvas, classes);
+          var scopes = ep.endpoint.scope.split(/\s/);
+          for (var i = 0; i < scopes.length; i++) {
+            ep.instance.setAttribute(canvas, ATTRIBUTE_SCOPE_PREFIX + scopes[i], TRUE$1);
+          }
+          if (!ep.instance._suspendDrawing) {
+            _size(canvas, 0, 0, 1, 1);
+          }
+          ep.instance._appendElement(canvas, ep.instance.getContainer());
+          canvas.appendChild(svg);
+          if (ep.cssClass != null) {
+            ep.instance.addClass(canvas, ep.cssClass);
+          }
+          ep.instance.addClass(canvas, ep.instance.endpointClass);
+          canvas.jtk = canvas.jtk || {};
+          canvas.jtk.endpoint = ep.endpoint;
+          canvas.style.display = ep.endpoint.visible !== false ? BLOCK : NONE$1;
+          return canvas;
+        }
+      }
+    }, {
+      key: "paint",
+      value: function paint(ep, handlers, paintStyle) {
+        if (ep.endpoint.deleted !== true) {
+          this.getEndpointElement(ep);
+          SvgComponent.paint(ep, true, paintStyle);
+          var s = extend({}, paintStyle);
+          if (s.outlineStroke) {
+            s.stroke = s.outlineStroke;
+          }
+          if (ep.node == null) {
+            ep.node = handlers.makeNode(ep, s);
+            ep.svg.appendChild(ep.node);
+          } else if (handlers.updateNode != null) {
+            handlers.updateNode(ep, ep.node);
+          }
+          _applyStyles(ep.canvas, ep.node, s);
+        }
+      }
+    }]);
+    return SvgEndpoint;
+  }();
+
+  var endpointMap = {};
+  function registerEndpointRenderer(name, fns) {
+    endpointMap[name] = fns;
+  }
+  function getPositionOnElement(evt, el, zoom) {
+    var jel = el;
+    var box = _typeof$1(el.getBoundingClientRect) !== UNDEFINED ? el.getBoundingClientRect() : {
+      left: 0,
+      top: 0,
+      width: 0,
+      height: 0
+    },
+        body = document.body,
+        docElem = document.documentElement,
+        scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+        scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
+        clientTop = docElem.clientTop || body.clientTop || 0,
+        clientLeft = docElem.clientLeft || body.clientLeft || 0,
+        pst = 0,
+        psl = 0,
+        top = box.top + scrollTop - clientTop + pst * zoom,
+        left = box.left + scrollLeft - clientLeft + psl * zoom,
+        cl = pageLocation(evt),
+        w = box.width || jel.offsetWidth * zoom,
+        h = box.height || jel.offsetHeight * zoom,
+        x = (cl.x - left) / w,
+        y = (cl.y - top) / h;
+    return {
+      x: x,
+      y: y
+    };
+  }
+  function isSVGElementOverlay(o) {
+    return isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o);
+  }
+  function setVisible(component, v) {
+    if (component.canvas) {
+      component.canvas.style.display = v ? "block" : "none";
+    }
+  }
+  function cleanup(component) {
+    if (component.canvas) {
+      component.canvas.parentNode.removeChild(component.canvas);
+    }
+    delete component.canvas;
+    delete component.svg;
+  }
+  function getEndpointCanvas(ep) {
+    return ep.canvas;
+  }
+  function getLabelElement(o) {
+    return HTMLElementOverlay.getElement(o);
+  }
+  function getCustomElement(o) {
+    return HTMLElementOverlay.getElement(o, o.component, function (c) {
+      var el = o.create(c);
+      o.instance.addClass(el, o.instance.overlayClass);
+      return el;
+    });
+  }
+  function groupDragConstrain(desiredLoc, dragEl, constrainRect, size) {
+    var x = desiredLoc.x,
+        y = desiredLoc.y;
+    if (dragEl._jsPlumbParentGroup && dragEl._jsPlumbParentGroup.constrain) {
+      x = Math.max(desiredLoc.x, 0);
+      y = Math.max(desiredLoc.y, 0);
+      x = Math.min(x, constrainRect.w - size.w);
+      y = Math.min(y, constrainRect.h - size.h);
+    }
+    return {
+      x: x,
+      y: y
+    };
+  }
+  var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
+    _inherits$9(BrowserJsPlumbInstance, _JsPlumbInstance);
+    var _super = _createSuper$9(BrowserJsPlumbInstance);
+    function BrowserJsPlumbInstance(_instanceIndex, defaults) {
+      var _this;
+      _classCallCheck$e(this, BrowserJsPlumbInstance);
+      _this = _super.call(this, _instanceIndex, defaults);
+      _this._instanceIndex = _instanceIndex;
+      _defineProperty$d(_assertThisInitialized$9(_this), "dragSelection", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "dragManager", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorDblClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorDblTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointDblClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayDblClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayDblTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorMouseover", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorMouseout", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointMouseover", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointMouseout", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorContextmenu", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorMousedown", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_connectorMouseup", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointMousedown", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_endpointMouseup", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayMouseover", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_overlayMouseout", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementClick", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementDblTap", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementMouseenter", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementMouseexit", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementMousemove", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementMouseup", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementMousedown", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "_elementContextmenu", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "eventManager", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "draggingClass", "jtk-dragging");
+      _defineProperty$d(_assertThisInitialized$9(_this), "elementDraggingClass", "jtk-element-dragging");
+      _defineProperty$d(_assertThisInitialized$9(_this), "hoverClass", "jtk-hover");
+      _defineProperty$d(_assertThisInitialized$9(_this), "sourceElementDraggingClass", "jtk-source-element-dragging");
+      _defineProperty$d(_assertThisInitialized$9(_this), "targetElementDraggingClass", "jtk-target-element-dragging");
+      _defineProperty$d(_assertThisInitialized$9(_this), "hoverSourceClass", "jtk-source-hover");
+      _defineProperty$d(_assertThisInitialized$9(_this), "hoverTargetClass", "jtk-target-hover");
+      _defineProperty$d(_assertThisInitialized$9(_this), "dragSelectClass", "jtk-drag-select");
+      _defineProperty$d(_assertThisInitialized$9(_this), "managedElementsSelector", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "elementsDraggable", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "elementDragHandler", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "groupDragOptions", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "elementDragOptions", void 0);
+      _defineProperty$d(_assertThisInitialized$9(_this), "svg", {
+        node: function node(name, attributes) {
+          return _node(name, attributes);
+        },
+        attr: function attr(node, attributes) {
+          return _attr(node, attributes);
+        },
+        pos: function pos(d) {
+          return _pos(d);
+        }
+      });
+      _this.elementsDraggable = defaults && defaults.elementsDraggable !== false;
+      _this.managedElementsSelector = defaults ? defaults.managedElementsSelector || SELECTOR_MANAGED_ELEMENT : SELECTOR_MANAGED_ELEMENT;
+      _this.eventManager = new EventManager();
+      _this.dragSelection = new DragSelection(_assertThisInitialized$9(_this));
+      _this.dragManager = new DragManager(_assertThisInitialized$9(_this), _this.dragSelection);
+      _this.dragManager.addHandler(new EndpointDragHandler(_assertThisInitialized$9(_this)));
+      _this.groupDragOptions = {
+        constrainFunction: groupDragConstrain
+      };
+      _this.dragManager.addHandler(new GroupDragHandler(_assertThisInitialized$9(_this), _this.dragSelection), _this.groupDragOptions);
+      _this.elementDragHandler = new ElementDragHandler(_assertThisInitialized$9(_this), _this.dragSelection);
+      _this.elementDragOptions = defaults && defaults.dragOptions || {};
+      _this.dragManager.addHandler(_this.elementDragHandler, _this.elementDragOptions);
+      if (defaults && defaults.dragOptions && defaults.dragOptions.filter) {
+        _this.dragManager.addFilter(defaults.dragOptions.filter);
+      }
+      var _connClick = function _connClick(event, e) {
+        if (!e.defaultPrevented && e._jsPlumbOverlay == null) {
+          var connectorElement = findParent(getEventSource(e), SELECTOR_CONNECTOR, this.getContainer(), true);
+          this.fire(event, connectorElement.jtk.connector.connection, e);
+        }
+      };
+      _this._connectorClick = _connClick.bind(_assertThisInitialized$9(_this), EVENT_CONNECTION_CLICK);
+      _this._connectorDblClick = _connClick.bind(_assertThisInitialized$9(_this), EVENT_CONNECTION_DBL_CLICK);
+      _this._connectorTap = _connClick.bind(_assertThisInitialized$9(_this), EVENT_CONNECTION_TAP);
+      _this._connectorDblTap = _connClick.bind(_assertThisInitialized$9(_this), EVENT_CONNECTION_DBL_TAP);
+      var _connectorHover = function _connectorHover(state, e) {
+        var el = getEventSource(e).parentNode;
+        if (el.jtk && el.jtk.connector) {
+          var connector = el.jtk.connector;
+          var connection = connector.connection;
+          this.setConnectorHover(connector, state);
+          if (state) {
+            this.addClass(connection.source, this.hoverSourceClass);
+            this.addClass(connection.target, this.hoverTargetClass);
+          } else {
+            this.removeClass(connection.source, this.hoverSourceClass);
+            this.removeClass(connection.target, this.hoverTargetClass);
+          }
+          this.fire(state ? EVENT_CONNECTION_MOUSEOVER : EVENT_CONNECTION_MOUSEOUT, el.jtk.connector.connection, e);
+        }
+      };
+      _this._connectorMouseover = _connectorHover.bind(_assertThisInitialized$9(_this), true);
+      _this._connectorMouseout = _connectorHover.bind(_assertThisInitialized$9(_this), false);
+      var _connectorMouseupdown = function _connectorMouseupdown(state, e) {
+        var el = getEventSource(e).parentNode;
+        if (el.jtk && el.jtk.connector) {
+          this.fire(state ? EVENT_CONNECTION_MOUSEUP : EVENT_CONNECTION_MOUSEDOWN, el.jtk.connector.connection, e);
+        }
+      };
+      _this._connectorMouseup = _connectorMouseupdown.bind(_assertThisInitialized$9(_this), true);
+      _this._connectorMousedown = _connectorMouseupdown.bind(_assertThisInitialized$9(_this), false);
+      _this._connectorContextmenu = function (e) {
+        var el = getEventSource(e).parentNode;
+        if (el.jtk && el.jtk.connector) {
+          this.fire(EVENT_CONNECTION_CONTEXTMENU, el.jtk.connector.connection, e);
+        }
+      }.bind(_assertThisInitialized$9(_this));
+      var _epClick = function _epClick(event, e, endpointElement) {
+        if (!e.defaultPrevented && e._jsPlumbOverlay == null) {
+          this.fire(event, endpointElement.jtk.endpoint, e);
+        }
+      };
+      _this._endpointClick = _epClick.bind(_assertThisInitialized$9(_this), EVENT_ENDPOINT_CLICK);
+      _this._endpointDblClick = _epClick.bind(_assertThisInitialized$9(_this), EVENT_ENDPOINT_DBL_CLICK);
+      var _endpointHover = function _endpointHover(state, e) {
+        var el = getEventSource(e);
+        if (el.jtk && el.jtk.endpoint) {
+          this.setEndpointHover(el.jtk.endpoint, state);
+          this.fire(state ? EVENT_ENDPOINT_MOUSEOVER : EVENT_ENDPOINT_MOUSEOUT, el.jtk.endpoint, e);
+        }
+      };
+      _this._endpointMouseover = _endpointHover.bind(_assertThisInitialized$9(_this), true);
+      _this._endpointMouseout = _endpointHover.bind(_assertThisInitialized$9(_this), false);
+      var _endpointMouseupdown = function _endpointMouseupdown(state, e) {
+        var el = getEventSource(e);
+        if (el.jtk && el.jtk.endpoint) {
+          this.fire(state ? EVENT_ENDPOINT_MOUSEUP : EVENT_ENDPOINT_MOUSEDOWN, el.jtk.endpoint, e);
+        }
+      };
+      _this._endpointMouseup = _endpointMouseupdown.bind(_assertThisInitialized$9(_this), true);
+      _this._endpointMousedown = _endpointMouseupdown.bind(_assertThisInitialized$9(_this), false);
+      var _oClick = function (method, e) {
+        var overlayElement = findParent(getEventSource(e), SELECTOR_OVERLAY, this.getContainer(), true);
+        var overlay = overlayElement.jtk.overlay;
+        if (overlay) {
+          this.fireOverlayMethod(overlay, method, e);
+        }
+      }.bind(_assertThisInitialized$9(_this));
+      _this._overlayClick = _oClick.bind(_assertThisInitialized$9(_this), EVENT_CLICK);
+      _this._overlayDblClick = _oClick.bind(_assertThisInitialized$9(_this), EVENT_DBL_CLICK);
+      _this._overlayTap = _oClick.bind(_assertThisInitialized$9(_this), EVENT_TAP);
+      _this._overlayDblTap = _oClick.bind(_assertThisInitialized$9(_this), EVENT_DBL_TAP);
+      var _overlayHover = function _overlayHover(state, e) {
+        var overlayElement = findParent(getEventSource(e), SELECTOR_OVERLAY, this.getContainer(), true);
+        var overlay = overlayElement.jtk.overlay;
+        if (overlay) {
+          this.setOverlayHover(overlay, state);
+        }
+      };
+      _this._overlayMouseover = _overlayHover.bind(_assertThisInitialized$9(_this), true);
+      _this._overlayMouseout = _overlayHover.bind(_assertThisInitialized$9(_this), false);
+      var _elementClick = function _elementClick(event, e, target) {
+        if (!e.defaultPrevented) {
+          this.fire(e.detail === 1 ? EVENT_ELEMENT_CLICK : EVENT_ELEMENT_DBL_CLICK, target, e);
+        }
+      };
+      _this._elementClick = _elementClick.bind(_assertThisInitialized$9(_this), EVENT_ELEMENT_CLICK);
+      var _elementTap = function _elementTap(event, e, target) {
+        if (!e.defaultPrevented) {
+          this.fire(EVENT_ELEMENT_TAP, target, e);
+        }
+      };
+      _this._elementTap = _elementTap.bind(_assertThisInitialized$9(_this), EVENT_ELEMENT_TAP);
+      var _elementDblTap = function _elementDblTap(event, e, target) {
+        if (!e.defaultPrevented) {
+          this.fire(EVENT_ELEMENT_DBL_TAP, target, e);
+        }
+      };
+      _this._elementDblTap = _elementDblTap.bind(_assertThisInitialized$9(_this), EVENT_ELEMENT_DBL_TAP);
+      var _elementHover = function _elementHover(state, e) {
+        this.fire(state ? EVENT_ELEMENT_MOUSE_OVER : EVENT_ELEMENT_MOUSE_OUT, getEventSource(e), e);
+      };
+      _this._elementMouseenter = _elementHover.bind(_assertThisInitialized$9(_this), true);
+      _this._elementMouseexit = _elementHover.bind(_assertThisInitialized$9(_this), false);
+      _this._elementMousemove = function (e) {
+        this.fire(EVENT_ELEMENT_MOUSE_MOVE, getEventSource(e), e);
+      }.bind(_assertThisInitialized$9(_this));
+      _this._elementMouseup = function (e) {
+        this.fire(EVENT_ELEMENT_MOUSE_UP, getEventSource(e), e);
+      }.bind(_assertThisInitialized$9(_this));
+      _this._elementMousedown = function (e) {
+        this.fire(EVENT_ELEMENT_MOUSE_DOWN, getEventSource(e), e);
+      }.bind(_assertThisInitialized$9(_this));
+      _this._elementContextmenu = function (e) {
+        this.fire(EVENT_ELEMENT_CONTEXTMENU, getEventSource(e), e);
+      }.bind(_assertThisInitialized$9(_this));
+      _this._attachEventDelegates();
+      return _this;
+    }
+    _createClass$e(BrowserJsPlumbInstance, [{
+      key: "fireOverlayMethod",
+      value: function fireOverlayMethod(overlay, event, e) {
+        var stem = overlay.component instanceof Connection ? CONNECTION : ENDPOINT;
+        var mappedEvent = compoundEvent(stem, event)
+        ;
+        e._jsPlumbOverlay = overlay;
+        overlay.fire(event, {
+          e: e,
+          overlay: overlay
+        });
+        this.fire(mappedEvent, overlay.component, e);
+      }
+    }, {
+      key: "addDragFilter",
+      value: function addDragFilter(filter, exclude) {
+        this.dragManager.addFilter(filter, exclude);
+      }
+    }, {
+      key: "removeDragFilter",
+      value: function removeDragFilter(filter) {
+        this.dragManager.removeFilter(filter);
+      }
+    }, {
+      key: "setDragGrid",
+      value: function setDragGrid(grid) {
+        this.dragManager.setOption(this.elementDragHandler, {
+          grid: grid
+        });
+      }
+    }, {
+      key: "_removeElement",
+      value: function _removeElement(element) {
+        element.parentNode && element.parentNode.removeChild(element);
+      }
+    }, {
+      key: "_appendElement",
+      value: function _appendElement(el, parent) {
+        if (parent) {
+          parent.appendChild(el);
+        }
+      }
+    }, {
+      key: "_getAssociatedElements",
+      value: function _getAssociatedElements(el) {
+        var a = [];
+        if (el.nodeType !== 3 && el.nodeType !== 8) {
+          var els = el.querySelectorAll(SELECTOR_MANAGED_ELEMENT);
+          Array.prototype.push.apply(a, els);
+        }
+        return a.filter(function (_a) {
+          return _a.nodeType !== 3 && _a.nodeType !== 8;
+        });
+      }
+    }, {
+      key: "shouldFireEvent",
+      value: function shouldFireEvent(event, value, originalEvent) {
+        return true;
+      }
+    }, {
+      key: "getClass",
+      value: function getClass$1(el) {
+        return getClass(el);
+      }
+    }, {
+      key: "addClass",
+      value: function addClass$1(el, clazz) {
+        addClass(el, clazz);
+      }
+    }, {
+      key: "hasClass",
+      value: function hasClass$1(el, clazz) {
+        return hasClass(el, clazz);
+      }
+    }, {
+      key: "removeClass",
+      value: function removeClass$1(el, clazz) {
+        removeClass(el, clazz);
+      }
+    }, {
+      key: "toggleClass",
+      value: function toggleClass$1(el, clazz) {
+        toggleClass(el, clazz);
+      }
+    }, {
+      key: "setAttribute",
+      value: function setAttribute(el, name, value) {
+        el.setAttribute(name, value);
+      }
+    }, {
+      key: "getAttribute",
+      value: function getAttribute(el, name) {
+        return el.getAttribute(name);
+      }
+    }, {
+      key: "setAttributes",
+      value: function setAttributes(el, atts) {
+        for (var i in atts) {
+          el.setAttribute(i, atts[i]);
+        }
+      }
+    }, {
+      key: "removeAttribute",
+      value: function removeAttribute(el, attName) {
+        el.removeAttribute && el.removeAttribute(attName);
+      }
+    }, {
+      key: "on",
+      value: function on(el, event, callbackOrSelector, callback) {
+        var _this2 = this;
+        var _one = function _one(_el) {
+          if (callback == null) {
+            _this2.eventManager.on(_el, event, callbackOrSelector);
+          } else {
+            _this2.eventManager.on(_el, event, callbackOrSelector, callback);
+          }
+        };
+        if (isNodeList(el)) {
+          forEach(el, function (el) {
+            return _one(el);
+          });
+        } else {
+          _one(el);
+        }
+        return this;
+      }
+    }, {
+      key: "off",
+      value: function off(el, event, callback) {
+        var _this3 = this;
+        if (isNodeList(el)) {
+          forEach(el, function (_el) {
+            return _this3.eventManager.off(_el, event, callback);
+          });
+        } else {
+          this.eventManager.off(el, event, callback);
+        }
+        return this;
+      }
+    }, {
+      key: "trigger",
+      value: function trigger(el, event, originalEvent, payload, detail) {
+        this.eventManager.trigger(el, event, originalEvent, payload, detail);
+      }
+    }, {
+      key: "getOffsetRelativeToRoot",
+      value: function getOffsetRelativeToRoot(el) {
+        return offsetRelativeToRoot(el);
+      }
+    }, {
+      key: "getOffset",
+      value: function getOffset(el) {
+        var jel = el;
+        var container = this.getContainer();
+        var out = {
+          x: jel.offsetLeft,
+          y: jel.offsetTop
+        },
+            op = el !== container && jel.offsetParent !== container ? jel.offsetParent : null,
+            _maybeAdjustScroll = function _maybeAdjustScroll(offsetParent) {
+          if (offsetParent != null && offsetParent !== document.body && (offsetParent.scrollTop > 0 || offsetParent.scrollLeft > 0)) {
+            out.x -= offsetParent.scrollLeft;
+            out.y -= offsetParent.scrollTop;
+          }
+        };
+        while (op != null) {
+          out.x += op.offsetLeft;
+          out.y += op.offsetTop;
+          _maybeAdjustScroll(op);
+          op = op.offsetParent === container ? null : op.offsetParent;
+        }
+        if (container != null && (container.scrollTop > 0 || container.scrollLeft > 0)) {
+          var pp = jel.offsetParent != null ? this.getStyle(jel.offsetParent, PROPERTY_POSITION) : STATIC,
+              p = this.getStyle(jel, PROPERTY_POSITION);
+          if (p !== ABSOLUTE$1 && p !== FIXED && pp !== ABSOLUTE$1 && pp !== FIXED) {
+            out.x -= container.scrollLeft;
+            out.y -= container.scrollTop;
+          }
+        }
+        return out;
+      }
+    }, {
+      key: "getSize",
+      value: function getSize(el) {
+        return size(el);
+      }
+    }, {
+      key: "getStyle",
+      value: function getStyle(el, prop) {
+        if (_typeof$1(window.getComputedStyle) !== UNDEFINED) {
+          return getComputedStyle(el, null).getPropertyValue(prop);
+        } else {
+          return el.currentStyle[prop];
+        }
+      }
+    }, {
+      key: "getGroupContentArea",
+      value: function getGroupContentArea(group) {
+        var da = this.getSelector(group.el, SELECTOR_GROUP_CONTAINER);
+        return da && da.length > 0 ? da[0] : group.el;
+      }
+    }, {
+      key: "getSelector",
+      value: function getSelector(ctx, spec) {
+        var sel = null;
+        if (arguments.length === 1) {
+          if (!isString(ctx)) {
+            var nodeList = document.createDocumentFragment();
+            nodeList.appendChild(ctx);
+            return fromArray(nodeList.childNodes);
+          }
+          sel = fromArray(document.querySelectorAll(ctx));
+        } else {
+          sel = fromArray(ctx.querySelectorAll(spec));
+        }
+        return sel;
+      }
+    }, {
+      key: "setPosition",
+      value: function setPosition(el, p) {
+        var jel = el;
+        jel.style.left = p.x + "px";
+        jel.style.top = p.y + "px";
+      }
+    }, {
+      key: "setDraggable",
+      value: function setDraggable(element, draggable) {
+        if (draggable) {
+          this.removeAttribute(element, ATTRIBUTE_NOT_DRAGGABLE);
+        } else {
+          this.setAttribute(element, ATTRIBUTE_NOT_DRAGGABLE, TRUE$1);
+        }
+      }
+    }, {
+      key: "isDraggable",
+      value: function isDraggable(el) {
+        var d = this.getAttribute(el, ATTRIBUTE_NOT_DRAGGABLE);
+        return d == null || d === FALSE$1;
+      }
+    }, {
+      key: "toggleDraggable",
+      value: function toggleDraggable(el) {
+        var state = this.isDraggable(el);
+        this.setDraggable(el, !state);
+        return !state;
+      }
+    }, {
+      key: "_attachEventDelegates",
+      value: function _attachEventDelegates() {
+        var currentContainer = this.getContainer();
+        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_OVERLAY, this._overlayClick);
+        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_OVERLAY, this._overlayDblClick);
+        this.eventManager.on(currentContainer, EVENT_TAP, SELECTOR_OVERLAY, this._overlayTap);
+        this.eventManager.on(currentContainer, EVENT_DBL_TAP, SELECTOR_OVERLAY, this._overlayDblTap);
+        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_CONNECTOR, this._connectorClick);
+        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_CONNECTOR, this._connectorDblClick);
+        this.eventManager.on(currentContainer, EVENT_TAP, SELECTOR_CONNECTOR, this._connectorTap);
+        this.eventManager.on(currentContainer, EVENT_DBL_TAP, SELECTOR_CONNECTOR, this._connectorDblTap);
+        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_ENDPOINT, this._endpointClick);
+        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_ENDPOINT, this._endpointDblClick);
+        this.eventManager.on(currentContainer, EVENT_CLICK, this.managedElementsSelector, this._elementClick);
+        this.eventManager.on(currentContainer, EVENT_TAP, this.managedElementsSelector, this._elementTap);
+        this.eventManager.on(currentContainer, EVENT_DBL_TAP, this.managedElementsSelector, this._elementDblTap);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_CONNECTOR, this._connectorMouseover);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_CONNECTOR, this._connectorMouseout);
+        this.eventManager.on(currentContainer, EVENT_CONTEXTMENU, SELECTOR_CONNECTOR, this._connectorContextmenu);
+        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_CONNECTOR, this._connectorMouseup);
+        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_CONNECTOR, this._connectorMousedown);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_ENDPOINT, this._endpointMouseover);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_ENDPOINT, this._endpointMouseout);
+        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_ENDPOINT, this._endpointMouseup);
+        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_ENDPOINT, this._endpointMousedown);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_OVERLAY, this._overlayMouseover);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_OVERLAY, this._overlayMouseout);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_MANAGED_ELEMENT, this._elementMouseenter);
+        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_MANAGED_ELEMENT, this._elementMouseexit);
+        this.eventManager.on(currentContainer, EVENT_MOUSEMOVE, SELECTOR_MANAGED_ELEMENT, this._elementMousemove);
+        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_MANAGED_ELEMENT, this._elementMouseup);
+        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_MANAGED_ELEMENT, this._elementMousedown);
+        this.eventManager.on(currentContainer, EVENT_CONTEXTMENU, SELECTOR_MANAGED_ELEMENT, this._elementContextmenu);
+      }
+    }, {
+      key: "_detachEventDelegates",
+      value: function _detachEventDelegates() {
+        var currentContainer = this.getContainer();
+        if (currentContainer) {
+          this.eventManager.off(currentContainer, EVENT_CLICK, this._connectorClick);
+          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._connectorDblClick);
+          this.eventManager.off(currentContainer, EVENT_TAP, this._connectorTap);
+          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._connectorDblTap);
+          this.eventManager.off(currentContainer, EVENT_CLICK, this._endpointClick);
+          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._endpointDblClick);
+          this.eventManager.off(currentContainer, EVENT_CLICK, this._overlayClick);
+          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._overlayDblClick);
+          this.eventManager.off(currentContainer, EVENT_TAP, this._overlayTap);
+          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._overlayDblTap);
+          this.eventManager.off(currentContainer, EVENT_CLICK, this._elementClick);
+          this.eventManager.off(currentContainer, EVENT_TAP, this._elementTap);
+          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._elementDblTap);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._connectorMouseover);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._connectorMouseout);
+          this.eventManager.off(currentContainer, EVENT_CONTEXTMENU, this._connectorContextmenu);
+          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._connectorMouseup);
+          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._connectorMousedown);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._endpointMouseover);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._endpointMouseout);
+          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._endpointMouseup);
+          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._endpointMousedown);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._overlayMouseover);
+          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._overlayMouseout);
+          this.eventManager.off(currentContainer, EVENT_MOUSEENTER, this._elementMouseenter);
+          this.eventManager.off(currentContainer, EVENT_MOUSEEXIT, this._elementMouseexit);
+          this.eventManager.off(currentContainer, EVENT_MOUSEMOVE, this._elementMousemove);
+          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._elementMouseup);
+          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._elementMousedown);
+          this.eventManager.off(currentContainer, EVENT_CONTEXTMENU, this._elementContextmenu);
+        }
+      }
+    }, {
+      key: "setContainer",
+      value: function setContainer(newContainer) {
+        var _this4 = this;
+        if (newContainer === document || newContainer === document.body) {
+          throw new Error("Cannot set document or document.body as container element");
+        }
+        this._detachEventDelegates();
+        var dragFilters;
+        if (this.dragManager != null) {
+          dragFilters = this.dragManager.reset();
+        }
+        this.setAttribute(newContainer, ATTRIBUTE_CONTAINER, uuid().replace("-", ""));
+        var currentContainer = this.getContainer();
+        if (currentContainer != null) {
+          currentContainer.removeAttribute(ATTRIBUTE_CONTAINER);
+          var children = fromArray(currentContainer.childNodes).filter(function (cn) {
+            return cn != null && (_this4.hasClass(cn, CLASS_CONNECTOR) || _this4.hasClass(cn, CLASS_ENDPOINT) || _this4.hasClass(cn, CLASS_OVERLAY) || cn.getAttribute && cn.getAttribute(ATTRIBUTE_MANAGED) != null);
+          });
+          forEach(children, function (el) {
+            newContainer.appendChild(el);
+          });
+        }
+        _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "setContainer", this).call(this, newContainer);
+        if (this.eventManager != null) {
+          this._attachEventDelegates();
+        }
+        if (this.dragManager != null) {
+          this.dragManager.addHandler(new EndpointDragHandler(this));
+          this.dragManager.addHandler(new GroupDragHandler(this, this.dragSelection), this.groupDragOptions);
+          this.elementDragHandler = new ElementDragHandler(this, this.dragSelection);
+          this.dragManager.addHandler(this.elementDragHandler, this.elementDragOptions);
+          if (dragFilters != null) {
+            this.dragManager.setFilters(dragFilters);
+          }
+        }
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "reset", this).call(this);
+        var container = this.getContainer();
+        var els = container.querySelectorAll([SELECTOR_MANAGED_ELEMENT, SELECTOR_ENDPOINT, SELECTOR_CONNECTOR, SELECTOR_OVERLAY].join(","));
+        forEach(els, function (el) {
+          return el.parentNode && el.parentNode.removeChild(el);
+        });
+      }
+    }, {
+      key: "destroy",
+      value: function destroy() {
+        this._detachEventDelegates();
+        if (this.dragManager != null) {
+          this.dragManager.reset();
+        }
+        this.clearDragSelection();
+        _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "destroy", this).call(this);
+      }
+    }, {
+      key: "unmanage",
+      value: function unmanage(el, removeElement) {
+        this.removeFromDragSelection(el);
+        _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "unmanage", this).call(this, el, removeElement);
+      }
+    }, {
+      key: "addToDragSelection",
+      value: function addToDragSelection() {
+        var _this5 = this;
+        for (var _len = arguments.length, el = new Array(_len), _key = 0; _key < _len; _key++) {
+          el[_key] = arguments[_key];
+        }
+        forEach(el, function (_el) {
+          return _this5.dragSelection.add(_el);
+        });
+      }
+    }, {
+      key: "clearDragSelection",
+      value: function clearDragSelection() {
+        this.dragSelection.clear();
+      }
+    }, {
+      key: "removeFromDragSelection",
+      value: function removeFromDragSelection() {
+        var _this6 = this;
+        for (var _len2 = arguments.length, el = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          el[_key2] = arguments[_key2];
+        }
+        forEach(el, function (_el) {
+          return _this6.dragSelection.remove(_el);
+        });
+      }
+    }, {
+      key: "toggleDragSelection",
+      value: function toggleDragSelection() {
+        var _this7 = this;
+        for (var _len3 = arguments.length, el = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          el[_key3] = arguments[_key3];
+        }
+        forEach(el, function (_el) {
+          return _this7.dragSelection.toggle(_el);
+        });
+      }
+    }, {
+      key: "addToDragGroup",
+      value: function addToDragGroup(spec) {
+        var _this$elementDragHand;
+        for (var _len4 = arguments.length, els = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+          els[_key4 - 1] = arguments[_key4];
+        }
+        (_this$elementDragHand = this.elementDragHandler).addToDragGroup.apply(_this$elementDragHand, [spec].concat(els));
+      }
+    }, {
+      key: "removeFromDragGroup",
+      value: function removeFromDragGroup() {
+        var _this$elementDragHand2;
+        (_this$elementDragHand2 = this.elementDragHandler).removeFromDragGroup.apply(_this$elementDragHand2, arguments);
+      }
+    }, {
+      key: "setDragGroupState",
+      value: function setDragGroupState(state) {
+        var _this$elementDragHand3;
+        for (var _len5 = arguments.length, els = new Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
+          els[_key5 - 1] = arguments[_key5];
+        }
+        (_this$elementDragHand3 = this.elementDragHandler).setDragGroupState.apply(_this$elementDragHand3, [state].concat(els));
+      }
+    }, {
+      key: "consume",
+      value: function consume$1(e, doNotPreventDefault) {
+        consume(e, doNotPreventDefault);
+      }
+    }, {
+      key: "rotate",
+      value: function rotate(element, rotation, doNotRepaint) {
+        var elementId = this.getId(element);
+        if (this._managedElements[elementId]) {
+          this._managedElements[elementId].el.style.transform = "rotate(" + rotation + "deg)";
+          this._managedElements[elementId].el.style.transformOrigin = "center center";
+          return _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "rotate", this).call(this, element, rotation, doNotRepaint);
+        }
+        return {
+          c: new Set(),
+          e: new Set()
+        };
+      }
+    }, {
+      key: "addOverlayClass",
+      value: function addOverlayClass(o, clazz) {
+        if (isLabelOverlay(o)) {
+          o.instance.addClass(getLabelElement(o), clazz);
+        } else if (isSVGElementOverlay(o)) {
+          o.instance.addClass(SVGElementOverlay.ensurePath(o), clazz);
+        } else if (isCustomOverlay(o)) {
+          o.instance.addClass(getCustomElement(o), clazz);
+        } else {
+          throw "Could not add class to overlay of type [" + o.type + "]";
+        }
+      }
+    }, {
+      key: "removeOverlayClass",
+      value: function removeOverlayClass(o, clazz) {
+        if (isLabelOverlay(o)) {
+          o.instance.removeClass(getLabelElement(o), clazz);
+        } else if (isSVGElementOverlay(o)) {
+          o.instance.removeClass(SVGElementOverlay.ensurePath(o), clazz);
+        } else if (isCustomOverlay(o)) {
+          o.instance.removeClass(getCustomElement(o), clazz);
+        } else {
+          throw "Could not remove class from overlay of type [" + o.type + "]";
+        }
+      }
+    }, {
+      key: "_paintOverlay",
+      value: function _paintOverlay(o, params, extents) {
+        if (isLabelOverlay(o)) {
+          getLabelElement(o);
+          var XY = o.component.getXY();
+          o.canvas.style.left = XY.x + params.d.minx + "px";
+          o.canvas.style.top = XY.y + params.d.miny + "px";
+        } else if (isSVGElementOverlay(o)) {
+          var path = isNaN(params.d.cxy.x) || isNaN(params.d.cxy.y) ? "M 0 0" : "M" + params.d.hxy.x + "," + params.d.hxy.y + " L" + params.d.tail[0].x + "," + params.d.tail[0].y + " L" + params.d.cxy.x + "," + params.d.cxy.y + " L" + params.d.tail[1].x + "," + params.d.tail[1].y + " L" + params.d.hxy.x + "," + params.d.hxy.y;
+          SVGElementOverlay.paint(o, path, params, extents);
+        } else if (isCustomOverlay(o)) {
+          getCustomElement(o);
+          var _XY = o.component.getXY();
+          o.canvas.style.left = _XY.x + params.d.minx + "px";
+          o.canvas.style.top = _XY.y + params.d.miny + "px";
+        } else {
+          throw "Could not paint overlay of type [" + o.type + "]";
+        }
+      }
+    }, {
+      key: "setOverlayVisible",
+      value: function setOverlayVisible(o, visible) {
+        var d = visible ? "block" : "none";
+        function s(el) {
+          if (el != null) {
+            el.style.display = d;
+          }
+        }
+        if (isLabelOverlay(o)) {
+          s(getLabelElement(o));
+        } else if (isCustomOverlay(o)) {
+          s(getCustomElement(o));
+        } else if (isSVGElementOverlay(o)) {
+          s(o.path);
+        }
+      }
+    }, {
+      key: "reattachOverlay",
+      value: function reattachOverlay(o, c) {
+        if (isLabelOverlay(o)) {
+          o.instance._appendElement(getLabelElement(o), this.getContainer());
+        } else if (isCustomOverlay(o)) {
+          o.instance._appendElement(getCustomElement(o), this.getContainer());
+        } else if (isSVGElementOverlay(o)) {
+          this._appendElement(SVGElementOverlay.ensurePath(o), c.connector.canvas);
+        }
+      }
+    }, {
+      key: "setOverlayHover",
+      value: function setOverlayHover(o, hover) {
+        var canvas;
+        if (isLabelOverlay(o)) {
+          canvas = getLabelElement(o);
+        } else if (isCustomOverlay(o)) {
+          canvas = getCustomElement(o);
+        } else if (isSVGElementOverlay(o)) {
+          canvas = SVGElementOverlay.ensurePath(o);
+        }
+        if (canvas != null) {
+          if (this.hoverClass != null) {
+            if (hover) {
+              this.addClass(canvas, this.hoverClass);
+            } else {
+              this.removeClass(canvas, this.hoverClass);
+            }
+          }
+          this.setHover(o.component, hover);
+        }
+      }
+    }, {
+      key: "destroyOverlay",
+      value: function destroyOverlay(o) {
+        if (isLabelOverlay(o)) {
+          var el = getLabelElement(o);
+          el.parentNode.removeChild(el);
+          delete o.canvas;
+          delete o.cachedDimensions;
+        } else if (isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o)) {
+          SVGElementOverlay.destroy(o);
+        } else if (isCustomOverlay(o)) {
+          var _el2 = getCustomElement(o);
+          _el2.parentNode.removeChild(_el2);
+          delete o.canvas;
+          delete o.cachedDimensions;
+        }
+      }
+    }, {
+      key: "drawOverlay",
+      value: function drawOverlay(o, component, paintStyle, absolutePosition) {
+        if (isLabelOverlay(o) || isCustomOverlay(o)) {
+          var td = HTMLElementOverlay._getDimensions(o);
+          if (td != null && td.w != null && td.h != null) {
+            var cxy = {
+              x: 0,
+              y: 0
+            };
+            if (absolutePosition) {
+              cxy = {
+                x: absolutePosition.x,
+                y: absolutePosition.y
+              };
+            } else if (component instanceof EndpointRepresentation) {
+              var locToUse = Array.isArray(o.location) ? o.location : [o.location, o.location];
+              cxy = {
+                x: locToUse[0] * component.w,
+                y: locToUse[1] * component.h
+              };
+            } else {
+              var loc = o.location,
+                  absolute = false;
+              if (isString(o.location) || o.location < 0 || o.location > 1) {
+                loc = parseInt("" + o.location, 10);
+                absolute = true;
+              }
+              cxy = component.pointOnPath(loc, absolute);
+            }
+            var minx = cxy.x - td.w / 2,
+                miny = cxy.y - td.h / 2;
+            return {
+              component: o,
+              d: {
+                minx: minx,
+                miny: miny,
+                td: td,
+                cxy: cxy
+              },
+              xmin: minx,
+              xmax: minx + td.w,
+              ymin: miny,
+              ymax: miny + td.h
+            };
+          } else {
+            return {
+              xmin: 0,
+              xmax: 0,
+              ymin: 0,
+              ymax: 0
+            };
+          }
+        } else if (isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o)) {
+          return o.draw(component, paintStyle, absolutePosition);
+        } else {
+          throw "Could not draw overlay of type [" + o.type + "]";
+        }
+      }
+    }, {
+      key: "updateLabel",
+      value: function updateLabel(o) {
+        if (isFunction(o.label)) {
+          var lt = o.label(this);
+          if (lt != null) {
+            getLabelElement(o).innerText = lt;
+          } else {
+            getLabelElement(o).innerText = "";
+          }
+        } else {
+          if (o.labelText == null) {
+            o.labelText = o.label;
+            if (o.labelText != null) {
+              getLabelElement(o).innerText = o.labelText;
+            } else {
+              getLabelElement(o).innerText = "";
+            }
+          }
+        }
+      }
+    }, {
+      key: "setHover",
+      value: function setHover(component, hover) {
+        component._hover = hover;
+        if (component instanceof Endpoint && component.endpoint != null) {
+          this.setEndpointHover(component, hover, -1);
+        } else if (component instanceof Connection && component.connector != null) {
+          this.setConnectorHover(component.connector, hover);
+        }
+      }
+    }, {
+      key: "paintConnector",
+      value: function paintConnector(connector, paintStyle, extents) {
+        paintSvgConnector(this, connector, paintStyle, extents);
+      }
+    }, {
+      key: "setConnectorHover",
+      value: function setConnectorHover(connector, hover, sourceEndpoint) {
+        if (hover === false || !this.currentlyDragging && !this.isHoverSuspended()) {
+          var canvas = connector.canvas;
+          if (canvas != null) {
+            if (connector.hoverClass != null) {
+              if (hover) {
+                this.addClass(canvas, connector.hoverClass);
+              } else {
+                this.removeClass(canvas, connector.hoverClass);
+              }
+            }
+            if (hover) {
+              this.addClass(canvas, this.hoverClass);
+            } else {
+              this.removeClass(canvas, this.hoverClass);
+            }
+          }
+          if (connector.connection.hoverPaintStyle != null) {
+            connector.connection.paintStyleInUse = hover ? connector.connection.hoverPaintStyle : connector.connection.paintStyle;
+            if (!this._suspendDrawing) {
+              this._paintConnection(connector.connection);
+            }
+          }
+          if (connector.connection.endpoints[0] !== sourceEndpoint) {
+            this.setEndpointHover(connector.connection.endpoints[0], hover, 0, true);
+          }
+          if (connector.connection.endpoints[1] !== sourceEndpoint) {
+            this.setEndpointHover(connector.connection.endpoints[1], hover, 1, true);
+          }
+        }
+      }
+    }, {
+      key: "destroyConnector",
+      value: function destroyConnector(connection) {
+        if (connection.connector != null) {
+          cleanup(connection.connector);
+        }
+      }
+    }, {
+      key: "addConnectorClass",
+      value: function addConnectorClass(connector, clazz) {
+        if (connector.canvas) {
+          this.addClass(connector.canvas, clazz);
+        }
+      }
+    }, {
+      key: "removeConnectorClass",
+      value: function removeConnectorClass(connector, clazz) {
+        if (connector.canvas) {
+          this.removeClass(connector.canvas, clazz);
+        }
+      }
+    }, {
+      key: "getConnectorClass",
+      value: function getConnectorClass(connector) {
+        if (connector.canvas) {
+          return connector.canvas.className.baseVal;
+        } else {
+          return "";
+        }
+      }
+    }, {
+      key: "setConnectorVisible",
+      value: function setConnectorVisible(connector, v) {
+        setVisible(connector, v);
+      }
+    }, {
+      key: "applyConnectorType",
+      value: function applyConnectorType(connector, t) {
+        if (connector.canvas && t.cssClass) {
+          var classes = Array.isArray(t.cssClass) ? t.cssClass : [t.cssClass];
+          this.addClass(connector.canvas, classes.join(" "));
+        }
+      }
+    }, {
+      key: "addEndpointClass",
+      value: function addEndpointClass(ep, c) {
+        var canvas = getEndpointCanvas(ep.endpoint);
+        if (canvas != null) {
+          this.addClass(canvas, c);
+        }
+      }
+    }, {
+      key: "applyEndpointType",
+      value: function applyEndpointType(ep, t) {
+        if (t.cssClass) {
+          var canvas = getEndpointCanvas(ep.endpoint);
+          if (canvas) {
+            var classes = Array.isArray(t.cssClass) ? t.cssClass : [t.cssClass];
+            this.addClass(canvas, classes.join(" "));
+          }
+        }
+      }
+    }, {
+      key: "destroyEndpoint",
+      value: function destroyEndpoint(ep) {
+        var anchorClass = this.endpointAnchorClassPrefix + (ep.currentAnchorClass ? "-" + ep.currentAnchorClass : "");
+        this.removeClass(ep.element, anchorClass);
+        cleanup(ep.endpoint);
+      }
+    }, {
+      key: "renderEndpoint",
+      value: function renderEndpoint(ep, paintStyle) {
+        var renderer = endpointMap[ep.endpoint.type];
+        if (renderer != null) {
+          SvgEndpoint.paint(ep.endpoint, renderer, paintStyle);
+        } else {
+          log("jsPlumb: no endpoint renderer found for type [" + ep.endpoint.type + "]");
+        }
+      }
+    }, {
+      key: "removeEndpointClass",
+      value: function removeEndpointClass(ep, c) {
+        var canvas = getEndpointCanvas(ep.endpoint);
+        if (canvas != null) {
+          this.removeClass(canvas, c);
+        }
+      }
+    }, {
+      key: "getEndpointClass",
+      value: function getEndpointClass(ep) {
+        var canvas = getEndpointCanvas(ep.endpoint);
+        if (canvas != null) {
+          return canvas.className;
+        } else {
+          return "";
+        }
+      }
+    }, {
+      key: "setEndpointHover",
+      value: function setEndpointHover(endpoint, hover, endpointIndex, doNotCascade) {
+        if (endpoint != null && (hover === false || !this.currentlyDragging && !this.isHoverSuspended())) {
+          var canvas = getEndpointCanvas(endpoint.endpoint);
+          if (canvas != null) {
+            if (endpoint.hoverClass != null) {
+              if (hover) {
+                this.addClass(canvas, endpoint.hoverClass);
+              } else {
+                this.removeClass(canvas, endpoint.hoverClass);
+              }
+            }
+            if (endpointIndex === 0 || endpointIndex === 1) {
+              var genericHoverClass = endpointIndex === 0 ? this.hoverSourceClass : this.hoverTargetClass;
+              if (hover) {
+                this.addClass(canvas, genericHoverClass);
+              } else {
+                this.removeClass(canvas, genericHoverClass);
+              }
+            }
+          }
+          if (endpoint.hoverPaintStyle != null) {
+            endpoint.paintStyleInUse = hover ? endpoint.hoverPaintStyle : endpoint.paintStyle;
+            if (!this._suspendDrawing) {
+              this.renderEndpoint(endpoint, endpoint.paintStyleInUse);
+            }
+          }
+          if (!doNotCascade) {
+            for (var i = 0; i < endpoint.connections.length; i++) {
+              this.setConnectorHover(endpoint.connections[i].connector, hover, endpoint);
+            }
+          }
+        }
+      }
+    }, {
+      key: "setEndpointVisible",
+      value: function setEndpointVisible(ep, v) {
+        setVisible(ep.endpoint, v);
+      }
+    }, {
+      key: "setGroupVisible",
+      value: function setGroupVisible(group, state) {
+        var m = group.el.querySelectorAll(SELECTOR_MANAGED_ELEMENT);
+        for (var i = 0; i < m.length; i++) {
+          if (state) {
+            this.show(m[i], true);
+          } else {
+            this.hide(m[i], true);
+          }
+        }
+      }
+    }, {
+      key: "deleteConnection",
+      value: function deleteConnection(connection, params) {
+        if (connection != null && connection.deleted !== true) {
+          if (connection.endpoints[0].deleted !== true) {
+            this.setEndpointHover(connection.endpoints[0], false, 0, true);
+          }
+          if (connection.endpoints[1].deleted !== true) {
+            this.setEndpointHover(connection.endpoints[1], false, 1, true);
+          }
+          return _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "deleteConnection", this).call(this, connection, params);
+        } else {
+          return false;
+        }
+      }
+    }, {
+      key: "addSourceSelector",
+      value: function addSourceSelector(selector, params, exclude) {
+        this.addDragFilter(selector);
+        return _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "addSourceSelector", this).call(this, selector, params, exclude);
+      }
+    }, {
+      key: "removeSourceSelector",
+      value: function removeSourceSelector(selector) {
+        this.removeDragFilter(selector.selector);
+        _get$3(_getPrototypeOf$9(BrowserJsPlumbInstance.prototype), "removeSourceSelector", this).call(this, selector);
+      }
+    }]);
+    return BrowserJsPlumbInstance;
+  }(JsPlumbInstance);
+
+  var CIRCLE = "circle";
+  var register$2 = function register() {
+    registerEndpointRenderer(DotEndpoint.type, {
+      makeNode: function makeNode(ep, style) {
+        return _node(CIRCLE, {
+          "cx": ep.w / 2,
+          "cy": ep.h / 2,
+          "r": ep.radius
+        });
+      },
+      updateNode: function updateNode(ep, node) {
+        _attr(node, {
+          "cx": "" + ep.w / 2,
+          "cy": "" + ep.h / 2,
+          "r": "" + ep.radius
+        });
+      }
+    });
+  };
+
+  var RECT = "rect";
+  var register$1 = function register() {
+    registerEndpointRenderer(RectangleEndpoint.type, {
+      makeNode: function makeNode(ep, style) {
+        return _node(RECT, {
+          "width": ep.w,
+          "height": ep.h
+        });
+      },
+      updateNode: function updateNode(ep, node) {
+        _attr(node, {
+          "width": ep.w,
+          "height": ep.h
+        });
+      }
+    });
+  };
+
+  var BLANK_ATTRIBUTES = {
+    "width": 10,
+    "height": 0,
+    "fill": "transparent",
+    "stroke": "transparent"
+  };
+  var register = function register() {
+    registerEndpointRenderer(BlankEndpoint.type, {
+      makeNode: function makeNode(ep, style) {
+        return _node("rect", BLANK_ATTRIBUTES);
+      },
+      updateNode: function updateNode(ep, node) {
+        _attr(node, BLANK_ATTRIBUTES);
+      }
+    });
+  };
+
+  register$2();
+  register();
+  register$1();
+  var _jsPlumbInstanceIndex = 0;
+  function getInstanceIndex() {
+    var i = _jsPlumbInstanceIndex + 1;
+    _jsPlumbInstanceIndex++;
+    return i;
+  }
+  function newInstance$1(defaults) {
+    return new BrowserJsPlumbInstance(getInstanceIndex(), defaults);
+  }
+
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _classCallCheck$d(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties$d(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass$d(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$d(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$d(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty$c(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _inherits$8(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf$8(subClass, superClass);
+  }
+
+  function _getPrototypeOf$8(o) {
+    _getPrototypeOf$8 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf$8(o);
+  }
+
+  function _setPrototypeOf$8(o, p) {
+    _setPrototypeOf$8 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf$8(o, p);
+  }
+
+  function _isNativeReflectConstruct$8() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function _assertThisInitialized$8(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn$8(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
+    }
+
+    return _assertThisInitialized$8(self);
+  }
+
+  function _createSuper$8(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct$8();
+
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf$8(Derived),
+          result;
+
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf$8(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn$8(this, result);
+    };
+  }
+
+  function _superPropBase$2(object, property) {
+    while (!Object.prototype.hasOwnProperty.call(object, property)) {
+      object = _getPrototypeOf$8(object);
+      if (object === null) break;
+    }
+
+    return object;
+  }
+
+  function _get$2(target, property, receiver) {
+    if (typeof Reflect !== "undefined" && Reflect.get) {
+      _get$2 = Reflect.get;
+    } else {
+      _get$2 = function _get(target, property, receiver) {
+        var base = _superPropBase$2(target, property);
+
+        if (!base) return;
+        var desc = Object.getOwnPropertyDescriptor(base, property);
+
+        if (desc.get) {
+          return desc.get.call(receiver);
+        }
+
+        return desc.value;
+      };
+    }
+
+    return _get$2(target, property, receiver || target);
+  }
+
   var Cluster = /*#__PURE__*/function () {
     function Cluster(seed) {
-      _classCallCheck$f(this, Cluster);
+      _classCallCheck$d(this, Cluster);
 
-      _defineProperty$e(this, "vertices", void 0);
+      _defineProperty$c(this, "vertices", void 0);
 
       this.vertices = [seed];
     }
 
-    _createClass$f(Cluster, [{
+    _createClass$d(Cluster, [{
       key: "addVertex",
       value: function addVertex(v) {
         this.vertices.push(v);
@@ -8952,35 +14178,35 @@
   var DEFAULT_PORT_SEPARATOR = ".";
   var Graph = /*#__PURE__*/function () {
     function Graph(params) {
-      _classCallCheck$f(this, Graph);
+      _classCallCheck$d(this, Graph);
 
-      _defineProperty$e(this, "nodes", []);
+      _defineProperty$c(this, "nodes", []);
 
-      _defineProperty$e(this, "id", void 0);
+      _defineProperty$c(this, "id", void 0);
 
-      _defineProperty$e(this, "edges", []);
+      _defineProperty$c(this, "edges", []);
 
-      _defineProperty$e(this, "groups", []);
+      _defineProperty$c(this, "groups", []);
 
-      _defineProperty$e(this, "_nodeMap", new Map());
+      _defineProperty$c(this, "_nodeMap", new Map());
 
-      _defineProperty$e(this, "_edgeMap", new Map());
+      _defineProperty$c(this, "_edgeMap", new Map());
 
-      _defineProperty$e(this, "_groupMap", new Map());
+      _defineProperty$c(this, "_groupMap", new Map());
 
-      _defineProperty$e(this, "defaultDirected", void 0);
+      _defineProperty$c(this, "defaultDirected", void 0);
 
-      _defineProperty$e(this, "defaultCost", void 0);
+      _defineProperty$c(this, "defaultCost", void 0);
 
-      _defineProperty$e(this, "_defaultIdFunction", void 0);
+      _defineProperty$c(this, "_defaultIdFunction", void 0);
 
-      _defineProperty$e(this, "typeFunction", void 0);
+      _defineProperty$c(this, "typeFunction", void 0);
 
-      _defineProperty$e(this, "enableSubgraphs", void 0);
+      _defineProperty$c(this, "enableSubgraphs", void 0);
 
-      _defineProperty$e(this, "portSeparator", void 0);
+      _defineProperty$c(this, "portSeparator", void 0);
 
-      _defineProperty$e(this, "_topLevelCache", {});
+      _defineProperty$c(this, "_topLevelCache", {});
 
       params = params || {};
       this.nodes = [];
@@ -8999,7 +14225,7 @@
       this.portSeparator = params.portSeparator || DEFAULT_PORT_SEPARATOR;
     }
 
-    _createClass$f(Graph, [{
+    _createClass$d(Graph, [{
       key: "_removeFromTopLevelCache",
       value: function _removeFromTopLevelCache(v) {
         delete this._topLevelCache[v.id];
@@ -10117,24 +15343,24 @@
 
     return Graph;
   }();
-  var Base$1 = /*#__PURE__*/function () {
+  var Base = /*#__PURE__*/function () {
     function Base(graph, data) {
-      _classCallCheck$f(this, Base);
+      _classCallCheck$d(this, Base);
 
       this.graph = graph;
       this.data = data;
 
-      _defineProperty$e(this, "atts", new Map());
+      _defineProperty$c(this, "atts", new Map());
 
-      _defineProperty$e(this, "type", void 0);
+      _defineProperty$c(this, "type", void 0);
 
-      _defineProperty$e(this, "objectType", void 0);
+      _defineProperty$c(this, "objectType", void 0);
 
       this.data = this.data || {};
       this.type = graph.getType(this.data);
     }
 
-    _createClass$f(Base, [{
+    _createClass$d(Base, [{
       key: "setAttribute",
       value: function setAttribute(key, value) {
         this.atts.set(key, value);
@@ -10159,9 +15385,9 @@
     return Base;
   }();
   var Vertex = /*#__PURE__*/function (_Base) {
-    _inherits$9(Vertex, _Base);
+    _inherits$8(Vertex, _Base);
 
-    var _super = _createSuper$9(Vertex);
+    var _super = _createSuper$8(Vertex);
 
     /**
      * The vertex's id. A string.
@@ -10177,27 +15403,27 @@
     function Vertex(graph, data, idFunction) {
       var _this3;
 
-      _classCallCheck$f(this, Vertex);
+      _classCallCheck$d(this, Vertex);
 
       _this3 = _super.call(this, graph, data);
       _this3.graph = graph;
       _this3.idFunction = idFunction;
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "id", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "id", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "_id", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "_id", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "data", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "data", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "edges", []);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "edges", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "indegreeCentrality", 0);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "indegreeCentrality", 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "outdegreeCentrality", 0);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "outdegreeCentrality", 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "nestedGraphs", []);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "nestedGraphs", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this3), "graphs", []);
+      _defineProperty$c(_assertThisInitialized$8(_this3), "graphs", []);
 
       _this3.id = graph.getId(data, idFunction);
       _this3.data = typeof data === 'string' ? {
@@ -10206,7 +15432,7 @@
       return _this3;
     }
 
-    _createClass$f(Vertex, [{
+    _createClass$d(Vertex, [{
       key: "getIndegreeCentrality",
       value: function getIndegreeCentrality() {
         return this.indegreeCentrality;
@@ -10388,30 +15614,30 @@
     }]);
 
     return Vertex;
-  }(Base$1);
+  }(Base);
   var Node = /*#__PURE__*/function (_Vertex) {
-    _inherits$9(Node, _Vertex);
+    _inherits$8(Node, _Vertex);
 
-    var _super2 = _createSuper$9(Node);
+    var _super2 = _createSuper$8(Node);
 
     function Node(graph, data, idFunction) {
       var _this6;
 
-      _classCallCheck$f(this, Node);
+      _classCallCheck$d(this, Node);
 
       _this6 = _super2.call(this, graph, data, idFunction);
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "objectType", Node.objectType);
+      _defineProperty$c(_assertThisInitialized$8(_this6), "objectType", Node.objectType);
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "ports", []);
+      _defineProperty$c(_assertThisInitialized$8(_this6), "ports", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "group", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this6), "group", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "portMap", {});
+      _defineProperty$c(_assertThisInitialized$8(_this6), "portMap", {});
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "defaultInternalCost", 0);
+      _defineProperty$c(_assertThisInitialized$8(_this6), "defaultInternalCost", 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this6), "internalEdges", {});
+      _defineProperty$c(_assertThisInitialized$8(_this6), "internalEdges", {});
 
       return _this6;
     }
@@ -10422,7 +15648,7 @@
      */
 
 
-    _createClass$f(Node, [{
+    _createClass$d(Node, [{
       key: "getAllEdges",
       value: function getAllEdges(params) {
         var e = this.getEdges(params).slice(0);
@@ -10744,22 +15970,22 @@
     return Node;
   }(Vertex);
 
-  _defineProperty$e(Node, "objectType", "Node");
+  _defineProperty$c(Node, "objectType", "Node");
 
   var Port = /*#__PURE__*/function (_Vertex2) {
-    _inherits$9(Port, _Vertex2);
+    _inherits$8(Port, _Vertex2);
 
-    var _super3 = _createSuper$9(Port);
+    var _super3 = _createSuper$8(Port);
 
     function Port(parent, data, idFunction) {
       var _this7;
 
-      _classCallCheck$f(this, Port);
+      _classCallCheck$d(this, Port);
 
       _this7 = _super3.call(this, parent.graph, data, idFunction);
       _this7.parent = parent;
 
-      _defineProperty$e(_assertThisInitialized$9(_this7), "objectType", Port.objectType);
+      _defineProperty$c(_assertThisInitialized$8(_this7), "objectType", Port.objectType);
 
       return _this7;
     }
@@ -10768,7 +15994,7 @@
      */
 
 
-    _createClass$f(Port, [{
+    _createClass$d(Port, [{
       key: "getParent",
       value: function getParent() {
         return this.parent;
@@ -10797,30 +16023,30 @@
     return Port;
   }(Vertex);
 
-  _defineProperty$e(Port, "objectType", "Port");
+  _defineProperty$c(Port, "objectType", "Port");
 
   var Group = /*#__PURE__*/function (_Node) {
-    _inherits$9(Group, _Node);
+    _inherits$8(Group, _Node);
 
-    var _super4 = _createSuper$9(Group);
+    var _super4 = _createSuper$8(Group);
 
     function Group(graph, data, idFunction) {
       var _this8;
 
-      _classCallCheck$f(this, Group);
+      _classCallCheck$d(this, Group);
 
       _this8 = _super4.call(this, graph, data, idFunction);
 
-      _defineProperty$e(_assertThisInitialized$9(_this8), "objectType", Group.objectType);
+      _defineProperty$c(_assertThisInitialized$8(_this8), "objectType", Group.objectType);
 
-      _defineProperty$e(_assertThisInitialized$9(_this8), "members", []);
+      _defineProperty$c(_assertThisInitialized$8(_this8), "members", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this8), "_memberMap", {});
+      _defineProperty$c(_assertThisInitialized$8(_this8), "_memberMap", {});
 
       return _this8;
     }
 
-    _createClass$f(Group, [{
+    _createClass$d(Group, [{
       key: "addMember",
       value: function addMember(v) {
         if (this._memberMap[v.id] != null) {
@@ -10906,12 +16132,12 @@
     return Group;
   }(Node);
 
-  _defineProperty$e(Group, "objectType", "Group");
+  _defineProperty$c(Group, "objectType", "Group");
 
   var Edge = /*#__PURE__*/function (_Base2) {
-    _inherits$9(Edge, _Base2);
+    _inherits$8(Edge, _Base2);
 
-    var _super5 = _createSuper$9(Edge);
+    var _super5 = _createSuper$8(Edge);
 
     /**
      * Source of the Edge.
@@ -10927,25 +16153,25 @@
     function Edge(params) {
       var _this9;
 
-      _classCallCheck$f(this, Edge);
+      _classCallCheck$d(this, Edge);
 
       _this9 = _super5.call(this, params.graph, params.data);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "objectType", Edge.objectType);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "objectType", Edge.objectType);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "source", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "source", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "target", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "target", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "cost", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "cost", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "directed", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "directed", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "id", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "id", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "connectionId", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "connectionId", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this9), "geometry", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this9), "geometry", void 0);
 
       _this9.source = params.source;
       _this9.target = params.target;
@@ -10960,7 +16186,7 @@
      */
 
 
-    _createClass$f(Edge, [{
+    _createClass$d(Edge, [{
       key: "getCost",
       value: function getCost() {
         return this.cost;
@@ -11027,9 +16253,9 @@
     }]);
 
     return Edge;
-  }(Base$1);
+  }(Base);
 
-  _defineProperty$e(Edge, "objectType", "Edge");
+  _defineProperty$c(Edge, "objectType", "Edge");
 
   // https://www.redblobgames.com/pathfinding/a-star/introduction.html
   // for instance, the A* algorithm, which is much faster than Djikstra, on that page, and note that I havent at all looked into how
@@ -11318,15 +16544,15 @@
    */
   var DataModel = /*#__PURE__*/function () {
     function DataModel(toolkit, def) {
-      _classCallCheck$f(this, DataModel);
+      _classCallCheck$d(this, DataModel);
 
       this.toolkit = toolkit;
 
-      _defineProperty$e(this, "nodeDefinitions", new Map());
+      _defineProperty$c(this, "nodeDefinitions", new Map());
 
-      _defineProperty$e(this, "groupDefinitions", new Map());
+      _defineProperty$c(this, "groupDefinitions", new Map());
 
-      _defineProperty$e(this, "portDefinitions", new Map());
+      _defineProperty$c(this, "portDefinitions", new Map());
 
       if (def != null) {
         var n = def.nodes || {};
@@ -11349,7 +16575,7 @@
       }
     }
 
-    _createClass$f(DataModel, [{
+    _createClass$d(DataModel, [{
       key: "getNodeDefinition",
       value: function getNodeDefinition(type) {
         return this.nodeDefinitions.get(type) || {};
@@ -11378,15 +16604,15 @@
      * @param params Path specification
      */
     function Path(toolkit, params) {
-      _classCallCheck$f(this, Path);
+      _classCallCheck$d(this, Path);
 
       this.toolkit = toolkit;
 
-      _defineProperty$e(this, "result", void 0);
+      _defineProperty$c(this, "result", void 0);
 
-      _defineProperty$e(this, "vertices", []);
+      _defineProperty$c(this, "vertices", []);
 
-      _defineProperty$e(this, "vertexMap", {});
+      _defineProperty$c(this, "vertexMap", {});
 
       this.result = toolkit.getGraph().findPath(params.source, params.target, params.strict, params.nodeFilter, params.edgeFilter);
 
@@ -11400,7 +16626,7 @@
      */
 
 
-    _createClass$f(Path, [{
+    _createClass$d(Path, [{
       key: "deleteEdges",
       value: function deleteEdges() {
         // detach all edges in the path
@@ -11769,47 +16995,47 @@
 
   var Magnetizer = /*#__PURE__*/function () {
     function Magnetizer(params) {
-      _classCallCheck$f(this, Magnetizer);
+      _classCallCheck$d(this, Magnetizer);
 
-      _defineProperty$e(this, "origin", void 0);
+      _defineProperty$c(this, "origin", void 0);
 
-      _defineProperty$e(this, "elements", void 0);
+      _defineProperty$c(this, "elements", void 0);
 
-      _defineProperty$e(this, "debug", void 0);
+      _defineProperty$c(this, "debug", void 0);
 
-      _defineProperty$e(this, "container", void 0);
+      _defineProperty$c(this, "container", void 0);
 
-      _defineProperty$e(this, "getContainerPosition", void 0);
+      _defineProperty$c(this, "getContainerPosition", void 0);
 
-      _defineProperty$e(this, "originDebugMarker", void 0);
+      _defineProperty$c(this, "originDebugMarker", void 0);
 
-      _defineProperty$e(this, "constrain", void 0);
+      _defineProperty$c(this, "constrain", void 0);
 
-      _defineProperty$e(this, "padding", void 0);
+      _defineProperty$c(this, "padding", void 0);
 
-      _defineProperty$e(this, "filter", void 0);
+      _defineProperty$c(this, "filter", void 0);
 
-      _defineProperty$e(this, "exclude", void 0);
+      _defineProperty$c(this, "exclude", void 0);
 
-      _defineProperty$e(this, "currentFocus", void 0);
+      _defineProperty$c(this, "currentFocus", void 0);
 
-      _defineProperty$e(this, "focusElement", null);
+      _defineProperty$c(this, "focusElement", null);
 
-      _defineProperty$e(this, "getSize", void 0);
+      _defineProperty$c(this, "getSize", void 0);
 
-      _defineProperty$e(this, "getId", void 0);
+      _defineProperty$c(this, "getId", void 0);
 
-      _defineProperty$e(this, "getPosition", void 0);
+      _defineProperty$c(this, "getPosition", void 0);
 
-      _defineProperty$e(this, "setPosition", void 0);
+      _defineProperty$c(this, "setPosition", void 0);
 
-      _defineProperty$e(this, "positionArray", []);
+      _defineProperty$c(this, "positionArray", []);
 
-      _defineProperty$e(this, "positions", new Map());
+      _defineProperty$c(this, "positions", new Map());
 
-      _defineProperty$e(this, "originalPositions", new Map());
+      _defineProperty$c(this, "originalPositions", new Map());
 
-      _defineProperty$e(this, "sizes", new Map());
+      _defineProperty$c(this, "sizes", new Map());
 
       this.getPosition = params.getPosition;
       this.setPosition = params.setPosition;
@@ -11841,7 +17067,7 @@
      */
 
 
-    _createClass$f(Magnetizer, [{
+    _createClass$d(Magnetizer, [{
       key: "executeAtPoint",
       value: function executeAtPoint(origin, options) {
         if (this.elements.length > 0) {
@@ -12365,65 +17591,65 @@
 
   var AbstractLayout = /*#__PURE__*/function () {
     function AbstractLayout(params) {
-      _classCallCheck$f(this, AbstractLayout);
+      _classCallCheck$d(this, AbstractLayout);
 
-      _defineProperty$e(this, "toolkit", void 0);
+      _defineProperty$c(this, "toolkit", void 0);
 
-      _defineProperty$e(this, "adapter", void 0);
+      _defineProperty$c(this, "adapter", void 0);
 
-      _defineProperty$e(this, "_vertices", []);
+      _defineProperty$c(this, "_vertices", []);
 
-      _defineProperty$e(this, "magnetizer", void 0);
+      _defineProperty$c(this, "magnetizer", void 0);
 
-      _defineProperty$e(this, "magnetizerIterations", void 0);
+      _defineProperty$c(this, "magnetizerIterations", void 0);
 
-      _defineProperty$e(this, "positions", new Map());
+      _defineProperty$c(this, "positions", new Map());
 
-      _defineProperty$e(this, "sizes", new Map());
+      _defineProperty$c(this, "sizes", new Map());
 
-      _defineProperty$e(this, "positionArray", []);
+      _defineProperty$c(this, "positionArray", []);
 
-      _defineProperty$e(this, "parameters", void 0);
+      _defineProperty$c(this, "parameters", void 0);
 
-      _defineProperty$e(this, "done", void 0);
+      _defineProperty$c(this, "done", void 0);
 
-      _defineProperty$e(this, "_minx", Infinity);
+      _defineProperty$c(this, "_minx", Infinity);
 
-      _defineProperty$e(this, "_miny", Infinity);
+      _defineProperty$c(this, "_miny", Infinity);
 
-      _defineProperty$e(this, "_maxx", -Infinity);
+      _defineProperty$c(this, "_maxx", -Infinity);
 
-      _defineProperty$e(this, "_maxy", -Infinity);
+      _defineProperty$c(this, "_maxy", -Infinity);
 
-      _defineProperty$e(this, "entries", {});
+      _defineProperty$c(this, "entries", {});
 
-      _defineProperty$e(this, "xmax", []);
+      _defineProperty$c(this, "xmax", []);
 
-      _defineProperty$e(this, "ymax", []);
+      _defineProperty$c(this, "ymax", []);
 
-      _defineProperty$e(this, "xmin", []);
+      _defineProperty$c(this, "xmin", []);
 
-      _defineProperty$e(this, "ymin", []);
+      _defineProperty$c(this, "ymin", []);
 
-      _defineProperty$e(this, "width", void 0);
+      _defineProperty$c(this, "width", void 0);
 
-      _defineProperty$e(this, "height", void 0);
+      _defineProperty$c(this, "height", void 0);
 
-      _defineProperty$e(this, "container", void 0);
+      _defineProperty$c(this, "container", void 0);
 
-      _defineProperty$e(this, "containerSize", void 0);
+      _defineProperty$c(this, "containerSize", void 0);
 
-      _defineProperty$e(this, "padding", void 0);
+      _defineProperty$c(this, "padding", void 0);
 
-      _defineProperty$e(this, "negativeValuesAllowed", void 0);
+      _defineProperty$c(this, "negativeValuesAllowed", void 0);
 
-      _defineProperty$e(this, "_locationFunction", void 0);
+      _defineProperty$c(this, "_locationFunction", void 0);
 
-      _defineProperty$e(this, "_vertexMap", {});
+      _defineProperty$c(this, "_vertexMap", {});
 
-      _defineProperty$e(this, "defaultMagnetized", void 0);
+      _defineProperty$c(this, "defaultMagnetized", void 0);
 
-      _defineProperty$e(this, "type", void 0);
+      _defineProperty$c(this, "type", void 0);
 
       this._locationFunction = params.options.locationFunction;
       this.adapter = params.adapter;
@@ -12439,7 +17665,7 @@
       this.parameters = params.options || {};
     }
 
-    _createClass$f(AbstractLayout, [{
+    _createClass$d(AbstractLayout, [{
       key: "_reset",
       value: function _reset() {
         this.done = false;
@@ -13192,7 +18418,7 @@
    * @internal
    */
   var AbstractLayoutAdapter = function AbstractLayoutAdapter() {
-    _classCallCheck$f(this, AbstractLayoutAdapter);
+    _classCallCheck$d(this, AbstractLayoutAdapter);
   };
 
   var layoutMap = {};
@@ -13217,25 +18443,25 @@
 
   var EMPTY_MAP = new Map();
   var EmptyLayout = /*#__PURE__*/function (_AbstractLayout) {
-    _inherits$9(EmptyLayout, _AbstractLayout);
+    _inherits$8(EmptyLayout, _AbstractLayout);
 
-    var _super = _createSuper$9(EmptyLayout);
+    var _super = _createSuper$8(EmptyLayout);
 
     function EmptyLayout(options) {
       var _this;
 
-      _classCallCheck$f(this, EmptyLayout);
+      _classCallCheck$d(this, EmptyLayout);
 
       _this = _super.call(this, options);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "type", EmptyLayout.type);
+      _defineProperty$c(_assertThisInitialized$8(_this), "type", EmptyLayout.type);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "defaultMagnetized", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "defaultMagnetized", void 0);
 
       return _this;
     }
 
-    _createClass$f(EmptyLayout, [{
+    _createClass$d(EmptyLayout, [{
       key: "getDefaultParameters",
       value: function getDefaultParameters() {
         return {};
@@ -13269,7 +18495,7 @@
     }, {
       key: "setPosition",
       value: function setPosition(id, x, y) {
-        return _defineProperty$e({}, id, {
+        return _defineProperty$c({}, id, {
           original: {
             x: x,
             y: y
@@ -13322,34 +18548,34 @@
     return EmptyLayout;
   }(AbstractLayout);
 
-  _defineProperty$e(EmptyLayout, "type", "Empty");
+  _defineProperty$c(EmptyLayout, "type", "Empty");
 
   Layouts.register(EmptyLayout.type, EmptyLayout);
 
   var AbsoluteBackedLayout = /*#__PURE__*/function (_AbstractLayout) {
-    _inherits$9(AbsoluteBackedLayout, _AbstractLayout);
+    _inherits$8(AbsoluteBackedLayout, _AbstractLayout);
 
-    var _super = _createSuper$9(AbsoluteBackedLayout);
+    var _super = _createSuper$8(AbsoluteBackedLayout);
 
     function AbsoluteBackedLayout(params) {
       var _this;
 
-      _classCallCheck$f(this, AbsoluteBackedLayout);
+      _classCallCheck$d(this, AbsoluteBackedLayout);
 
       _this = _super.call(this, params);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_suppliedLocationFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_suppliedLocationFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "defaultMagnetized", false);
+      _defineProperty$c(_assertThisInitialized$8(_this), "defaultMagnetized", false);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "absoluteBacked", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "absoluteBacked", void 0);
 
       _this.absoluteBacked = params.options.absoluteBacked === true;
       _this._suppliedLocationFunction = params.options.locationFunction;
       return _this;
     }
 
-    _createClass$f(AbsoluteBackedLayout, [{
+    _createClass$d(AbsoluteBackedLayout, [{
       key: "_vertexAdded",
       value: function _vertexAdded(params, eventInfo) {
         return this._findLocation(params.vertex, params.parameters);
@@ -13426,23 +18652,23 @@
    */
 
   var AbsoluteLayout = /*#__PURE__*/function (_AbsoluteBackedLayout) {
-    _inherits$9(AbsoluteLayout, _AbsoluteBackedLayout);
+    _inherits$8(AbsoluteLayout, _AbsoluteBackedLayout);
 
-    var _super2 = _createSuper$9(AbsoluteLayout);
+    var _super2 = _createSuper$8(AbsoluteLayout);
 
     function AbsoluteLayout(params) {
       var _this2;
 
-      _classCallCheck$f(this, AbsoluteLayout);
+      _classCallCheck$d(this, AbsoluteLayout);
 
       _this2 = _super2.call(this, params);
 
-      _defineProperty$e(_assertThisInitialized$9(_this2), "type", AbsoluteLayout.type);
+      _defineProperty$c(_assertThisInitialized$8(_this2), "type", AbsoluteLayout.type);
 
       return _this2;
     }
 
-    _createClass$f(AbsoluteLayout, [{
+    _createClass$d(AbsoluteLayout, [{
       key: "getDefaultParameters",
       value: function getDefaultParameters() {
         return {};
@@ -13452,7 +18678,7 @@
     return AbsoluteLayout;
   }(AbsoluteBackedLayout);
 
-  _defineProperty$e(AbsoluteLayout, "type", "Absolute");
+  _defineProperty$c(AbsoluteLayout, "type", "Absolute");
 
   Layouts.register(AbsoluteLayout.type, AbsoluteLayout);
 
@@ -13686,7 +18912,7 @@
       p2 = ["edge"],
       s2 = [":source", ":target"];
 
-  var _bind$1 = function _bind(binder, p, s, fn) {
+  var _bind = function _bind(binder, p, s, fn) {
     for (var i = 0; i < p.length; i++) {
       for (var j = 0; j < s.length; j++) {
         _bindOne(binder, p[i] + s[j], fn);
@@ -13703,13 +18929,13 @@
     function AutoSaver(instance, options) {
       var _this = this;
 
-      _classCallCheck$f(this, AutoSaver);
+      _classCallCheck$d(this, AutoSaver);
 
       this.instance = instance;
 
-      _defineProperty$e(this, "bindings", []);
+      _defineProperty$c(this, "bindings", []);
 
-      _defineProperty$e(this, "timer", null);
+      _defineProperty$c(this, "timer", null);
 
       if (options.saveUrl == null) {
         if (options.autoSaveHandler == null) {
@@ -13774,14 +19000,14 @@
         _suspended = false;
       });
 
-      _bind$1(this, prefixes, suffixes, _save);
+      _bind(this, prefixes, suffixes, _save);
 
-      _bind$1(this, p2, s2, _save);
+      _bind(this, p2, s2, _save);
 
-      _bind$1(this, ["group:"], ["member:added", "member:removed"], _save);
+      _bind(this, ["group:"], ["member:added", "member:removed"], _save);
     }
 
-    _createClass$f(AutoSaver, [{
+    _createClass$d(AutoSaver, [{
       key: "discard",
       value: function discard() {
         var _this2 = this;
@@ -13796,21 +19022,21 @@
     return AutoSaver;
   }();
   var CatchAllEventHandler = function CatchAllEventHandler(instance) {
-    _classCallCheck$f(this, CatchAllEventHandler);
+    _classCallCheck$d(this, CatchAllEventHandler);
 
     this.instance = instance;
 
-    _defineProperty$e(this, "bindings", []);
+    _defineProperty$c(this, "bindings", []);
 
     var _f = function _f() {
       instance.fire("dataUpdated");
     };
 
-    _bind$1(this, prefixes, suffixes, _f);
+    _bind(this, prefixes, suffixes, _f);
 
-    _bind$1(this, p2, s2, _f);
+    _bind(this, p2, s2, _f);
 
-    _bind$1(this, ["group:"], ["member:added", "member:removed"], _f);
+    _bind(this, ["group:"], ["member:added", "member:removed"], _f);
   };
 
   /**
@@ -13830,21 +19056,21 @@
    */
 
   var AbstractFilterableDataset = /*#__PURE__*/function (_EventGenerator) {
-    _inherits$9(AbstractFilterableDataset, _EventGenerator);
+    _inherits$8(AbstractFilterableDataset, _EventGenerator);
 
-    var _super = _createSuper$9(AbstractFilterableDataset);
+    var _super = _createSuper$8(AbstractFilterableDataset);
 
     function AbstractFilterableDataset(toolkit) {
       var _this;
 
-      _classCallCheck$f(this, AbstractFilterableDataset);
+      _classCallCheck$d(this, AbstractFilterableDataset);
 
       _this = _super.call(this);
       _this.toolkit = toolkit;
       return _this;
     }
 
-    _createClass$f(AbstractFilterableDataset, [{
+    _createClass$d(AbstractFilterableDataset, [{
       key: "_createSelection",
       value: function _createSelection(onClear) {
         return new Selection(this.toolkit, {
@@ -13893,49 +19119,49 @@
    * A selection is a group of vertices and edges, upon which you can perform bulk operations.
    */
   var Selection = /*#__PURE__*/function (_AbstractFilterableDa) {
-    _inherits$9(Selection, _AbstractFilterableDa);
+    _inherits$8(Selection, _AbstractFilterableDa);
 
-    var _super = _createSuper$9(Selection);
+    var _super = _createSuper$8(Selection);
 
     function Selection(toolkit, params) {
       var _this;
 
-      _classCallCheck$f(this, Selection);
+      _classCallCheck$d(this, Selection);
 
       _this = _super.call(this, toolkit);
       _this.toolkit = toolkit;
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "maxNodes", Infinity);
+      _defineProperty$c(_assertThisInitialized$8(_this), "maxNodes", Infinity);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "maxEdges", Infinity);
+      _defineProperty$c(_assertThisInitialized$8(_this), "maxEdges", Infinity);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "maxGroups", Infinity);
+      _defineProperty$c(_assertThisInitialized$8(_this), "maxGroups", Infinity);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_nodes", []);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_nodes", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_groups", []);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_groups", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_edges", []);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_edges", []);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "capacityPolicy", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "capacityPolicy", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "generator", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "generator", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onReload", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onReload", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onBeforeReload", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onBeforeReload", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onClear", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onClear", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "autoFill", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "autoFill", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "dataSource", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "dataSource", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_objMap", {});
+      _defineProperty$c(_assertThisInitialized$8(_this), "_objMap", {});
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_loading", false);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_loading", false);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "edgeFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "edgeFactory", void 0);
 
       _this.edgeFactory = toolkit.edgeFactory;
       _this.generator = params.generator;
@@ -14029,7 +19255,7 @@
       return _this;
     }
 
-    _createClass$f(Selection, [{
+    _createClass$d(Selection, [{
       key: "_getList",
       value: function _getList(obj) {
         return obj.objectType === Edge.objectType ? this._edges : obj.objectType === Node.objectType ? this._nodes : this._groups;
@@ -14701,9 +19927,9 @@
     return Selection;
   }(AbstractFilterableDataset);
 
-  _defineProperty$e(Selection, "DISCARD_EXISTING", "discardExisting");
+  _defineProperty$c(Selection, "DISCARD_EXISTING", "discardExisting");
 
-  _defineProperty$e(Selection, "DISCARD_NEW", "discardNew");
+  _defineProperty$c(Selection, "DISCARD_NEW", "discardNew");
 
   var _parsers, _JSON_DATATYPE;
 
@@ -14850,9 +20076,9 @@
   var JSON_DATATYPE = "json";
   var HIERARCHICAL_JSON_DATATYPE = "hierarchical-json";
 
-  var exporters = _defineProperty$e({}, JSON_DATATYPE, JSONGraphExporter);
+  var exporters = _defineProperty$c({}, JSON_DATATYPE, JSONGraphExporter);
 
-  var parsers = (_parsers = {}, _defineProperty$e(_parsers, JSON_DATATYPE, JSONGraphParser), _defineProperty$e(_parsers, HIERARCHICAL_JSON_DATATYPE, hierarchicalJsonParser), _parsers);
+  var parsers = (_parsers = {}, _defineProperty$c(_parsers, JSON_DATATYPE, JSONGraphParser), _defineProperty$c(_parsers, HIERARCHICAL_JSON_DATATYPE, hierarchicalJsonParser), _parsers);
   /**
    * list of managed operations.
    * @internal
@@ -14874,28 +20100,28 @@
     ManagedOperations["addPort"] = "addPort";
   })(ManagedOperations || (ManagedOperations = {}));
 
-  var managers = _defineProperty$e({}, JSON_DATATYPE, (_JSON_DATATYPE = {}, _defineProperty$e(_JSON_DATATYPE, ManagedOperations.removeNode, function (dataset, node, idFunction) {
+  var managers = _defineProperty$c({}, JSON_DATATYPE, (_JSON_DATATYPE = {}, _defineProperty$c(_JSON_DATATYPE, ManagedOperations.removeNode, function (dataset, node, idFunction) {
     var id = idFunction(node.data);
     removeWithFunction(dataset.nodes, function (n) {
       return n.id === id;
     });
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.removeGroup, function (dataset, group, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.removeGroup, function (dataset, group, idFunction) {
     var id = idFunction(group.data);
     removeWithFunction(dataset.groups, function (g) {
       return g.id === id;
     });
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.removeEdge, function (dataset, edge, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.removeEdge, function (dataset, edge, idFunction) {
     var id = idFunction(edge.data);
     removeWithFunction(dataset.edges, function (e) {
       return e.data && e.data.id === id;
     });
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.addNode, function (dataset, node, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.addNode, function (dataset, node, idFunction) {
     dataset.nodes = dataset.nodes || [];
     dataset.nodes.push(node.data);
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.addGroup, function (dataset, group, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.addGroup, function (dataset, group, idFunction) {
     dataset.groups = dataset.groups || [];
     dataset.groups.push(group.data);
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.addEdge, function (dataset, edge, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.addEdge, function (dataset, edge, idFunction) {
     var j = {
       source: edge.source.getFullId(),
       target: edge.target.getFullId(),
@@ -14903,12 +20129,12 @@
     };
     dataset.edges = dataset.edges || [];
     dataset.edges.push(j);
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.addPort, function (dataset, params, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.addPort, function (dataset, params, idFunction) {
     dataset.ports = dataset.ports || [];
     var d = extend({}, params.port.data || {});
     d.id = params.port.getFullId();
     dataset.ports.push(d);
-  }), _defineProperty$e(_JSON_DATATYPE, ManagedOperations.removePort, function (dataset, params, idFunction) {
+  }), _defineProperty$c(_JSON_DATATYPE, ManagedOperations.removePort, function (dataset, params, idFunction) {
     var id = params.port.getFullId();
     removeWithFunction(dataset.ports, function (p) {
       return p.id === id;
@@ -14948,23 +20174,23 @@
 
   var EdgeAction = /*#__PURE__*/function () {
     function EdgeAction(obj, toolkit, manager) {
-      _classCallCheck$f(this, EdgeAction);
+      _classCallCheck$d(this, EdgeAction);
 
       this.obj = obj;
       this.toolkit = toolkit;
       this.manager = manager;
 
-      _defineProperty$e(this, "source", void 0);
+      _defineProperty$c(this, "source", void 0);
 
-      _defineProperty$e(this, "target", void 0);
+      _defineProperty$c(this, "target", void 0);
 
-      _defineProperty$e(this, "edgeId", void 0);
+      _defineProperty$c(this, "edgeId", void 0);
 
-      _defineProperty$e(this, "sourcePort", void 0);
+      _defineProperty$c(this, "sourcePort", void 0);
 
-      _defineProperty$e(this, "targetPort", void 0);
+      _defineProperty$c(this, "targetPort", void 0);
 
-      _defineProperty$e(this, "geometry", void 0);
+      _defineProperty$c(this, "geometry", void 0);
 
       this.source = obj.source.getFullId();
       this.target = obj.target.getFullId();
@@ -14983,7 +20209,7 @@
       this.geometry = obj.geometry;
     }
 
-    _createClass$f(EdgeAction, [{
+    _createClass$d(EdgeAction, [{
       key: "generateSourceId",
       value: function generateSourceId() {
         return this.sourcePort == null ? this.source : this.source + this.toolkit.getGraph().getPortSeparator() + this.sourcePort;
@@ -15023,17 +20249,17 @@
     return EdgeAction;
   }();
   var EdgeAddAction = /*#__PURE__*/function (_EdgeAction) {
-    _inherits$9(EdgeAddAction, _EdgeAction);
+    _inherits$8(EdgeAddAction, _EdgeAction);
 
-    var _super = _createSuper$9(EdgeAddAction);
+    var _super = _createSuper$8(EdgeAddAction);
 
     function EdgeAddAction() {
-      _classCallCheck$f(this, EdgeAddAction);
+      _classCallCheck$d(this, EdgeAddAction);
 
       return _super.apply(this, arguments);
     }
 
-    _createClass$f(EdgeAddAction, [{
+    _createClass$d(EdgeAddAction, [{
       key: "undo",
       value: function undo() {
         this._remove();
@@ -15053,17 +20279,17 @@
     return EdgeAddAction;
   }(EdgeAction);
   var EdgeRemoveAction = /*#__PURE__*/function (_EdgeAction2) {
-    _inherits$9(EdgeRemoveAction, _EdgeAction2);
+    _inherits$8(EdgeRemoveAction, _EdgeAction2);
 
-    var _super2 = _createSuper$9(EdgeRemoveAction);
+    var _super2 = _createSuper$8(EdgeRemoveAction);
 
     function EdgeRemoveAction() {
-      _classCallCheck$f(this, EdgeRemoveAction);
+      _classCallCheck$d(this, EdgeRemoveAction);
 
       return _super2.apply(this, arguments);
     }
 
-    _createClass$f(EdgeRemoveAction, [{
+    _createClass$d(EdgeRemoveAction, [{
       key: "undo",
       value: function undo() {
         this._add();
@@ -15085,7 +20311,7 @@
 
   var CompoundAction = /*#__PURE__*/function () {
     function CompoundAction(actions) {
-      _classCallCheck$f(this, CompoundAction);
+      _classCallCheck$d(this, CompoundAction);
 
       this.actions = actions;
 
@@ -15094,7 +20320,7 @@
       }
     }
 
-    _createClass$f(CompoundAction, [{
+    _createClass$d(CompoundAction, [{
       key: "addAction",
       value: function addAction(action) {
         this.actions.push(action);
@@ -15140,7 +20366,7 @@
 
   var MoveAction = /*#__PURE__*/function () {
     function MoveAction(obj, originalPosition, pos, renderer) {
-      _classCallCheck$f(this, MoveAction);
+      _classCallCheck$d(this, MoveAction);
 
       this.obj = obj;
       this.originalPosition = originalPosition;
@@ -15148,7 +20374,7 @@
       this.renderer = renderer;
     }
 
-    _createClass$f(MoveAction, [{
+    _createClass$d(MoveAction, [{
       key: "redo",
       value: function redo() {
         this.renderer.setPosition(this.obj, this.pos.x, this.pos.y);
@@ -15170,13 +20396,13 @@
 
   var NodeGroupAction = /*#__PURE__*/function () {
     function NodeGroupAction(obj, toolkit) {
-      _classCallCheck$f(this, NodeGroupAction);
+      _classCallCheck$d(this, NodeGroupAction);
 
       this.obj = obj;
       this.toolkit = toolkit;
     }
 
-    _createClass$f(NodeGroupAction, [{
+    _createClass$d(NodeGroupAction, [{
       key: "_add",
       value: function _add() {
         if (this.obj.objectType === Node.objectType) {
@@ -15205,17 +20431,17 @@
     return NodeGroupAction;
   }();
   var TerminusAddAction = /*#__PURE__*/function (_NodeGroupAction) {
-    _inherits$9(TerminusAddAction, _NodeGroupAction);
+    _inherits$8(TerminusAddAction, _NodeGroupAction);
 
-    var _super = _createSuper$9(TerminusAddAction);
+    var _super = _createSuper$8(TerminusAddAction);
 
     function TerminusAddAction() {
-      _classCallCheck$f(this, TerminusAddAction);
+      _classCallCheck$d(this, TerminusAddAction);
 
       return _super.apply(this, arguments);
     }
 
-    _createClass$f(TerminusAddAction, [{
+    _createClass$d(TerminusAddAction, [{
       key: "undo",
       value: function undo() {
         this._remove();
@@ -15230,17 +20456,17 @@
     return TerminusAddAction;
   }(NodeGroupAction);
   var TerminusRemoveAction = /*#__PURE__*/function (_NodeGroupAction2) {
-    _inherits$9(TerminusRemoveAction, _NodeGroupAction2);
+    _inherits$8(TerminusRemoveAction, _NodeGroupAction2);
 
-    var _super2 = _createSuper$9(TerminusRemoveAction);
+    var _super2 = _createSuper$8(TerminusRemoveAction);
 
     function TerminusRemoveAction() {
-      _classCallCheck$f(this, TerminusRemoveAction);
+      _classCallCheck$d(this, TerminusRemoveAction);
 
       return _super2.apply(this, arguments);
     }
 
-    _createClass$f(TerminusRemoveAction, [{
+    _createClass$d(TerminusRemoveAction, [{
       key: "undo",
       value: function undo() {
         this._add();
@@ -15261,21 +20487,21 @@
     return TerminusRemoveAction;
   }(NodeGroupAction);
   var GroupRemoveAction = /*#__PURE__*/function (_TerminusRemoveAction) {
-    _inherits$9(GroupRemoveAction, _TerminusRemoveAction);
+    _inherits$8(GroupRemoveAction, _TerminusRemoveAction);
 
-    var _super3 = _createSuper$9(GroupRemoveAction);
+    var _super3 = _createSuper$8(GroupRemoveAction);
 
     function GroupRemoveAction(params, t) {
       var _this;
 
-      _classCallCheck$f(this, GroupRemoveAction);
+      _classCallCheck$d(this, GroupRemoveAction);
 
       _this = _super3.call(this, params.group, t);
       _this.params = params;
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "childrenRemoved", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "childrenRemoved", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "orphanedChildren", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "orphanedChildren", void 0);
 
       _this.childrenRemoved = params.removeChildren;
       _this.orphanedChildren = params.children.map(function (c) {
@@ -15284,12 +20510,12 @@
       return _this;
     }
 
-    _createClass$f(GroupRemoveAction, [{
+    _createClass$d(GroupRemoveAction, [{
       key: "_add",
       value: function _add() {
         var _this2 = this;
 
-        _get$3(_getPrototypeOf$9(GroupRemoveAction.prototype), "_add", this).call(this);
+        _get$2(_getPrototypeOf$8(GroupRemoveAction.prototype), "_add", this).call(this);
 
         if (!this.childrenRemoved) {
           this.orphanedChildren.forEach(function (c) {
@@ -15304,20 +20530,20 @@
 
   var UpdateAction = /*#__PURE__*/function () {
     function UpdateAction(obj, originalData, toolkit) {
-      _classCallCheck$f(this, UpdateAction);
+      _classCallCheck$d(this, UpdateAction);
 
       this.obj = obj;
       this.toolkit = toolkit;
 
-      _defineProperty$e(this, "newData", void 0);
+      _defineProperty$c(this, "newData", void 0);
 
-      _defineProperty$e(this, "originalData", void 0);
+      _defineProperty$c(this, "originalData", void 0);
 
       this.newData = extend({}, obj.data);
       this.originalData = extend({}, originalData);
     }
 
-    _createClass$f(UpdateAction, [{
+    _createClass$d(UpdateAction, [{
       key: "_getMethod",
       value: function _getMethod() {
         return "update" + this.obj.objectType;
@@ -15344,14 +20570,14 @@
 
   var PortAction = /*#__PURE__*/function () {
     function PortAction(obj, parent, toolkit) {
-      _classCallCheck$f(this, PortAction);
+      _classCallCheck$d(this, PortAction);
 
       this.obj = obj;
       this.parent = parent;
       this.toolkit = toolkit;
     }
 
-    _createClass$f(PortAction, [{
+    _createClass$d(PortAction, [{
       key: "_add",
       value: function _add() {
         this.toolkit.addPort(this.parent, this.obj.data);
@@ -15371,17 +20597,17 @@
     return PortAction;
   }();
   var PortAddAction = /*#__PURE__*/function (_PortAction) {
-    _inherits$9(PortAddAction, _PortAction);
+    _inherits$8(PortAddAction, _PortAction);
 
-    var _super = _createSuper$9(PortAddAction);
+    var _super = _createSuper$8(PortAddAction);
 
     function PortAddAction() {
-      _classCallCheck$f(this, PortAddAction);
+      _classCallCheck$d(this, PortAddAction);
 
       return _super.apply(this, arguments);
     }
 
-    _createClass$f(PortAddAction, [{
+    _createClass$d(PortAddAction, [{
       key: "undo",
       value: function undo() {
         this._remove();
@@ -15401,17 +20627,17 @@
     return PortAddAction;
   }(PortAction);
   var PortRemoveAction = /*#__PURE__*/function (_PortAction2) {
-    _inherits$9(PortRemoveAction, _PortAction2);
+    _inherits$8(PortRemoveAction, _PortAction2);
 
-    var _super2 = _createSuper$9(PortRemoveAction);
+    var _super2 = _createSuper$8(PortRemoveAction);
 
     function PortRemoveAction() {
-      _classCallCheck$f(this, PortRemoveAction);
+      _classCallCheck$d(this, PortRemoveAction);
 
       return _super2.apply(this, arguments);
     }
 
-    _createClass$f(PortRemoveAction, [{
+    _createClass$d(PortRemoveAction, [{
       key: "undo",
       value: function undo() {
         this._add();
@@ -15439,14 +20665,14 @@
 
   var GroupAction = /*#__PURE__*/function () {
     function GroupAction(node, group, toolkit) {
-      _classCallCheck$f(this, GroupAction);
+      _classCallCheck$d(this, GroupAction);
 
       this.node = node;
       this.group = group;
       this.toolkit = toolkit;
     }
 
-    _createClass$f(GroupAction, [{
+    _createClass$d(GroupAction, [{
       key: "hasDeltas",
       value: function hasDeltas() {
         return this.node != null;
@@ -15457,17 +20683,17 @@
   }();
 
   var AddGroupMemberAction = /*#__PURE__*/function (_GroupAction) {
-    _inherits$9(AddGroupMemberAction, _GroupAction);
+    _inherits$8(AddGroupMemberAction, _GroupAction);
 
-    var _super = _createSuper$9(AddGroupMemberAction);
+    var _super = _createSuper$8(AddGroupMemberAction);
 
     function AddGroupMemberAction() {
-      _classCallCheck$f(this, AddGroupMemberAction);
+      _classCallCheck$d(this, AddGroupMemberAction);
 
       return _super.apply(this, arguments);
     }
 
-    _createClass$f(AddGroupMemberAction, [{
+    _createClass$d(AddGroupMemberAction, [{
       key: "redo",
       value: function redo() {
         this.toolkit.addToGroup(this.node, this.group);
@@ -15482,17 +20708,17 @@
     return AddGroupMemberAction;
   }(GroupAction);
   var RemoveGroupMemberAction = /*#__PURE__*/function (_GroupAction2) {
-    _inherits$9(RemoveGroupMemberAction, _GroupAction2);
+    _inherits$8(RemoveGroupMemberAction, _GroupAction2);
 
-    var _super2 = _createSuper$9(RemoveGroupMemberAction);
+    var _super2 = _createSuper$8(RemoveGroupMemberAction);
 
     function RemoveGroupMemberAction() {
-      _classCallCheck$f(this, RemoveGroupMemberAction);
+      _classCallCheck$d(this, RemoveGroupMemberAction);
 
       return _super2.apply(this, arguments);
     }
 
-    _createClass$f(RemoveGroupMemberAction, [{
+    _createClass$d(RemoveGroupMemberAction, [{
       key: "redo",
       value: function redo() {
         this.toolkit.removeFromGroup(this.node);
@@ -15508,13 +20734,13 @@
   }(GroupAction);
   var GroupCollapseAction = /*#__PURE__*/function () {
     function GroupCollapseAction(group, renderer) {
-      _classCallCheck$f(this, GroupCollapseAction);
+      _classCallCheck$d(this, GroupCollapseAction);
 
       this.group = group;
       this.renderer = renderer;
     }
 
-    _createClass$f(GroupCollapseAction, [{
+    _createClass$d(GroupCollapseAction, [{
       key: "redo",
       value: function redo() {
         this.renderer.collapseGroup(this.group);
@@ -15535,13 +20761,13 @@
   }();
   var GroupExpandAction = /*#__PURE__*/function () {
     function GroupExpandAction(group, renderer) {
-      _classCallCheck$f(this, GroupExpandAction);
+      _classCallCheck$d(this, GroupExpandAction);
 
       this.group = group;
       this.renderer = renderer;
     }
 
-    _createClass$f(GroupExpandAction, [{
+    _createClass$d(GroupExpandAction, [{
       key: "redo",
       value: function redo() {
         this.renderer.expandGroup(this.group);
@@ -15563,7 +20789,7 @@
 
   var ToolkitRendererVertexRemovedAction = /*#__PURE__*/function () {
     function ToolkitRendererVertexRemovedAction(renderer, vertex, pos) {
-      _classCallCheck$f(this, ToolkitRendererVertexRemovedAction);
+      _classCallCheck$d(this, ToolkitRendererVertexRemovedAction);
 
       this.renderer = renderer;
       this.vertex = vertex;
@@ -15572,7 +20798,7 @@
     // the dataset
 
 
-    _createClass$f(ToolkitRendererVertexRemovedAction, [{
+    _createClass$d(ToolkitRendererVertexRemovedAction, [{
       key: "redo",
       value: function redo() {} // undoing this action means putting the vertex back to where it was prior to it being removed.
 
@@ -15593,7 +20819,7 @@
 
   var EdgePathCommand = /*#__PURE__*/function () {
     function EdgePathCommand(toolkit, edge, originalGeometry, geometry, renderer) {
-      _classCallCheck$f(this, EdgePathCommand);
+      _classCallCheck$d(this, EdgePathCommand);
 
       this.toolkit = toolkit;
       this.edge = edge;
@@ -15602,7 +20828,7 @@
       this.renderer = renderer;
     }
 
-    _createClass$f(EdgePathCommand, [{
+    _createClass$d(EdgePathCommand, [{
       key: "_apply",
       value: function _apply(g) {
         this.toolkit.fire(EVENT_EDGE_PATH_RESTORED, {
@@ -15641,23 +20867,23 @@
    */
   var UndoRedoManager = /*#__PURE__*/function () {
     function UndoRedoManager(params) {
-      _classCallCheck$f(this, UndoRedoManager);
+      _classCallCheck$d(this, UndoRedoManager);
 
-      _defineProperty$e(this, "toolkit", void 0);
+      _defineProperty$c(this, "toolkit", void 0);
 
-      _defineProperty$e(this, "maximumSize", void 0);
+      _defineProperty$c(this, "maximumSize", void 0);
 
-      _defineProperty$e(this, "suspend", void 0);
+      _defineProperty$c(this, "suspend", void 0);
 
-      _defineProperty$e(this, "onChange", void 0);
+      _defineProperty$c(this, "onChange", void 0);
 
-      _defineProperty$e(this, "undoStack", void 0);
+      _defineProperty$c(this, "undoStack", void 0);
 
-      _defineProperty$e(this, "redoStack", void 0);
+      _defineProperty$c(this, "redoStack", void 0);
 
-      _defineProperty$e(this, "currentTransaction", void 0);
+      _defineProperty$c(this, "currentTransaction", void 0);
 
-      _defineProperty$e(this, "appendStack", 0);
+      _defineProperty$c(this, "appendStack", 0);
 
       this.toolkit = params.toolkit;
       this.suspend = false;
@@ -15674,7 +20900,7 @@
      */
 
 
-    _createClass$f(UndoRedoManager, [{
+    _createClass$d(UndoRedoManager, [{
       key: "_bindListeners",
       value: function _bindListeners() {
         var _this = this;
@@ -16088,125 +21314,125 @@
    * @public
    */
   var JsPlumbToolkit = /*#__PURE__*/function (_OptimisticEventGener) {
-    _inherits$9(JsPlumbToolkit, _OptimisticEventGener);
+    _inherits$8(JsPlumbToolkit, _OptimisticEventGener);
 
-    var _super = _createSuper$9(JsPlumbToolkit);
+    var _super = _createSuper$8(JsPlumbToolkit);
 
     function JsPlumbToolkit(params) {
       var _this;
 
-      _classCallCheck$f(this, JsPlumbToolkit);
+      _classCallCheck$d(this, JsPlumbToolkit);
 
       _this = _super.call(this);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "graph", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "graph", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "autoSaver", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "autoSaver", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "idFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "idFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "typeProperty", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "typeProperty", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "edgeTypeProperty", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "edgeTypeProperty", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portTypeProperty", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portTypeProperty", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "typeFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "typeFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "edgeIdFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "edgeIdFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "edgeTypeFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "edgeTypeFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portIdFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portIdFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portTypeFunction", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portTypeFunction", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portExtractor", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portExtractor", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portUpdater", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portUpdater", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portDataProperty", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portDataProperty", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portOrderProperty", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portOrderProperty", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "modelTopAttribute", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "modelTopAttribute", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "modelLeftAttribute", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "modelLeftAttribute", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "model", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "model", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "suspendGraph", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "suspendGraph", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "dataLoading", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "dataLoading", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_originalData", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_originalData", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_originalDataType", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_originalDataType", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "debugEnabled", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "debugEnabled", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "defaultObjectFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "defaultObjectFactory", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "nodeFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "nodeFactory", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "edgeFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "edgeFactory", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "portFactory", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "groupFactory", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "groupFactory", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "autoSave", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "autoSave", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "saveUrl", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "saveUrl", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "autoSaveDebounceTimeout", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "autoSaveDebounceTimeout", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "autoSaveHandler", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "autoSaveHandler", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "saveHeaders", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "saveHeaders", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onAutoSaveSuccess", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onAutoSaveSuccess", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onAutoSaveError", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onAutoSaveError", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "doNotUpdateOriginalData", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "doNotUpdateOriginalData", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onBeforeAutoSave", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onBeforeAutoSave", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "onAfterAutoSave", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "onAfterAutoSave", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "portSeparator", ".");
+      _defineProperty$c(_assertThisInitialized$8(_this), "portSeparator", ".");
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "defaultCost", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "defaultCost", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "defaultDirected", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "defaultDirected", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "enableSubgraphs", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "enableSubgraphs", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "undoRedo", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "undoRedo", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "graphParams", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "graphParams", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "beforeConnect", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "beforeConnect", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "beforeMoveConnection", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "beforeMoveConnection", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "beforeStartConnect", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "beforeStartConnect", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "beforeDetach", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "beforeDetach", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "beforeStartDetach", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "beforeStartDetach", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_currentSelection", void 0);
+      _defineProperty$c(_assertThisInitialized$8(_this), "_currentSelection", void 0);
 
-      _defineProperty$e(_assertThisInitialized$9(_this), "_renderersById", new Map());
+      _defineProperty$c(_assertThisInitialized$8(_this), "_renderersById", new Map());
 
       params = params || {};
       var undoRedoParams = params.undoRedo || {};
 
       if (undoRedoParams.enabled !== false) {
         _this.undoRedo = new UndoRedoManager({
-          toolkit: _assertThisInitialized$9(_this),
+          toolkit: _assertThisInitialized$8(_this),
           maximumSize: undoRedoParams.maximumSize,
           onChange: function onChange(instance, undoCount, redoCount) {
             _this.fire(EVENT_UNDOREDO_UPDATE, {
@@ -16244,7 +21470,7 @@
       _this.portOrderProperty = params.portOrderProperty;
       _this.suspendGraph = false;
       _this.debugEnabled = false;
-      _this.model = new DataModel(_assertThisInitialized$9(_this), params.model);
+      _this.model = new DataModel(_assertThisInitialized$8(_this), params.model);
 
       _this.defaultObjectFactory = function (type, data, callback) {
         data = data == null || !isObject(data) ? {} : data;
@@ -16322,7 +21548,7 @@
       _this.graph = new Graph(_this.graphParams);
 
       if (_this.autoSave) {
-        _this.autoSaver = new AutoSaver(_assertThisInitialized$9(_this), {
+        _this.autoSaver = new AutoSaver(_assertThisInitialized$8(_this), {
           saveUrl: _this.saveUrl,
           saveHeaders: _this.saveHeaders,
           onAutoSaveSuccess: _this.onAutoSaveSuccess,
@@ -16335,7 +21561,7 @@
       } // catch all event handler fires 'dataUpdated' for lots of events.
 
 
-      new CatchAllEventHandler(_assertThisInitialized$9(_this));
+      new CatchAllEventHandler(_assertThisInitialized$8(_this));
 
       var _defaultConnectHandler = function _defaultConnectHandler(source, target) {
         if (_this.model == null) return true; // shortcut for setups where there is no model on the toolkit.
@@ -16416,7 +21642,7 @@
       return _this;
     }
 
-    _createClass$f(JsPlumbToolkit, [{
+    _createClass$d(JsPlumbToolkit, [{
       key: "_createSelection",
       value: function _createSelection(onClear) {
         return new Selection(this, {
@@ -16586,7 +21812,7 @@
           var _continue = this.beforeStartConnect(sv, this.edgeTypeFunction(currentData));
 
           if (_continue) {
-            if (_typeof$1(_continue) === "object") {
+            if (_typeof(_continue) === "object") {
               currentData = extend(_continue, currentData);
             }
 
@@ -17010,7 +22236,7 @@
 
         if (continueCallback == null) {
           if (data != null) {
-            data = _typeof$1(data) === "object" ? data : {};
+            data = _typeof(data) === "object" ? data : {};
             continueCallback = typeof data === "function" ? data : null;
           } else {
             data = {};
@@ -17073,7 +22299,7 @@
 
         if (continueCallback == null) {
           if (data != null) {
-            data = _typeof$1(data) === "object" ? data : {};
+            data = _typeof(data) === "object" ? data : {};
             continueCallback = typeof data === "function" ? data : null;
           } else if (data == null && continueCallback == null) {
             data = {};
@@ -18688,7 +23914,7 @@
         if (obj != null) {
           if (typeof obj === "string") {
             obj = this.getNode(obj) || this.getGroup(obj) || this.getPort(obj) || this.getEdge(obj);
-          } else if (_typeof$1(obj) === "object" && typeof obj.objectType === "undefined") {
+          } else if (_typeof(obj) === "object" && typeof obj.objectType === "undefined") {
             var id = this.idFunction(obj),
                 edgeId = this.edgeIdFunction(obj);
             obj = this.getNode(id) || this.getGroup(id) || this.getEdge(edgeId);
@@ -18791,13 +24017,13 @@
     return JsPlumbToolkit;
   }(OptimisticEventGenerator);
 
-  function _classCallCheck$e(instance, Constructor) {
+  function _classCallCheck$c(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties$e(target, props) {
+  function _defineProperties$c(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -18807,13 +24033,13 @@
     }
   }
 
-  function _createClass$e(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$e(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$e(Constructor, staticProps);
+  function _createClass$c(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$c(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$c(Constructor, staticProps);
     return Constructor;
   }
 
-  function _defineProperty$d(obj, key, value) {
+  function _defineProperty$b(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
         value: value,
@@ -18826,1737 +24052,6 @@
     }
 
     return obj;
-  }
-
-  function _inherits$8(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) _setPrototypeOf$8(subClass, superClass);
-  }
-
-  function _getPrototypeOf$8(o) {
-    _getPrototypeOf$8 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf$8(o);
-  }
-
-  function _setPrototypeOf$8(o, p) {
-    _setPrototypeOf$8 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf$8(o, p);
-  }
-
-  function _isNativeReflectConstruct$8() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
-
-    try {
-      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function _assertThisInitialized$8(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return self;
-  }
-
-  function _possibleConstructorReturn$8(self, call) {
-    if (call && (typeof call === "object" || typeof call === "function")) {
-      return call;
-    } else if (call !== void 0) {
-      throw new TypeError("Derived constructors may only return object or undefined");
-    }
-
-    return _assertThisInitialized$8(self);
-  }
-
-  function _createSuper$8(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct$8();
-
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf$8(Derived),
-          result;
-
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf$8(this).constructor;
-
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
-      }
-
-      return _possibleConstructorReturn$8(this, result);
-    };
-  }
-
-  function _slicedToArray$3(arr, i) {
-    return _arrayWithHoles$3(arr) || _iterableToArrayLimit$3(arr, i) || _unsupportedIterableToArray$3(arr, i) || _nonIterableRest$3();
-  }
-
-  function _toConsumableArray$1(arr) {
-    return _arrayWithoutHoles$1(arr) || _iterableToArray$1(arr) || _unsupportedIterableToArray$3(arr) || _nonIterableSpread$1();
-  }
-
-  function _arrayWithoutHoles$1(arr) {
-    if (Array.isArray(arr)) return _arrayLikeToArray$3(arr);
-  }
-
-  function _arrayWithHoles$3(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArray$1(iter) {
-    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-  }
-
-  function _iterableToArrayLimit$3(arr, i) {
-    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-    if (_i == null) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-
-    var _s, _e;
-
-    try {
-      for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _unsupportedIterableToArray$3(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray$3(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$3(o, minLen);
-  }
-
-  function _arrayLikeToArray$3(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-
-  function _nonIterableSpread$1() {
-    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  function _nonIterableRest$3() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  function extendWithCallback(o1, o2, cb) {
-    for (var o in o2) {
-      o1[o] = o2[o];
-      if (cb) cb(o, o1[o]);
-    }
-
-    return o1;
-  }
-  function filterEmpty(l) {
-    return l.filter(function (e) {
-      return e != null && fastTrim(e).length > 0;
-    });
-  }
-  function eachNotEmpty(strings, fn) {
-    for (var i = 0; i < strings.length; i++) {
-      var t = strings[i];
-
-      if (t == null || t.length === 0) {
-        continue;
-      } else {
-        fn(i, t);
-      }
-    }
-  }
-
-  function parseAttributes(d, attributesRe) {
-    if (d == null) {
-      return d;
-    } else {
-      var parts = d.replace("/>", ">").split(/^<|>$/)[1].split(attributesRe);
-      return filterEmpty(parts);
-    }
-  }
-  function peek(a) {
-    return a.length > 0 ? a[a.length - 1] : null;
-  }
-  function isLoopPresent(stack) {
-    if (stack == null || stack.length === 0) {
-      return false;
-    } else {
-      for (var i = stack.length - 1; i > -1; i--) {
-        if (stack[i].type === "each") return true;
-      }
-    }
-
-    return false;
-  }
-  function _addBinding(bindingId, match, entry, predicate, instance) {
-    var u = uuid(),
-        b = {
-      w: match,
-      e: [],
-      u: u
-    };
-    instance.bindings[u] = b;
-
-    var fnBody = function fnBody() {
-      return predicate != null ? "try {  if(" + predicate + ") { out = out.replace(this.e[k][0], eval(this.e[k][1])); } else out=''; } catch(__) { out='';}" : "try { out = out.replace(this.e[k][0], eval(this.e[k][1])); } catch(__) { out=out.replace(this.e[k][0], '');}";
-    };
-
-    var prefix = function prefix() {
-      return predicate != null ? "var out='';try { with($data) { if (" + predicate + ") out = this.w; else return null; }}catch(_){return null;}" : "var out = this.w;";
-    };
-
-    b.reapply = new Function("$data", prefix() + "for (var k = 0; k < this.e.length; k++) { with($data) { " + fnBody() + " }} return out;");
-    entry.bindings[bindingId] = b;
-    match.replace(/\$\{([^\}]*)\}/g, function (term, content, _loc, _whole) {
-      b.e.push([term, content]);
-      return "";
-    });
-    return u;
-  }
-  function _bindOneAtt(id, value, output, predicate, instance) {
-    output.atts[id] = value;
-
-    _addBinding(id, value, output, predicate, instance);
-  }
-  function parseAtts(el, instance) {
-    var p = parseAttributes(el, instance.attributesRe),
-        o = {
-      el: fastTrim(p[0]),
-      atts: {},
-      bindings: {}
-    };
-
-    var _maybeBindAttribute = function _maybeBindAttribute(_p, predicate) {
-      // if not an inline if, parse a normal attribute.
-      var m = _p.match(/([^=]+)=['"](.*)['"]/);
-
-      if (m == null && predicate == null) {
-        o.atts[_p] = "";
-      } else if (m == null) {
-        _bindOneAtt(_p, "", o, predicate, instance);
-      } else {
-        _bindOneAtt(m[1], m[2], o, predicate, instance);
-      }
-
-      return m;
-    };
-
-    for (var i = 1; i < p.length; i++) {
-      var _p = fastTrim(p[i]);
-
-      if (_p != null && _p.length > 0) {
-        // test if this is an inline IF statement. if so, its content should be run back through the attribute
-        // parser to get its constituent parts.
-        var isInlineIf = _p.match(instance.inlineIfRe);
-
-        if (isInlineIf) {
-          var parts = isInlineIf[2].split(instance.attributesRe); // add each part one by one using the code below but with the predicate attached.
-
-          for (var j = 0; j < parts.length; j++) {
-            var __p = fastTrim(parts[j]);
-
-            if (__p != null && __p.length > 0) {
-              _maybeBindAttribute(__p, isInlineIf[1]); // bind the attribute with the given predicate.
-
-            }
-          }
-        } else {
-          _maybeBindAttribute(_p);
-        }
-      }
-    }
-
-    return o;
-  }
-  var AbstractEntry = function AbstractEntry(instance) {
-    _classCallCheck$e(this, AbstractEntry);
-
-    this.instance = instance;
-
-    _defineProperty$d(this, "type", void 0);
-
-    _defineProperty$d(this, "tag", void 0);
-
-    _defineProperty$d(this, "remove", void 0);
-
-    _defineProperty$d(this, "uuid", void 0);
-
-    _defineProperty$d(this, "children", []);
-
-    _defineProperty$d(this, "elements", []);
-
-    _defineProperty$d(this, "bindings", void 0);
-
-    _defineProperty$d(this, "context", void 0);
-
-    _defineProperty$d(this, "functionBody", void 0);
-
-    _defineProperty$d(this, "precompile", void 0);
-
-    _defineProperty$d(this, "postcompile", void 0);
-
-    this.uuid = uuid();
-    instance.entries[this.uuid] = this;
-  };
-
-  /**
-   * @internal
-   */
-  var TextEntry = /*#__PURE__*/function (_AbstractEntry) {
-    _inherits$8(TextEntry, _AbstractEntry);
-
-    var _super = _createSuper$8(TextEntry);
-
-    function TextEntry(options, instance) {
-      var _this;
-
-      _classCallCheck$e(this, TextEntry);
-
-      _this = _super.call(this, instance);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "type", "text");
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "value", void 0);
-
-      _this.value = options.value;
-      _this.bindings = {};
-      return _this;
-    }
-
-    _createClass$e(TextEntry, [{
-      key: "_getBoundValue",
-      value: function _getBoundValue() {
-        return "_rotors.bind(__knockleData[0], '" + this.bindings["__element"].u + "', typeof $key !== 'undefined' ? $key : null, typeof $value !== 'undefined' ? $value : null)";
-      }
-    }, {
-      key: "compile",
-      value: function compile() {
-        return this.instance.getExecutionContent(this._getBoundValue(), this.uuid, true) + ";_rotors.pet(_eid, '" + this.uuid + "');";
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        entry.el.nodeValue = newEntry.el.nodeValue;
-        return {
-          added: [],
-          removed: [],
-          elements: []
-        };
-      }
-    }]);
-
-    return TextEntry;
-  }(AbstractEntry);
-
-  function emptyUpdateResult() {
-    return {
-      added: [],
-      removed: [],
-      elements: []
-    };
-  }
-  function _findChild(valuesToFind, newEntry) {
-    for (var i = 0; i < newEntry.children.length; i++) {
-      var allMatch = true;
-
-      for (var k in valuesToFind) {
-        if (valuesToFind[k] !== newEntry.children[i][k]) {
-          allMatch = false;
-          break;
-        }
-      }
-
-      if (allMatch) return newEntry.children[i];
-    }
-  }
-
-  function _updateParent(instance, entry, newEntry, fieldIds, parent) {
-    var visitedChildren = {},
-        missingChildren = [],
-        newChild,
-        child,
-        newChildren = [],
-        r = {
-      added: [],
-      removed: [],
-      elements: []
-    },
-        _r;
-
-    var cacheKey = function cacheKey(child) {
-      var k = "";
-
-      for (var i = 0; i < fieldIds.length; i++) {
-        k += child[fieldIds[i]];
-      }
-
-      return k;
-    };
-
-    if (newEntry.children.length > 0) {
-      for (var i = 0; i < entry.children.length; i++) {
-        child = entry.children[i];
-        var match = {};
-
-        for (var k = 0; k < fieldIds.length; k++) {
-          match[fieldIds[k]] = child[fieldIds[k]];
-        }
-
-        newChild = _findChild(match, newEntry);
-
-        if (newChild == null) {
-          missingChildren.push(child);
-        } else {
-          visitedChildren[cacheKey(child)] = true;
-          _r = instance.updateFrom(child, newChild, null);
-          Array.prototype.push.apply(r.added, _r.added);
-          Array.prototype.push.apply(r.removed, _r.removed);
-        }
-      }
-    } else {
-      Array.prototype.push.apply(missingChildren, entry.children);
-    } // remove the missing children
-
-
-    var _missingMap = {};
-
-    for (var _i = 0; _i < missingChildren.length; _i++) {
-      missingChildren[_i].el.parentNode && missingChildren[_i].el.parentNode.removeChild(missingChildren[_i].el);
-      _missingMap[missingChildren[_i].index] = true;
-    } // update the list of children for the entry, to remove the ones that were missing from the latest run.
-
-
-    var filtered = entry.children.filter(function (c) {
-      return _missingMap[c.index] !== true;
-    });
-    entry.children = filtered; // get, if possible, the last child element rendered.
-
-    var lastRendered = entry.children.length > 0 ? entry.children[entry.children.length - 1].el : null;
-
-    for (var _i2 = 0; _i2 < newEntry.children.length; _i2++) {
-      child = newEntry.children[_i2];
-
-      if (!visitedChildren[cacheKey(child)]) {
-        // a new child. needs to be inserted into the DOM somewhere, either as a sibling of the last element rendered,
-        // or if none rendered, then a sibling of the parents last child, or if none of those, a child of the parent
-        entry.children.push(child);
-        newChildren.push(child);
-      }
-    }
-
-    if (newChildren.length > 0) {
-      for (var _i3 = 0; _i3 < newChildren.length; _i3++) {
-        if (lastRendered != null) {
-          lastRendered.parentNode.insertBefore(newChildren[_i3].el, lastRendered.nextSibling);
-        } else if (parent != null) {
-          parent.el.appendChild(newChildren[_i3].el);
-        } else {
-          console.log("Knockle: couldnt insert child, nothing to insert after");
-        }
-
-        lastRendered = newChildren[_i3].el;
-      }
-    }
-
-    Array.prototype.push.apply(r.added, newChildren);
-    Array.prototype.push.apply(r.removed, missingChildren);
-    return r;
-  }
-
-  var CommentEntry = /*#__PURE__*/function (_AbstractEntry) {
-    _inherits$8(CommentEntry, _AbstractEntry);
-
-    var _super = _createSuper$8(CommentEntry);
-
-    function CommentEntry(comment, instance) {
-      var _this;
-
-      _classCallCheck$e(this, CommentEntry);
-
-      _this = _super.call(this, instance);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "type", "comment");
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "comment", void 0);
-
-      _this.comment = comment;
-      return _this;
-    }
-
-    _createClass$e(CommentEntry, [{
-      key: "compile",
-      value: function compile() {
-        return "";
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        return emptyUpdateResult();
-      }
-    }]);
-
-    return CommentEntry;
-  }(AbstractEntry);
-
-  var ElementEntry = /*#__PURE__*/function (_AbstractEntry) {
-    _inherits$8(ElementEntry, _AbstractEntry);
-
-    var _super = _createSuper$8(ElementEntry);
-
-    function ElementEntry(ta, instance, templateResolver, stack, parseIdStack) {
-      var _this;
-
-      _classCallCheck$e(this, ElementEntry);
-
-      _this = _super.call(this, instance); //const ta =
-
-      _this.templateResolver = templateResolver;
-      _this.stack = stack;
-      _this.parseIdStack = parseIdStack;
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "type", "element");
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "namespace", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "atts", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "custom", void 0);
-
-      var p = ta.el.split(":");
-      _this.tag = ta.el;
-
-      if (p.length === 2) {
-        _this.namespace = p[0];
-      }
-
-      _this.atts = ta.atts;
-      _this.bindings = ta.bindings;
-      _this.remove = false;
-      return _this;
-    }
-
-    _createClass$e(ElementEntry, [{
-      key: "compile",
-      value: function compile(isCustomScope) {
-        var customTag = this.instance.getCustomTag(this.tag);
-
-        if (customTag) {
-          var fb = customTag.getFunctionBody(this.instance, this); //var renderCb = _rotors.customTags[this.tag] ? "_rotors.customTags['" + this.tag + "'].rendered(_le, _rotors, __knockleData[0]);" : "_rotors.globalTags['" + this.tag + "'].rendered(_le, _rotors, data[0]);"
-
-          var renderCb = "_rotors.customTagRendered('" + this.tag + "', _le, __knockleData[0]);";
-
-          for (var c = 0; c < this.children.length; c++) {
-            if (this.children[c].precompile) {
-              fb += this.children[c].precompile(this.instance);
-            }
-
-            fb += this.children[c].compile();
-
-            if (this.children[c].postcompile) {
-              fb += this.children[c].postcompile(this.instance);
-            }
-          }
-
-          fb += "_le=_els.pop();" + renderCb + "_rotors.pet(_eid,'" + this.uuid + "');";
-          return fb;
-        }
-
-        var fp = "/* element entry " + this.uuid + " */;"; // custom elements may set `remove` to true, meaning they behave as an element but their element should not appear in the output.
-
-        if (this.remove !== true) {
-          fp += this.instance.getExecutionContent(this.tag, this.uuid, false, this.namespace);
-          var bracketAtt, bracketExpression;
-
-          for (var a in this.atts) {
-            if (this.atts.hasOwnProperty(a)) {
-              var attExpr = void 0;
-
-              if (this.bindings[a] != null) {
-                attExpr = "_rotors.bind(__knockleData[0], '" + this.bindings[a].u + "');";
-                bracketAtt = a.match(/\(([^)]+)\)/);
-
-                if (bracketAtt) {
-                  var commandName = bracketAtt[1];
-                  var command = this.atts[a];
-                  bracketExpression = ";if(__a!=null){_rotors.addCommand(_eid,e,\"" + commandName + "\",\"" + command + "\");}";
-                }
-              } else {
-                // a static attribute value.
-                attExpr = "'" + this.atts[a] + "'";
-              }
-
-              var suffix = bracketAtt ? bracketExpression : ";if(__a!=null) {_rotors.setAttribute(e,'" + a + "',__a || '');}";
-              fp += "__a=" + attExpr + suffix;
-            }
-          }
-        }
-
-        for (var i = 0; i < this.children.length; i++) {
-          if (this.children[i].precompile) {
-            fp += this.children[i].precompile();
-          }
-
-          var fn = this.children[i].compile();
-          fp += fn;
-          this.children[i].functionBody = fn;
-
-          if (this.children[i].postcompile) {
-            fp += this.children[i].postcompile();
-          }
-        }
-
-        if (this.remove !== true && !isCustomScope) {
-          fp += "_le=_els.pop();";
-          fp += "_rotors.pet(_eid, '" + this.uuid + "');";
-        }
-
-        return fp;
-      }
-    }, {
-      key: "_applyStyles",
-      value: function _applyStyles(el, styles) {
-        styles.split(";").forEach(function (s) {
-          var ss = s.indexOf(":"),
-              prop = s.substring(0, ss);
-          el.style[prop] = s.substring(ss + 1);
-        });
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        var a,
-            v,
-            r = emptyUpdateResult(),
-            _r; // update the attributes/class/style of the element.
-
-
-        for (a in this.atts) {
-          if (this.atts.hasOwnProperty(a) && a !== "class") {
-            v = newEntry.el.getAttribute(a);
-
-            if (v) {
-              if (a === "style" && entry.el.style != null) {
-                this._applyStyles(entry.el, v);
-              } else {
-                entry.el.setAttribute(a, v);
-              }
-            } else {
-              entry.el.removeAttribute(a);
-            }
-          }
-        }
-
-        if (this.originalCustomTag) {
-          var customTag = this.instance.getCustomTag(this.originalCustomTag);
-
-          if (customTag) {
-            r.elements.push([entry.el, customTag]);
-          }
-        }
-
-        for (var i = 0; i < entry.children.length; i++) {
-          _r = this.instance.updateFrom(entry.children[i], newEntry.children[i], entry);
-          Array.prototype.push.apply(r.removed, _r.removed);
-          Array.prototype.push.apply(r.added, _r.added);
-          Array.prototype.push.apply(r.elements, _r.elements);
-        }
-
-        if (entry.el._RotorsUpdate) {
-          var updaters = this.instance.updaters[entry.el._RotorsUpdate];
-
-          for (var u = 0; u < updaters.length; u++) {
-            updaters[u](entry.el);
-          }
-        }
-
-        return r;
-      }
-    }]);
-
-    return ElementEntry;
-  }(AbstractEntry);
-
-  var elementMap = {};
-  var Elements$1 = {
-    construct: function construct(tag, ta, instance, templateResolver, stack, parseIdStack) {
-      var c = elementMap[tag];
-
-      if (!c) {
-        throw {
-          message: "Knockle: unknown element '" + tag + "'"
-        };
-      } else {
-        return new c(ta, instance, templateResolver, stack, parseIdStack);
-      }
-    },
-    register: function register(name, conn) {
-      elementMap[name] = conn;
-    },
-    exists: function exists(tag) {
-      return elementMap[tag] != null;
-    }
-  };
-
-  var CustomTag = function CustomTag(instance, tagName, options) {
-    var _this = this;
-
-    _classCallCheck$e(this, CustomTag);
-
-    this.instance = instance;
-    this.tagName = tagName;
-    this.options = options;
-
-    _defineProperty$d(this, "template", void 0);
-
-    _defineProperty$d(this, "getFunctionBody", void 0);
-
-    _defineProperty$d(this, "getFunctionEnd", void 0);
-
-    _defineProperty$d(this, "rendered", void 0);
-
-    _defineProperty$d(this, "updated", void 0);
-
-    var combineAttributes = function combineAttributes(ast, fromParseTree) {
-      var out = [];
-
-      var _loop = function _loop(i) {
-        var newAstEntry = extend({}, ast[i]);
-        newAstEntry.compile = ast[i].compile;
-        out.push(newAstEntry);
-        extendWithCallback(newAstEntry.atts, fromParseTree.atts, function (k, v) {
-          _bindOneAtt(k, v, newAstEntry, null, _this.instance);
-        });
-      };
-
-      for (var i = 0; i < ast.length; i++) {
-        _loop(i);
-      }
-
-      return out;
-    };
-
-    this.template = options.template;
-
-    this.getFunctionBody = function (knockle, parseTree) {
-      var ast = knockle.parse(_this.template, null, {
-        originalCustomTag: parseTree.tag,
-        context: parseTree.context,
-        customParent: parseTree
-      });
-      var atts = combineAttributes(ast, parseTree);
-      return knockle.compile(atts, false, true, true);
-    };
-
-    this.getFunctionEnd = function () {
-      return ";_els.pop();";
-    };
-
-    this.rendered = options.rendered || function (el, data, instance) {};
-
-    this.updated = options.updated || function (el, data, instance) {};
-  };
-
-  var globalTags = {};
-  var registerGlobalTag = function registerGlobalTag(tagName, tag) {
-    if (globalTags[tagName] == null) {
-      globalTags[tagName] = tag;
-    } else {
-      throw new Error("Tag '" + tagName + "' already registered");
-    }
-  };
-  var getCustomTag = function getCustomTag(tagName) {
-    return globalTags[tagName];
-  };
-  var Knockle = /*#__PURE__*/function () {
-    function Knockle(options, registerGlobalTag, getGlobalTag) {
-      _classCallCheck$e(this, Knockle);
-
-      this.registerGlobalTag = registerGlobalTag;
-      this.getGlobalTag = getGlobalTag;
-
-      _defineProperty$d(this, "templateResolver", void 0);
-
-      _defineProperty$d(this, "defaultTemplate", void 0);
-
-      _defineProperty$d(this, "entries", void 0);
-
-      _defineProperty$d(this, "bindings", void 0);
-
-      _defineProperty$d(this, "customTags", {});
-
-      _defineProperty$d(this, "cache", new Map());
-
-      _defineProperty$d(this, "templateCache", new Map());
-
-      _defineProperty$d(this, "openRe", new RegExp("<([^\/>]*?)>$|<([^\/].*[^\/])>$"));
-
-      _defineProperty$d(this, "closeRe", new RegExp("^<\/([^>]+)>"));
-
-      _defineProperty$d(this, "openCloseRe", new RegExp("<(.*)(\/>$)"));
-
-      _defineProperty$d(this, "tokenizerRe", /(<[^\^>]+\/>)|(<!--[\s\S]*?-->)|(<[\/a-zA-Z0-9\-:]+(?:\s*[\(a-zA-Z\-\)]+=\"[^\"]*\"|\s*[a-zA-Z\-]+='[^']+'|\s*[\(a-zA-Z\-\)]|\s*\{\{.*\}\})*>)/);
-
-      _defineProperty$d(this, "commentRe", /<!--[\s\S]*?-->/);
-
-      _defineProperty$d(this, "attributesRe", /([\(a-zA-Z0-9\-_:\)]+="[^"]*")|\s+([\(a-zA-Z0-9\-_:\)]+(?=\s.|$))|(\{\{if [^(?:\}\})]+\}\}.*\{\{\/if\}\})/);
-
-      _defineProperty$d(this, "inlineIfRe", /\{\{if ([^\}]+)\}\}(.*)\{\{\/if\}\}/);
-
-      _defineProperty$d(this, "singleExpressionRe", /^[\s]*\$\{([^\}]*)\}[\s]*$/);
-
-      _defineProperty$d(this, "_fnPreamble", "__knockleData=[__knockleData||{}];var frag=_rotors.cf(),_els=[],e,_le,__a,$value,$key,_eid = _rotors.nec();_els.push(frag);");
-
-      _defineProperty$d(this, "_fnSuffix", ";_rotors.pushCommands(_eid,frag);return frag;");
-
-      _defineProperty$d(this, "isBrowser", true);
-
-      _defineProperty$d(this, "executions", void 0);
-
-      _defineProperty$d(this, "updaters", {});
-
-      _defineProperty$d(this, "_templates", void 0);
-
-      _defineProperty$d(this, "namespaceHandlers", {});
-
-      _defineProperty$d(this, "namespaces", {});
-
-      options = options || {};
-
-      this.getGlobalTag = getGlobalTag || function (tag) {
-        return globalTags[tag];
-      };
-
-      this._templates = options.templates || {};
-      this.entries = {};
-      this.bindings = {};
-      this.executions = {};
-      this.defaultTemplate = options.defaultTemplate;
-      this.templateResolver = options.templateResolver || this._getDefaultTemplateResolver();
-    }
-
-    _createClass$e(Knockle, [{
-      key: "resolveTemplate",
-      value: function resolveTemplate(id) {
-        if (this._templates[id] != null) {
-          return this._templates[id];
-        } else {
-          return this.templateResolver(id);
-        }
-      }
-    }, {
-      key: "bind",
-      value: function bind(fromObj, id) {
-        var b = this.bindings[id];
-
-        if (b == null) {
-          return "";
-        } else {
-          return b.reapply(fromObj);
-        }
-      }
-      /**
-       * Add a command - this is called during execution of a template. See pushCommands below.
-       * @param executionId
-       * @param el
-       * @param command
-       * @param action
-       */
-
-    }, {
-      key: "addCommand",
-      value: function addCommand(executionId, el, command, action) {
-        this.executions[executionId].commands = this.executions[executionId].commands || {};
-        this.executions[executionId].commands[command] = this.executions[executionId].commands[command] || [];
-        this.executions[executionId].commands[command].push({
-          element: el,
-          command: command,
-          action: action
-        });
-      }
-      /**
-       * At the end of an execution this is called - any commands found during the execution are transferred to the fragment
-       * that was created.
-       * @param executionId
-       * @param el
-       */
-
-    }, {
-      key: "pushCommands",
-      value: function pushCommands(executionId, el) {
-        el.commands = this.executions[executionId].commands;
-      }
-    }, {
-      key: "setAttribute",
-      value: function setAttribute(el, a, v) {
-        var p = a.split(":");
-
-        if (p.length === 1 || this.namespaces[p[0]] == null) {
-          el.setAttribute(p[0], v);
-        } else {
-          el.setAttributeNS(this.namespaces[p[0]], p[1], v);
-        }
-      }
-    }, {
-      key: "clearCache",
-      value: function clearCache() {
-        this.cache.clear();
-        this.templateCache.clear();
-      }
-    }, {
-      key: "nec",
-      value: function nec() {
-        var _eid = uuid();
-
-        this.executions[_eid] = {
-          "current": [{
-            children: []
-          }]
-        };
-        return _eid;
-      } //traceExecution
-
-    }, {
-      key: "te",
-      value: function te(el, eid, entryId, loopIndex) {
-        var __ec = {
-          el: el,
-          children: [],
-          id: entryId,
-          index: loopIndex
-        };
-        this.executions[eid].current[0].children.push(__ec);
-        var key = entryId + (loopIndex != null ? "-" + loopIndex : "");
-        this.executions[eid][key] = __ec;
-        this.executions[eid].current.unshift(__ec);
-      } //popExecutionTrace
-
-    }, {
-      key: "pet",
-      value: function pet(eid) {
-        this.executions[eid].current = this.executions[eid].current.splice(1);
-      }
-    }, {
-      key: "parseAttributes",
-      value: function parseAttributes$1(el) {
-        return parseAttributes(el, this.attributesRe);
-      }
-    }, {
-      key: "getExecutionContent",
-      value: function getExecutionContent(content, uuid, isTextNode, namespace) {
-        var p = namespace != null ? this.namespaceHandlers[namespace](content) : isTextNode ? "e=_rotors.ctn(" + content + ");" : "e=_rotors.ce('" + content + "');";
-        return p + "_rotors.peek(_els).appendChild(e);" + (isTextNode ? "" : "_els.push(e);") + // if a text node, dont push onto the stack, it can have no children
-        "e._rotors=_rotors.entries['" + uuid + "'];" + // _rotors.entries[uuid] is the Rotors Element (from the AST) that is creating the DOM element
-        // here. it may be executing inside a loop, in which case this is NOT a reference to the r-each, it is a reference to the child content in the
-        // loop. So there may be multiple dom elements that reference this rotors Element. We distinguish between these via the inclusion of the
-        // `_rotorsLoopId`, if it is set. That is the ID of the r-each.
-        //"if (typeof _rotorsLoopId != 'undefined'){_rotors.entries[_rotorsLoopId].elements.push(e);}else{_rotors.entries['" + uuid + "'].elements.push(e);}"
-        "e._rotorsEid=_eid;" + "if(typeof _rotorsLoopId !== 'undefined') {e._rotorsLoopId=_rotorsLoopId;e._rotorsLoopContext=_rotorsLoopContext;e._rotorsKey=$key;}" + "_rotors.te(e, _eid, '" + uuid + "', typeof $key != 'undefined' ? $key  : null);";
-      }
-    }, {
-      key: "_wrapCache",
-      value: function _wrapCache(resolver, forceReload) {
-        var _this = this;
-
-        return function (id) {
-          var t = forceReload ? null : _this.cache.get(id);
-
-          if (t == null) {
-            t = resolver(id);
-          }
-
-          if (t == null) {
-            t = _this.defaultTemplate;
-          }
-
-          if (t != null) {
-            _this.cache.set(id, t);
-          }
-
-          return t;
-        };
-      }
-    }, {
-      key: "constructElement",
-      value: function constructElement(tag, ta, templateResolver, stack, parseIdStack) {
-        return Elements$1.construct(tag, ta, this, templateResolver, stack, parseIdStack);
-      }
-    }, {
-      key: "isCustomElement",
-      value: function isCustomElement(tag) {
-        return Elements$1.exists(tag);
-      }
-    }, {
-      key: "parse",
-      value: function parse(str, templateResolver, extraProperties, parseIdStack) {
-        var _this2 = this;
-
-        parseIdStack = parseIdStack || []; //templateResolver = this._wrapCache(templateResolver || this.templateResolver, null)
-
-        templateResolver = this._wrapCache(templateResolver || function (id) {
-          return _this2.resolveTemplate(id);
-        }, null);
-
-        var stack = [],
-            results = [],
-            _test = function _test(token, re) {
-          var m = token.match(re);
-          return m == null ? null : m;
-        },
-            _peek = function _peek() {
-          return stack.length > 0 ? stack[stack.length - 1] : null;
-        },
-            _isBalanced = function _isBalanced(endTag) {
-          var p = _peek();
-
-          return p != null && p.tag === endTag;
-        },
-            _push = function _push(el, doNotSetCurrent) {
-          if (stack.length > 0) _peek().children.push(el);
-          if (!doNotSetCurrent) stack.push(el); // push to stack, unless told not to
-          else if (stack.length === 0) results.push(el); // if not pushing to stack and the stack is empty, must push to results or we'll lose this one.
-        },
-            _pushChild = function _pushChild(el) {
-          _push(el, true);
-        },
-            _pop = function _pop() {
-          var r = stack.pop();
-
-          if (stack.length === 0 && !r.remove) {
-            results.push(r);
-          } else {
-            if (r.remove) {
-              // remove the entry (and therefore all its children) from the children of its parent.
-              var parent = _peek();
-
-              if (parent) parent.children.pop();
-            }
-          }
-
-          return r;
-        },
-            _openElementHandler = function _openElementHandler(t, m, templateResolver, parseStack) {
-          var ta = parseAtts(t, _this2);
-
-          if (_this2.isCustomElement(ta.el)) {
-            return _this2.constructElement(ta.el, ta, templateResolver, stack, parseIdStack);
-          } else {
-            return new ElementEntry(ta, _this2, templateResolver, stack, parseIdStack);
-          }
-        },
-            tagHandlers = [{
-          re: this.commentRe,
-          handler: function handler(t, m, templateResolver, instance, parseStack) {
-            //_rotors.debug("comment", t, m)
-            _push(new CommentEntry(t, instance), true);
-          }
-        }, {
-          re: this.openRe,
-          handler: function handler(t, m, templateResolver, instance, parseStack) {
-            var ee = _openElementHandler(t, m, templateResolver);
-
-            _push(ee, ee.remove);
-          }
-        }, {
-          re: this.closeRe,
-          handler: function handler(t, m, templateResolver, instance, parseStack) {
-            if (m[1] === "r-tmpl") {
-              return;
-            }
-
-            if (!_isBalanced(m[1])) {
-              throw new TypeError("Unbalanced closing tag '" + m[1] + "'; opening tag was '" + _pop().tag + "'");
-            } else _pop();
-          }
-        }, {
-          re: this.openCloseRe,
-          handler: function handler(t, m, templateResolver, instance, parseStack) {
-            //_rotors.debug("open and close element", t, m)
-            var ee = _openElementHandler(t, m, templateResolver);
-
-            _push(ee, true);
-          }
-        }, {
-          re: /.*/,
-          handler: function handler(t, m, templateResolver, instance, parseStack) {
-            //_rotors.debug("text node", t)
-            var te = new TextEntry({
-              value: t
-            }, _this2);
-
-            _pushChild(te);
-
-            _addBinding("__element", t, te, null, _this2);
-          }
-        }];
-
-        eachNotEmpty(fastTrim(str).split(this.tokenizerRe), function (index, item) {
-          var trimmed = fastTrim(item);
-
-          for (var j = 0; j < tagHandlers.length; j++) {
-            //item = _trim(item)
-            var m = _test(trimmed, tagHandlers[j].re);
-
-            if (m) {
-              tagHandlers[j].handler(item, m, templateResolver, _this2, parseIdStack);
-              break;
-            }
-          }
-        }); //if (results.length == 0)
-        //  what to do? malformed, seemingly.
-
-        if (results.length > 0 && extraProperties) {
-          for (var prop in extraProperties) {
-            results[0][prop] = extraProperties[prop];
-          }
-        }
-
-        return results;
-      }
-    }, {
-      key: "compile",
-      value: function compile(ast, precompileOnly, functionBodyOnly, isCustomScope) {
-        // create data stack, fragment (which in browser is a DocumentFragment and on the server a Fakement, a stack
-        // for the current parent element, and a execution id, which is a globally unique id that will be in scope for
-        // every function executed in this template, and can subsequently be used to retrieve all of the elements associated
-        // with a particular execution of this template function,
-        var items = [],
-            fn;
-
-        for (var i = 0; i < ast.length; i++) {
-          var content = "";
-
-          if (ast[i].precompile) {
-            content += ast[i].precompile(this);
-          }
-
-          fn = ast[i].compile(isCustomScope);
-          content += fn;
-          ast[i].functionBody = fn;
-
-          if (ast[i].postcompile) {
-            content += ast[i].postcompile(this);
-          }
-
-          items.push(content);
-        }
-
-        var fb = items.join("");
-        if (functionBodyOnly) return fb;
-
-        var f = this._compileSingle(fb),
-            _r = this;
-
-        if (!precompileOnly) {
-          var _cf = function _cf(data) {
-            return f.apply(this, [data, _r]);
-          };
-
-          _cf.functionBody = fb;
-          return _cf;
-        } else {
-          return f;
-        }
-      }
-    }, {
-      key: "_compileSingle",
-      value: function _compileSingle(fb) {
-        return new Function("__knockleData,_rotors", this._fnPreamble + fb + this._fnSuffix);
-      } // compiles then executes a single function body using the given data
-
-    }, {
-      key: "_executeSingle",
-      value: function _executeSingle(fb, data) {
-        return this._compileSingle(fb)(data, this);
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        var handler = this.entries[entry.id];
-        return handler.updateFrom(entry, newEntry, parent);
-      }
-    }, {
-      key: "getTemplate",
-      value: function getTemplate(id) {
-        return this.templateCache.get(id);
-      }
-    }, {
-      key: "addTemplate",
-      value: function addTemplate(id, content) {
-        this._templates[id] = content;
-      }
-    }, {
-      key: "template",
-      value: function template(id, data, templateResolver, forceReload) {
-        var _this3 = this;
-
-        var cachedTemplate = !forceReload ? this.templateCache.get(id) : null;
-
-        if (cachedTemplate != null) {
-          return cachedTemplate(data);
-        } else {
-          templateResolver = this._wrapCache(templateResolver || function (id) {
-            return _this3.resolveTemplate(id);
-          }, forceReload);
-          var content = templateResolver(id);
-
-          if (content != null) {
-            var p = this.parse(content, templateResolver, null, [id]),
-                c = this.compile(p);
-            this.templateCache.set(id, c);
-            return c(data);
-          } else {
-            return this.cf();
-          }
-        }
-      }
-    }, {
-      key: "peek",
-      value: function peek$1(stack) {
-        return peek(stack);
-      }
-      /**
-       * Get, or set, a value from/to an object.
-       * @param inObj Object to operate on
-       * @param path Path to the value to get/set
-       * @param value If null, this method gets a value. Otherwise, this method sets a value.
-       */
-
-    }, {
-      key: "data",
-      value: function data$1(inObj, path, value) {
-        return data(inObj, path, value);
-      }
-    }, {
-      key: "each",
-      value: function each(l, fn, loopUuid, ctx, key) {
-        var i;
-
-        if (Array.isArray(l)) {
-          for (i = 0; i < l.length; i++) {
-            fn(l[i], loopUuid, i, ctx, key);
-          }
-        } else {
-          for (i in l) {
-            if (l.hasOwnProperty(i)) {
-              fn({
-                "$key": i,
-                "$value": l[i]
-              }, loopUuid, i, ctx, key);
-            }
-          }
-        }
-      }
-    }, {
-      key: "update",
-      value: function update(el, data) {
-        var _this4 = this;
-
-        var eid = el._rotorsEid,
-            executionContext,
-            rootEntry,
-            _rotors,
-            rootRotorsEntry;
-
-        if (eid == null || el._rotors == null) return; // otherwise, retrieve the context and get the entry for this specific element.
-        else {
-          _rotors = el._rotors.instance;
-          executionContext = _rotors.executions[eid];
-          var idx = el._rotorsKey,
-              key = el._rotors.uuid + (idx != null ? "-" + idx : "");
-          rootEntry = executionContext[key];
-          rootRotorsEntry = _rotors.entries[rootEntry.id];
-        }
-
-        var newFrag = _rotors._executeSingle(rootRotorsEntry.customParent ? rootRotorsEntry.customParent.functionBody : rootRotorsEntry.functionBody, data),
-            newRoot = newFrag.childNodes[0],
-            newEid = newRoot._rotorsEid,
-            newExecutionContext = _rotors.executions[newEid],
-            newRootEntry = newExecutionContext[newRoot._rotors.uuid]; // recurse down from the root entry and merge in the new version of each entry.
-        // r-each might result in elements being added or removed, as might r-if
-
-
-        var result = this.updateFrom(rootEntry, newRootEntry, null);
-        result.elements.forEach(function (_ref) {
-          var _ref2 = _slicedToArray$3(_ref, 2),
-              el = _ref2[0],
-              tag = _ref2[1];
-
-          tag.updated(el, data, _this4);
-        });
-        return result;
-      }
-    }, {
-      key: "onUpdate",
-      value: function onUpdate(el, fn) {
-        if (el._rotors == null) return;
-        var _rotors = el._rotors.instance;
-        el._RotorsUpdate = el._RotorsUpdate || uuid();
-        _rotors.updaters[el._RotorsUpdate] = _rotors.updaters[el._RotorsUpdate] || [];
-
-        _rotors.updaters[el._RotorsUpdate].push(fn);
-      }
-    }, {
-      key: "copyChildNodes",
-      value: function copyChildNodes(from, to) {
-        var j = from.childNodes.length;
-
-        for (var i = 0; i < j; i++) {
-          to.appendChild(from.childNodes[0]);
-        }
-      }
-      /**
-       * Removes the given element from this Knockle instance, and optionally removes it from the DOM too.
-       * @param el Element to remove.
-       * @param removeFromDOM Whether or not to also remove from the DOM.
-       */
-
-    }, {
-      key: "remove",
-      value: function remove(el, removeFromDOM) {
-        if (el._RotorsUpdate && this.updaters[el._RotorsUpdate]) {
-          delete this.updaters[el._RotorsUpdate];
-        }
-
-        if (el._rotorsEid && this.executions[el._rotorsEid]) {
-          delete this.executions[el._rotorsEid];
-        }
-
-        if (removeFromDOM) {
-          el.parentNode && el.parentNode.removeChild(el);
-        }
-      }
-    }, {
-      key: "registerTag",
-      value: function registerTag(tagName, handlers, isGlobal) {
-        var tag = new CustomTag(this, tagName, handlers);
-
-        if (isGlobal) {
-          this.registerGlobalTag(tagName, tag);
-        } else {
-          this.customTags[tagName] = tag;
-        }
-      }
-    }, {
-      key: "getCustomTag",
-      value: function getCustomTag(tagName) {
-        return this.customTags[tagName] || this.getGlobalTag(tagName);
-      }
-    }, {
-      key: "customTagRendered",
-      value: function customTagRendered(tagName, el, data) {
-        var t = this.getCustomTag(tagName);
-
-        if (t) {
-          t.rendered(el, data, this);
-        }
-      }
-    }]);
-
-    return Knockle;
-  }();
-
-  /**
-   * An `r-each` tag.
-   * @internal
-   */
-
-  var EachEntry = /*#__PURE__*/function (_ElementEntry) {
-    _inherits$8(EachEntry, _ElementEntry);
-
-    var _super = _createSuper$8(EachEntry);
-
-    function EachEntry(data, instance, templateResolver, stack, parseIdStack) {
-      var _this;
-
-      _classCallCheck$e(this, EachEntry);
-
-      _this = _super.call(this, data, instance, templateResolver, stack, parseIdStack);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "key", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "type", "each");
-
-      _this.context = data.atts["in"];
-      _this.key = data.atts["key"];
-      _this.tag = "r-each";
-      return _this;
-    }
-
-    _createClass$e(EachEntry, [{
-      key: "compile",
-      value: function compile() {
-        var _this2 = this;
-
-        var _getChildContent = function _getChildContent() {
-          var out = "function(item, _rotorsLoopId, _rotorsLoopIndex, _rotorsLoopContext, _key) { ";
-          out += "__knockleData.unshift(item);$value=item;";
-          out += "$key=_key ? _rotors.data($value, _key) : _rotorsLoopIndex;";
-
-          for (var i = 0; i < _this2.children.length; i++) {
-            var cfb = _this2.children[i].compile();
-
-            _this2.children[i].functionBody = cfb;
-            out += cfb;
-          }
-
-          out += "__knockleData.splice(0,1);";
-          out += "}";
-          return out;
-        };
-
-        var l1 = ";_rotors.te(null, _eid, '" + this.uuid + "');";
-        var l2 = this.context ? ";__knockleData.unshift(_rotors.data(__knockleData[0], \"" + this.context + "\"));" : "";
-        var l3 = "_rotors.each(__knockleData[0], " + _getChildContent() + ",'" + this.uuid + "', '" + this.context.replace(/'/g, "\\'") + "'," + (typeof this.key == 'undefined' ? "null);" : "'" + this.key + "');");
-        var l4 = this.context ? ";__knockleData.splice(0, 1);" : "";
-        var l5 = ";_rotors.pet(_eid, '" + this.uuid + "');";
-        return l1 + l2 + l3 + l4 + l5;
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        var updates = _updateParent(this.instance, entry, newEntry, ["id", "index"], parent);
-
-        var childEntry,
-            domEl = null; // newEntry.children has the order we want. ensure they are in the correct order.
-
-        for (var i = 0; i < newEntry.children.length; i++) {
-          childEntry = _findChild({
-            index: newEntry.children[i].index,
-            id: newEntry.children[i].id
-          }, entry);
-
-          if (childEntry && childEntry.el) {
-            if (domEl != null) {
-              domEl.parentNode.insertBefore(childEntry.el, domEl.nextSibling);
-            }
-
-            domEl = childEntry.el;
-          }
-        }
-
-        return updates;
-      }
-    }]);
-
-    return EachEntry;
-  }(ElementEntry);
-  Elements$1.register("r-each", EachEntry);
-
-  var IfEntry = /*#__PURE__*/function (_ElementEntry) {
-    _inherits$8(IfEntry, _ElementEntry);
-
-    var _super = _createSuper$8(IfEntry);
-
-    function IfEntry(data, instance, templateResolver, stack, parseIdStack) {
-      var _this;
-
-      _classCallCheck$e(this, IfEntry);
-
-      _this = _super.call(this, data, instance, templateResolver, stack, parseIdStack);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "type", "if");
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "test", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "happyFlowChildren", void 0);
-
-      _this.test = data.atts["test"];
-      _this.tag = "r-if";
-      return _this;
-    }
-
-    _createClass$e(IfEntry, [{
-      key: "compile",
-      value: function compile() {
-        var c = "",
-            _else = "",
-            i;
-        var happyFlow = this.happyFlowChildren || this.children;
-
-        for (i = 0; i < happyFlow.length; i++) {
-          c += happyFlow[i].compile() + ";";
-        }
-
-        if (this.happyFlowChildren != null) {
-          // if happy flow was set, then `children` is unhappy flow.
-          _else = "else {";
-
-          for (i = 0; i < this.children.length; i++) {
-            _else += this.children[i].compile() + ";";
-          }
-
-          _else += "}";
-        }
-
-        var l1 = ";_rotors.te(null, _eid, '" + this.uuid + "');";
-        return l1 + "with (__knockleData[0]) { if(" + this.test + ") { " + c + " }" + _else + "}_rotors.pet(_eid);";
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        return _updateParent(this.instance, entry, this.flatMap(newEntry), ["id"], parent);
-      } //
-      // flattens the given Execution to extract the child elements from any nested tags like r-each or r-if. only
-      // one level of nesting is supported.
-      //
-
-    }, {
-      key: "flatMap",
-      value: function flatMap(entry) {
-        var mappedChildren = [];
-        entry.children.forEach(function (c) {
-          if (c.el == null) {
-            mappedChildren.push.apply(mappedChildren, _toConsumableArray$1(c.children));
-          } else {
-            mappedChildren.push(c);
-          }
-        });
-        return {
-          el: entry.el,
-          index: entry.index,
-          id: entry.id,
-          children: mappedChildren
-        };
-      }
-    }]);
-
-    return IfEntry;
-  }(ElementEntry);
-  Elements$1.register("r-if", IfEntry);
-
-  var ElseEntry = /*#__PURE__*/function (_ElementEntry) {
-    _inherits$8(ElseEntry, _ElementEntry);
-
-    var _super = _createSuper$8(ElseEntry);
-
-    function ElseEntry(ta, instance, templateResolver, stack, parseIdStack) {
-      var _this;
-
-      _classCallCheck$e(this, ElseEntry);
-
-      _this = _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
-      var ifStatement = peek(stack);
-
-      if (ifStatement != null) {
-        if (ifStatement instanceof IfEntry) {
-          ifStatement.happyFlowChildren = ifStatement.children;
-          ifStatement.children = [];
-        }
-      }
-
-      _this.remove = true;
-      _this.tag = "r-else";
-      return _this;
-    }
-
-    _createClass$e(ElseEntry, [{
-      key: "compile",
-      value: function compile() {
-        return "";
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        return emptyUpdateResult();
-      }
-    }]);
-
-    return ElseEntry;
-  }(ElementEntry);
-  Elements$1.register("r-else", ElseEntry);
-
-  var TmplEntry = /*#__PURE__*/function (_ElementEntry) {
-    _inherits$8(TmplEntry, _ElementEntry);
-
-    var _super = _createSuper$8(TmplEntry);
-
-    function TmplEntry(ta, instance, templateResolver, stack, parseIdStack) {
-      var _this;
-
-      _classCallCheck$e(this, TmplEntry);
-
-      _this = _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "templateId", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "lookup", void 0);
-
-      _defineProperty$d(_assertThisInitialized$8(_this), "default", void 0);
-
-      _this.context = ta.atts["context"];
-      _this.type = "template";
-      _this.remove = true;
-
-      if (!ta.atts["lookup"]) {
-        _this.templateId = ta.atts["id"];
-        var insideLoop = isLoopPresent(stack);
-
-        if (parseIdStack.indexOf(_this.templateId) !== -1) {
-          if (!insideLoop) {
-            throw new TypeError("recursive template call [" + _this.templateId + "]");
-          } else {
-            _this.compile = function () {
-              return ";eval(_rotors.getTemplate('" + _this.templateId + "').functionBody);";
-            };
-          }
-        } else {
-          // insert the nested ast. this means resolving the template, creating an ast, and inserting all
-          // the entries. also, push the template id on the parse stack, to avoid recursing on the same
-          // template
-          var _nested = templateResolver(_this.templateId);
-
-          parseIdStack.push(_this.templateId);
-
-          var nestedAst = _this.instance.parse(_nested, templateResolver, null, parseIdStack); // if not in the template cache, compile it and add it.
-
-
-          if (_this.instance.templateCache.get(_this.templateId) == null) {
-            _this.instance.templateCache.set(_this.templateId, _this.instance.compile(nestedAst));
-          } // write context in to nested ast roots
-
-
-          for (var i = 0; i < nestedAst.length; i++) {
-            nestedAst[i].context = _this.context;
-          } //_rotors.debug("nested ast", nestedAst)
-
-
-          _this.children = nestedAst;
-          parseIdStack.pop();
-        }
-      } else {
-        _this.lookup = ta.atts["lookup"];
-        _this["default"] = ta.atts["default"] || "";
-
-        _this.compile = function () {
-          return ";with(__knockleData[0]){var tlid=eval(\"" + _this.lookup.replace(/[\$\{\}]/g, "") + "\");}" + "if (_rotors.templateCache[tlid] == null){var ___t = _rotors.resolveTemplate(tlid) || _rotors.resolveTemplate(\"" + _this["default"] + "\");_rotors.templateCache[tlid]=_rotors.compile(_rotors.parse(___t));} eval(_rotors.templateCache[tlid].functionBody);";
-        };
-      }
-
-      _this.precompile = function () {
-        return _this.context ? ";__knockleData.unshift(_rotors.data(__knockleData[0], \"" + _this.context + "\"));" : "";
-      };
-
-      _this.postcompile = function () {
-        return _this.context ? ";__knockleData.splice(0, 1);" : "";
-      };
-
-      return _this;
-    }
-
-    _createClass$e(TmplEntry, [{
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        return {
-          added: [],
-          removed: [],
-          elements: []
-        };
-      }
-    }]);
-
-    return TmplEntry;
-  }(ElementEntry);
-  Elements$1.register("r-tmpl", TmplEntry);
-
-  var HtmlEntry = /*#__PURE__*/function (_ElementEntry) {
-    _inherits$8(HtmlEntry, _ElementEntry);
-
-    var _super = _createSuper$8(HtmlEntry);
-
-    function HtmlEntry(ta, instance, templateResolver, stack, parseIdStack) {
-      _classCallCheck$e(this, HtmlEntry);
-
-      return _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
-    }
-
-    _createClass$e(HtmlEntry, [{
-      key: "compile",
-      value: function compile() {
-        // r-html is expected to have a text node of the form ${key}, where `key` is the key in the data to retrieve and
-        // render as html. if there is no such text node, or it is not of the correct form, the error is logged and
-        // the html insertion stops.
-        try {
-          var key = this.children[0].bindings.__element.e[0][1];
-          return ";var __hp=_rotors.parse(__knockleData[0]." + key + "),__hc=_rotors.compile(__hp,true);var __f=__hc(__knockleData[0], _rotors);_rotors.copyChildNodes(__f, _rotors.peek(_els));";
-        } catch (e) {
-          //_rotors.maybeDebug("Could not find key to bind for r-html element. Should be in the form <r-html>${key}</r-html> ('key' can be anything)")
-          return "";
-        }
-      }
-    }, {
-      key: "updateFrom",
-      value: function updateFrom(entry, newEntry, parent) {
-        return emptyUpdateResult();
-      }
-    }]);
-
-    return HtmlEntry;
-  }(ElementEntry);
-  Elements$1.register("r-html", HtmlEntry);
-
-  function _classCallCheck$d(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$d(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$d(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$d(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$d(Constructor, staticProps);
-    return Constructor;
   }
 
   function _inherits$7(subClass, superClass) {
@@ -20640,245 +24135,21 @@
     };
   }
 
-  var SVG_NAMESPACE = "svg";
-  var XLINK_NAMESPACE = "xlink";
-  /**
-   * Default implementation of TemplateResolver for use in browsers.
-   * @param tid
-   * @internal
-   */
-
-  function InBrowserTemplateResolver(tid) {
-    var d = document.getElementById(tid);
-    return d != null ? d.innerHTML : null;
-  }
-  /**
-   * Implementation of Knockle for use with the browser-ui package.
-   * @internal
-   */
-
-  var BrowserUiKnockle = /*#__PURE__*/function (_Knockle) {
-    _inherits$7(BrowserUiKnockle, _Knockle);
-
-    var _super = _createSuper$7(BrowserUiKnockle);
-
-    function BrowserUiKnockle(options, registerGlobalTag, getGlobalTag) {
-      var _this;
-
-      _classCallCheck$d(this, BrowserUiKnockle);
-
-      _this = _super.call(this, options, registerGlobalTag, getGlobalTag);
-
-      _this.namespaceHandlers[SVG_NAMESPACE] = function (tag) {
-        return "e = document.createElementNS('http://www.w3.org/2000/svg', '" + tag.split(":")[1] + "');" + "e.setAttribute('version', '1.1');" + "e.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');";
-      };
-
-      _this.namespaces[XLINK_NAMESPACE] = "http://www.w3.org/1999/xlink";
-      return _this;
-    }
-    /**
-     * create an element with the given tag name
-     * @internal
-     * @param tag
-     */
-
-
-    _createClass$d(BrowserUiKnockle, [{
-      key: "ce",
-      value: function ce(tag) {
-        return document.createElement(tag);
-      }
-      /**
-       * create a fragment
-       * @internal
-       */
-
-    }, {
-      key: "cf",
-      value: function cf() {
-        return document.createDocumentFragment();
-      }
-      /**
-       * create a text node
-       * @internal
-       * @param value
-       */
-
-    }, {
-      key: "ctn",
-      value: function ctn(value) {
-        return document.createTextNode(value);
-      }
-      /**
-       * @internal
-       * @private
-       */
-
-    }, {
-      key: "_getDefaultTemplateResolver",
-      value: function _getDefaultTemplateResolver() {
-        return InBrowserTemplateResolver;
-      }
-    }]);
-
-    return BrowserUiKnockle;
-  }(Knockle);
-  /**
-   * @internal
-   * @param options
-   */
-
-  function newKnockleInstance(options) {
-    return new BrowserUiKnockle(options || {}, registerGlobalTag, getCustomTag);
-  }
-
-  function _typeof(obj) {
-    "@babel/helpers - typeof";
-
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-      _typeof = function (obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function (obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-      };
-    }
-
-    return _typeof(obj);
-  }
-
-  function _classCallCheck$c(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$c(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$c(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$c(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$c(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineProperty$c(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function _inherits$6(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) _setPrototypeOf$6(subClass, superClass);
-  }
-
-  function _getPrototypeOf$6(o) {
-    _getPrototypeOf$6 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf$6(o);
-  }
-
-  function _setPrototypeOf$6(o, p) {
-    _setPrototypeOf$6 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf$6(o, p);
-  }
-
-  function _isNativeReflectConstruct$6() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
-
-    try {
-      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function _assertThisInitialized$6(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return self;
-  }
-
-  function _possibleConstructorReturn$6(self, call) {
-    if (call && (typeof call === "object" || typeof call === "function")) {
-      return call;
-    }
-
-    return _assertThisInitialized$6(self);
-  }
-
-  function _createSuper$6(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct$6();
-
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf$6(Derived),
-          result;
-
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf$6(this).constructor;
-
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
-      }
-
-      return _possibleConstructorReturn$6(this, result);
-    };
-  }
-
-  function _superPropBase$2(object, property) {
+  function _superPropBase$1(object, property) {
     while (!Object.prototype.hasOwnProperty.call(object, property)) {
-      object = _getPrototypeOf$6(object);
+      object = _getPrototypeOf$7(object);
       if (object === null) break;
     }
 
     return object;
   }
 
-  function _get$2(target, property, receiver) {
+  function _get$1(target, property, receiver) {
     if (typeof Reflect !== "undefined" && Reflect.get) {
-      _get$2 = Reflect.get;
+      _get$1 = Reflect.get;
     } else {
-      _get$2 = function _get(target, property, receiver) {
-        var base = _superPropBase$2(target, property);
+      _get$1 = function _get(target, property, receiver) {
+        var base = _superPropBase$1(target, property);
 
         if (!base) return;
         var desc = Object.getOwnPropertyDescriptor(base, property);
@@ -20891,15 +24162,27 @@
       };
     }
 
-    return _get$2(target, property, receiver || target);
+    return _get$1(target, property, receiver || target);
   }
 
   function _slicedToArray$2(arr, i) {
     return _arrayWithHoles$2(arr) || _iterableToArrayLimit$2(arr, i) || _unsupportedIterableToArray$2(arr, i) || _nonIterableRest$2();
   }
 
+  function _toConsumableArray$1(arr) {
+    return _arrayWithoutHoles$1(arr) || _iterableToArray$1(arr) || _unsupportedIterableToArray$2(arr) || _nonIterableSpread$1();
+  }
+
+  function _arrayWithoutHoles$1(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray$2(arr);
+  }
+
   function _arrayWithHoles$2(arr) {
     if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArray$1(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
   }
 
   function _iterableToArrayLimit$2(arr, i) {
@@ -20949,5996 +24232,11 @@
     return arr2;
   }
 
-  function _nonIterableRest$2() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  function matchesSelector$1(el, selector, ctx) {
-    ctx = ctx || el.parentNode;
-    var possibles = ctx.querySelectorAll(selector);
-    for (var i = 0; i < possibles.length; i++) {
-      if (possibles[i] === el) {
-        return true;
-      }
-    }
-    return false;
-  }
-  function consume(e, doNotPreventDefault) {
-    if (e.stopPropagation) {
-      e.stopPropagation();
-    } else {
-      e.returnValue = false;
-    }
-    if (!doNotPreventDefault && e.preventDefault) {
-      e.preventDefault();
-    }
-  }
-  function findParent(el, selector, container, matchOnElementAlso) {
-    if (matchOnElementAlso && matchesSelector$1(el, selector, container)) {
-      return el;
-    } else {
-      el = el.parentNode;
-    }
-    while (el != null && el !== container) {
-      if (matchesSelector$1(el, selector)) {
-        return el;
-      } else {
-        el = el.parentNode;
-      }
-    }
-  }
-  function getEventSource(e) {
-    return e.srcElement || e.target;
-  }
-  function _setClassName(el, cn, classList) {
-    cn = fastTrim(cn);
-    if (typeof el.className.baseVal !== "undefined") {
-      el.className.baseVal = cn;
-    } else {
-      el.className = cn;
-    }
-    try {
-      var cl = el.classList;
-      if (cl != null) {
-        while (cl.length > 0) {
-          cl.remove(cl.item(0));
-        }
-        for (var i = 0; i < classList.length; i++) {
-          if (classList[i]) {
-            cl.add(classList[i]);
-          }
-        }
-      }
-    } catch (e) {
-      log("JSPLUMB: cannot set class list", e);
-    }
-  }
-  function _getClassName(el) {
-    return el.className != null ? typeof el.className.baseVal === "undefined" ? el.className : el.className.baseVal : "";
-  }
-  function _classManip(el, classesToAdd, classesToRemove) {
-    var cta = classesToAdd == null ? [] : Array.isArray(classesToAdd) ? classesToAdd : classesToAdd.split(/\s+/);
-    var ctr = classesToRemove == null ? [] : Array.isArray(classesToRemove) ? classesToRemove : classesToRemove.split(/\s+/);
-    var className = _getClassName(el),
-        curClasses = className.split(/\s+/);
-    var _oneSet = function _oneSet(add, classes) {
-      for (var i = 0; i < classes.length; i++) {
-        if (add) {
-          if (curClasses.indexOf(classes[i]) === -1) {
-            curClasses.push(classes[i]);
-          }
-        } else {
-          var idx = curClasses.indexOf(classes[i]);
-          if (idx !== -1) {
-            curClasses.splice(idx, 1);
-          }
-        }
-      }
-    };
-    _oneSet(true, cta);
-    _oneSet(false, ctr);
-    _setClassName(el, curClasses.join(" "), curClasses);
-  }
-  function isNodeList(el) {
-    return !isString(el) && !Array.isArray(el) && el.length != null && el.documentElement == null && el.nodeType == null;
-  }
-  function isArrayLike(el) {
-    return !isString(el) && (Array.isArray(el) || isNodeList(el));
-  }
-  function getClass(el) {
-    return _getClassName(el);
-  }
-  function addClass(el, clazz) {
-    var _one = function _one(el, clazz) {
-      if (el != null && clazz != null && clazz.length > 0) {
-        if (el.classList) {
-          var parts = fastTrim(clazz).split(/\s+/);
-          forEach(parts, function (part) {
-            el.classList.add(part);
-          });
-        } else {
-          _classManip(el, clazz);
-        }
-      }
-    };
-    if (isNodeList(el)) {
-      forEach(el, function (el) {
-        return _one(el, clazz);
-      });
-    } else {
-      _one(el, clazz);
-    }
-  }
-  function hasClass(el, clazz) {
-    if (el.classList) {
-      return el.classList.contains(clazz);
-    } else {
-      return _getClassName(el).indexOf(clazz) !== -1;
-    }
-  }
-  function removeClass(el, clazz) {
-    var _one = function _one(el, clazz) {
-      if (el != null && clazz != null && clazz.length > 0) {
-        if (el.classList) {
-          var parts = fastTrim(clazz).split(/\s+/);
-          parts.forEach(function (part) {
-            el.classList.remove(part);
-          });
-        } else {
-          _classManip(el, null, clazz);
-        }
-      }
-    };
-    if (isNodeList(el)) {
-      forEach(el, function (el) {
-        return _one(el, clazz);
-      });
-    } else {
-      _one(el, clazz);
-    }
-  }
-  function toggleClass(el, clazz) {
-    var _this = this;
-    var _one = function _one(el, clazz) {
-      if (el != null && clazz != null && clazz.length > 0) {
-        if (el.classList) {
-          el.classList.toggle(clazz);
-        } else {
-          if (_this.hasClass(el, clazz)) {
-            _this.removeClass(el, clazz);
-          } else {
-            _this.addClass(el, clazz);
-          }
-        }
-      }
-    };
-    if (isNodeList(el)) {
-      forEach(el, function (el) {
-        return _one(el, clazz);
-      });
-    } else {
-      _one(el, clazz);
-    }
-  }
-  function createElement(tag, style, clazz, atts) {
-    return createElementNS(null, tag, style, clazz, atts);
-  }
-  function createElementNS(ns, tag, style, clazz, atts) {
-    var e = ns == null ? document.createElement(tag) : document.createElementNS(ns, tag);
-    var i;
-    style = style || {};
-    for (i in style) {
-      e.style[i] = style[i];
-    }
-    if (clazz) {
-      e.className = clazz;
-    }
-    atts = atts || {};
-    for (i in atts) {
-      e.setAttribute(i, "" + atts[i]);
-    }
-    return e;
-  }
-  function offsetRelativeToRoot(el) {
-    var box = el.getBoundingClientRect(),
-        body = document.body,
-        docElem = document.documentElement,
-    scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
-        scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
-    clientTop = docElem.clientTop || body.clientTop || 0,
-        clientLeft = docElem.clientLeft || body.clientLeft || 0,
-    top = box.top + scrollTop - clientTop,
-        left = box.left + scrollLeft - clientLeft;
-    return {
-      x: Math.round(left),
-      y: Math.round(top)
-    };
-  }
-  function size(el) {
-    return {
-      w: el.offsetWidth,
-      h: el.offsetHeight
-    };
-  }
-
-  var svgAttributeMap = {
-    "stroke-linejoin": "stroke-linejoin",
-    "stroke-dashoffset": "stroke-dashoffset",
-    "stroke-linecap": "stroke-linecap"
-  };
-  var STROKE_DASHARRAY = "stroke-dasharray";
-  var DASHSTYLE = "dashstyle";
-  var FILL = "fill";
-  var STROKE = "stroke";
-  var STROKE_WIDTH = "stroke-width";
-  var LINE_WIDTH = "strokeWidth";
-  var ELEMENT_SVG = "svg";
-  var ELEMENT_PATH = "path";
-  var ns = {
-    svg: "http://www.w3.org/2000/svg"
-  };
-  function _attr(node, attributes) {
-    for (var i in attributes) {
-      node.setAttribute(i, "" + attributes[i]);
-    }
-  }
-  function _node(name, attributes) {
-    attributes = attributes || {};
-    attributes.version = "1.1";
-    attributes.xmlns = ns.svg;
-    return createElementNS(ns.svg, name, null, null, attributes);
-  }
-  function _pos(d) {
-    return "position:absolute;left:" + d[0] + "px;top:" + d[1] + "px";
-  }
-  function _applyStyles(parent, node, style) {
-    node.setAttribute(FILL, style.fill ? style.fill : NONE$1);
-    node.setAttribute(STROKE, style.stroke ? style.stroke : NONE$1);
-    if (style.strokeWidth) {
-      node.setAttribute(STROKE_WIDTH, style.strokeWidth);
-    }
-    if (style[DASHSTYLE] && style[LINE_WIDTH] && !style[STROKE_DASHARRAY]) {
-      var sep = style[DASHSTYLE].indexOf(",") === -1 ? " " : ",",
-          parts = style[DASHSTYLE].split(sep),
-          styleToUse = "";
-      forEach(parts, function (p) {
-        styleToUse += Math.floor(p * style.strokeWidth) + sep;
-      });
-      node.setAttribute(STROKE_DASHARRAY, styleToUse);
-    } else if (style[STROKE_DASHARRAY]) {
-      node.setAttribute(STROKE_DASHARRAY, style[STROKE_DASHARRAY]);
-    }
-    for (var i in svgAttributeMap) {
-      if (style[i]) {
-        node.setAttribute(svgAttributeMap[i], style[i]);
-      }
-    }
-  }
-  function _appendAtIndex(svg, path, idx) {
-    if (svg.childNodes.length > idx) {
-      svg.insertBefore(path, svg.childNodes[idx]);
-    } else {
-      svg.appendChild(path);
-    }
-  }
-  function _size(svg, x, y, w, h) {
-    svg.style.width = w + "px";
-    svg.style.height = h + "px";
-    svg.style.left = x + "px";
-    svg.style.top = y + "px";
-    svg.height = h;
-    svg.width = w;
-  }
-
-  function compoundEvent(stem, event, subevent) {
-    var a = [stem, event];
-    if (subevent) {
-      a.push(subevent);
-    }
-    return a.join(":");
-  }
-  var ATTRIBUTE_CONTAINER = "data-jtk-container";
-  var ATTRIBUTE_GROUP_CONTENT = "data-jtk-group-content";
-  var ATTRIBUTE_JTK_ENABLED = "data-jtk-enabled";
-  var ATTRIBUTE_JTK_SCOPE = "data-jtk-scope";
-  var ENDPOINT = "endpoint";
-  var ELEMENT = "element";
-  var CONNECTION = "connection";
-  var ELEMENT_DIV = "div";
-  var EVENT_CLICK = "click";
-  var EVENT_CONTEXTMENU = "contextmenu";
-  var EVENT_DBL_CLICK = "dblclick";
-  var EVENT_DBL_TAP = "dbltap";
-  var EVENT_FOCUS = "focus";
-  var EVENT_MOUSEDOWN = "mousedown";
-  var EVENT_MOUSEENTER = "mouseenter";
-  var EVENT_MOUSEEXIT = "mouseexit";
-  var EVENT_MOUSEMOVE = "mousemove";
-  var EVENT_MOUSEUP = "mouseup";
-  var EVENT_MOUSEOUT = "mouseout";
-  var EVENT_MOUSEOVER = "mouseover";
-  var EVENT_TAP = "tap";
-  var EVENT_DRAG_MOVE = "drag:move";
-  var EVENT_DRAG_STOP = "drag:stop";
-  var EVENT_DRAG_START = "drag:start";
-  var EVENT_REVERT = "revert";
-  var EVENT_CONNECTION_ABORT = "connection:abort";
-  var EVENT_CONNECTION_DRAG = "connection:drag";
-  var EVENT_ELEMENT_CLICK = compoundEvent(ELEMENT, EVENT_CLICK);
-  var EVENT_ELEMENT_DBL_CLICK = compoundEvent(ELEMENT, EVENT_DBL_CLICK);
-  var EVENT_ELEMENT_DBL_TAP = compoundEvent(ELEMENT, EVENT_DBL_TAP);
-  var EVENT_ELEMENT_MOUSE_OUT = compoundEvent(ELEMENT, EVENT_MOUSEOUT);
-  var EVENT_ELEMENT_MOUSE_OVER = compoundEvent(ELEMENT, EVENT_MOUSEOVER);
-  var EVENT_ELEMENT_MOUSE_MOVE = compoundEvent(ELEMENT, EVENT_MOUSEMOVE);
-  var EVENT_ELEMENT_MOUSE_UP = compoundEvent(ELEMENT, EVENT_MOUSEUP);
-  var EVENT_ELEMENT_MOUSE_DOWN = compoundEvent(ELEMENT, EVENT_MOUSEDOWN);
-  var EVENT_ELEMENT_CONTEXTMENU = compoundEvent(ELEMENT, EVENT_CONTEXTMENU);
-  var EVENT_ELEMENT_TAP = compoundEvent(ELEMENT, EVENT_TAP);
-  var EVENT_ENDPOINT_CLICK = compoundEvent(ENDPOINT, EVENT_CLICK);
-  var EVENT_ENDPOINT_DBL_CLICK = compoundEvent(ENDPOINT, EVENT_DBL_CLICK);
-  compoundEvent(ENDPOINT, EVENT_DBL_TAP);
-  var EVENT_ENDPOINT_MOUSEOUT = compoundEvent(ENDPOINT, EVENT_MOUSEOUT);
-  var EVENT_ENDPOINT_MOUSEOVER = compoundEvent(ENDPOINT, EVENT_MOUSEOVER);
-  var EVENT_ENDPOINT_MOUSEUP = compoundEvent(ENDPOINT, EVENT_MOUSEUP);
-  var EVENT_ENDPOINT_MOUSEDOWN = compoundEvent(ENDPOINT, EVENT_MOUSEDOWN);
-  compoundEvent(ENDPOINT, EVENT_TAP);
-  var EVENT_CONNECTION_CLICK = compoundEvent(CONNECTION, EVENT_CLICK);
-  var EVENT_CONNECTION_DBL_CLICK = compoundEvent(CONNECTION, EVENT_DBL_CLICK);
-  var EVENT_CONNECTION_DBL_TAP = compoundEvent(CONNECTION, EVENT_DBL_TAP);
-  var EVENT_CONNECTION_MOUSEOUT = compoundEvent(CONNECTION, EVENT_MOUSEOUT);
-  var EVENT_CONNECTION_MOUSEOVER = compoundEvent(CONNECTION, EVENT_MOUSEOVER);
-  var EVENT_CONNECTION_MOUSEUP = compoundEvent(CONNECTION, EVENT_MOUSEUP);
-  var EVENT_CONNECTION_MOUSEDOWN = compoundEvent(CONNECTION, EVENT_MOUSEDOWN);
-  var EVENT_CONNECTION_CONTEXTMENU = compoundEvent(CONNECTION, EVENT_CONTEXTMENU);
-  var EVENT_CONNECTION_TAP = compoundEvent(CONNECTION, EVENT_TAP);
-  var PROPERTY_POSITION = "position";
-  var SELECTOR_CONNECTOR = cls(CLASS_CONNECTOR);
-  var SELECTOR_ENDPOINT = cls(CLASS_ENDPOINT);
-  var SELECTOR_GROUP = att(ATTRIBUTE_GROUP);
-  var SELECTOR_GROUP_CONTAINER = att(ATTRIBUTE_GROUP_CONTENT);
-  var SELECTOR_OVERLAY = cls(CLASS_OVERLAY);
-
-  function _touch(target, pageX, pageY, screenX, screenY, clientX, clientY) {
-    return new Touch({
-      target: target,
-      identifier: uuid(),
-      pageX: pageX,
-      pageY: pageY,
-      screenX: screenX,
-      screenY: screenY,
-      clientX: clientX || screenX,
-      clientY: clientY || screenY
-    });
-  }
-  function _touchList() {
-    var list = [];
-    list.push.apply(list, arguments);
-    list.item = function (index) {
-      return this[index];
-    };
-    return list;
-  }
-  function _touchAndList(target, pageX, pageY, screenX, screenY, clientX, clientY) {
-    return _touchList(_touch(target, pageX, pageY, screenX, screenY, clientX, clientY));
-  }
-  function matchesSelector(el, selector, ctx) {
-    ctx = ctx || el.parentNode;
-    var possibles = ctx.querySelectorAll(selector);
-    for (var i = 0; i < possibles.length; i++) {
-      if (possibles[i] === el) {
-        return true;
-      }
-    }
-    return false;
-  }
-  function _t(e) {
-    return e.srcElement || e.target;
-  }
-  function _pi(e, target, obj, doCompute) {
-    if (!doCompute) return {
-      path: [target],
-      end: 1
-    };else if (typeof e.path !== "undefined" && e.path.indexOf) {
-      return {
-        path: e.path,
-        end: e.path.indexOf(obj)
-      };
-    } else {
-      var out = {
-        path: [],
-        end: -1
-      },
-          _one = function _one(el) {
-        out.path.push(el);
-        if (el === obj) {
-          out.end = out.path.length - 1;
-        } else if (el.parentNode != null) {
-          _one(el.parentNode);
-        }
-      };
-      _one(target);
-      return out;
-    }
-  }
-  function _d(l, fn) {
-    var i = 0,
-        j;
-    for (i = 0, j = l.length; i < j; i++) {
-      if (l[i][0] === fn) {
-        break;
-      }
-    }
-    if (i < l.length) {
-      l.splice(i, 1);
-    }
-  }
-  var guid = 1;
-  function isTouchDevice$1() {
-    return "ontouchstart" in document.documentElement || navigator.maxTouchPoints != null && navigator.maxTouchPoints > 0;
-  }
-  function isMouseDevice() {
-    return "onmousedown" in document.documentElement;
-  }
-  var touchMap = {
-    "mousedown": "touchstart",
-    "mouseup": "touchend",
-    "mousemove": "touchmove"
-  };
-  var PAGE = "page";
-  var SCREEN = "screen";
-  var CLIENT = "client";
-  function _genLoc(e, prefix) {
-    if (e == null) return {
-      x: 0,
-      y: 0
-    };
-    var ts = touches(e),
-        t = getTouch(ts, 0);
-    return {
-      x: t[prefix + "X"],
-      y: t[prefix + "Y"]
-    };
-  }
-  function pageLocation(e) {
-    return _genLoc(e, PAGE);
-  }
-  function screenLocation(e) {
-    return _genLoc(e, SCREEN);
-  }
-  function clientLocation(e) {
-    return _genLoc(e, CLIENT);
-  }
-  function getTouch(touches, idx) {
-    return touches.item ? touches.item(idx) : touches[idx];
-  }
-  function touches(e) {
-    return e.touches && e.touches.length > 0 ? e.touches : e.changedTouches && e.changedTouches.length > 0 ? e.changedTouches : e.targetTouches && e.targetTouches.length > 0 ? e.targetTouches : [e];
-  }
-  function touchCount(e) {
-    return touches(e).length;
-  }
-  function _bind(obj, type, fn, originalFn, options) {
-    _store(obj, type, fn);
-    originalFn.__tauid = fn.__tauid;
-    if (obj.addEventListener) {
-      obj.addEventListener(type, fn, false, options);
-    } else if (obj.attachEvent) {
-      var key = type + fn.__tauid;
-      obj["e" + key] = fn;
-      obj[key] = function () {
-        obj["e" + key] && obj["e" + key](window.event);
-      };
-      obj.attachEvent("on" + type, obj[key]);
-    }
-  }
-  function _unbind(obj, type, fn) {
-    var _this = this;
-    if (fn == null) return;
-    _each$1(obj, function (_el) {
-      _unstore(_el, type, fn);
-      if (fn.__tauid != null) {
-        if (_el.removeEventListener) {
-          _el.removeEventListener(type, fn, false);
-          if (isTouchDevice$1() && touchMap[type]) _el.removeEventListener(touchMap[type], fn, false);
-        } else if (_this.detachEvent) {
-          var key = type + fn.__tauid;
-          _el[key] && _el.detachEvent("on" + type, _el[key]);
-          _el[key] = null;
-          _el["e" + key] = null;
-        }
-      }
-      if (fn.__taTouchProxy) {
-        _unbind(obj, fn.__taTouchProxy[1], fn.__taTouchProxy[0]);
-      }
-    });
-  }
-  function _each$1(obj, fn) {
-    if (obj == null) return;
-    var entries = typeof obj === "string" ? document.querySelectorAll(obj) : obj.length != null ? obj : [obj];
-    for (var i = 0; i < entries.length; i++) {
-      fn(entries[i]);
-    }
-  }
-  function _store(obj, event, fn) {
-    var g = guid++;
-    obj.__ta = obj.__ta || {};
-    obj.__ta[event] = obj.__ta[event] || {};
-    obj.__ta[event][g] = fn;
-    fn.__tauid = g;
-    return g;
-  }
-  function _unstore(obj, event, fn) {
-    obj.__ta && obj.__ta[event] && delete obj.__ta[event][fn.__tauid];
-    if (fn.__taExtra) {
-      for (var i = 0; i < fn.__taExtra.length; i++) {
-        _unbind(obj, fn.__taExtra[i][0], fn.__taExtra[i][1]);
-      }
-      fn.__taExtra.length = 0;
-    }
-    fn.__taUnstore && fn.__taUnstore();
-  }
-  var NOT_SELECTOR_REGEX = /:not\(([^)]+)\)/;
-  function _curryChildFilter(children, obj, fn, evt) {
-    if (children == null) {
-      return fn;
-    } else {
-      var c = children.split(","),
-          pc = [],
-          nc = [];
-      forEach(c, function (sel) {
-        var m = sel.match(NOT_SELECTOR_REGEX);
-        if (m != null) {
-          nc.push(m[1]);
-        } else {
-          pc.push(sel);
-        }
-      });
-      if (nc.length > 0 && pc.length === 0) {
-        pc.push(WILDCARD);
-      }
-      var _fn = function _fn(e) {
-        _fn.__tauid = fn.__tauid;
-        var t = _t(e);
-        var done = false;
-        var target = t;
-        var pathInfo = _pi(e, t, obj, children != null);
-        if (pathInfo.end != -1) {
-          for (var p = 0; !done && p < pathInfo.end; p++) {
-            target = pathInfo.path[p];
-            for (var i = 0; i < nc.length; i++) {
-              if (matchesSelector(target, nc[i], obj)) {
-                return;
-              }
-            }
-            for (var _i = 0; !done && _i < pc.length; _i++) {
-              if (matchesSelector(target, pc[_i], obj)) {
-                fn.apply(target, [e, target]);
-                done = true;
-                break;
-              }
-            }
-          }
-        }
-      };
-      registerExtraFunction(fn, evt, _fn);
-      return _fn;
-    }
-  }
-  function registerExtraFunction(fn, evt, newFn) {
-    fn.__taExtra = fn.__taExtra || [];
-    fn.__taExtra.push([evt, newFn]);
-  }
-  var DefaultHandler = function DefaultHandler(obj, evt, fn, children, options) {
-    if (isTouchDevice$1() && touchMap[evt]) {
-      var tfn = _curryChildFilter(children, obj, fn, touchMap[evt]);
-      _bind(obj, touchMap[evt], tfn, fn, options);
-    }
-    if (evt === EVENT_FOCUS && obj.getAttribute(ATTRIBUTE_TABINDEX) == null) {
-      obj.setAttribute(ATTRIBUTE_TABINDEX, "1");
-    }
-    _bind(obj, evt, _curryChildFilter(children, obj, fn, evt), fn, options);
-  };
-  var _tapProfiles = {
-    "tap": {
-      touches: 1,
-      taps: 1
-    },
-    "dbltap": {
-      touches: 1,
-      taps: 2
-    },
-    "contextmenu": {
-      touches: 2,
-      taps: 1
-    }
-  };
-  function meeHelper(type, evt, obj, target) {
-    for (var i in obj.__tamee[type]) {
-      if (obj.__tamee[type].hasOwnProperty(i)) {
-        obj.__tamee[type][i].apply(target, [evt]);
-      }
-    }
-  }
-  var TapHandler = function () {
-    function TapHandler() {
-      _classCallCheck$c(this, TapHandler);
-    }
-    _createClass$c(TapHandler, null, [{
-      key: "generate",
-      value: function generate(clickThreshold, dblClickThreshold) {
-        return function (obj, evt, fn, children) {
-          if (evt == EVENT_CONTEXTMENU && isMouseDevice()) DefaultHandler(obj, evt, fn, children);else {
-            if (obj.__taTapHandler == null) {
-              var tt = obj.__taTapHandler = {
-                tap: [],
-                dbltap: [],
-                down: false,
-                taps: 0,
-                downSelectors: []
-              };
-              var down = function down(e) {
-                var target = _t(e),
-                    pathInfo = _pi(e, target, obj, children != null),
-                    finished = false;
-                for (var p = 0; p < pathInfo.end; p++) {
-                  if (finished) return;
-                  target = pathInfo.path[p];
-                  for (var i = 0; i < tt.downSelectors.length; i++) {
-                    if (tt.downSelectors[i] == null || matchesSelector(target, tt.downSelectors[i], obj)) {
-                      tt.down = true;
-                      setTimeout(clearSingle, clickThreshold);
-                      setTimeout(clearDouble, dblClickThreshold);
-                      finished = true;
-                      break;
-                    }
-                  }
-                }
-              },
-                  up = function up(e) {
-                if (tt.down) {
-                  var target = _t(e),
-                      currentTarget,
-                      pathInfo;
-                  tt.taps++;
-                  var tc = touchCount(e);
-                  for (var eventId in _tapProfiles) {
-                    if (_tapProfiles.hasOwnProperty(eventId)) {
-                      var p = _tapProfiles[eventId];
-                      if (p.touches === tc && (p.taps === 1 || p.taps === tt.taps)) {
-                        for (var i = 0; i < tt[eventId].length; i++) {
-                          pathInfo = _pi(e, target, obj, tt[eventId][i][1] != null);
-                          for (var pLoop = 0; pLoop < pathInfo.end; pLoop++) {
-                            currentTarget = pathInfo.path[pLoop];
-                            if (tt[eventId][i][1] == null || matchesSelector(currentTarget, tt[eventId][i][1], obj)) {
-                              tt[eventId][i][0].apply(currentTarget, [e, currentTarget]);
-                              break;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-                  clearSingle = function clearSingle() {
-                tt.down = false;
-              },
-                  clearDouble = function clearDouble() {
-                tt.taps = 0;
-              };
-              obj.__taTapHandler.downHandler = down;
-              obj.__taTapHandler.upHandler = up;
-              DefaultHandler(obj, EVENT_MOUSEDOWN, down);
-              DefaultHandler(obj, EVENT_MOUSEUP, up);
-            }
-            obj.__taTapHandler.downSelectors.push(children);
-            obj.__taTapHandler[evt].push([fn, children]);
-            fn.__taUnstore = function () {
-              if (obj.__taTapHandler != null) {
-                removeWithFunction(obj.__taTapHandler.downSelectors, function (ds) {
-                  return ds === children;
-                });
-                _d(obj.__taTapHandler[evt], fn);
-                if (obj.__taTapHandler.downSelectors.length === 0) {
-                  _unbind(obj, EVENT_MOUSEDOWN, obj.__taTapHandler.downHandler);
-                  _unbind(obj, EVENT_MOUSEUP, obj.__taTapHandler.upHandler);
-                  delete obj.__taTapHandler;
-                }
-              }
-            };
-          }
-        };
-      }
-    }]);
-    return TapHandler;
-  }();
-  var MouseEnterExitHandler = function () {
-    function MouseEnterExitHandler() {
-      _classCallCheck$c(this, MouseEnterExitHandler);
-    }
-    _createClass$c(MouseEnterExitHandler, null, [{
-      key: "generate",
-      value: function generate() {
-        var activeElements = [];
-        return function (obj, evt, fn, children) {
-          if (!obj.__tamee) {
-            obj.__tamee = {
-              over: false,
-              mouseenter: [],
-              mouseexit: []
-            };
-            var over = function over(e) {
-              var t = _t(e);
-              if (children == null && t == obj && !obj.__tamee.over || matchesSelector(t, children, obj) && (t.__tamee == null || !t.__tamee.over)) {
-                meeHelper(EVENT_MOUSEENTER, e, obj, t);
-                t.__tamee = t.__tamee || {};
-                t.__tamee.over = true;
-                activeElements.push(t);
-              }
-            },
-                out = function out(e) {
-              var t = _t(e);
-              for (var i = 0; i < activeElements.length; i++) {
-                if (t == activeElements[i] && !matchesSelector(e.relatedTarget || e.toElement, "*", t)) {
-                  t.__tamee.over = false;
-                  activeElements.splice(i, 1);
-                  meeHelper(EVENT_MOUSEEXIT, e, obj, t);
-                }
-              }
-            };
-            _bind(obj, EVENT_MOUSEOVER, _curryChildFilter(children, obj, over, EVENT_MOUSEOVER), over);
-            _bind(obj, EVENT_MOUSEOUT, _curryChildFilter(children, obj, out, EVENT_MOUSEOUT), out);
-          }
-          fn.__taUnstore = function () {
-            delete obj.__tamee[evt][fn.__tauid];
-          };
-          _store(obj, evt, fn);
-          obj.__tamee[evt][fn.__tauid] = fn;
-        };
-      }
-    }]);
-    return MouseEnterExitHandler;
-  }();
-  var EventManager = function () {
-    function EventManager(params) {
-      _classCallCheck$c(this, EventManager);
-      _defineProperty$c(this, "clickThreshold", void 0);
-      _defineProperty$c(this, "dblClickThreshold", void 0);
-      _defineProperty$c(this, "tapHandler", void 0);
-      _defineProperty$c(this, "mouseEnterExitHandler", void 0);
-      params = params || {};
-      this.clickThreshold = params.clickThreshold || 250;
-      this.dblClickThreshold = params.dblClickThreshold || 450;
-      this.mouseEnterExitHandler = MouseEnterExitHandler.generate();
-      this.tapHandler = TapHandler.generate(this.clickThreshold, this.dblClickThreshold);
-    }
-    _createClass$c(EventManager, [{
-      key: "_doBind",
-      value: function _doBind(el, evt, fn, children, options) {
-        if (fn == null) return;
-        var jel = el;
-        if (evt === EVENT_TAP || evt === EVENT_DBL_TAP || evt === EVENT_CONTEXTMENU) {
-          this.tapHandler(jel, evt, fn, children, options);
-        } else if (evt === EVENT_MOUSEENTER || evt == EVENT_MOUSEEXIT) this.mouseEnterExitHandler(jel, evt, fn, children, options);else {
-          DefaultHandler(jel, evt, fn, children, options);
-        }
-      }
-    }, {
-      key: "on",
-      value: function on(el, event, children, fn, options) {
-        var _c = fn == null ? null : children,
-            _f = fn == null ? children : fn;
-        this._doBind(el, event, _f, _c, options);
-        return this;
-      }
-    }, {
-      key: "off",
-      value: function off(el, event, fn) {
-        _unbind(el, event, fn);
-        return this;
-      }
-    }, {
-      key: "trigger",
-      value: function trigger(el, event, originalEvent, payload, detail) {
-        var originalIsMouse = isMouseDevice() && (typeof MouseEvent === "undefined" || originalEvent == null || originalEvent.constructor === MouseEvent);
-        var eventToBind = isTouchDevice$1() && !isMouseDevice() && touchMap[event] ? touchMap[event] : event,
-            bindingAMouseEvent = !(isTouchDevice$1() && !isMouseDevice() && touchMap[event]);
-        var pl = pageLocation(originalEvent),
-            sl = screenLocation(originalEvent),
-            cl = clientLocation(originalEvent);
-        _each$1(el, function (_el) {
-          var evt;
-          originalEvent = originalEvent || {
-            screenX: sl.x,
-            screenY: sl.y,
-            clientX: cl.x,
-            clientY: cl.y
-          };
-          var _decorate = function _decorate(_evt) {
-            if (payload) {
-              _evt.payload = payload;
-            }
-          };
-          var eventGenerators = {
-            "TouchEvent": function TouchEvent(evt) {
-              var touchList = _touchAndList(_el, pl.x, pl.y, sl.x, sl.y, cl.x, cl.y),
-                  init = evt.initTouchEvent || evt.initEvent;
-              init(eventToBind, true, true, window, null, sl.x, sl.y, cl.x, cl.y, false, false, false, false, touchList, touchList, touchList, 1, 0);
-            },
-            "MouseEvents": function MouseEvents(evt) {
-              evt.initMouseEvent(eventToBind, true, true, window, detail == null ? 1 : detail, sl.x, sl.y, cl.x, cl.y, false, false, false, false, 1, _el);
-            }
-          };
-          var ite = !bindingAMouseEvent && !originalIsMouse && isTouchDevice$1() && touchMap[event],
-              evtName = ite ? "TouchEvent" : "MouseEvents";
-          evt = document.createEvent(evtName);
-          eventGenerators[evtName](evt);
-          _decorate(evt);
-          _el.dispatchEvent(evt);
-        });
-        return this;
-      }
-    }]);
-    return EventManager;
-  }();
-
-  function findDelegateElement(parentElement, childElement, selector) {
-    if (matchesSelector$1(childElement, selector, parentElement)) {
-      return childElement;
-    } else {
-      var currentParent = childElement.parentNode;
-      while (currentParent != null && currentParent !== parentElement) {
-        if (matchesSelector$1(currentParent, selector, parentElement)) {
-          return currentParent;
-        } else {
-          currentParent = currentParent.parentNode;
-        }
-      }
-    }
-  }
-  function _getPosition(el) {
-    return {
-      x: el.offsetLeft,
-      y: el.offsetTop
-    };
-  }
-  function _getSize(el) {
-    return {
-      w: el.offsetWidth,
-      h: el.offsetHeight
-    };
-  }
-  function _setPosition(el, pos) {
-    el.style.left = pos.x + "px";
-    el.style.top = pos.y + "px";
-  }
-  function _assignId(obj) {
-    if (typeof obj === "function") {
-      obj._katavorioId = uuid();
-      return obj._katavorioId;
-    } else {
-      return obj;
-    }
-  }
-  function isInsideParent(instance, _el, pos) {
-    var p = _el.parentNode,
-        s = instance.getSize(p),
-        ss = instance.getSize(_el),
-        leftEdge = pos.x,
-        rightEdge = leftEdge + ss.w,
-        topEdge = pos.y,
-        bottomEdge = topEdge + ss.h;
-    return rightEdge > 0 && leftEdge < s.w && bottomEdge > 0 && topEdge < s.h;
-  }
-  function findMatchingSelector(availableSelectors, parentElement, childElement) {
-    var el = null;
-    var draggableId = parentElement.getAttribute("katavorio-draggable"),
-        prefix = draggableId != null ? "[katavorio-draggable='" + draggableId + "'] " : "";
-    for (var i = 0; i < availableSelectors.length; i++) {
-      el = findDelegateElement(parentElement, childElement, prefix + availableSelectors[i].selector);
-      if (el != null) {
-        if (availableSelectors[i].filter) {
-          var matches = matchesSelector$1(childElement, availableSelectors[i].filter, el),
-              exclude = availableSelectors[i].filterExclude === true;
-          if (exclude && !matches || matches) {
-            return null;
-          }
-        }
-        return [availableSelectors[i], el];
-      }
-    }
-    return null;
-  }
-  var EVENT_START = "start";
-  var EVENT_BEFORE_START = "beforeStart";
-  var EVENT_DRAG = "drag";
-  var EVENT_DROP = "drop";
-  var EVENT_OVER = "over";
-  var EVENT_OUT = "out";
-  var EVENT_STOP = "stop";
-  var ATTRIBUTE_DRAGGABLE = "katavorio-draggable";
-  var CLASS_DRAGGABLE$1 = ATTRIBUTE_DRAGGABLE;
-  var DEFAULT_GRID_X = 10;
-  var DEFAULT_GRID_Y = 10;
-  var TRUE = function TRUE() {
-    return true;
-  };
-  var FALSE = function FALSE() {
-    return false;
-  };
-  var _classes = {
-    delegatedDraggable: "katavorio-delegated-draggable",
-    draggable: CLASS_DRAGGABLE$1,
-    drag: "katavorio-drag",
-    selected: "katavorio-drag-selected",
-    noSelect: "katavorio-drag-no-select",
-    ghostProxy: "katavorio-ghost-proxy",
-    clonedDrag: "katavorio-clone-drag"
-  };
-  var _events = [EVENT_STOP, EVENT_START, EVENT_DRAG, EVENT_DROP, EVENT_OVER, EVENT_OUT, EVENT_BEFORE_START];
-  var _devNull = function _devNull() {};
-  var _each = function _each(obj, fn) {
-    if (obj == null) return;
-    obj = !isString(obj) && obj.tagName == null && obj.length != null ? obj : [obj];
-    for (var i = 0; i < obj.length; i++) {
-      fn.apply(obj[i], [obj[i]]);
-    }
-  };
-  var _inputFilter = function _inputFilter(e, el, collicat) {
-    var t = e.srcElement || e.target;
-    return !matchesSelector$1(t, collicat.getInputFilterSelector(), el);
-  };
-  var Base = function () {
-    function Base(el, k) {
-      _classCallCheck$c(this, Base);
-      this.el = el;
-      this.k = k;
-      _defineProperty$c(this, "_class", void 0);
-      _defineProperty$c(this, "uuid", uuid());
-      _defineProperty$c(this, "enabled", true);
-      _defineProperty$c(this, "scopes", []);
-    }
-    _createClass$c(Base, [{
-      key: "setEnabled",
-      value: function setEnabled(e) {
-        this.enabled = e;
-      }
-    }, {
-      key: "isEnabled",
-      value: function isEnabled() {
-        return this.enabled;
-      }
-    }, {
-      key: "toggleEnabled",
-      value: function toggleEnabled() {
-        this.enabled = !this.enabled;
-      }
-    }, {
-      key: "addScope",
-      value: function addScope(scopes) {
-        var m = {};
-        _each(this.scopes, function (s) {
-          m[s] = true;
-        });
-        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
-          m[s] = true;
-        });
-        this.scopes.length = 0;
-        for (var i in m) {
-          this.scopes.push(i);
-        }
-      }
-    }, {
-      key: "removeScope",
-      value: function removeScope(scopes) {
-        var m = {};
-        _each(this.scopes, function (s) {
-          m[s] = true;
-        });
-        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
-          delete m[s];
-        });
-        this.scopes.length = 0;
-        for (var i in m) {
-          this.scopes.push(i);
-        }
-      }
-    }, {
-      key: "toggleScope",
-      value: function toggleScope(scopes) {
-        var m = {};
-        _each(this.scopes, function (s) {
-          m[s] = true;
-        });
-        _each(scopes ? scopes.split(/\s+/) : [], function (s) {
-          if (m[s]) delete m[s];else m[s] = true;
-        });
-        this.scopes.length = 0;
-        for (var i in m) {
-          this.scopes.push(i);
-        }
-      }
-    }]);
-    return Base;
-  }();
-  function getConstrainingRectangle(el) {
-    return {
-      w: el.parentNode.offsetWidth + el.parentNode.scrollLeft,
-      h: el.parentNode.offsetHeight + el.parentNode.scrollTop
-    };
-  }
-  var ContainmentType;
-  (function (ContainmentType) {
-    ContainmentType["notNegative"] = "notNegative";
-    ContainmentType["parent"] = "parent";
-    ContainmentType["parentEnclosed"] = "parentEnclosed";
-  })(ContainmentType || (ContainmentType = {}));
-  var Drag = function (_Base) {
-    _inherits$6(Drag, _Base);
-    var _super = _createSuper$6(Drag);
-    function Drag(el, params, k) {
-      var _this;
-      _classCallCheck$c(this, Drag);
-      _this = _super.call(this, el, k);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_class", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "rightButtonCanDrag", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "consumeStartEvent", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "clone", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "scroll", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "trackScroll", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_downAt", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_posAtDown", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_pagePosAtDown", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_pageDelta", {
-        x: 0,
-        y: 0
-      });
-      _defineProperty$c(_assertThisInitialized$6(_this), "_moving", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_lastPosition", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_lastScrollValues", {
-        x: 0,
-        y: 0
-      });
-      _defineProperty$c(_assertThisInitialized$6(_this), "_initialScroll", {
-        x: 0,
-        y: 0
-      });
-      _defineProperty$c(_assertThisInitialized$6(_this), "_size", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_currentParentPosition", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostParentPosition", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_dragEl", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_multipleDrop", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostProxyOffsets", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostDx", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostDy", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_isConstrained", false);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostProxyParent", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_useGhostProxy", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ghostProxyFunction", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_activeSelectorParams", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_availableSelectors", []);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_canDrag", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_consumeFilteredEvents", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_parent", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_ignoreZoom", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_filters", {});
-      _defineProperty$c(_assertThisInitialized$6(_this), "_constrainRect", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementToDrag", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "downListener", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "moveListener", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "upListener", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "scrollTracker", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "listeners", {
-        "start": [],
-        "drag": [],
-        "stop": [],
-        "over": [],
-        "out": [],
-        "beforeStart": [],
-        "revert": []
-      });
-      _this._class = _this.k.css.draggable;
-      addClass(_this.el, _this._class);
-      _this.downListener = _this._downListener.bind(_assertThisInitialized$6(_this));
-      _this.upListener = _this._upListener.bind(_assertThisInitialized$6(_this));
-      _this.moveListener = _this._moveListener.bind(_assertThisInitialized$6(_this));
-      _this.rightButtonCanDrag = params.rightButtonCanDrag === true;
-      _this.consumeStartEvent = params.consumeStartEvent !== false;
-      _this._dragEl = _this.el;
-      _this.clone = params.clone === true;
-      _this.scroll = params.scroll === true;
-      _this.trackScroll = params.trackScroll !== false;
-      _this._multipleDrop = params.multipleDrop !== false;
-      _this._canDrag = params.canDrag || TRUE;
-      _this._consumeFilteredEvents = params.consumeFilteredEvents;
-      _this._parent = params.parent;
-      _this._ignoreZoom = params.ignoreZoom === true;
-      _this._ghostProxyParent = params.ghostProxyParent;
-      if (_this.trackScroll) {
-        _this.scrollTracker = _this._trackScroll.bind(_assertThisInitialized$6(_this));
-        document.addEventListener("scroll", _this.scrollTracker);
-      }
-      if (params.ghostProxy === true) {
-        _this._useGhostProxy = TRUE;
-      } else {
-        if (params.ghostProxy && typeof params.ghostProxy === "function") {
-          _this._useGhostProxy = params.ghostProxy;
-        } else {
-          _this._useGhostProxy = function (container, dragEl) {
-            if (_this._activeSelectorParams && _this._activeSelectorParams.useGhostProxy) {
-              return _this._activeSelectorParams.useGhostProxy(container, dragEl);
-            } else {
-              return false;
-            }
-          };
-        }
-      }
-      if (params.makeGhostProxy) {
-        _this._ghostProxyFunction = params.makeGhostProxy;
-      } else {
-        _this._ghostProxyFunction = function (el) {
-          if (_this._activeSelectorParams && _this._activeSelectorParams.makeGhostProxy) {
-            return _this._activeSelectorParams.makeGhostProxy(el);
-          } else {
-            return el.cloneNode(true);
-          }
-        };
-      }
-      if (params.selector) {
-        var draggableId = _this.el.getAttribute(ATTRIBUTE_DRAGGABLE);
-        if (draggableId == null) {
-          draggableId = "" + new Date().getTime();
-          _this.el.setAttribute("katavorio-draggable", draggableId);
-        }
-        _this._availableSelectors.push(params);
-      }
-      _this.k.eventManager.on(_this.el, EVENT_MOUSEDOWN, _this.downListener);
-      return _this;
-    }
-    _createClass$c(Drag, [{
-      key: "_trackScroll",
-      value: function _trackScroll(e) {
-        if (this._moving) {
-          var currentScrollValues = {
-            x: document.documentElement.scrollLeft,
-            y: document.documentElement.scrollTop
-          },
-              dsx = currentScrollValues.x - this._lastScrollValues.x,
-              dsy = currentScrollValues.y - this._lastScrollValues.y,
-              _pos = {
-            x: dsx + this._lastPosition.x,
-            y: dsy + this._lastPosition.y
-          },
-          dx = _pos.x - this._downAt.x,
-              dy = _pos.y - this._downAt.y,
-              _z = this._ignoreZoom ? 1 : this.k.getZoom();
-          if (this._dragEl && this._dragEl.parentNode) {
-            dx += this._dragEl.parentNode.scrollLeft - this._initialScroll.x;
-            dy += this._dragEl.parentNode.scrollTop - this._initialScroll.y;
-          }
-          dx /= _z;
-          dy /= _z;
-          this.moveBy(dx, dy, e);
-          this._lastPosition = _pos;
-          this._lastScrollValues = currentScrollValues;
-        }
-      }
-    }, {
-      key: "on",
-      value: function on(evt, fn) {
-        if (this.listeners[evt]) {
-          this.listeners[evt].push(fn);
-        }
-      }
-    }, {
-      key: "off",
-      value: function off(evt, fn) {
-        if (this.listeners[evt]) {
-          var l = [];
-          for (var i = 0; i < this.listeners[evt].length; i++) {
-            if (this.listeners[evt][i] !== fn) {
-              l.push(this.listeners[evt][i]);
-            }
-          }
-          this.listeners[evt] = l;
-        }
-      }
-    }, {
-      key: "_upListener",
-      value: function _upListener(e) {
-        if (this._downAt) {
-          this._downAt = null;
-          this.k.eventManager.off(document, EVENT_MOUSEMOVE, this.moveListener);
-          this.k.eventManager.off(document, EVENT_MOUSEUP, this.upListener);
-          removeClass(document.body, _classes.noSelect);
-          this.unmark(e);
-          this.stop(e);
-          this._moving = false;
-          if (this.clone) {
-            this._dragEl && this._dragEl.parentNode && this._dragEl.parentNode.removeChild(this._dragEl);
-            this._dragEl = null;
-          } else {
-            if (this._activeSelectorParams && this._activeSelectorParams.revertFunction) {
-              if (this._activeSelectorParams.revertFunction(this._dragEl, _getPosition(this._dragEl)) === true) {
-                _setPosition(this._dragEl, this._posAtDown);
-                this._dispatch(EVENT_REVERT, this._dragEl);
-              }
-            }
-          }
-        }
-      }
-    }, {
-      key: "_downListener",
-      value: function _downListener(e) {
-        if (e.defaultPrevented) {
-          return;
-        }
-        var isNotRightClick = this.rightButtonCanDrag || e.which !== 3 && e.button !== 2;
-        if (isNotRightClick && this.isEnabled() && this._canDrag()) {
-          var _f = this._testFilter(e) && _inputFilter(e, this.el, this.k);
-          if (_f) {
-            this._activeSelectorParams = null;
-            this._elementToDrag = null;
-            if (this._availableSelectors.length === 0) {
-              console.log("JSPLUMB: no available drag selectors");
-            }
-            var eventTarget = e.target || e.srcElement;
-            var match = findMatchingSelector(this._availableSelectors, this.el, eventTarget);
-            if (match != null) {
-              this._activeSelectorParams = match[0];
-              this._elementToDrag = match[1];
-            }
-            if (this._activeSelectorParams == null || this._elementToDrag == null) {
-              return;
-            }
-            var initial = this._activeSelectorParams.dragInit ? this._activeSelectorParams.dragInit(this._elementToDrag) : null;
-            if (initial != null) {
-              this._elementToDrag = initial;
-            }
-            if (this.clone) {
-              this._dragEl = this._elementToDrag.cloneNode(true);
-              addClass(this._dragEl, _classes.clonedDrag);
-              this._dragEl.setAttribute("id", null);
-              this._dragEl.style.position = "absolute";
-              if (this._parent != null) {
-                var _p2 = _getPosition(this.el);
-                this._dragEl.style.left = _p2.x + "px";
-                this._dragEl.style.top = _p2.y + "px";
-                this._parent.appendChild(this._dragEl);
-              } else {
-                var b = offsetRelativeToRoot(this._elementToDrag);
-                this._dragEl.style.left = b.x + "px";
-                this._dragEl.style.top = b.y + "px";
-                document.body.appendChild(this._dragEl);
-              }
-            } else {
-              this._dragEl = this._elementToDrag;
-            }
-            if (this.consumeStartEvent) {
-              consume(e);
-            }
-            this._downAt = pageLocation(e);
-            if (this._dragEl && this._dragEl.parentNode) {
-              this._initialScroll = {
-                x: this._dragEl.parentNode.scrollLeft,
-                y: this._dragEl.parentNode.scrollTop
-              };
-            }
-            this._posAtDown = _getPosition(this._dragEl);
-            this._pagePosAtDown = offsetRelativeToRoot(this._dragEl);
-            this._pageDelta = {
-              x: this._pagePosAtDown.x - this._posAtDown.x,
-              y: this._pagePosAtDown.y - this._posAtDown.y
-            };
-            this._size = _getSize(this._dragEl);
-            this.k.eventManager.on(document, EVENT_MOUSEMOVE, this.moveListener);
-            this.k.eventManager.on(document, EVENT_MOUSEUP, this.upListener);
-            addClass(document.body, _classes.noSelect);
-            this._dispatch(EVENT_BEFORE_START, {
-              el: this.el,
-              pos: this._posAtDown,
-              e: e,
-              drag: this,
-              size: this._size
-            });
-          } else if (this._consumeFilteredEvents) {
-            consume(e);
-          }
-        }
-      }
-    }, {
-      key: "_moveListener",
-      value: function _moveListener(e) {
-        if (this._downAt) {
-          if (!this._moving) {
-            var dispatchResult = this._dispatch(EVENT_START, {
-              el: this.el,
-              pos: this._posAtDown,
-              e: e,
-              drag: this,
-              size: this._size
-            });
-            if (dispatchResult !== false) {
-              if (!this._downAt) {
-                return;
-              }
-              this.mark(dispatchResult);
-              this._moving = true;
-            } else {
-              this.abort();
-            }
-          }
-          if (this._downAt) {
-            var _pos2 = pageLocation(e),
-                dx = _pos2.x - this._downAt.x,
-                dy = _pos2.y - this._downAt.y,
-                _z2 = this._ignoreZoom ? 1 : this.k.getZoom();
-            this._lastPosition = {
-              x: _pos2.x,
-              y: _pos2.y
-            };
-            this._lastScrollValues = {
-              x: document.documentElement.scrollLeft,
-              y: document.documentElement.scrollTop
-            };
-            if (this._dragEl && this._dragEl.parentNode) {
-              dx += this._dragEl.parentNode.scrollLeft - this._initialScroll.x;
-              dy += this._dragEl.parentNode.scrollTop - this._initialScroll.y;
-            }
-            dx /= _z2;
-            dy /= _z2;
-            this.moveBy(dx, dy, e);
-          }
-        }
-      }
-    }, {
-      key: "mark",
-      value: function mark(payload) {
-        this._posAtDown = _getPosition(this._dragEl);
-        this._pagePosAtDown = offsetRelativeToRoot(this._dragEl);
-        this._pageDelta = {
-          x: this._pagePosAtDown.x - this._posAtDown.x,
-          y: this._pagePosAtDown.y - this._posAtDown.y
-        };
-        this._size = _getSize(this._dragEl);
-        addClass(this._dragEl, this.k.css.drag);
-        this._constrainRect = getConstrainingRectangle(this._dragEl);
-        this._ghostDx = 0;
-        this._ghostDy = 0;
-      }
-    }, {
-      key: "unmark",
-      value: function unmark(e) {
-        if (this._isConstrained && this._useGhostProxy(this._elementToDrag, this._dragEl)) {
-          this._ghostProxyOffsets = {
-            x: this._dragEl.offsetLeft - this._ghostDx,
-            y: this._dragEl.offsetTop - this._ghostDy
-          };
-          this._dragEl.parentNode.removeChild(this._dragEl);
-          this._dragEl = this._elementToDrag;
-        } else {
-          this._ghostProxyOffsets = null;
-        }
-        removeClass(this._dragEl, this.k.css.drag);
-        this._isConstrained = false;
-      }
-    }, {
-      key: "moveBy",
-      value: function moveBy(dx, dy, e) {
-        var desiredLoc = this.toGrid({
-          x: this._posAtDown.x + dx,
-          y: this._posAtDown.y + dy
-        }),
-            cPos = this._doConstrain(desiredLoc, this._dragEl, this._constrainRect, this._size);
-        if (this._useGhostProxy(this.el, this._dragEl)) {
-          if (desiredLoc.x !== cPos.x || desiredLoc.y !== cPos.y) {
-            if (!this._isConstrained) {
-              var gp = this._ghostProxyFunction(this._elementToDrag);
-              addClass(gp, _classes.ghostProxy);
-              if (this._ghostProxyParent) {
-                this._ghostProxyParent.appendChild(gp);
-                this._currentParentPosition = offsetRelativeToRoot(this._elementToDrag.parentNode);
-                this._ghostParentPosition = offsetRelativeToRoot(this._ghostProxyParent);
-                this._ghostDx = this._currentParentPosition.x - this._ghostParentPosition.x;
-                this._ghostDy = this._currentParentPosition.y - this._ghostParentPosition.y;
-              } else {
-                this._elementToDrag.parentNode.appendChild(gp);
-              }
-              this._dragEl = gp;
-              this._isConstrained = true;
-            }
-            cPos = desiredLoc;
-          } else {
-            if (this._isConstrained) {
-              this._dragEl.parentNode.removeChild(this._dragEl);
-              this._dragEl = this._elementToDrag;
-              this._isConstrained = false;
-              this._currentParentPosition = null;
-              this._ghostParentPosition = null;
-              this._ghostDx = 0;
-              this._ghostDy = 0;
-            }
-          }
-        }
-        _setPosition(this._dragEl, {
-          x: cPos.x + this._ghostDx,
-          y: cPos.y + this._ghostDy
-        });
-        this._dispatch(EVENT_DRAG, {
-          el: this.el,
-          pos: cPos,
-          e: e,
-          drag: this,
-          size: this._size,
-          originalPos: this._posAtDown
-        });
-      }
-    }, {
-      key: "abort",
-      value: function abort() {
-        if (this._downAt != null) {
-          this._upListener();
-        }
-      }
-    }, {
-      key: "getDragElement",
-      value: function getDragElement(retrieveOriginalElement) {
-        return retrieveOriginalElement ? this._elementToDrag || this.el : this._dragEl || this.el;
-      }
-    }, {
-      key: "stop",
-      value: function stop(e, force) {
-        if (force || this._moving) {
-          var positions = [],
-              dPos = _getPosition(this._dragEl);
-          positions.push([this._dragEl, dPos, this, this._size]);
-          this._dispatch(EVENT_STOP, {
-            el: this._dragEl,
-            pos: this._ghostProxyOffsets || dPos,
-            finalPos: dPos,
-            e: e,
-            drag: this,
-            selection: positions,
-            size: this._size,
-            originalPos: {
-              x: this._posAtDown.x,
-              y: this._posAtDown.y
-            }
-          });
-        } else if (!this._moving) {
-          this._activeSelectorParams.dragAbort ? this._activeSelectorParams.dragAbort(this._elementToDrag) : null;
-        }
-      }
-    }, {
-      key: "_dispatch",
-      value: function _dispatch(evt, value) {
-        var result = null;
-        if (this._activeSelectorParams && this._activeSelectorParams[evt]) {
-          result = this._activeSelectorParams[evt](value);
-        } else if (this.listeners[evt]) {
-          for (var i = 0; i < this.listeners[evt].length; i++) {
-            try {
-              var v = this.listeners[evt][i](value);
-              if (v != null) {
-                result = v;
-              }
-            } catch (e) {}
-          }
-        }
-        return result;
-      }
-    }, {
-      key: "resolveGrid",
-      value: function resolveGrid() {
-        var out = {
-          grid: null,
-          thresholdX: DEFAULT_GRID_X / 2,
-          thresholdY: DEFAULT_GRID_Y / 2
-        };
-        if (this._activeSelectorParams != null && this._activeSelectorParams.grid != null) {
-          out.grid = this._activeSelectorParams.grid;
-          if (this._activeSelectorParams.snapThreshold != null) {
-            out.thresholdX = this._activeSelectorParams.snapThreshold;
-            out.thresholdY = this._activeSelectorParams.snapThreshold;
-          }
-        }
-        return out;
-      }
-    }, {
-      key: "toGrid",
-      value: function toGrid(pos) {
-        var _this$resolveGrid = this.resolveGrid(),
-            grid = _this$resolveGrid.grid,
-            thresholdX = _this$resolveGrid.thresholdX,
-            thresholdY = _this$resolveGrid.thresholdY;
-        if (grid == null) {
-          return pos;
-        } else {
-          var tx = grid ? grid.w / 2 : thresholdX,
-              ty = grid ? grid.h / 2 : thresholdY;
-          return snapToGrid(pos, grid, tx, ty);
-        }
-      }
-    }, {
-      key: "setUseGhostProxy",
-      value: function setUseGhostProxy(val) {
-        this._useGhostProxy = val ? TRUE : FALSE;
-      }
-    }, {
-      key: "_doConstrain",
-      value: function _doConstrain(pos, dragEl, _constrainRect, _size) {
-        if (this._activeSelectorParams != null && this._activeSelectorParams.constrainFunction && typeof this._activeSelectorParams.constrainFunction === "function") {
-          return this._activeSelectorParams.constrainFunction(pos, dragEl, _constrainRect, _size);
-        } else {
-          return pos;
-        }
-      }
-    }, {
-      key: "_testFilter",
-      value: function _testFilter(e) {
-        for (var key in this._filters) {
-          var f = this._filters[key];
-          var rv = f[0](e);
-          if (f[1]) {
-            rv = !rv;
-          }
-          if (!rv) {
-            return false;
-          }
-        }
-        return true;
-      }
-    }, {
-      key: "addFilter",
-      value: function addFilter(f, _exclude) {
-        var _this2 = this;
-        if (f) {
-          var key = _assignId(f);
-          this._filters[key] = [function (e) {
-            var t = e.srcElement || e.target;
-            var m;
-            if (isString(f)) {
-              m = matchesSelector$1(t, f, _this2.el);
-            } else if (typeof f === "function") {
-              m = f(e, _this2.el);
-            }
-            return m;
-          }, _exclude !== false];
-        }
-      }
-    }, {
-      key: "removeFilter",
-      value: function removeFilter(f) {
-        var key = typeof f === "function" ? f._katavorioId : f;
-        delete this._filters[key];
-      }
-    }, {
-      key: "clearAllFilters",
-      value: function clearAllFilters() {
-        this._filters = {};
-      }
-    }, {
-      key: "addSelector",
-      value: function addSelector(params, atStart) {
-        if (params.selector) {
-          if (atStart) {
-            this._availableSelectors.unshift(params);
-          } else {
-            this._availableSelectors.push(params);
-          }
-        }
-      }
-    }, {
-      key: "destroy",
-      value: function destroy() {
-        this.k.eventManager.off(this.el, EVENT_MOUSEDOWN, this.downListener);
-        this.k.eventManager.off(document, EVENT_MOUSEMOVE, this.moveListener);
-        this.k.eventManager.off(document, EVENT_MOUSEUP, this.upListener);
-        this.downListener = null;
-        this.upListener = null;
-        this.moveListener = null;
-        if (this.scrollTracker != null) {
-          document.removeEventListener("scroll", this.scrollTracker);
-        }
-      }
-    }]);
-    return Drag;
-  }(Base);
-  var DEFAULT_INPUTS = ["input", "textarea", "select", "button", "option"];
-  var DEFAULT_INPUT_FILTER_SELECTOR = DEFAULT_INPUTS.join(",");
-  var Collicat = function () {
-    function Collicat(options) {
-      _classCallCheck$c(this, Collicat);
-      _defineProperty$c(this, "eventManager", void 0);
-      _defineProperty$c(this, "zoom", 1);
-      _defineProperty$c(this, "css", {});
-      _defineProperty$c(this, "inputFilterSelector", void 0);
-      options = options || {};
-      this.inputFilterSelector = options.inputFilterSelector || DEFAULT_INPUT_FILTER_SELECTOR;
-      this.eventManager = new EventManager();
-      this.zoom = options.zoom || 1;
-      var _c = options.css || {};
-      extend(this.css, _c);
-    }
-    _createClass$c(Collicat, [{
-      key: "getZoom",
-      value: function getZoom() {
-        return this.zoom;
-      }
-    }, {
-      key: "setZoom",
-      value: function setZoom(z) {
-        this.zoom = z;
-      }
-    }, {
-      key: "_prepareParams",
-      value: function _prepareParams(p) {
-        p = p || {};
-        var _p = {
-          events: {}
-        },
-            i;
-        for (i in p) {
-          _p[i] = p[i];
-        }
-        for (i = 0; i < _events.length; i++) {
-          _p.events[_events[i]] = p[_events[i]] || _devNull;
-        }
-        return _p;
-      }
-    }, {
-      key: "getInputFilterSelector",
-      value: function getInputFilterSelector() {
-        return this.inputFilterSelector;
-      }
-    }, {
-      key: "setInputFilterSelector",
-      value: function setInputFilterSelector(selector) {
-        this.inputFilterSelector = selector;
-        return this;
-      }
-    }, {
-      key: "draggable",
-      value: function draggable(el, params) {
-        if (el._katavorioDrag == null) {
-          var _p3 = this._prepareParams(params);
-          var d = new Drag(el, _p3, this);
-          addClass(el, _classes.delegatedDraggable);
-          el._katavorioDrag = d;
-          return d;
-        } else {
-          return el._katavorioDrag;
-        }
-      }
-    }, {
-      key: "destroyDraggable",
-      value: function destroyDraggable(el) {
-        if (el._katavorioDrag) {
-          el._katavorioDrag.destroy();
-          delete el._katavorioDrag;
-        }
-      }
-    }]);
-    return Collicat;
-  }();
-
-  var CLASS_DRAG_SELECTED = "jtk-drag-selected";
-  var DragSelection = function () {
-    function DragSelection(instance) {
-      _classCallCheck$c(this, DragSelection);
-      this.instance = instance;
-      _defineProperty$c(this, "_dragSelection", []);
-      _defineProperty$c(this, "_dragSizes", new Map());
-      _defineProperty$c(this, "_dragElements", new Map());
-      _defineProperty$c(this, "_dragElementStartPositions", new Map());
-      _defineProperty$c(this, "_dragElementPositions", new Map());
-      _defineProperty$c(this, "__activeSet", void 0);
-    }
-    _createClass$c(DragSelection, [{
-      key: "_activeSet",
-      get: function get() {
-        if (this.__activeSet == null) {
-          return this._dragSelection;
-        } else {
-          return this.__activeSet;
-        }
-      }
-    }, {
-      key: "length",
-      get: function get() {
-        return this._dragSelection.length;
-      }
-    }, {
-      key: "filterActiveSet",
-      value: function filterActiveSet(fn) {
-        var _this = this;
-        this.__activeSet = [];
-        forEach(this._dragSelection, function (p) {
-          if (fn(p)) {
-            _this.__activeSet.push(p);
-          }
-        });
-      }
-    }, {
-      key: "clear",
-      value: function clear() {
-        var _this2 = this;
-        this.reset();
-        forEach(this._dragSelection, function (p) {
-          return _this2.instance.removeClass(p.jel, CLASS_DRAG_SELECTED);
-        });
-        this._dragSelection.length = 0;
-      }
-    }, {
-      key: "reset",
-      value: function reset() {
-        this._dragElementStartPositions.clear();
-        this._dragElementPositions.clear();
-        this._dragSizes.clear();
-        this._dragElements.clear();
-        this.__activeSet = null;
-      }
-    }, {
-      key: "initialisePositions",
-      value: function initialisePositions() {
-        var _this3 = this;
-        forEach(this._activeSet, function (p) {
-          var off = {
-            x: parseInt("" + p.jel.offsetLeft, 10),
-            y: parseInt("" + p.jel.offsetTop, 10)
-          };
-          _this3._dragElementStartPositions.set(p.id, off);
-          _this3._dragElementPositions.set(p.id, off);
-          _this3._dragSizes.set(p.id, _this3.instance.getSize(p.jel));
-        });
-      }
-    }, {
-      key: "updatePositions",
-      value: function updatePositions(currentPosition, originalPosition, callback) {
-        var _this4 = this;
-        var dx = currentPosition.x - originalPosition.x,
-            dy = currentPosition.y - originalPosition.y;
-        forEach(this._activeSet, function (p) {
-          var op = _this4._dragElementStartPositions.get(p.id);
-          if (op) {
-            var x = op.x + dx,
-                y = op.y + dy;
-            var _s = _this4._dragSizes.get(p.id);
-            var _b = {
-              x: x,
-              y: y,
-              w: _s.w,
-              h: _s.h
-            };
-            if (p.jel._jsPlumbParentGroup && p.jel._jsPlumbParentGroup.constrain) {
-              var constrainRect = {
-                w: p.jel.parentNode.offsetWidth + p.jel.parentNode.scrollLeft,
-                h: p.jel.parentNode.offsetHeight + p.jel.parentNode.scrollTop
-              };
-              _b.x = Math.max(_b.x, 0);
-              _b.y = Math.max(_b.y, 0);
-              _b.x = Math.min(_b.x, constrainRect.w - _s.w);
-              _b.y = Math.min(_b.y, constrainRect.h - _s.h);
-            }
-            _this4._dragElementPositions.set(p.id, {
-              x: x,
-              y: y
-            });
-            p.jel.style.left = _b.x + "px";
-            p.jel.style.top = _b.y + "px";
-            callback(p.jel, p.id, _s, _b);
-          }
-        });
-      }
-    }, {
-      key: "each",
-      value: function each(f) {
-        var _this5 = this;
-        forEach(this._activeSet, function (p) {
-          var s = _this5._dragSizes.get(p.id);
-          var o = _this5._dragElementPositions.get(p.id);
-          var orig = _this5._dragElementStartPositions.get(p.id);
-          f(p.jel, p.id, o, s, orig);
-        });
-      }
-    }, {
-      key: "add",
-      value: function add(el, id) {
-        var jel = el;
-        id = id || this.instance.getId(jel);
-        var idx = findWithFunction(this._dragSelection, function (p) {
-          return p.id === id;
-        });
-        if (idx === -1) {
-          this.instance.addClass(el, CLASS_DRAG_SELECTED);
-          this._dragSelection.push({
-            id: id,
-            jel: jel
-          });
-        }
-      }
-    }, {
-      key: "remove",
-      value: function remove(el) {
-        var _this6 = this;
-        var jel = el;
-        this._dragSelection = this._dragSelection.filter(function (p) {
-          var out = p.jel !== jel;
-          if (!out) {
-            _this6.instance.removeClass(p.jel, CLASS_DRAG_SELECTED);
-          }
-          return out;
-        });
-      }
-    }, {
-      key: "toggle",
-      value: function toggle(el) {
-        var jel = el;
-        var idx = findWithFunction(this._dragSelection, function (p) {
-          return p.jel === jel;
-        });
-        if (idx !== -1) {
-          this.remove(jel);
-        } else {
-          this.add(el);
-        }
-      }
-    }]);
-    return DragSelection;
-  }();
-
-  var CLASS_DELEGATED_DRAGGABLE = "jtk-delegated-draggable";
-  var CLASS_DRAGGABLE = "jtk-draggable";
-  var CLASS_DRAG_CONTAINER = "jtk-drag";
-  var CLASS_GHOST_PROXY = "jtk-ghost-proxy";
-  var CLASS_DRAG_ACTIVE = "jtk-drag-active";
-  var CLASS_DRAGGED = "jtk-dragged";
-  var CLASS_DRAG_HOVER = "jtk-drag-hover";
-  var DragManager = function () {
-    function DragManager(instance, dragSelection, options) {
-      var _this = this;
-      _classCallCheck$c(this, DragManager);
-      this.instance = instance;
-      this.dragSelection = dragSelection;
-      _defineProperty$c(this, "collicat", void 0);
-      _defineProperty$c(this, "drag", void 0);
-      _defineProperty$c(this, "_draggables", {});
-      _defineProperty$c(this, "_dlist", []);
-      _defineProperty$c(this, "_elementsWithEndpoints", {});
-      _defineProperty$c(this, "_draggablesForElements", {});
-      _defineProperty$c(this, "handlers", []);
-      _defineProperty$c(this, "_trackScroll", void 0);
-      _defineProperty$c(this, "_filtersToAdd", []);
-      this.collicat = new Collicat({
-        zoom: this.instance.currentZoom,
-        css: {
-          noSelect: this.instance.dragSelectClass,
-          delegatedDraggable: CLASS_DELEGATED_DRAGGABLE,
-          draggable: CLASS_DRAGGABLE,
-          drag: CLASS_DRAG_CONTAINER,
-          selected: CLASS_DRAG_SELECTED,
-          active: CLASS_DRAG_ACTIVE,
-          hover: CLASS_DRAG_HOVER,
-          ghostProxy: CLASS_GHOST_PROXY
-        }
-      });
-      this.instance.bind(EVENT_ZOOM, function (z) {
-        _this.collicat.setZoom(z);
-      });
-      options = options || {};
-      this._trackScroll = options.trackScroll !== false;
-    }
-    _createClass$c(DragManager, [{
-      key: "addHandler",
-      value: function addHandler(handler, dragOptions) {
-        var _this2 = this;
-        var o = extend({
-          selector: handler.selector
-        }, dragOptions || {});
-        o.start = wrap(o.start, function (p) {
-          return handler.onStart(p);
-        }, false);
-        o.drag = wrap(o.drag, function (p) {
-          return handler.onDrag(p);
-        });
-        o.stop = wrap(o.stop, function (p) {
-          return handler.onStop(p);
-        });
-        var handlerBeforeStart = (handler.onBeforeStart || function (p) {}).bind(handler);
-        o.beforeStart = wrap(o.beforeStart, function (p) {
-          return handlerBeforeStart(p);
-        });
-        o.dragInit = function (el) {
-          return handler.onDragInit(el);
-        };
-        o.dragAbort = function (el) {
-          return handler.onDragAbort(el);
-        };
-        if (handler.useGhostProxy) {
-          o.useGhostProxy = handler.useGhostProxy;
-          o.makeGhostProxy = handler.makeGhostProxy;
-        }
-        if (o.constrainFunction == null && o.containment != null) {
-          switch (o.containment) {
-            case ContainmentType.notNegative:
-              {
-                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
-                  return {
-                    x: Math.max(0, Math.min(pos.x)),
-                    y: Math.max(0, Math.min(pos.y))
-                  };
-                };
-                break;
-              }
-            case ContainmentType.parent:
-              {
-                var padding = o.containmentPadding || 5;
-                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
-                  var x = pos.x < 0 ? 0 : pos.x > _constrainRect.w - padding ? _constrainRect.w - padding : pos.x;
-                  var y = pos.y < 0 ? 0 : pos.y > _constrainRect.h - padding ? _constrainRect.h - padding : pos.y;
-                  return {
-                    x: x,
-                    y: y
-                  };
-                };
-                break;
-              }
-            case ContainmentType.parentEnclosed:
-              {
-                o.constrainFunction = function (pos, dragEl, _constrainRect, _size) {
-                  var x = pos.x < 0 ? 0 : pos.x + _size.w > _constrainRect.w ? _constrainRect.w - _size.w : pos.x;
-                  var y = pos.y < 0 ? 0 : pos.y + _size.h > _constrainRect.h ? _constrainRect.h - _size.h : pos.y;
-                  return {
-                    x: x,
-                    y: y
-                  };
-                };
-                break;
-              }
-          }
-        }
-        if (this.drag == null) {
-          o.trackScroll = this._trackScroll;
-          this.drag = this.collicat.draggable(this.instance.getContainer(), o);
-          forEach(this._filtersToAdd, function (filterToAdd) {
-            return _this2.drag.addFilter(filterToAdd[0], filterToAdd[1]);
-          });
-          this.drag.on(EVENT_REVERT, function (el) {
-            _this2.instance.revalidate(el);
-          });
-        } else {
-          this.drag.addSelector(o);
-        }
-        this.handlers.push({
-          handler: handler,
-          options: o
-        });
-        handler.init(this.drag);
-      }
-    }, {
-      key: "addSelector",
-      value: function addSelector(params, atStart) {
-        this.drag && this.drag.addSelector(params, atStart);
-      }
-    }, {
-      key: "addFilter",
-      value: function addFilter(filter, exclude) {
-        if (this.drag == null) {
-          this._filtersToAdd.push([filter, exclude === true]);
-        } else {
-          this.drag.addFilter(filter, exclude);
-        }
-      }
-    }, {
-      key: "removeFilter",
-      value: function removeFilter(filter) {
-        if (this.drag != null) {
-          this.drag.removeFilter(filter);
-        }
-      }
-    }, {
-      key: "setFilters",
-      value: function setFilters(filters) {
-        var _this3 = this;
-        forEach(filters, function (f) {
-          _this3.drag.addFilter(f[0], f[1]);
-        });
-      }
-    }, {
-      key: "reset",
-      value: function reset() {
-        var out = [];
-        forEach(this.handlers, function (p) {
-          p.handler.reset();
-        });
-        this.handlers.length = 0;
-        if (this.drag != null) {
-          var currentFilters = this.drag._filters;
-          for (var f in currentFilters) {
-            out.push([f, currentFilters[f][1]]);
-          }
-          this.collicat.destroyDraggable(this.instance.getContainer());
-        }
-        delete this.drag;
-        return out;
-      }
-    }, {
-      key: "setOption",
-      value: function setOption(handler, options) {
-        var handlerAndOptions = getWithFunction(this.handlers, function (p) {
-          return p.handler === handler;
-        });
-        if (handlerAndOptions != null) {
-          extend(handlerAndOptions.options, options || {});
-        }
-      }
-    }]);
-    return DragManager;
-  }();
-
-  function decodeDragGroupSpec(instance, spec) {
-    if (isString(spec)) {
-      return {
-        id: spec,
-        active: true
-      };
-    } else {
-      return {
-        id: instance.getId(spec),
-        active: spec.active
-      };
-    }
-  }
-  function isActiveDragGroupMember(dragGroup, el) {
-    var details = getFromSetWithFunction(dragGroup.members, function (m) {
-      return m.el === el;
-    });
-    if (details !== null) {
-      return details.active === true;
-    } else {
-      return false;
-    }
-  }
-  function getAncestors(el) {
-    var ancestors = [];
-    var p = el._jsPlumbParentGroup;
-    while (p != null) {
-      ancestors.push(p.el);
-      p = p.group;
-    }
-    return ancestors;
-  }
-  var ElementDragHandler = function () {
-    function ElementDragHandler(instance, _dragSelection) {
-      _classCallCheck$c(this, ElementDragHandler);
-      this.instance = instance;
-      this._dragSelection = _dragSelection;
-      _defineProperty$c(this, "selector", "> " + SELECTOR_MANAGED_ELEMENT + ":not(" + cls(CLASS_OVERLAY) + ")");
-      _defineProperty$c(this, "_dragOffset", null);
-      _defineProperty$c(this, "_groupLocations", []);
-      _defineProperty$c(this, "_intersectingGroups", []);
-      _defineProperty$c(this, "_currentDragParentGroup", null);
-      _defineProperty$c(this, "_dragGroupByElementIdMap", {});
-      _defineProperty$c(this, "_dragGroupMap", {});
-      _defineProperty$c(this, "_currentDragGroup", null);
-      _defineProperty$c(this, "_currentDragGroupOffsets", new Map());
-      _defineProperty$c(this, "_currentDragGroupSizes", new Map());
-      _defineProperty$c(this, "_dragPayload", null);
-      _defineProperty$c(this, "drag", void 0);
-      _defineProperty$c(this, "originalPosition", void 0);
-    }
-    _createClass$c(ElementDragHandler, [{
-      key: "onDragInit",
-      value: function onDragInit(el) {
-        return null;
-      }
-    }, {
-      key: "onDragAbort",
-      value: function onDragAbort(el) {
-        return null;
-      }
-    }, {
-      key: "getDropGroup",
-      value: function getDropGroup() {
-        var dropGroup = null;
-        if (this._intersectingGroups.length > 0) {
-          var targetGroup = this._intersectingGroups[0].groupLoc.group;
-          var intersectingElement = this._intersectingGroups[0].intersectingElement;
-          var currentGroup = intersectingElement._jsPlumbParentGroup;
-          if (currentGroup !== targetGroup) {
-            if (currentGroup == null || !currentGroup.overrideDrop(intersectingElement, targetGroup)) {
-              dropGroup = this._intersectingGroups[0];
-            }
-          }
-        }
-        return dropGroup;
-      }
-    }, {
-      key: "onStop",
-      value: function onStop(params) {
-        var _this = this;
-        var jel = params.drag.getDragElement();
-        var dropGroup = this.getDropGroup();
-        var elementsToProcess = [];
-        elementsToProcess.push({
-          el: jel,
-          id: this.instance.getId(jel),
-          pos: params.finalPos,
-          originalGroup: jel._jsPlumbParentGroup,
-          redrawResult: null,
-          originalPos: params.originalPos,
-          reverted: false,
-          dropGroup: dropGroup != null ? dropGroup.groupLoc.group : null
-        });
-        this._dragSelection.each(function (el, id, o, s, orig) {
-          if (el !== params.el) {
-            var pp = {
-              x: o.x,
-              y: o.y
-            };
-            var x = pp.x,
-                y = pp.y;
-            if (el._jsPlumbParentGroup && el._jsPlumbParentGroup.constrain) {
-              var constrainRect = {
-                w: el.parentNode.offsetWidth + el.parentNode.scrollLeft,
-                h: el.parentNode.offsetHeight + el.parentNode.scrollTop
-              };
-              x = Math.max(x, 0);
-              y = Math.max(y, 0);
-              x = Math.min(x, constrainRect.w - s.w);
-              y = Math.min(y, constrainRect.h - s.h);
-              pp.x = x;
-              pp.y = y;
-            }
-            elementsToProcess.push({
-              el: el,
-              id: id,
-              pos: pp,
-              originalPos: orig,
-              originalGroup: el._jsPlumbParentGroup,
-              redrawResult: null,
-              reverted: false,
-              dropGroup: dropGroup != null ? dropGroup.groupLoc.group : null
-            });
-          }
-        });
-        forEach(elementsToProcess, function (p) {
-          var wasInGroup = p.originalGroup != null,
-              isInOriginalGroup = wasInGroup && isInsideParent(_this.instance, p.el, p.pos),
-              parentOffset = {
-            x: 0,
-            y: 0
-          };
-          if (wasInGroup && !isInOriginalGroup) {
-            if (dropGroup == null) {
-              var orphanedPosition = _this._pruneOrOrphan(p, true, true);
-              if (orphanedPosition.pos != null) {
-                p.pos = orphanedPosition.pos.pos;
-              } else {
-                if (!orphanedPosition.pruned && p.originalGroup.revert) {
-                  p.pos = p.originalPos;
-                  p.reverted = true;
-                }
-              }
-            }
-          } else if (wasInGroup && isInOriginalGroup) {
-            parentOffset = _this.instance.viewport.getPosition(p.originalGroup.elId);
-          }
-          if (dropGroup != null && !isInOriginalGroup) {
-            _this.instance.groupManager.addToGroup(dropGroup.groupLoc.group, false, p.el);
-          } else {
-            p.dropGroup = null;
-          }
-          if (p.reverted) {
-            _this.instance.setPosition(p.el, p.pos);
-          }
-          p.redrawResult = _this.instance.setElementPosition(p.el, p.pos.x + parentOffset.x, p.pos.y + parentOffset.y);
-          _this.instance.removeClass(p.el, CLASS_DRAGGED);
-          _this.instance.select({
-            source: p.el
-          }).removeClass(_this.instance.elementDraggingClass + " " + _this.instance.sourceElementDraggingClass, true);
-          _this.instance.select({
-            target: p.el
-          }).removeClass(_this.instance.elementDraggingClass + " " + _this.instance.targetElementDraggingClass, true);
-        });
-        if (elementsToProcess[0].originalGroup != null) {
-          var currentGroup = jel._jsPlumbParentGroup;
-          if (currentGroup !== elementsToProcess[0].originalGroup) {
-            var originalElement = params.drag.getDragElement(true);
-            if (elementsToProcess[0].originalGroup.ghost) {
-              var o1 = this.instance.getOffset(this.instance.getGroupContentArea(currentGroup));
-              var o2 = this.instance.getOffset(this.instance.getGroupContentArea(elementsToProcess[0].originalGroup));
-              var o = {
-                x: o2.x + params.pos.x - o1.x,
-                y: o2.y + params.pos.y - o1.y
-              };
-              originalElement.style.left = o.x + "px";
-              originalElement.style.top = o.y + "px";
-              this.instance.revalidate(originalElement);
-            }
-          }
-        }
-        this.instance.fire(EVENT_DRAG_STOP, {
-          elements: elementsToProcess,
-          e: params.e,
-          el: jel,
-          payload: this._dragPayload
-        });
-        this._cleanup();
-      }
-    }, {
-      key: "_cleanup",
-      value: function _cleanup() {
-        var _this2 = this;
-        forEach(this._groupLocations, function (groupLoc) {
-          _this2.instance.removeClass(groupLoc.el, CLASS_DRAG_ACTIVE);
-          _this2.instance.removeClass(groupLoc.el, CLASS_DRAG_HOVER);
-        });
-        this._currentDragParentGroup = null;
-        this._groupLocations.length = 0;
-        this.instance.hoverSuspended = false;
-        this._dragOffset = null;
-        this._dragSelection.reset();
-        this._dragPayload = null;
-        this._currentDragGroupOffsets.clear();
-        this._currentDragGroupSizes.clear();
-        this._currentDragGroup = null;
-      }
-    }, {
-      key: "reset",
-      value: function reset() {}
-    }, {
-      key: "init",
-      value: function init(drag) {
-        this.drag = drag;
-      }
-    }, {
-      key: "onDrag",
-      value: function onDrag(params) {
-        var _this3 = this;
-        var el = params.drag.getDragElement();
-        var finalPos = params.pos;
-        var elSize = this.instance.getSize(el);
-        var ui = {
-          x: finalPos.x,
-          y: finalPos.y
-        };
-        this._intersectingGroups.length = 0;
-        if (this._dragOffset != null) {
-          ui.x += this._dragOffset.x;
-          ui.y += this._dragOffset.y;
-        }
-        var _one = function _one(el, bounds, findIntersectingGroups) {
-          if (findIntersectingGroups) {
-            var ancestorsOfIntersectingGroups = new Set();
-            forEach(_this3._groupLocations, function (groupLoc) {
-              if (!ancestorsOfIntersectingGroups.has(groupLoc.group.id) && intersects(bounds, groupLoc.r)) {
-                if (groupLoc.group !== _this3._currentDragParentGroup) {
-                  _this3.instance.addClass(groupLoc.el, CLASS_DRAG_HOVER);
-                }
-                _this3._intersectingGroups.push({
-                  groupLoc: groupLoc,
-                  intersectingElement: params.drag.getDragElement(true),
-                  d: 0
-                });
-                forEach(_this3.instance.groupManager.getAncestors(groupLoc.group), function (g) {
-                  return ancestorsOfIntersectingGroups.add(g.id);
-                });
-              } else {
-                _this3.instance.removeClass(groupLoc.el, CLASS_DRAG_HOVER);
-              }
-            });
-          }
-          _this3.instance.setElementPosition(el, bounds.x, bounds.y);
-          _this3.instance.fire(EVENT_DRAG_MOVE, {
-            el: el,
-            e: params.e,
-            pos: {
-              x: bounds.x,
-              y: bounds.y
-            },
-            originalPosition: _this3.originalPosition,
-            payload: _this3._dragPayload
-          });
-        };
-        var elBounds = {
-          x: ui.x,
-          y: ui.y,
-          w: elSize.w,
-          h: elSize.h
-        };
-        _one(el, elBounds, true);
-        this._dragSelection.updatePositions(finalPos, this.originalPosition, function (el, id, s, b) {
-          _one(el, b, false);
-        });
-        this._currentDragGroupOffsets.forEach(function (v, k) {
-          var s = _this3._currentDragGroupSizes.get(k);
-          var _b = {
-            x: elBounds.x + v[0].x,
-            y: elBounds.y + v[0].y,
-            w: s.w,
-            h: s.h
-          };
-          v[1].style.left = _b.x + "px";
-          v[1].style.top = _b.y + "px";
-          _one(v[1], _b, false);
-        });
-      }
-    }, {
-      key: "onStart",
-      value: function onStart(params) {
-        var _this4 = this;
-        var el = params.drag.getDragElement();
-        var elOffset = this.instance.getOffset(el);
-        this.originalPosition = {
-          x: params.pos.x,
-          y: params.pos.y
-        };
-        if (el._jsPlumbParentGroup) {
-          this._dragOffset = this.instance.getOffset(el.offsetParent);
-          this._currentDragParentGroup = el._jsPlumbParentGroup;
-        }
-        var cont = true;
-        var nd = el.getAttribute(ATTRIBUTE_NOT_DRAGGABLE);
-        if (this.instance.elementsDraggable === false || nd != null && nd !== FALSE$1) {
-          cont = false;
-        }
-        if (cont) {
-          this._groupLocations.length = 0;
-          this._intersectingGroups.length = 0;
-          this.instance.hoverSuspended = true;
-          var originalElement = params.drag.getDragElement(true),
-              descendants = originalElement.querySelectorAll(SELECTOR_MANAGED_ELEMENT),
-              ancestors = getAncestors(originalElement),
-              a = [];
-          Array.prototype.push.apply(a, descendants);
-          Array.prototype.push.apply(a, ancestors);
-          this._dragSelection.filterActiveSet(function (p) {
-            return a.indexOf(p.jel) === -1;
-          });
-          this._dragSelection.initialisePositions();
-          var _one = function _one(_el) {
-            if (!_el._isJsPlumbGroup || _this4.instance.allowNestedGroups) {
-              var isNotInAGroup = !_el._jsPlumbParentGroup;
-              var membersAreDroppable = isNotInAGroup || _el._jsPlumbParentGroup.dropOverride !== true;
-              var isGhostOrNotConstrained = !isNotInAGroup && (_el._jsPlumbParentGroup.ghost || _el._jsPlumbParentGroup.constrain !== true);
-              if (isNotInAGroup || membersAreDroppable && isGhostOrNotConstrained) {
-                forEach(_this4.instance.groupManager.getGroups(), function (group) {
-                  var elementGroup = _el._jsPlumbGroup;
-                  if (group.droppable !== false && group.enabled !== false && _el._jsPlumbGroup !== group && !_this4.instance.groupManager.isDescendant(group, elementGroup)) {
-                    var groupEl = group.el,
-                        s = _this4.instance.getSize(groupEl),
-                        o = _this4.instance.getOffset(groupEl),
-                        boundingRect = {
-                      x: o.x,
-                      y: o.y,
-                      w: s.w,
-                      h: s.h
-                    };
-                    var groupLocation = {
-                      el: groupEl,
-                      r: boundingRect,
-                      group: group
-                    };
-                    _this4._groupLocations.push(groupLocation);
-                    if (group !== _this4._currentDragParentGroup) {
-                      _this4.instance.addClass(groupEl, CLASS_DRAG_ACTIVE);
-                    }
-                  }
-                });
-                _this4._groupLocations.sort(function (a, b) {
-                  if (_this4.instance.groupManager.isDescendant(a.group, b.group)) {
-                    return -1;
-                  } else if (_this4.instance.groupManager.isAncestor(b.group, a.group)) {
-                    return 1;
-                  } else {
-                    return 0;
-                  }
-                });
-              }
-            }
-            _this4.instance.select({
-              source: _el
-            }).addClass(_this4.instance.elementDraggingClass + " " + _this4.instance.sourceElementDraggingClass, true);
-            _this4.instance.select({
-              target: _el
-            }).addClass(_this4.instance.elementDraggingClass + " " + _this4.instance.targetElementDraggingClass, true);
-            return _this4.instance.fire(EVENT_DRAG_START, {
-              el: _el,
-              e: params.e,
-              originalPosition: _this4.originalPosition,
-              pos: _this4.originalPosition
-            });
-          };
-          var elId = this.instance.getId(el);
-          this._currentDragGroup = this._dragGroupByElementIdMap[elId];
-          if (this._currentDragGroup && !isActiveDragGroupMember(this._currentDragGroup, el)) {
-            this._currentDragGroup = null;
-          }
-          var dragStartReturn = _one(el);
-          if (dragStartReturn === false) {
-            this._cleanup();
-            return false;
-          } else {
-            this._dragPayload = dragStartReturn;
-          }
-          if (this._currentDragGroup != null) {
-            this._currentDragGroupOffsets.clear();
-            this._currentDragGroupSizes.clear();
-            this._currentDragGroup.members.forEach(function (jel) {
-              var off = _this4.instance.getOffset(jel.el);
-              _this4._currentDragGroupOffsets.set(jel.elId, [{
-                x: off.x - elOffset.x,
-                y: off.y - elOffset.y
-              }, jel.el]);
-              _this4._currentDragGroupSizes.set(jel.elId, _this4.instance.getSize(jel.el));
-              _one(jel.el);
-            });
-          }
-        }
-        return cont;
-      }
-    }, {
-      key: "addToDragGroup",
-      value: function addToDragGroup(spec) {
-        var _this5 = this;
-        var details = decodeDragGroupSpec(this.instance, spec);
-        var dragGroup = this._dragGroupMap[details.id];
-        if (dragGroup == null) {
-          dragGroup = {
-            id: details.id,
-            members: new Set()
-          };
-          this._dragGroupMap[details.id] = dragGroup;
-        }
-        for (var _len = arguments.length, els = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-          els[_key - 1] = arguments[_key];
-        }
-        this.removeFromDragGroup.apply(this, els);
-        forEach(els, function (el) {
-          var elId = _this5.instance.getId(el);
-          dragGroup.members.add({
-            elId: elId,
-            el: el,
-            active: details.active
-          });
-          _this5._dragGroupByElementIdMap[elId] = dragGroup;
-        });
-      }
-    }, {
-      key: "removeFromDragGroup",
-      value: function removeFromDragGroup() {
-        var _this6 = this;
-        for (var _len2 = arguments.length, els = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          els[_key2] = arguments[_key2];
-        }
-        forEach(els, function (el) {
-          var id = _this6.instance.getId(el);
-          var dragGroup = _this6._dragGroupByElementIdMap[id];
-          if (dragGroup != null) {
-            var s = new Set();
-            dragGroup.members.forEach(function (member) {
-              if (member.el !== el) {
-                s.add(member);
-              }
-            });
-            dragGroup.members = s;
-            delete _this6._dragGroupByElementIdMap[id];
-          }
-        });
-      }
-    }, {
-      key: "setDragGroupState",
-      value: function setDragGroupState(state) {
-        var _this7 = this;
-        for (var _len3 = arguments.length, els = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-          els[_key3 - 1] = arguments[_key3];
-        }
-        var elementIds = els.map(function (el) {
-          return _this7.instance.getId(el);
-        });
-        forEach(elementIds, function (id) {
-          var dragGroup = _this7._dragGroupByElementIdMap[id];
-          if (dragGroup != null) {
-            var member = getFromSetWithFunction(dragGroup.members, function (m) {
-              return m.elId === id;
-            });
-            if (member != null) {
-              member.active = state;
-            }
-          }
-        });
-      }
-    }, {
-      key: "_pruneOrOrphan",
-      value: function _pruneOrOrphan(params, doNotTransferToAncestor, isDefinitelyNotInsideParent) {
-        var jel = params.el;
-        var orphanedPosition = {
-          pruned: false,
-          pos: null
-        };
-        if (isDefinitelyNotInsideParent || !isInsideParent(this.instance, jel, params.pos)) {
-          var group = jel._jsPlumbParentGroup;
-          if (group.prune) {
-            if (jel._isJsPlumbGroup) {
-              this.instance.removeGroup(jel._jsPlumbGroup);
-            } else {
-              group.remove(params.el, true);
-            }
-            orphanedPosition.pruned = true;
-          } else if (group.orphan) {
-            orphanedPosition.pos = this.instance.groupManager.orphan(params.el, doNotTransferToAncestor);
-            if (jel._isJsPlumbGroup) {
-              group.removeGroup(jel._jsPlumbGroup);
-            } else {
-              group.remove(params.el);
-            }
-          }
-        }
-        return orphanedPosition;
-      }
-    }]);
-    return ElementDragHandler;
-  }();
-
-  function _makeFloatingEndpoint(ep, endpoint, referenceCanvas, sourceElement, instance) {
-    var floatingAnchor = createFloatingAnchor(instance, sourceElement);
-    var p = {
-      paintStyle: ep.getPaintStyle(),
-      preparedAnchor: floatingAnchor,
-      element: sourceElement,
-      scope: ep.scope
-    };
-    if (endpoint != null) {
-      if (isAssignableFrom(endpoint, EndpointRepresentation)) {
-        p.existingEndpoint = endpoint;
-      } else {
-        p.endpoint = endpoint;
-      }
-    }
-    var actualEndpoint = instance._internal_newEndpoint(p);
-    instance._paintEndpoint(actualEndpoint, {});
-    return actualEndpoint;
-  }
-  function selectorFilter(evt, _el, selector, _instance, negate) {
-    var t = evt.target || evt.srcElement,
-        ok = false,
-        sel = _instance.getSelector(_el, selector);
-    for (var j = 0; j < sel.length; j++) {
-      if (sel[j] === t) {
-        ok = true;
-        break;
-      }
-    }
-    return negate ? !ok : ok;
-  }
-  var SELECTOR_DRAG_ACTIVE_OR_HOVER = cls(CLASS_DRAG_ACTIVE, CLASS_DRAG_HOVER);
-  var SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA = "sourceSelectorEndpoint";
-  var EndpointDragHandler = function () {
-    function EndpointDragHandler(instance) {
-      _classCallCheck$c(this, EndpointDragHandler);
-      this.instance = instance;
-      _defineProperty$c(this, "jpc", void 0);
-      _defineProperty$c(this, "existingJpc", void 0);
-      _defineProperty$c(this, "_originalAnchorSpec", void 0);
-      _defineProperty$c(this, "ep", void 0);
-      _defineProperty$c(this, "endpointRepresentation", void 0);
-      _defineProperty$c(this, "canvasElement", void 0);
-      _defineProperty$c(this, "_activeDefinition", void 0);
-      _defineProperty$c(this, "placeholderInfo", {
-        id: null,
-        element: null
-      });
-      _defineProperty$c(this, "floatingIndex", void 0);
-      _defineProperty$c(this, "floatingId", void 0);
-      _defineProperty$c(this, "floatingElement", void 0);
-      _defineProperty$c(this, "floatingEndpoint", void 0);
-      _defineProperty$c(this, "floatingAnchor", void 0);
-      _defineProperty$c(this, "_stopped", void 0);
-      _defineProperty$c(this, "inPlaceCopy", void 0);
-      _defineProperty$c(this, "endpointDropTargets", []);
-      _defineProperty$c(this, "currentDropTarget", null);
-      _defineProperty$c(this, "payload", void 0);
-      _defineProperty$c(this, "floatingConnections", {});
-      _defineProperty$c(this, "_forceReattach", void 0);
-      _defineProperty$c(this, "_forceDetach", void 0);
-      _defineProperty$c(this, "mousedownHandler", void 0);
-      _defineProperty$c(this, "mouseupHandler", void 0);
-      _defineProperty$c(this, "selector", cls(CLASS_ENDPOINT));
-      var container = instance.getContainer();
-      this.mousedownHandler = this._mousedownHandler.bind(this);
-      this.mouseupHandler = this._mouseupHandler.bind(this);
-      instance.on(container, EVENT_MOUSEDOWN, SELECTOR_MANAGED_ELEMENT, this.mousedownHandler);
-      instance.on(container, EVENT_MOUSEUP, [SELECTOR_MANAGED_ELEMENT, cls(CLASS_ENDPOINT)].join(","), this.mouseupHandler);
-    }
-    _createClass$c(EndpointDragHandler, [{
-      key: "_resolveDragParent",
-      value: function _resolveDragParent(def, eventTarget) {
-        var container = this.instance.getContainer();
-        var parent = findParent(eventTarget, SELECTOR_MANAGED_ELEMENT, container, true);
-        if (def.parentSelector != null) {
-          var child = findParent(eventTarget, def.parentSelector, container, true);
-          if (child != null) {
-            parent = findParent(child.parentNode, SELECTOR_MANAGED_ELEMENT, container, false);
-          }
-          return child || parent;
-        } else {
-          return parent;
-        }
-      }
-    }, {
-      key: "_mousedownHandler",
-      value: function _mousedownHandler(e) {
-        var sourceEl;
-        var sourceSelector;
-        if (e.which === 3 || e.button === 2) {
-          return;
-        }
-        var eventTarget = e.target || e.srcElement;
-        sourceSelector = this._getSourceDefinition(e);
-        if (sourceSelector != null) {
-          sourceEl = this._resolveDragParent(sourceSelector.def.def, eventTarget);
-          if (sourceEl == null || sourceEl.getAttribute(ATTRIBUTE_JTK_ENABLED) === FALSE$1) {
-            return;
-          }
-        }
-        if (sourceSelector) {
-          var sourceElement = e.currentTarget,
-              def;
-          if (eventTarget.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
-            consume(e);
-            this._activeDefinition = sourceSelector;
-            def = sourceSelector.def.def;
-            if (def.canAcceptNewConnection != null && !def.canAcceptNewConnection(sourceEl, e)) {
-              return false;
-            }
-            var elxy = getPositionOnElement(e, sourceEl, this.instance.currentZoom);
-            var tempEndpointParams = {
-              element: sourceEl
-            };
-            extend(tempEndpointParams, def);
-            tempEndpointParams.isTemporarySource = true;
-            if (def.scope) {
-              tempEndpointParams.scope = def.scope;
-            } else {
-              var scopeFromElement = eventTarget.getAttribute(ATTRIBUTE_JTK_SCOPE);
-              if (scopeFromElement != null) {
-                tempEndpointParams.scope = scopeFromElement;
-              }
-            }
-            var extractedParameters = def.parameterExtractor ? def.parameterExtractor(sourceEl, eventTarget, e) : {};
-            tempEndpointParams = merge(tempEndpointParams, extractedParameters);
-            if (tempEndpointParams.maxConnections != null && tempEndpointParams.maxConnections >= 0) {
-              var sourceCount = this.instance.select({
-                source: sourceEl
-              }).length;
-              if (sourceCount >= tempEndpointParams.maxConnections) {
-                consume(e);
-                if (def.onMaxConnections) {
-                  def.onMaxConnections({
-                    element: sourceEl,
-                    maxConnections: tempEndpointParams.maxConnections
-                  }, e);
-                }
-                e.stopImmediatePropagation && e.stopImmediatePropagation();
-                return false;
-              }
-            }
-            if (def.anchorPositionFinder) {
-              var maybeAnchorSpec = def.anchorPositionFinder(sourceEl, elxy, def, e);
-              if (maybeAnchorSpec != null) {
-                tempEndpointParams.anchor = maybeAnchorSpec;
-              }
-            }
-            this._originalAnchorSpec = tempEndpointParams.anchor || (this.instance.areDefaultAnchorsSet() ? this.instance.defaults.anchors[0] : this.instance.defaults.anchor);
-            var _originalAnchor = this.instance.router.prepareAnchor(this._originalAnchorSpec);
-            var anchorSpecToUse = [elxy.x, elxy.y, 0, 0];
-            if (_originalAnchor.locations.length > 0) {
-              anchorSpecToUse[2] = _originalAnchor.locations[0].ox;
-              anchorSpecToUse[3] = _originalAnchor.locations[0].oy;
-            } else if (_originalAnchor.isContinuous) {
-              var dx = elxy.x < 0.5 ? elxy.x : 1 - elxy.x;
-              var dy = elxy.y < 0.5 ? elxy.y : 1 - elxy.y;
-              anchorSpecToUse[2] = dx < dy ? elxy.x < 0.5 ? -1 : 1 : 0;
-              anchorSpecToUse[3] = dy < dx ? elxy.y < 0.5 ? -1 : 1 : 0;
-            }
-            tempEndpointParams.anchor = anchorSpecToUse;
-            tempEndpointParams.deleteOnEmpty = true;
-            this.ep = this.instance._internal_newEndpoint(tempEndpointParams);
-            var payload = {};
-            if (def.extract) {
-              for (var att in def.extract) {
-                var v = eventTarget.getAttribute(att);
-                if (v) {
-                  payload[def.extract[att]] = v;
-                }
-              }
-              this.ep.mergeParameters(payload);
-            }
-            if (tempEndpointParams.uniqueEndpoint) {
-              var elementId = this.ep.elementId;
-              var existingUniqueEndpoint = this.instance.getManagedData(elementId, SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA, sourceSelector.id);
-              if (existingUniqueEndpoint == null) {
-                this.instance.setManagedData(elementId, SOURCE_SELECTOR_UNIQUE_ENDPOINT_DATA, sourceSelector.id, this.ep);
-                this.ep.deleteOnEmpty = false;
-              } else {
-                this.ep.finalEndpoint = existingUniqueEndpoint;
-              }
-            }
-            sourceElement._jsPlumbOrphanedEndpoints = sourceElement._jsPlumbOrphanedEndpoints || [];
-            sourceElement._jsPlumbOrphanedEndpoints.push(this.ep);
-            this.instance.trigger(this.ep.endpoint.canvas, EVENT_MOUSEDOWN, e, payload);
-          }
-        }
-      }
-    }, {
-      key: "_mouseupHandler",
-      value: function _mouseupHandler(e) {
-        var el = e.currentTarget || e.srcElement;
-        if (el._jsPlumbOrphanedEndpoints) {
-          each(el._jsPlumbOrphanedEndpoints, this.instance._maybePruneEndpoint.bind(this.instance));
-          el._jsPlumbOrphanedEndpoints.length = 0;
-        }
-        this._activeDefinition = null;
-      }
-    }, {
-      key: "onDragInit",
-      value: function onDragInit(el) {
-        var ipco = this.instance.getOffset(el),
-            ips = this.instance.getSize(el);
-        this._makeDraggablePlaceholder(ipco, ips);
-        this.placeholderInfo.element.jtk = el.jtk;
-        return this.placeholderInfo.element;
-      }
-    }, {
-      key: "onDragAbort",
-      value: function onDragAbort(el) {
-        this._cleanupDraggablePlaceholder();
-      }
-    }, {
-      key: "_makeDraggablePlaceholder",
-      value: function _makeDraggablePlaceholder(ipco, ips) {
-        this.placeholderInfo = this.placeholderInfo || {};
-        var n = createElement(ELEMENT_DIV, {
-          position: "absolute"
-        });
-        this.instance._appendElement(n, this.instance.getContainer());
-        var id = this.instance.getId(n);
-        this.instance.setPosition(n, ipco);
-        n.style.width = ips.w + "px";
-        n.style.height = ips.h + "px";
-        this.instance.manage(n);
-        this.placeholderInfo.id = id;
-        this.placeholderInfo.element = n;
-        return n;
-      }
-    }, {
-      key: "_cleanupDraggablePlaceholder",
-      value: function _cleanupDraggablePlaceholder() {
-        if (this.placeholderInfo.element) {
-          this.instance.unmanage(this.placeholderInfo.element, true);
-          delete this.placeholderInfo.element;
-          delete this.placeholderInfo.id;
-        }
-      }
-    }, {
-      key: "reset",
-      value: function reset() {
-        var c = this.instance.getContainer();
-        this.instance.off(c, EVENT_MOUSEUP, this.mouseupHandler);
-        this.instance.off(c, EVENT_MOUSEDOWN, this.mousedownHandler);
-      }
-    }, {
-      key: "init",
-      value: function init(drag) {}
-    }, {
-      key: "startNewConnectionDrag",
-      value: function startNewConnectionDrag(scope, data) {
-        this.jpc = this.instance._newConnection({
-          sourceEndpoint: this.ep,
-          targetEndpoint: this.floatingEndpoint,
-          source: this.ep.element,
-          target: this.placeholderInfo.element,
-          paintStyle: this.ep.connectorStyle,
-          hoverPaintStyle: this.ep.connectorHoverStyle,
-          connector: this.ep.connector,
-          overlays: this.ep.connectorOverlays,
-          type: this.ep.edgeType,
-          cssClass: this.ep.connectorClass,
-          hoverClass: this.ep.connectorHoverClass,
-          scope: scope,
-          data: data
-        });
-        this.jpc.pending = true;
-        this.jpc.addClass(this.instance.draggingClass);
-        this.floatingEndpoint.addClass(this.instance.draggingClass);
-        this.instance.fire(EVENT_CONNECTION_DRAG, this.jpc);
-      }
-    }, {
-      key: "startExistingConnectionDrag",
-      value: function startExistingConnectionDrag() {
-        this.existingJpc = true;
-        this.instance.setHover(this.jpc, false);
-        var anchorIdx = this.jpc.endpoints[0].id === this.ep.id ? 0 : 1;
-        this.ep.detachFromConnection(this.jpc, null, true);
-        this.floatingEndpoint.addConnection(this.jpc);
-        this.floatingEndpoint.addClass(this.instance.draggingClass);
-        this.instance.fire(EVENT_CONNECTION_DRAG, this.jpc);
-        this.instance.sourceOrTargetChanged(this.jpc.endpoints[anchorIdx].elementId, this.placeholderInfo.id, this.jpc, this.placeholderInfo.element, anchorIdx);
-        this.jpc.suspendedEndpoint = this.jpc.endpoints[anchorIdx];
-        this.jpc.suspendedElement = this.jpc.endpoints[anchorIdx].element;
-        this.jpc.suspendedElementId = this.jpc.endpoints[anchorIdx].elementId;
-        this.jpc.suspendedElementType = anchorIdx === 0 ? SOURCE$1 : TARGET$1;
-        this.instance.setHover(this.jpc.suspendedEndpoint, false);
-        this.floatingEndpoint.referenceEndpoint = this.jpc.suspendedEndpoint;
-        this.floatingEndpoint.mergeParameters(this.jpc.suspendedEndpoint.parameters);
-        this.jpc.endpoints[anchorIdx] = this.floatingEndpoint;
-        this.jpc.addClass(this.instance.draggingClass);
-        this.floatingId = this.placeholderInfo.id;
-        this.floatingIndex = anchorIdx;
-      }
-    }, {
-      key: "_shouldStartDrag",
-      value: function _shouldStartDrag() {
-        var _continue = true;
-        if (!this.ep.enabled) {
-          _continue = false;
-        }
-        if (this.jpc == null && !this.ep.isSource && !this.ep.isTemporarySource) {
-          _continue = false;
-        }
-        if (this.ep.isSource && this.ep.isFull() && !(this.jpc != null && this.ep.dragAllowedWhenFull)) {
-          _continue = false;
-        }
-        if (this.jpc != null && !this.jpc.isDetachable(this.ep)) {
-          if (this.ep.isFull()) {
-            _continue = false;
-          } else {
-            this.jpc = null;
-          }
-        }
-        var payload = {};
-        var beforeDrag = this.instance.checkCondition(this.jpc == null ? INTERCEPT_BEFORE_DRAG : INTERCEPT_BEFORE_START_DETACH, {
-          endpoint: this.ep,
-          source: this.ep.element,
-          sourceId: this.ep.elementId,
-          connection: this.jpc
-        });
-        if (beforeDrag === false) {
-          _continue = false;
-        }
-        else if (_typeof(beforeDrag) === "object") {
-          payload = beforeDrag;
-          extend(payload, this.payload || {});
-        } else {
-          payload = this.payload || {};
-        }
-        return [_continue, payload];
-      }
-    }, {
-      key: "_createFloatingEndpoint",
-      value: function _createFloatingEndpoint(canvasElement) {
-        var endpointToFloat = this.ep.endpoint;
-        if (this.ep.edgeType != null) {
-          var aae = this.instance._deriveEndpointAndAnchorSpec(this.ep.edgeType);
-          endpointToFloat = aae.endpoints[1];
-        }
-        this.floatingEndpoint = _makeFloatingEndpoint(this.ep, endpointToFloat, canvasElement, this.placeholderInfo.element, this.instance);
-        this.floatingAnchor = this.floatingEndpoint._anchor;
-        this.floatingEndpoint.deleteOnEmpty = true;
-        this.floatingElement = this.floatingEndpoint.endpoint.canvas;
-        this.floatingId = this.instance.getId(this.floatingElement);
-      }
-    }, {
-      key: "_populateTargets",
-      value: function _populateTargets(canvasElement, eventTarget, event) {
-        var _this = this;
-        var isSourceDrag = this.jpc && this.jpc.endpoints[0] === this.ep;
-        var boundingRect;
-        var matchingEndpoints = this.instance.getContainer().querySelectorAll([".", CLASS_ENDPOINT, "[", ATTRIBUTE_SCOPE_PREFIX, this.ep.scope, "]"].join(""));
-        forEach(matchingEndpoints, function (candidate) {
-          if ((_this.jpc != null || candidate !== canvasElement) && candidate !== _this.floatingElement && !candidate.jtk.endpoint.isFull()) {
-            if (isSourceDrag && candidate.jtk.endpoint.isSource || !isSourceDrag && candidate.jtk.endpoint.isTarget) {
-              var o = _this.instance.getOffset(candidate),
-                  s = _this.instance.getSize(candidate);
-              boundingRect = {
-                x: o.x,
-                y: o.y,
-                w: s.w,
-                h: s.h
-              };
-              _this.endpointDropTargets.push({
-                el: candidate,
-                targetEl: candidate,
-                r: boundingRect,
-                endpoint: candidate.jtk.endpoint,
-                def: null
-              });
-              _this.instance.addClass(candidate, CLASS_DRAG_ACTIVE);
-            }
-          }
-        });
-        if (isSourceDrag) {
-          var sourceDef = getWithFunction(this.instance.sourceSelectors, function (sSel) {
-            return sSel.isEnabled() && (sSel.def.def.scope == null || sSel.def.def.scope === _this.ep.scope);
-          });
-          if (sourceDef != null) {
-            var targetZones = this.instance.getContainer().querySelectorAll(sourceDef.redrop === REDROP_POLICY_ANY ? SELECTOR_MANAGED_ELEMENT : sourceDef.selector);
-            forEach(targetZones, function (el) {
-              if (el.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
-                var scopeFromElement = el.getAttribute(ATTRIBUTE_JTK_SCOPE);
-                if (scopeFromElement != null && scopeFromElement !== _this.ep.scope) {
-                  return;
-                }
-                var d = {
-                  r: null,
-                  el: el
-                };
-                d.targetEl = findParent(el, SELECTOR_MANAGED_ELEMENT, _this.instance.getContainer(), true);
-                var o = _this.instance.getOffset(d.el),
-                    s = _this.instance.getSize(d.el);
-                d.r = {
-                  x: o.x,
-                  y: o.y,
-                  w: s.w,
-                  h: s.h
-                };
-                if (sourceDef.def.def.rank != null) {
-                  d.rank = sourceDef.def.def.rank;
-                }
-                d.def = sourceDef;
-                _this.endpointDropTargets.push(d);
-                _this.instance.addClass(d.targetEl, CLASS_DRAG_ACTIVE);
-              }
-            });
-          }
-        } else {
-          var targetDefs = getAllWithFunction(this.instance.targetSelectors, function (tSel) {
-            return tSel.isEnabled();
-          });
-          targetDefs.forEach(function (targetDef) {
-            var targetZones = _this.instance.getContainer().querySelectorAll(targetDef.selector);
-            forEach(targetZones, function (el) {
-              if (el.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
-                var scopeFromElement = el.getAttribute(ATTRIBUTE_JTK_SCOPE);
-                if (scopeFromElement != null && scopeFromElement !== _this.ep.scope) {
-                  return;
-                }
-                var d = {
-                  r: null,
-                  el: el
-                };
-                if (targetDef.def.def.parentSelector != null) {
-                  d.targetEl = findParent(el, targetDef.def.def.parentSelector, _this.instance.getContainer(), true);
-                }
-                if (d.targetEl == null) {
-                  d.targetEl = findParent(el, SELECTOR_MANAGED_ELEMENT, _this.instance.getContainer(), true);
-                }
-                if (targetDef.def.def.allowLoopback === false || _this._activeDefinition && _this._activeDefinition.def.def.allowLoopback === false) {
-                  if (d.targetEl === _this.ep.element) {
-                    return;
-                  }
-                }
-                if (targetDef.def.def.canAcceptNewConnection != null && !targetDef.def.def.canAcceptNewConnection(d.targetEl, event)) {
-                  return;
-                }
-                var maxConnections = targetDef.def.def.maxConnections;
-                if (maxConnections != null && maxConnections !== -1) {
-                  if (_this.instance.select({
-                    target: d.targetEl
-                  }).length >= maxConnections) {
-                    return;
-                  }
-                }
-                var o = _this.instance.getOffset(el),
-                    s = _this.instance.getSize(el);
-                d.r = {
-                  x: o.x,
-                  y: o.y,
-                  w: s.w,
-                  h: s.h
-                };
-                d.def = targetDef.def;
-                if (targetDef.def.def.rank != null) {
-                  d.rank = targetDef.def.def.rank;
-                }
-                _this.endpointDropTargets.push(d);
-                _this.instance.addClass(d.targetEl, CLASS_DRAG_ACTIVE);
-              }
-            });
-          });
-        }
-        this.endpointDropTargets.sort(function (a, b) {
-          if (a.targetEl._isJsPlumbGroup && !b.targetEl._isJsPlumbGroup) {
-            return 1;
-          } else if (!a.targetEl._isJsPlumbGroup && b.targetEl._isJsPlumbGroup) {
-            return -1;
-          } else {
-            if (a.targetEl._isJsPlumbGroup && b.targetEl._isJsPlumbGroup) {
-              if (_this.instance.groupManager.isAncestor(a.targetEl._jsPlumbGroup, b.targetEl._jsPlumbGroup)) {
-                return -1;
-              } else if (_this.instance.groupManager.isAncestor(b.targetEl._jsPlumbGroup, a.targetEl._jsPlumbGroup)) {
-                return 1;
-              }
-            } else {
-              if (a.rank != null && b.rank != null) {
-                if (a.rank > b.rank) {
-                  return -1;
-                } else if (a.rank < b.rank) {
-                  return 1;
-                } else ;
-              } else {
-                return 0;
-              }
-            }
-          }
-        });
-      }
-    }, {
-      key: "onStart",
-      value: function onStart(p) {
-        this.endpointDropTargets.length = 0;
-        this.currentDropTarget = null;
-        this._stopped = false;
-        var dragEl = p.drag.getDragElement();
-        this.ep = dragEl.jtk.endpoint;
-        var eventTarget = p.e.srcElement || p.e.target;
-        if (!this.ep) {
-          return false;
-        }
-        this.endpointRepresentation = this.ep.endpoint;
-        this.canvasElement = this.endpointRepresentation.canvas;
-        this.jpc = this.ep.connectorSelector();
-        var _this$_shouldStartDra = this._shouldStartDrag(),
-            _this$_shouldStartDra2 = _slicedToArray$2(_this$_shouldStartDra, 2),
-            _continue = _this$_shouldStartDra2[0],
-            payload = _this$_shouldStartDra2[1];
-        if (_continue === false) {
-          this._stopped = true;
-          return false;
-        }
-        this.instance.setHover(this.ep, false);
-        this.instance.isConnectionBeingDragged = true;
-        if (this.jpc && !this.ep.isFull() && this.ep.isSource) {
-          this.jpc = null;
-        }
-        this._createFloatingEndpoint(this.canvasElement);
-        this._populateTargets(this.canvasElement, eventTarget, p.e);
-        if (this.jpc == null) {
-          this.startNewConnectionDrag(this.ep.scope, payload);
-        } else {
-          this.startExistingConnectionDrag();
-        }
-        this._registerFloatingConnection(this.placeholderInfo, this.jpc, this.floatingEndpoint);
-        this.instance.currentlyDragging = true;
-      }
-    }, {
-      key: "onBeforeStart",
-      value: function onBeforeStart(beforeStartParams) {
-        this.payload = beforeStartParams.e.payload || {};
-      }
-    }, {
-      key: "onDrag",
-      value: function onDrag(params) {
-        if (this._stopped) {
-          return true;
-        }
-        if (this.placeholderInfo.element) {
-          var floatingElementSize = this.instance.getSize(this.floatingElement);
-          this.instance.setElementPosition(this.placeholderInfo.element, params.pos.x, params.pos.y);
-          var boundingRect = {
-            x: params.pos.x,
-            y: params.pos.y,
-            w: floatingElementSize.w,
-            h: floatingElementSize.h
-          },
-              newDropTarget,
-              idx,
-              _cont;
-          for (var i = 0; i < this.endpointDropTargets.length; i++) {
-            if (intersects(boundingRect, this.endpointDropTargets[i].r)) {
-              newDropTarget = this.endpointDropTargets[i];
-              break;
-            }
-          }
-          if (newDropTarget !== this.currentDropTarget && this.currentDropTarget != null) {
-            idx = this._getFloatingAnchorIndex();
-            this.instance.removeClass(this.currentDropTarget.el, CLASS_DRAG_HOVER);
-            if (this.currentDropTarget.endpoint) {
-              this.currentDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropAllowedClass);
-              this.currentDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropForbiddenClass);
-            }
-            this.floatingAnchor.out();
-          }
-          if (newDropTarget != null) {
-            this.instance.addClass(newDropTarget.el, CLASS_DRAG_HOVER);
-            idx = this._getFloatingAnchorIndex();
-            if (newDropTarget.endpoint != null) {
-              _cont = newDropTarget.endpoint.isSource && idx === 0 || newDropTarget.endpoint.isTarget && idx !== 0 || this.jpc.suspendedEndpoint && newDropTarget.endpoint.referenceEndpoint && newDropTarget.endpoint.referenceEndpoint.id === this.jpc.suspendedEndpoint.id;
-              if (_cont) {
-                var bb = this.instance.checkCondition(CHECK_DROP_ALLOWED, {
-                  sourceEndpoint: this.jpc.endpoints[idx],
-                  targetEndpoint: newDropTarget.endpoint.endpoint,
-                  connection: this.jpc
-                });
-                if (bb) {
-                  newDropTarget.endpoint.endpoint.addClass(this.instance.endpointDropAllowedClass);
-                  newDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropForbiddenClass);
-                } else {
-                  newDropTarget.endpoint.endpoint.removeClass(this.instance.endpointDropAllowedClass);
-                  newDropTarget.endpoint.endpoint.addClass(this.instance.endpointDropForbiddenClass);
-                }
-                this.floatingAnchor.over(newDropTarget.endpoint);
-                this.instance._paintConnection(this.jpc);
-              } else {
-                newDropTarget = null;
-              }
-            }
-          }
-          this.currentDropTarget = newDropTarget;
-        }
-      }
-    }, {
-      key: "_maybeCleanup",
-      value: function _maybeCleanup(ep) {
-        if (ep._mtNew && ep.connections.length === 0) {
-          this.instance.deleteEndpoint(ep);
-        } else {
-          delete ep._mtNew;
-        }
-      }
-    }, {
-      key: "_reattachOrDiscard",
-      value: function _reattachOrDiscard(originalEvent) {
-        var existingConnection = this.jpc.suspendedEndpoint != null;
-        var idx = this._getFloatingAnchorIndex();
-        if (existingConnection && this._shouldReattach(originalEvent)) {
-          if (idx === 0) {
-            this.jpc.source = this.jpc.suspendedElement;
-            this.jpc.sourceId = this.jpc.suspendedElementId;
-          } else {
-            this.jpc.target = this.jpc.suspendedElement;
-            this.jpc.targetId = this.jpc.suspendedElementId;
-          }
-          this._doForceReattach(idx);
-          return true;
-        } else {
-          this._discard(idx, originalEvent);
-          return false;
-        }
-      }
-    }, {
-      key: "onStop",
-      value: function onStop(p) {
-        var _this2 = this;
-        var originalEvent = p.e;
-        this.instance.isConnectionBeingDragged = false;
-        this.instance.currentlyDragging = false;
-        var classesToRemove = classList(CLASS_DRAG_HOVER, CLASS_DRAG_ACTIVE);
-        var matchingSelectors = this.instance.getContainer().querySelectorAll(SELECTOR_DRAG_ACTIVE_OR_HOVER);
-        forEach(matchingSelectors, function (el) {
-          _this2.instance.removeClass(el, classesToRemove);
-        });
-        if (this.jpc && this.jpc.endpoints != null) {
-          var existingConnection = this.jpc.suspendedEndpoint != null;
-          var idx = this._getFloatingAnchorIndex();
-          var suspendedEndpoint = this.jpc.suspendedEndpoint;
-          var dropEndpoint;
-          if (this.currentDropTarget != null) {
-            dropEndpoint = this._getDropEndpoint(p, this.jpc);
-            if (dropEndpoint == null) {
-              !this._reattachOrDiscard(p.e);
-            } else {
-              if (suspendedEndpoint && suspendedEndpoint.id === dropEndpoint.id) {
-                this._doForceReattach(idx);
-              } else {
-                if (!dropEndpoint.enabled) {
-                  this._reattachOrDiscard(p.e);
-                } else if (dropEndpoint.isFull()) {
-                  dropEndpoint.fire(EVENT_MAX_CONNECTIONS, {
-                    endpoint: this,
-                    connection: this.jpc,
-                    maxConnections: this.instance.defaults.maxConnections
-                  }, originalEvent);
-                  this._reattachOrDiscard(p.e);
-                } else {
-                  if (idx === 0) {
-                    this.jpc.source = dropEndpoint.element;
-                    this.jpc.sourceId = dropEndpoint.elementId;
-                  } else {
-                    this.jpc.target = dropEndpoint.element;
-                    this.jpc.targetId = dropEndpoint.elementId;
-                  }
-                  var _doContinue = true;
-                  if (existingConnection && this.jpc.suspendedEndpoint.id !== dropEndpoint.id) {
-                    if (!this.jpc.isDetachAllowed(this.jpc) || !this.jpc.endpoints[idx].isDetachAllowed(this.jpc) || !this.jpc.suspendedEndpoint.isDetachAllowed(this.jpc) || !this.instance.checkCondition("beforeDetach", this.jpc)) {
-                      _doContinue = false;
-                    }
-                  }
-                  _doContinue = _doContinue && dropEndpoint.isDropAllowed(this.jpc.sourceId, this.jpc.targetId, this.jpc.scope, this.jpc, dropEndpoint);
-                  if (_doContinue) {
-                    this._drop(dropEndpoint, idx, originalEvent, _doContinue);
-                  } else {
-                    this._reattachOrDiscard(p.e);
-                  }
-                }
-              }
-            }
-          } else {
-            this._reattachOrDiscard(p.e);
-          }
-          this.instance._refreshEndpoint(this.ep);
-          this.ep.removeClass(this.instance.draggingClass);
-          this._cleanupDraggablePlaceholder();
-          this.jpc.removeClass(this.instance.draggingClass);
-          delete this.jpc.suspendedEndpoint;
-          delete this.jpc.suspendedElement;
-          delete this.jpc.suspendedElementType;
-          delete this.jpc.suspendedElementId;
-          delete this.jpc.suspendedIndex;
-          delete this.floatingId;
-          delete this.floatingIndex;
-          delete this.floatingElement;
-          delete this.floatingEndpoint;
-          delete this.floatingAnchor;
-          delete this.jpc.pending;
-          if (dropEndpoint != null) {
-            this._maybeCleanup(dropEndpoint);
-          }
-        }
-      }
-    }, {
-      key: "_getSourceDefinition",
-      value: function _getSourceDefinition(evt) {
-        var selector;
-        for (var i = 0; i < this.instance.sourceSelectors.length; i++) {
-          selector = this.instance.sourceSelectors[i];
-          if (selector.isEnabled()) {
-            var r = selectorFilter(evt, this.instance.getContainer(), selector.selector, this.instance, selector.exclude);
-            if (r !== false) {
-              return selector;
-            }
-          }
-        }
-      }
-    }, {
-      key: "_getDropEndpoint",
-      value: function _getDropEndpoint(p, jpc) {
-        var dropEndpoint;
-        if (this.currentDropTarget.endpoint == null) {
-          var targetDefinition = this.currentDropTarget.def;
-          var eventTarget = p.e.target || p.e.srcElement;
-          if (targetDefinition == null) {
-            return null;
-          }
-          var targetElement = this.currentDropTarget.targetEl;
-          var elxy = getPositionOnElement(p.e, targetElement, this.instance.currentZoom);
-          var eps = this.instance._deriveEndpointAndAnchorSpec(jpc.getType().join(" "), true);
-          var pp = eps.endpoints ? extend(p, {
-            endpoint: targetDefinition.def.endpoint || eps.endpoints[1]
-          }) : p;
-          var anchorsToUse = this.instance.validAnchorsSpec(eps.anchors) ? eps.anchors : this.instance.areDefaultAnchorsSet() ? this.instance.defaults.anchors : null;
-          var anchorFromDef = targetDefinition.def.anchor;
-          var anchorFromPositionFinder = targetDefinition.def.anchorPositionFinder ? targetDefinition.def.anchorPositionFinder(targetElement, elxy, targetDefinition.def, p.e) : null;
-          var dropAnchor = anchorFromPositionFinder != null ? anchorFromPositionFinder : anchorFromDef != null ? anchorFromDef : anchorsToUse != null && anchorsToUse[1] != null ? anchorsToUse[1] : null;
-          if (dropAnchor != null) {
-            pp = extend(pp, {
-              anchor: dropAnchor
-            });
-          }
-          if (targetDefinition.def.portId != null) {
-            pp.portId = targetDefinition.def.portId;
-          }
-          var extractedParameters = targetDefinition.def.parameterExtractor ? targetDefinition.def.parameterExtractor(this.currentDropTarget.el, eventTarget, p.e) : {};
-          pp = merge(pp, extractedParameters);
-          pp.element = targetElement;
-          dropEndpoint = this.instance._internal_newEndpoint(pp);
-          dropEndpoint._mtNew = true;
-          dropEndpoint.deleteOnEmpty = true;
-          if (targetDefinition.def.parameters) {
-            dropEndpoint.mergeParameters(targetDefinition.def.parameters);
-          }
-          if (targetDefinition.def.extract) {
-            var tpayload = {};
-            for (var att in targetDefinition.def.extract) {
-              var v = this.currentDropTarget.el.getAttribute(att);
-              if (v) {
-                tpayload[targetDefinition.def.extract[att]] = v;
-              }
-            }
-            dropEndpoint.mergeParameters(tpayload);
-          }
-        } else {
-          dropEndpoint = this.currentDropTarget.endpoint;
-        }
-        if (dropEndpoint) {
-          dropEndpoint.removeClass(this.instance.endpointDropAllowedClass);
-          dropEndpoint.removeClass(this.instance.endpointDropForbiddenClass);
-        }
-        return dropEndpoint;
-      }
-    }, {
-      key: "_doForceReattach",
-      value: function _doForceReattach(idx) {
-        this.floatingEndpoint.detachFromConnection(this.jpc, null, true);
-        this.jpc.endpoints[idx] = this.jpc.suspendedEndpoint;
-        this.instance.setHover(this.jpc, false);
-        this.jpc._forceDetach = true;
-        this.jpc.suspendedEndpoint.addConnection(this.jpc);
-        this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.suspendedEndpoint.elementId, this.jpc, this.jpc.suspendedEndpoint.element, idx);
-        this.instance.deleteEndpoint(this.floatingEndpoint);
-        this.instance.repaint(this.jpc.source);
-        delete this.jpc._forceDetach;
-      }
-    }, {
-      key: "_shouldReattach",
-      value: function _shouldReattach(originalEvent) {
-        return this.jpc.isReattach() || this.jpc._forceReattach || !functionChain(true, false, [[this.jpc.endpoints[0], IS_DETACH_ALLOWED, [this.jpc]], [this.jpc.endpoints[1], IS_DETACH_ALLOWED, [this.jpc]], [this.jpc, IS_DETACH_ALLOWED, [this.jpc]], [this.instance, CHECK_CONDITION, [INTERCEPT_BEFORE_DETACH, this.jpc]]]);
-      }
-    }, {
-      key: "_discard",
-      value: function _discard(idx, originalEvent) {
-        if (this.jpc.pending) {
-          this.instance.fire(EVENT_CONNECTION_ABORT, this.jpc, originalEvent);
-        } else {
-          if (idx === 0) {
-            this.jpc.source = this.jpc.suspendedEndpoint.element;
-            this.jpc.sourceId = this.jpc.suspendedEndpoint.elementId;
-          } else {
-            this.jpc.target = this.jpc.suspendedEndpoint.element;
-            this.jpc.targetId = this.jpc.suspendedEndpoint.elementId;
-          }
-          this.jpc.endpoints[idx] = this.jpc.suspendedEndpoint;
-        }
-        if (this.floatingEndpoint) {
-          this.floatingEndpoint.detachFromConnection(this.jpc);
-        }
-        this.instance.deleteConnection(this.jpc, {
-          originalEvent: originalEvent,
-          force: true
-        });
-      }
-    }, {
-      key: "_drop",
-      value: function _drop(dropEndpoint, idx, originalEvent, optionalData) {
-        this.jpc.endpoints[idx].detachFromConnection(this.jpc);
-        if (this.jpc.suspendedEndpoint) {
-          this.jpc.suspendedEndpoint.detachFromConnection(this.jpc);
-        }
-        this.jpc.endpoints[idx] = dropEndpoint;
-        dropEndpoint.addConnection(this.jpc);
-        if (this.jpc.suspendedEndpoint) {
-          var suspendedElementId = this.jpc.suspendedEndpoint.elementId;
-          this.instance.fireMoveEvent({
-            index: idx,
-            originalSourceId: idx === 0 ? suspendedElementId : this.jpc.sourceId,
-            newSourceId: idx === 0 ? dropEndpoint.elementId : this.jpc.sourceId,
-            originalTargetId: idx === 1 ? suspendedElementId : this.jpc.targetId,
-            newTargetId: idx === 1 ? dropEndpoint.elementId : this.jpc.targetId,
-            originalEndpoint: this.jpc.suspendedEndpoint,
-            connection: this.jpc,
-            newEndpoint: dropEndpoint
-          }, originalEvent);
-        }
-        if (idx === 1) {
-          this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.targetId, this.jpc, this.jpc.target, 1);
-        } else {
-          this.instance.sourceOrTargetChanged(this.floatingId, this.jpc.sourceId, this.jpc, this.jpc.source, 0);
-        }
-        if (this.jpc.endpoints[0].finalEndpoint) {
-          var _toDelete = this.jpc.endpoints[0];
-          _toDelete.detachFromConnection(this.jpc);
-          this.jpc.endpoints[0] = this.jpc.endpoints[0].finalEndpoint;
-          this.jpc.endpoints[0].addConnection(this.jpc);
-        }
-        if (isObject(optionalData)) {
-          this.jpc.mergeData(optionalData);
-        }
-        if (this._originalAnchorSpec) {
-          this.jpc.endpoints[0].setAnchor(this._originalAnchorSpec);
-          this._originalAnchorSpec = null;
-        }
-        this.instance._finaliseConnection(this.jpc, null, originalEvent);
-        this.instance.setHover(this.jpc, false);
-        this.instance.revalidate(this.jpc.endpoints[0].element);
-      }
-    }, {
-      key: "_registerFloatingConnection",
-      value: function _registerFloatingConnection(info, conn, ep) {
-        this.floatingConnections[info.id] = conn;
-        addToDictionary(this.instance.endpointsByElement, info.id, ep);
-      }
-    }, {
-      key: "_getFloatingAnchorIndex",
-      value: function _getFloatingAnchorIndex() {
-        return this.floatingIndex == null ? 1 : this.floatingIndex;
-      }
-    }]);
-    return EndpointDragHandler;
-  }();
-
-  var GroupDragHandler = function (_ElementDragHandler) {
-    _inherits$6(GroupDragHandler, _ElementDragHandler);
-    var _super = _createSuper$6(GroupDragHandler);
-    function GroupDragHandler(instance, dragSelection) {
-      var _this;
-      _classCallCheck$c(this, GroupDragHandler);
-      _this = _super.call(this, instance, dragSelection);
-      _this.instance = instance;
-      _this.dragSelection = dragSelection;
-      _defineProperty$c(_assertThisInitialized$6(_this), "selector", [">", SELECTOR_GROUP, SELECTOR_MANAGED_ELEMENT].join(" "));
-      _defineProperty$c(_assertThisInitialized$6(_this), "doRevalidate", void 0);
-      _this.doRevalidate = _this._revalidate.bind(_assertThisInitialized$6(_this));
-      return _this;
-    }
-    _createClass$c(GroupDragHandler, [{
-      key: "reset",
-      value: function reset() {
-        this.drag.off(EVENT_REVERT, this.doRevalidate);
-      }
-    }, {
-      key: "_revalidate",
-      value: function _revalidate(el) {
-        this.instance.revalidate(el);
-      }
-    }, {
-      key: "init",
-      value: function init(drag) {
-        this.drag = drag;
-        drag.on(EVENT_REVERT, this.doRevalidate);
-      }
-    }, {
-      key: "useGhostProxy",
-      value: function useGhostProxy(container, dragEl) {
-        var group = dragEl._jsPlumbParentGroup;
-        return group == null ? false : group.ghost === true;
-      }
-    }, {
-      key: "makeGhostProxy",
-      value: function makeGhostProxy(el) {
-        var jel = el;
-        var newEl = jel.cloneNode(true);
-        newEl._jsPlumbParentGroup = jel._jsPlumbParentGroup;
-        return newEl;
-      }
-    }]);
-    return GroupDragHandler;
-  }(ElementDragHandler);
-
-  var HTMLElementOverlay = function () {
-    function HTMLElementOverlay(instance, overlay) {
-      _classCallCheck$c(this, HTMLElementOverlay);
-      this.instance = instance;
-      this.overlay = overlay;
-      _defineProperty$c(this, "htmlElementOverlay", void 0);
-      this.htmlElementOverlay = overlay;
-    }
-    _createClass$c(HTMLElementOverlay, null, [{
-      key: "getElement",
-      value: function getElement(o, component, elementCreator) {
-        if (o.canvas == null) {
-          if (elementCreator && component) {
-            o.canvas = elementCreator(component);
-            var cls = o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : "");
-            o.instance.addClass(o.canvas, cls);
-          } else {
-            o.canvas = createElement(ELEMENT_DIV, {}, o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : ""));
-          }
-          o.instance.setAttribute(o.canvas, "jtk-overlay-id", o.id);
-          for (var att in o.attributes) {
-            o.instance.setAttribute(o.canvas, att, o.attributes[att]);
-          }
-          o.canvas.style.position = ABSOLUTE$1;
-          o.instance._appendElement(o.canvas, o.instance.getContainer());
-          o.instance.getId(o.canvas);
-          var ts = "translate(-50%, -50%)";
-          o.canvas.style.webkitTransform = ts;
-          o.canvas.style.mozTransform = ts;
-          o.canvas.style.msTransform = ts;
-          o.canvas.style.oTransform = ts;
-          o.canvas.style.transform = ts;
-          if (!o.isVisible()) {
-            o.canvas.style.display = NONE$1;
-          }
-          o.canvas.jtk = {
-            overlay: o
-          };
-        }
-        return o.canvas;
-      }
-    }, {
-      key: "destroy",
-      value: function destroy(o) {
-        o.canvas && o.canvas.parentNode && o.canvas.parentNode.removeChild(o.canvas);
-        delete o.canvas;
-        delete o.cachedDimensions;
-      }
-    }, {
-      key: "_getDimensions",
-      value: function _getDimensions(o, forceRefresh) {
-        if (o.cachedDimensions == null || forceRefresh) {
-          o.cachedDimensions = {
-            w: 1,
-            h: 1
-          };
-        }
-        return o.cachedDimensions;
-      }
-    }]);
-    return HTMLElementOverlay;
-  }();
-
-  var SVGElementOverlay = function (_Overlay) {
-    _inherits$6(SVGElementOverlay, _Overlay);
-    var _super = _createSuper$6(SVGElementOverlay);
-    function SVGElementOverlay() {
-      var _this;
-      _classCallCheck$c(this, SVGElementOverlay);
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      _this = _super.call.apply(_super, [this].concat(args));
-      _defineProperty$c(_assertThisInitialized$6(_this), "path", void 0);
-      return _this;
-    }
-    _createClass$c(SVGElementOverlay, null, [{
-      key: "ensurePath",
-      value: function ensurePath(o) {
-        if (o.path == null) {
-          var atts = extend({
-            "jtk-overlay-id": o.id
-          }, o.attributes);
-          o.path = _node(ELEMENT_PATH, atts);
-          var parent = null;
-          if (o.component instanceof Connection) {
-            var connector = o.component.connector;
-            parent = connector != null ? connector.canvas : null;
-          } else if (o.component instanceof Endpoint) {
-            var endpoint = o.component.endpoint;
-            parent = endpoint != null ? endpoint.svg : endpoint;
-          }
-          if (parent != null) {
-            _appendAtIndex(parent, o.path, 1);
-          }
-          var cls = o.instance.overlayClass + " " + (o.cssClass ? o.cssClass : "");
-          o.instance.addClass(o.path, cls);
-          o.path.jtk = {
-            overlay: o
-          };
-        }
-        return o.path;
-      }
-    }, {
-      key: "paint",
-      value: function paint(o, path, params, extents) {
-        this.ensurePath(o);
-        var offset = [0, 0];
-        if (extents.xmin < 0) {
-          offset[0] = -extents.xmin;
-        }
-        if (extents.ymin < 0) {
-          offset[1] = -extents.ymin;
-        }
-        var a = {
-          "d": path,
-          stroke: params.stroke ? params.stroke : null,
-          fill: params.fill ? params.fill : null,
-          transform: "translate(" + offset[0] + "," + offset[1] + ")",
-          "pointer-events": "visibleStroke"
-        };
-        _attr(o.path, a);
-      }
-    }, {
-      key: "destroy",
-      value: function destroy(o, force) {
-        var _o = o;
-        if (_o.path != null && _o.path.parentNode != null) {
-          _o.path.parentNode.removeChild(_o.path);
-        }
-        if (_o.bgPath != null && _o.bgPath.parentNode != null) {
-          _o.bgPath.parentNode.removeChild(_o.bgPath);
-        }
-        delete _o.path;
-        delete _o.bgPath;
-      }
-    }]);
-    return SVGElementOverlay;
-  }(Overlay);
-
-  var SvgComponent = function () {
-    function SvgComponent() {
-      _classCallCheck$c(this, SvgComponent);
-    }
-    _createClass$c(SvgComponent, null, [{
-      key: "paint",
-      value: function paint(connector, useDivWrapper, paintStyle, extents) {
-        if (paintStyle != null) {
-          var xy = [connector.x, connector.y],
-              wh = [connector.w, connector.h],
-              p;
-          if (extents != null) {
-            if (extents.xmin < 0) {
-              xy[0] += extents.xmin;
-            }
-            if (extents.ymin < 0) {
-              xy[1] += extents.ymin;
-            }
-            wh[0] = extents.xmax + (extents.xmin < 0 ? -extents.xmin : 0);
-            wh[1] = extents.ymax + (extents.ymin < 0 ? -extents.ymin : 0);
-          }
-          if (isFinite(wh[0]) && isFinite(wh[1])) {
-            if (useDivWrapper) {
-              _size(connector.canvas, xy[0], xy[1], wh[0], wh[1]);
-              xy[0] = 0;
-              xy[1] = 0;
-              p = _pos([0, 0]);
-              _attr(connector.svg, {
-                "style": p,
-                "width": "" + (wh[0] || 0),
-                "height": "" + (wh[1] || 0)
-              });
-            } else {
-              p = _pos([xy[0], xy[1]]);
-              _attr(connector.canvas, {
-                "style": p,
-                "width": "" + (wh[0] || 0),
-                "height": "" + (wh[1] || 0)
-              });
-            }
-          }
-        }
-      }
-    }]);
-    return SvgComponent;
-  }();
-
-  function paintSvgConnector(instance, connector, paintStyle, extents) {
-    getConnectorElement(instance, connector);
-    SvgComponent.paint(connector, false, paintStyle, extents);
-    var p = "",
-        offset = [0, 0];
-    if (extents.xmin < 0) {
-      offset[0] = -extents.xmin;
-    }
-    if (extents.ymin < 0) {
-      offset[1] = -extents.ymin;
-    }
-    if (connector.segments.length > 0) {
-      p = instance.getPathData(connector);
-      var a = {
-        d: p,
-        transform: "translate(" + offset[0] + "," + offset[1] + ")",
-        "pointer-events": "visibleStroke"
-      },
-          outlineStyle = null;
-      if (paintStyle.outlineStroke) {
-        var outlineWidth = paintStyle.outlineWidth || 1,
-            outlineStrokeWidth = paintStyle.strokeWidth + 2 * outlineWidth;
-        outlineStyle = extend({}, paintStyle);
-        outlineStyle.stroke = paintStyle.outlineStroke;
-        outlineStyle.strokeWidth = outlineStrokeWidth;
-        if (connector.bgPath == null) {
-          connector.bgPath = _node(ELEMENT_PATH, a);
-          instance.addClass(connector.bgPath, instance.connectorOutlineClass);
-          _appendAtIndex(connector.canvas, connector.bgPath, 0);
-        } else {
-          _attr(connector.bgPath, a);
-        }
-        _applyStyles(connector.canvas, connector.bgPath, outlineStyle);
-      }
-      var cany = connector;
-      if (cany.path == null) {
-        cany.path = _node(ELEMENT_PATH, a);
-        _appendAtIndex(cany.canvas, cany.path, paintStyle.outlineStroke ? 1 : 0);
-      } else {
-        if (cany.path.parentNode !== cany.canvas) {
-          _appendAtIndex(cany.canvas, cany.path, paintStyle.outlineStroke ? 1 : 0);
-        }
-        _attr(connector.path, a);
-      }
-      _applyStyles(connector.canvas, connector.path, paintStyle);
-    }
-  }
-  function getConnectorElement(instance, c) {
-    if (c.canvas != null) {
-      return c.canvas;
-    } else {
-      var svg = _node(ELEMENT_SVG, {
-        "style": "",
-        "width": "0",
-        "height": "0",
-        "pointer-events": NONE$1,
-        "position": ABSOLUTE$1
-      });
-      c.canvas = svg;
-      instance._appendElement(c.canvas, instance.getContainer());
-      if (c.cssClass != null) {
-        instance.addClass(svg, c.cssClass);
-      }
-      instance.addClass(svg, instance.connectorClass);
-      svg.jtk = svg.jtk || {};
-      svg.jtk.connector = c;
-      return svg;
-    }
-  }
-
-  var SvgEndpoint = function () {
-    function SvgEndpoint() {
-      _classCallCheck$c(this, SvgEndpoint);
-    }
-    _createClass$c(SvgEndpoint, null, [{
-      key: "getEndpointElement",
-      value: function getEndpointElement(ep) {
-        if (ep.canvas != null) {
-          return ep.canvas;
-        } else {
-          var svg = _node(ELEMENT_SVG, {
-            "style": "",
-            "width": "0",
-            "height": "0",
-            "pointer-events": NONE$1,
-            "position": ABSOLUTE$1
-          });
-          ep.svg = svg;
-          var canvas = createElement(ELEMENT_DIV, {
-            position: ABSOLUTE$1
-          });
-          ep.canvas = canvas;
-          var classes = ep.classes.join(" ");
-          ep.instance.addClass(canvas, classes);
-          var scopes = ep.endpoint.scope.split(/\s/);
-          for (var i = 0; i < scopes.length; i++) {
-            ep.instance.setAttribute(canvas, ATTRIBUTE_SCOPE_PREFIX + scopes[i], TRUE$1);
-          }
-          if (!ep.instance._suspendDrawing) {
-            _size(canvas, 0, 0, 1, 1);
-          }
-          ep.instance._appendElement(canvas, ep.instance.getContainer());
-          canvas.appendChild(svg);
-          if (ep.cssClass != null) {
-            ep.instance.addClass(canvas, ep.cssClass);
-          }
-          ep.instance.addClass(canvas, ep.instance.endpointClass);
-          canvas.jtk = canvas.jtk || {};
-          canvas.jtk.endpoint = ep.endpoint;
-          canvas.style.display = ep.endpoint.visible !== false ? BLOCK : NONE$1;
-          return canvas;
-        }
-      }
-    }, {
-      key: "paint",
-      value: function paint(ep, handlers, paintStyle) {
-        if (ep.endpoint.deleted !== true) {
-          this.getEndpointElement(ep);
-          SvgComponent.paint(ep, true, paintStyle);
-          var s = extend({}, paintStyle);
-          if (s.outlineStroke) {
-            s.stroke = s.outlineStroke;
-          }
-          if (ep.node == null) {
-            ep.node = handlers.makeNode(ep, s);
-            ep.svg.appendChild(ep.node);
-          } else if (handlers.updateNode != null) {
-            handlers.updateNode(ep, ep.node);
-          }
-          _applyStyles(ep.canvas, ep.node, s);
-        }
-      }
-    }]);
-    return SvgEndpoint;
-  }();
-
-  var endpointMap = {};
-  function registerEndpointRenderer(name, fns) {
-    endpointMap[name] = fns;
-  }
-  function getPositionOnElement(evt, el, zoom) {
-    var jel = el;
-    var box = _typeof(el.getBoundingClientRect) !== UNDEFINED ? el.getBoundingClientRect() : {
-      left: 0,
-      top: 0,
-      width: 0,
-      height: 0
-    },
-        body = document.body,
-        docElem = document.documentElement,
-        scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
-        scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
-        clientTop = docElem.clientTop || body.clientTop || 0,
-        clientLeft = docElem.clientLeft || body.clientLeft || 0,
-        pst = 0,
-        psl = 0,
-        top = box.top + scrollTop - clientTop + pst * zoom,
-        left = box.left + scrollLeft - clientLeft + psl * zoom,
-        cl = pageLocation(evt),
-        w = box.width || jel.offsetWidth * zoom,
-        h = box.height || jel.offsetHeight * zoom,
-        x = (cl.x - left) / w,
-        y = (cl.y - top) / h;
-    return {
-      x: x,
-      y: y
-    };
-  }
-  function isSVGElementOverlay(o) {
-    return isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o);
-  }
-  function setVisible(component, v) {
-    if (component.canvas) {
-      component.canvas.style.display = v ? "block" : "none";
-    }
-  }
-  function cleanup(component) {
-    if (component.canvas) {
-      component.canvas.parentNode.removeChild(component.canvas);
-    }
-    delete component.canvas;
-    delete component.svg;
-  }
-  function getEndpointCanvas(ep) {
-    return ep.canvas;
-  }
-  function getLabelElement(o) {
-    return HTMLElementOverlay.getElement(o);
-  }
-  function getCustomElement(o) {
-    return HTMLElementOverlay.getElement(o, o.component, function (c) {
-      var el = o.create(c);
-      o.instance.addClass(el, o.instance.overlayClass);
-      return el;
-    });
-  }
-  function groupDragConstrain(desiredLoc, dragEl, constrainRect, size) {
-    var x = desiredLoc.x,
-        y = desiredLoc.y;
-    if (dragEl._jsPlumbParentGroup && dragEl._jsPlumbParentGroup.constrain) {
-      x = Math.max(desiredLoc.x, 0);
-      y = Math.max(desiredLoc.y, 0);
-      x = Math.min(x, constrainRect.w - size.w);
-      y = Math.min(y, constrainRect.h - size.h);
-    }
-    return {
-      x: x,
-      y: y
-    };
-  }
-  var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
-    _inherits$6(BrowserJsPlumbInstance, _JsPlumbInstance);
-    var _super = _createSuper$6(BrowserJsPlumbInstance);
-    function BrowserJsPlumbInstance(_instanceIndex, defaults) {
-      var _this;
-      _classCallCheck$c(this, BrowserJsPlumbInstance);
-      _this = _super.call(this, _instanceIndex, defaults);
-      _this._instanceIndex = _instanceIndex;
-      _defineProperty$c(_assertThisInitialized$6(_this), "dragSelection", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "dragManager", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorDblClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorDblTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointDblClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayDblClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayDblTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorMouseover", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorMouseout", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointMouseover", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointMouseout", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorContextmenu", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorMousedown", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_connectorMouseup", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointMousedown", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_endpointMouseup", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayMouseover", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_overlayMouseout", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementClick", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementDblTap", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementMouseenter", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementMouseexit", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementMousemove", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementMouseup", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementMousedown", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "_elementContextmenu", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "eventManager", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "draggingClass", "jtk-dragging");
-      _defineProperty$c(_assertThisInitialized$6(_this), "elementDraggingClass", "jtk-element-dragging");
-      _defineProperty$c(_assertThisInitialized$6(_this), "hoverClass", "jtk-hover");
-      _defineProperty$c(_assertThisInitialized$6(_this), "sourceElementDraggingClass", "jtk-source-element-dragging");
-      _defineProperty$c(_assertThisInitialized$6(_this), "targetElementDraggingClass", "jtk-target-element-dragging");
-      _defineProperty$c(_assertThisInitialized$6(_this), "hoverSourceClass", "jtk-source-hover");
-      _defineProperty$c(_assertThisInitialized$6(_this), "hoverTargetClass", "jtk-target-hover");
-      _defineProperty$c(_assertThisInitialized$6(_this), "dragSelectClass", "jtk-drag-select");
-      _defineProperty$c(_assertThisInitialized$6(_this), "managedElementsSelector", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "elementsDraggable", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "elementDragHandler", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "groupDragOptions", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "elementDragOptions", void 0);
-      _defineProperty$c(_assertThisInitialized$6(_this), "svg", {
-        node: function node(name, attributes) {
-          return _node(name, attributes);
-        },
-        attr: function attr(node, attributes) {
-          return _attr(node, attributes);
-        },
-        pos: function pos(d) {
-          return _pos(d);
-        }
-      });
-      _this.elementsDraggable = defaults && defaults.elementsDraggable !== false;
-      _this.managedElementsSelector = defaults ? defaults.managedElementsSelector || SELECTOR_MANAGED_ELEMENT : SELECTOR_MANAGED_ELEMENT;
-      _this.eventManager = new EventManager();
-      _this.dragSelection = new DragSelection(_assertThisInitialized$6(_this));
-      _this.dragManager = new DragManager(_assertThisInitialized$6(_this), _this.dragSelection);
-      _this.dragManager.addHandler(new EndpointDragHandler(_assertThisInitialized$6(_this)));
-      _this.groupDragOptions = {
-        constrainFunction: groupDragConstrain
-      };
-      _this.dragManager.addHandler(new GroupDragHandler(_assertThisInitialized$6(_this), _this.dragSelection), _this.groupDragOptions);
-      _this.elementDragHandler = new ElementDragHandler(_assertThisInitialized$6(_this), _this.dragSelection);
-      _this.elementDragOptions = defaults && defaults.dragOptions || {};
-      _this.dragManager.addHandler(_this.elementDragHandler, _this.elementDragOptions);
-      if (defaults && defaults.dragOptions && defaults.dragOptions.filter) {
-        _this.dragManager.addFilter(defaults.dragOptions.filter);
-      }
-      var _connClick = function _connClick(event, e) {
-        if (!e.defaultPrevented && e._jsPlumbOverlay == null) {
-          var connectorElement = findParent(getEventSource(e), SELECTOR_CONNECTOR, this.getContainer(), true);
-          this.fire(event, connectorElement.jtk.connector.connection, e);
-        }
-      };
-      _this._connectorClick = _connClick.bind(_assertThisInitialized$6(_this), EVENT_CONNECTION_CLICK);
-      _this._connectorDblClick = _connClick.bind(_assertThisInitialized$6(_this), EVENT_CONNECTION_DBL_CLICK);
-      _this._connectorTap = _connClick.bind(_assertThisInitialized$6(_this), EVENT_CONNECTION_TAP);
-      _this._connectorDblTap = _connClick.bind(_assertThisInitialized$6(_this), EVENT_CONNECTION_DBL_TAP);
-      var _connectorHover = function _connectorHover(state, e) {
-        var el = getEventSource(e).parentNode;
-        if (el.jtk && el.jtk.connector) {
-          var connector = el.jtk.connector;
-          var connection = connector.connection;
-          this.setConnectorHover(connector, state);
-          if (state) {
-            this.addClass(connection.source, this.hoverSourceClass);
-            this.addClass(connection.target, this.hoverTargetClass);
-          } else {
-            this.removeClass(connection.source, this.hoverSourceClass);
-            this.removeClass(connection.target, this.hoverTargetClass);
-          }
-          this.fire(state ? EVENT_CONNECTION_MOUSEOVER : EVENT_CONNECTION_MOUSEOUT, el.jtk.connector.connection, e);
-        }
-      };
-      _this._connectorMouseover = _connectorHover.bind(_assertThisInitialized$6(_this), true);
-      _this._connectorMouseout = _connectorHover.bind(_assertThisInitialized$6(_this), false);
-      var _connectorMouseupdown = function _connectorMouseupdown(state, e) {
-        var el = getEventSource(e).parentNode;
-        if (el.jtk && el.jtk.connector) {
-          this.fire(state ? EVENT_CONNECTION_MOUSEUP : EVENT_CONNECTION_MOUSEDOWN, el.jtk.connector.connection, e);
-        }
-      };
-      _this._connectorMouseup = _connectorMouseupdown.bind(_assertThisInitialized$6(_this), true);
-      _this._connectorMousedown = _connectorMouseupdown.bind(_assertThisInitialized$6(_this), false);
-      _this._connectorContextmenu = function (e) {
-        var el = getEventSource(e).parentNode;
-        if (el.jtk && el.jtk.connector) {
-          this.fire(EVENT_CONNECTION_CONTEXTMENU, el.jtk.connector.connection, e);
-        }
-      }.bind(_assertThisInitialized$6(_this));
-      var _epClick = function _epClick(event, e, endpointElement) {
-        if (!e.defaultPrevented && e._jsPlumbOverlay == null) {
-          this.fire(event, endpointElement.jtk.endpoint, e);
-        }
-      };
-      _this._endpointClick = _epClick.bind(_assertThisInitialized$6(_this), EVENT_ENDPOINT_CLICK);
-      _this._endpointDblClick = _epClick.bind(_assertThisInitialized$6(_this), EVENT_ENDPOINT_DBL_CLICK);
-      var _endpointHover = function _endpointHover(state, e) {
-        var el = getEventSource(e);
-        if (el.jtk && el.jtk.endpoint) {
-          this.setEndpointHover(el.jtk.endpoint, state);
-          this.fire(state ? EVENT_ENDPOINT_MOUSEOVER : EVENT_ENDPOINT_MOUSEOUT, el.jtk.endpoint, e);
-        }
-      };
-      _this._endpointMouseover = _endpointHover.bind(_assertThisInitialized$6(_this), true);
-      _this._endpointMouseout = _endpointHover.bind(_assertThisInitialized$6(_this), false);
-      var _endpointMouseupdown = function _endpointMouseupdown(state, e) {
-        var el = getEventSource(e);
-        if (el.jtk && el.jtk.endpoint) {
-          this.fire(state ? EVENT_ENDPOINT_MOUSEUP : EVENT_ENDPOINT_MOUSEDOWN, el.jtk.endpoint, e);
-        }
-      };
-      _this._endpointMouseup = _endpointMouseupdown.bind(_assertThisInitialized$6(_this), true);
-      _this._endpointMousedown = _endpointMouseupdown.bind(_assertThisInitialized$6(_this), false);
-      var _oClick = function (method, e) {
-        var overlayElement = findParent(getEventSource(e), SELECTOR_OVERLAY, this.getContainer(), true);
-        var overlay = overlayElement.jtk.overlay;
-        if (overlay) {
-          this.fireOverlayMethod(overlay, method, e);
-        }
-      }.bind(_assertThisInitialized$6(_this));
-      _this._overlayClick = _oClick.bind(_assertThisInitialized$6(_this), EVENT_CLICK);
-      _this._overlayDblClick = _oClick.bind(_assertThisInitialized$6(_this), EVENT_DBL_CLICK);
-      _this._overlayTap = _oClick.bind(_assertThisInitialized$6(_this), EVENT_TAP);
-      _this._overlayDblTap = _oClick.bind(_assertThisInitialized$6(_this), EVENT_DBL_TAP);
-      var _overlayHover = function _overlayHover(state, e) {
-        var overlayElement = findParent(getEventSource(e), SELECTOR_OVERLAY, this.getContainer(), true);
-        var overlay = overlayElement.jtk.overlay;
-        if (overlay) {
-          this.setOverlayHover(overlay, state);
-        }
-      };
-      _this._overlayMouseover = _overlayHover.bind(_assertThisInitialized$6(_this), true);
-      _this._overlayMouseout = _overlayHover.bind(_assertThisInitialized$6(_this), false);
-      var _elementClick = function _elementClick(event, e, target) {
-        if (!e.defaultPrevented) {
-          this.fire(e.detail === 1 ? EVENT_ELEMENT_CLICK : EVENT_ELEMENT_DBL_CLICK, target, e);
-        }
-      };
-      _this._elementClick = _elementClick.bind(_assertThisInitialized$6(_this), EVENT_ELEMENT_CLICK);
-      var _elementTap = function _elementTap(event, e, target) {
-        if (!e.defaultPrevented) {
-          this.fire(EVENT_ELEMENT_TAP, target, e);
-        }
-      };
-      _this._elementTap = _elementTap.bind(_assertThisInitialized$6(_this), EVENT_ELEMENT_TAP);
-      var _elementDblTap = function _elementDblTap(event, e, target) {
-        if (!e.defaultPrevented) {
-          this.fire(EVENT_ELEMENT_DBL_TAP, target, e);
-        }
-      };
-      _this._elementDblTap = _elementDblTap.bind(_assertThisInitialized$6(_this), EVENT_ELEMENT_DBL_TAP);
-      var _elementHover = function _elementHover(state, e) {
-        this.fire(state ? EVENT_ELEMENT_MOUSE_OVER : EVENT_ELEMENT_MOUSE_OUT, getEventSource(e), e);
-      };
-      _this._elementMouseenter = _elementHover.bind(_assertThisInitialized$6(_this), true);
-      _this._elementMouseexit = _elementHover.bind(_assertThisInitialized$6(_this), false);
-      _this._elementMousemove = function (e) {
-        this.fire(EVENT_ELEMENT_MOUSE_MOVE, getEventSource(e), e);
-      }.bind(_assertThisInitialized$6(_this));
-      _this._elementMouseup = function (e) {
-        this.fire(EVENT_ELEMENT_MOUSE_UP, getEventSource(e), e);
-      }.bind(_assertThisInitialized$6(_this));
-      _this._elementMousedown = function (e) {
-        this.fire(EVENT_ELEMENT_MOUSE_DOWN, getEventSource(e), e);
-      }.bind(_assertThisInitialized$6(_this));
-      _this._elementContextmenu = function (e) {
-        this.fire(EVENT_ELEMENT_CONTEXTMENU, getEventSource(e), e);
-      }.bind(_assertThisInitialized$6(_this));
-      _this._attachEventDelegates();
-      return _this;
-    }
-    _createClass$c(BrowserJsPlumbInstance, [{
-      key: "fireOverlayMethod",
-      value: function fireOverlayMethod(overlay, event, e) {
-        var stem = overlay.component instanceof Connection ? CONNECTION : ENDPOINT;
-        var mappedEvent = compoundEvent(stem, event)
-        ;
-        e._jsPlumbOverlay = overlay;
-        overlay.fire(event, {
-          e: e,
-          overlay: overlay
-        });
-        this.fire(mappedEvent, overlay.component, e);
-      }
-    }, {
-      key: "addDragFilter",
-      value: function addDragFilter(filter, exclude) {
-        this.dragManager.addFilter(filter, exclude);
-      }
-    }, {
-      key: "removeDragFilter",
-      value: function removeDragFilter(filter) {
-        this.dragManager.removeFilter(filter);
-      }
-    }, {
-      key: "setDragGrid",
-      value: function setDragGrid(grid) {
-        this.dragManager.setOption(this.elementDragHandler, {
-          grid: grid
-        });
-      }
-    }, {
-      key: "_removeElement",
-      value: function _removeElement(element) {
-        element.parentNode && element.parentNode.removeChild(element);
-      }
-    }, {
-      key: "_appendElement",
-      value: function _appendElement(el, parent) {
-        if (parent) {
-          parent.appendChild(el);
-        }
-      }
-    }, {
-      key: "_getAssociatedElements",
-      value: function _getAssociatedElements(el) {
-        var a = [];
-        if (el.nodeType !== 3 && el.nodeType !== 8) {
-          var els = el.querySelectorAll(SELECTOR_MANAGED_ELEMENT);
-          Array.prototype.push.apply(a, els);
-        }
-        return a.filter(function (_a) {
-          return _a.nodeType !== 3 && _a.nodeType !== 8;
-        });
-      }
-    }, {
-      key: "shouldFireEvent",
-      value: function shouldFireEvent(event, value, originalEvent) {
-        return true;
-      }
-    }, {
-      key: "getClass",
-      value: function getClass$1(el) {
-        return getClass(el);
-      }
-    }, {
-      key: "addClass",
-      value: function addClass$1(el, clazz) {
-        addClass(el, clazz);
-      }
-    }, {
-      key: "hasClass",
-      value: function hasClass$1(el, clazz) {
-        return hasClass(el, clazz);
-      }
-    }, {
-      key: "removeClass",
-      value: function removeClass$1(el, clazz) {
-        removeClass(el, clazz);
-      }
-    }, {
-      key: "toggleClass",
-      value: function toggleClass$1(el, clazz) {
-        toggleClass(el, clazz);
-      }
-    }, {
-      key: "setAttribute",
-      value: function setAttribute(el, name, value) {
-        el.setAttribute(name, value);
-      }
-    }, {
-      key: "getAttribute",
-      value: function getAttribute(el, name) {
-        return el.getAttribute(name);
-      }
-    }, {
-      key: "setAttributes",
-      value: function setAttributes(el, atts) {
-        for (var i in atts) {
-          el.setAttribute(i, atts[i]);
-        }
-      }
-    }, {
-      key: "removeAttribute",
-      value: function removeAttribute(el, attName) {
-        el.removeAttribute && el.removeAttribute(attName);
-      }
-    }, {
-      key: "on",
-      value: function on(el, event, callbackOrSelector, callback) {
-        var _this2 = this;
-        var _one = function _one(_el) {
-          if (callback == null) {
-            _this2.eventManager.on(_el, event, callbackOrSelector);
-          } else {
-            _this2.eventManager.on(_el, event, callbackOrSelector, callback);
-          }
-        };
-        if (isNodeList(el)) {
-          forEach(el, function (el) {
-            return _one(el);
-          });
-        } else {
-          _one(el);
-        }
-        return this;
-      }
-    }, {
-      key: "off",
-      value: function off(el, event, callback) {
-        var _this3 = this;
-        if (isNodeList(el)) {
-          forEach(el, function (_el) {
-            return _this3.eventManager.off(_el, event, callback);
-          });
-        } else {
-          this.eventManager.off(el, event, callback);
-        }
-        return this;
-      }
-    }, {
-      key: "trigger",
-      value: function trigger(el, event, originalEvent, payload, detail) {
-        this.eventManager.trigger(el, event, originalEvent, payload, detail);
-      }
-    }, {
-      key: "getOffsetRelativeToRoot",
-      value: function getOffsetRelativeToRoot(el) {
-        return offsetRelativeToRoot(el);
-      }
-    }, {
-      key: "getOffset",
-      value: function getOffset(el) {
-        var jel = el;
-        var container = this.getContainer();
-        var out = {
-          x: jel.offsetLeft,
-          y: jel.offsetTop
-        },
-            op = el !== container && jel.offsetParent !== container ? jel.offsetParent : null,
-            _maybeAdjustScroll = function _maybeAdjustScroll(offsetParent) {
-          if (offsetParent != null && offsetParent !== document.body && (offsetParent.scrollTop > 0 || offsetParent.scrollLeft > 0)) {
-            out.x -= offsetParent.scrollLeft;
-            out.y -= offsetParent.scrollTop;
-          }
-        };
-        while (op != null) {
-          out.x += op.offsetLeft;
-          out.y += op.offsetTop;
-          _maybeAdjustScroll(op);
-          op = op.offsetParent === container ? null : op.offsetParent;
-        }
-        if (container != null && (container.scrollTop > 0 || container.scrollLeft > 0)) {
-          var pp = jel.offsetParent != null ? this.getStyle(jel.offsetParent, PROPERTY_POSITION) : STATIC,
-              p = this.getStyle(jel, PROPERTY_POSITION);
-          if (p !== ABSOLUTE$1 && p !== FIXED && pp !== ABSOLUTE$1 && pp !== FIXED) {
-            out.x -= container.scrollLeft;
-            out.y -= container.scrollTop;
-          }
-        }
-        return out;
-      }
-    }, {
-      key: "getSize",
-      value: function getSize(el) {
-        return size(el);
-      }
-    }, {
-      key: "getStyle",
-      value: function getStyle(el, prop) {
-        if (_typeof(window.getComputedStyle) !== UNDEFINED) {
-          return getComputedStyle(el, null).getPropertyValue(prop);
-        } else {
-          return el.currentStyle[prop];
-        }
-      }
-    }, {
-      key: "getGroupContentArea",
-      value: function getGroupContentArea(group) {
-        var da = this.getSelector(group.el, SELECTOR_GROUP_CONTAINER);
-        return da && da.length > 0 ? da[0] : group.el;
-      }
-    }, {
-      key: "getSelector",
-      value: function getSelector(ctx, spec) {
-        var sel = null;
-        if (arguments.length === 1) {
-          if (!isString(ctx)) {
-            var nodeList = document.createDocumentFragment();
-            nodeList.appendChild(ctx);
-            return fromArray(nodeList.childNodes);
-          }
-          sel = fromArray(document.querySelectorAll(ctx));
-        } else {
-          sel = fromArray(ctx.querySelectorAll(spec));
-        }
-        return sel;
-      }
-    }, {
-      key: "setPosition",
-      value: function setPosition(el, p) {
-        var jel = el;
-        jel.style.left = p.x + "px";
-        jel.style.top = p.y + "px";
-      }
-    }, {
-      key: "setDraggable",
-      value: function setDraggable(element, draggable) {
-        if (draggable) {
-          this.removeAttribute(element, ATTRIBUTE_NOT_DRAGGABLE);
-        } else {
-          this.setAttribute(element, ATTRIBUTE_NOT_DRAGGABLE, TRUE$1);
-        }
-      }
-    }, {
-      key: "isDraggable",
-      value: function isDraggable(el) {
-        var d = this.getAttribute(el, ATTRIBUTE_NOT_DRAGGABLE);
-        return d == null || d === FALSE$1;
-      }
-    }, {
-      key: "toggleDraggable",
-      value: function toggleDraggable(el) {
-        var state = this.isDraggable(el);
-        this.setDraggable(el, !state);
-        return !state;
-      }
-    }, {
-      key: "_attachEventDelegates",
-      value: function _attachEventDelegates() {
-        var currentContainer = this.getContainer();
-        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_OVERLAY, this._overlayClick);
-        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_OVERLAY, this._overlayDblClick);
-        this.eventManager.on(currentContainer, EVENT_TAP, SELECTOR_OVERLAY, this._overlayTap);
-        this.eventManager.on(currentContainer, EVENT_DBL_TAP, SELECTOR_OVERLAY, this._overlayDblTap);
-        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_CONNECTOR, this._connectorClick);
-        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_CONNECTOR, this._connectorDblClick);
-        this.eventManager.on(currentContainer, EVENT_TAP, SELECTOR_CONNECTOR, this._connectorTap);
-        this.eventManager.on(currentContainer, EVENT_DBL_TAP, SELECTOR_CONNECTOR, this._connectorDblTap);
-        this.eventManager.on(currentContainer, EVENT_CLICK, SELECTOR_ENDPOINT, this._endpointClick);
-        this.eventManager.on(currentContainer, EVENT_DBL_CLICK, SELECTOR_ENDPOINT, this._endpointDblClick);
-        this.eventManager.on(currentContainer, EVENT_CLICK, this.managedElementsSelector, this._elementClick);
-        this.eventManager.on(currentContainer, EVENT_TAP, this.managedElementsSelector, this._elementTap);
-        this.eventManager.on(currentContainer, EVENT_DBL_TAP, this.managedElementsSelector, this._elementDblTap);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_CONNECTOR, this._connectorMouseover);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_CONNECTOR, this._connectorMouseout);
-        this.eventManager.on(currentContainer, EVENT_CONTEXTMENU, SELECTOR_CONNECTOR, this._connectorContextmenu);
-        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_CONNECTOR, this._connectorMouseup);
-        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_CONNECTOR, this._connectorMousedown);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_ENDPOINT, this._endpointMouseover);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_ENDPOINT, this._endpointMouseout);
-        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_ENDPOINT, this._endpointMouseup);
-        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_ENDPOINT, this._endpointMousedown);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_OVERLAY, this._overlayMouseover);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_OVERLAY, this._overlayMouseout);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOVER, SELECTOR_MANAGED_ELEMENT, this._elementMouseenter);
-        this.eventManager.on(currentContainer, EVENT_MOUSEOUT, SELECTOR_MANAGED_ELEMENT, this._elementMouseexit);
-        this.eventManager.on(currentContainer, EVENT_MOUSEMOVE, SELECTOR_MANAGED_ELEMENT, this._elementMousemove);
-        this.eventManager.on(currentContainer, EVENT_MOUSEUP, SELECTOR_MANAGED_ELEMENT, this._elementMouseup);
-        this.eventManager.on(currentContainer, EVENT_MOUSEDOWN, SELECTOR_MANAGED_ELEMENT, this._elementMousedown);
-        this.eventManager.on(currentContainer, EVENT_CONTEXTMENU, SELECTOR_MANAGED_ELEMENT, this._elementContextmenu);
-      }
-    }, {
-      key: "_detachEventDelegates",
-      value: function _detachEventDelegates() {
-        var currentContainer = this.getContainer();
-        if (currentContainer) {
-          this.eventManager.off(currentContainer, EVENT_CLICK, this._connectorClick);
-          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._connectorDblClick);
-          this.eventManager.off(currentContainer, EVENT_TAP, this._connectorTap);
-          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._connectorDblTap);
-          this.eventManager.off(currentContainer, EVENT_CLICK, this._endpointClick);
-          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._endpointDblClick);
-          this.eventManager.off(currentContainer, EVENT_CLICK, this._overlayClick);
-          this.eventManager.off(currentContainer, EVENT_DBL_CLICK, this._overlayDblClick);
-          this.eventManager.off(currentContainer, EVENT_TAP, this._overlayTap);
-          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._overlayDblTap);
-          this.eventManager.off(currentContainer, EVENT_CLICK, this._elementClick);
-          this.eventManager.off(currentContainer, EVENT_TAP, this._elementTap);
-          this.eventManager.off(currentContainer, EVENT_DBL_TAP, this._elementDblTap);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._connectorMouseover);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._connectorMouseout);
-          this.eventManager.off(currentContainer, EVENT_CONTEXTMENU, this._connectorContextmenu);
-          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._connectorMouseup);
-          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._connectorMousedown);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._endpointMouseover);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._endpointMouseout);
-          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._endpointMouseup);
-          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._endpointMousedown);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOVER, this._overlayMouseover);
-          this.eventManager.off(currentContainer, EVENT_MOUSEOUT, this._overlayMouseout);
-          this.eventManager.off(currentContainer, EVENT_MOUSEENTER, this._elementMouseenter);
-          this.eventManager.off(currentContainer, EVENT_MOUSEEXIT, this._elementMouseexit);
-          this.eventManager.off(currentContainer, EVENT_MOUSEMOVE, this._elementMousemove);
-          this.eventManager.off(currentContainer, EVENT_MOUSEUP, this._elementMouseup);
-          this.eventManager.off(currentContainer, EVENT_MOUSEDOWN, this._elementMousedown);
-          this.eventManager.off(currentContainer, EVENT_CONTEXTMENU, this._elementContextmenu);
-        }
-      }
-    }, {
-      key: "setContainer",
-      value: function setContainer(newContainer) {
-        var _this4 = this;
-        if (newContainer === document || newContainer === document.body) {
-          throw new Error("Cannot set document or document.body as container element");
-        }
-        this._detachEventDelegates();
-        var dragFilters;
-        if (this.dragManager != null) {
-          dragFilters = this.dragManager.reset();
-        }
-        this.setAttribute(newContainer, ATTRIBUTE_CONTAINER, uuid().replace("-", ""));
-        var currentContainer = this.getContainer();
-        if (currentContainer != null) {
-          currentContainer.removeAttribute(ATTRIBUTE_CONTAINER);
-          var children = fromArray(currentContainer.childNodes).filter(function (cn) {
-            return cn != null && (_this4.hasClass(cn, CLASS_CONNECTOR) || _this4.hasClass(cn, CLASS_ENDPOINT) || _this4.hasClass(cn, CLASS_OVERLAY) || cn.getAttribute && cn.getAttribute(ATTRIBUTE_MANAGED) != null);
-          });
-          forEach(children, function (el) {
-            newContainer.appendChild(el);
-          });
-        }
-        _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "setContainer", this).call(this, newContainer);
-        if (this.eventManager != null) {
-          this._attachEventDelegates();
-        }
-        if (this.dragManager != null) {
-          this.dragManager.addHandler(new EndpointDragHandler(this));
-          this.dragManager.addHandler(new GroupDragHandler(this, this.dragSelection), this.groupDragOptions);
-          this.elementDragHandler = new ElementDragHandler(this, this.dragSelection);
-          this.dragManager.addHandler(this.elementDragHandler, this.elementDragOptions);
-          if (dragFilters != null) {
-            this.dragManager.setFilters(dragFilters);
-          }
-        }
-      }
-    }, {
-      key: "reset",
-      value: function reset() {
-        _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "reset", this).call(this);
-        var container = this.getContainer();
-        var els = container.querySelectorAll([SELECTOR_MANAGED_ELEMENT, SELECTOR_ENDPOINT, SELECTOR_CONNECTOR, SELECTOR_OVERLAY].join(","));
-        forEach(els, function (el) {
-          return el.parentNode && el.parentNode.removeChild(el);
-        });
-      }
-    }, {
-      key: "destroy",
-      value: function destroy() {
-        this._detachEventDelegates();
-        if (this.dragManager != null) {
-          this.dragManager.reset();
-        }
-        this.clearDragSelection();
-        _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "destroy", this).call(this);
-      }
-    }, {
-      key: "unmanage",
-      value: function unmanage(el, removeElement) {
-        this.removeFromDragSelection(el);
-        _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "unmanage", this).call(this, el, removeElement);
-      }
-    }, {
-      key: "addToDragSelection",
-      value: function addToDragSelection() {
-        var _this5 = this;
-        for (var _len = arguments.length, el = new Array(_len), _key = 0; _key < _len; _key++) {
-          el[_key] = arguments[_key];
-        }
-        forEach(el, function (_el) {
-          return _this5.dragSelection.add(_el);
-        });
-      }
-    }, {
-      key: "clearDragSelection",
-      value: function clearDragSelection() {
-        this.dragSelection.clear();
-      }
-    }, {
-      key: "removeFromDragSelection",
-      value: function removeFromDragSelection() {
-        var _this6 = this;
-        for (var _len2 = arguments.length, el = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          el[_key2] = arguments[_key2];
-        }
-        forEach(el, function (_el) {
-          return _this6.dragSelection.remove(_el);
-        });
-      }
-    }, {
-      key: "toggleDragSelection",
-      value: function toggleDragSelection() {
-        var _this7 = this;
-        for (var _len3 = arguments.length, el = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-          el[_key3] = arguments[_key3];
-        }
-        forEach(el, function (_el) {
-          return _this7.dragSelection.toggle(_el);
-        });
-      }
-    }, {
-      key: "addToDragGroup",
-      value: function addToDragGroup(spec) {
-        var _this$elementDragHand;
-        for (var _len4 = arguments.length, els = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
-          els[_key4 - 1] = arguments[_key4];
-        }
-        (_this$elementDragHand = this.elementDragHandler).addToDragGroup.apply(_this$elementDragHand, [spec].concat(els));
-      }
-    }, {
-      key: "removeFromDragGroup",
-      value: function removeFromDragGroup() {
-        var _this$elementDragHand2;
-        (_this$elementDragHand2 = this.elementDragHandler).removeFromDragGroup.apply(_this$elementDragHand2, arguments);
-      }
-    }, {
-      key: "setDragGroupState",
-      value: function setDragGroupState(state) {
-        var _this$elementDragHand3;
-        for (var _len5 = arguments.length, els = new Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
-          els[_key5 - 1] = arguments[_key5];
-        }
-        (_this$elementDragHand3 = this.elementDragHandler).setDragGroupState.apply(_this$elementDragHand3, [state].concat(els));
-      }
-    }, {
-      key: "consume",
-      value: function consume$1(e, doNotPreventDefault) {
-        consume(e, doNotPreventDefault);
-      }
-    }, {
-      key: "rotate",
-      value: function rotate(element, rotation, doNotRepaint) {
-        var elementId = this.getId(element);
-        if (this._managedElements[elementId]) {
-          this._managedElements[elementId].el.style.transform = "rotate(" + rotation + "deg)";
-          this._managedElements[elementId].el.style.transformOrigin = "center center";
-          return _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "rotate", this).call(this, element, rotation, doNotRepaint);
-        }
-        return {
-          c: new Set(),
-          e: new Set()
-        };
-      }
-    }, {
-      key: "addOverlayClass",
-      value: function addOverlayClass(o, clazz) {
-        if (isLabelOverlay(o)) {
-          o.instance.addClass(getLabelElement(o), clazz);
-        } else if (isSVGElementOverlay(o)) {
-          o.instance.addClass(SVGElementOverlay.ensurePath(o), clazz);
-        } else if (isCustomOverlay(o)) {
-          o.instance.addClass(getCustomElement(o), clazz);
-        } else {
-          throw "Could not add class to overlay of type [" + o.type + "]";
-        }
-      }
-    }, {
-      key: "removeOverlayClass",
-      value: function removeOverlayClass(o, clazz) {
-        if (isLabelOverlay(o)) {
-          o.instance.removeClass(getLabelElement(o), clazz);
-        } else if (isSVGElementOverlay(o)) {
-          o.instance.removeClass(SVGElementOverlay.ensurePath(o), clazz);
-        } else if (isCustomOverlay(o)) {
-          o.instance.removeClass(getCustomElement(o), clazz);
-        } else {
-          throw "Could not remove class from overlay of type [" + o.type + "]";
-        }
-      }
-    }, {
-      key: "_paintOverlay",
-      value: function _paintOverlay(o, params, extents) {
-        if (isLabelOverlay(o)) {
-          getLabelElement(o);
-          var XY = o.component.getXY();
-          o.canvas.style.left = XY.x + params.d.minx + "px";
-          o.canvas.style.top = XY.y + params.d.miny + "px";
-        } else if (isSVGElementOverlay(o)) {
-          var path = isNaN(params.d.cxy.x) || isNaN(params.d.cxy.y) ? "M 0 0" : "M" + params.d.hxy.x + "," + params.d.hxy.y + " L" + params.d.tail[0].x + "," + params.d.tail[0].y + " L" + params.d.cxy.x + "," + params.d.cxy.y + " L" + params.d.tail[1].x + "," + params.d.tail[1].y + " L" + params.d.hxy.x + "," + params.d.hxy.y;
-          SVGElementOverlay.paint(o, path, params, extents);
-        } else if (isCustomOverlay(o)) {
-          getCustomElement(o);
-          var _XY = o.component.getXY();
-          o.canvas.style.left = _XY.x + params.d.minx + "px";
-          o.canvas.style.top = _XY.y + params.d.miny + "px";
-        } else {
-          throw "Could not paint overlay of type [" + o.type + "]";
-        }
-      }
-    }, {
-      key: "setOverlayVisible",
-      value: function setOverlayVisible(o, visible) {
-        var d = visible ? "block" : "none";
-        function s(el) {
-          if (el != null) {
-            el.style.display = d;
-          }
-        }
-        if (isLabelOverlay(o)) {
-          s(getLabelElement(o));
-        } else if (isCustomOverlay(o)) {
-          s(getCustomElement(o));
-        } else if (isSVGElementOverlay(o)) {
-          s(o.path);
-        }
-      }
-    }, {
-      key: "reattachOverlay",
-      value: function reattachOverlay(o, c) {
-        if (isLabelOverlay(o)) {
-          o.instance._appendElement(getLabelElement(o), this.getContainer());
-        } else if (isCustomOverlay(o)) {
-          o.instance._appendElement(getCustomElement(o), this.getContainer());
-        } else if (isSVGElementOverlay(o)) {
-          this._appendElement(SVGElementOverlay.ensurePath(o), c.connector.canvas);
-        }
-      }
-    }, {
-      key: "setOverlayHover",
-      value: function setOverlayHover(o, hover) {
-        var canvas;
-        if (isLabelOverlay(o)) {
-          canvas = getLabelElement(o);
-        } else if (isCustomOverlay(o)) {
-          canvas = getCustomElement(o);
-        } else if (isSVGElementOverlay(o)) {
-          canvas = SVGElementOverlay.ensurePath(o);
-        }
-        if (canvas != null) {
-          if (this.hoverClass != null) {
-            if (hover) {
-              this.addClass(canvas, this.hoverClass);
-            } else {
-              this.removeClass(canvas, this.hoverClass);
-            }
-          }
-          this.setHover(o.component, hover);
-        }
-      }
-    }, {
-      key: "destroyOverlay",
-      value: function destroyOverlay(o) {
-        if (isLabelOverlay(o)) {
-          var el = getLabelElement(o);
-          el.parentNode.removeChild(el);
-          delete o.canvas;
-          delete o.cachedDimensions;
-        } else if (isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o)) {
-          SVGElementOverlay.destroy(o);
-        } else if (isCustomOverlay(o)) {
-          var _el2 = getCustomElement(o);
-          _el2.parentNode.removeChild(_el2);
-          delete o.canvas;
-          delete o.cachedDimensions;
-        }
-      }
-    }, {
-      key: "drawOverlay",
-      value: function drawOverlay(o, component, paintStyle, absolutePosition) {
-        if (isLabelOverlay(o) || isCustomOverlay(o)) {
-          var td = HTMLElementOverlay._getDimensions(o);
-          if (td != null && td.w != null && td.h != null) {
-            var cxy = {
-              x: 0,
-              y: 0
-            };
-            if (absolutePosition) {
-              cxy = {
-                x: absolutePosition.x,
-                y: absolutePosition.y
-              };
-            } else if (component instanceof EndpointRepresentation) {
-              var locToUse = Array.isArray(o.location) ? o.location : [o.location, o.location];
-              cxy = {
-                x: locToUse[0] * component.w,
-                y: locToUse[1] * component.h
-              };
-            } else {
-              var loc = o.location,
-                  absolute = false;
-              if (isString(o.location) || o.location < 0 || o.location > 1) {
-                loc = parseInt("" + o.location, 10);
-                absolute = true;
-              }
-              cxy = component.pointOnPath(loc, absolute);
-            }
-            var minx = cxy.x - td.w / 2,
-                miny = cxy.y - td.h / 2;
-            return {
-              component: o,
-              d: {
-                minx: minx,
-                miny: miny,
-                td: td,
-                cxy: cxy
-              },
-              xmin: minx,
-              xmax: minx + td.w,
-              ymin: miny,
-              ymax: miny + td.h
-            };
-          } else {
-            return {
-              xmin: 0,
-              xmax: 0,
-              ymin: 0,
-              ymax: 0
-            };
-          }
-        } else if (isArrowOverlay(o) || isDiamondOverlay(o) || isPlainArrowOverlay(o)) {
-          return o.draw(component, paintStyle, absolutePosition);
-        } else {
-          throw "Could not draw overlay of type [" + o.type + "]";
-        }
-      }
-    }, {
-      key: "updateLabel",
-      value: function updateLabel(o) {
-        if (isFunction(o.label)) {
-          var lt = o.label(this);
-          if (lt != null) {
-            getLabelElement(o).innerText = lt;
-          } else {
-            getLabelElement(o).innerText = "";
-          }
-        } else {
-          if (o.labelText == null) {
-            o.labelText = o.label;
-            if (o.labelText != null) {
-              getLabelElement(o).innerText = o.labelText;
-            } else {
-              getLabelElement(o).innerText = "";
-            }
-          }
-        }
-      }
-    }, {
-      key: "setHover",
-      value: function setHover(component, hover) {
-        component._hover = hover;
-        if (component instanceof Endpoint && component.endpoint != null) {
-          this.setEndpointHover(component, hover, -1);
-        } else if (component instanceof Connection && component.connector != null) {
-          this.setConnectorHover(component.connector, hover);
-        }
-      }
-    }, {
-      key: "paintConnector",
-      value: function paintConnector(connector, paintStyle, extents) {
-        paintSvgConnector(this, connector, paintStyle, extents);
-      }
-    }, {
-      key: "setConnectorHover",
-      value: function setConnectorHover(connector, hover, sourceEndpoint) {
-        if (hover === false || !this.currentlyDragging && !this.isHoverSuspended()) {
-          var canvas = connector.canvas;
-          if (canvas != null) {
-            if (connector.hoverClass != null) {
-              if (hover) {
-                this.addClass(canvas, connector.hoverClass);
-              } else {
-                this.removeClass(canvas, connector.hoverClass);
-              }
-            }
-            if (hover) {
-              this.addClass(canvas, this.hoverClass);
-            } else {
-              this.removeClass(canvas, this.hoverClass);
-            }
-          }
-          if (connector.connection.hoverPaintStyle != null) {
-            connector.connection.paintStyleInUse = hover ? connector.connection.hoverPaintStyle : connector.connection.paintStyle;
-            if (!this._suspendDrawing) {
-              this._paintConnection(connector.connection);
-            }
-          }
-          if (connector.connection.endpoints[0] !== sourceEndpoint) {
-            this.setEndpointHover(connector.connection.endpoints[0], hover, 0, true);
-          }
-          if (connector.connection.endpoints[1] !== sourceEndpoint) {
-            this.setEndpointHover(connector.connection.endpoints[1], hover, 1, true);
-          }
-        }
-      }
-    }, {
-      key: "destroyConnector",
-      value: function destroyConnector(connection) {
-        if (connection.connector != null) {
-          cleanup(connection.connector);
-        }
-      }
-    }, {
-      key: "addConnectorClass",
-      value: function addConnectorClass(connector, clazz) {
-        if (connector.canvas) {
-          this.addClass(connector.canvas, clazz);
-        }
-      }
-    }, {
-      key: "removeConnectorClass",
-      value: function removeConnectorClass(connector, clazz) {
-        if (connector.canvas) {
-          this.removeClass(connector.canvas, clazz);
-        }
-      }
-    }, {
-      key: "getConnectorClass",
-      value: function getConnectorClass(connector) {
-        if (connector.canvas) {
-          return connector.canvas.className.baseVal;
-        } else {
-          return "";
-        }
-      }
-    }, {
-      key: "setConnectorVisible",
-      value: function setConnectorVisible(connector, v) {
-        setVisible(connector, v);
-      }
-    }, {
-      key: "applyConnectorType",
-      value: function applyConnectorType(connector, t) {
-        if (connector.canvas && t.cssClass) {
-          var classes = Array.isArray(t.cssClass) ? t.cssClass : [t.cssClass];
-          this.addClass(connector.canvas, classes.join(" "));
-        }
-      }
-    }, {
-      key: "addEndpointClass",
-      value: function addEndpointClass(ep, c) {
-        var canvas = getEndpointCanvas(ep.endpoint);
-        if (canvas != null) {
-          this.addClass(canvas, c);
-        }
-      }
-    }, {
-      key: "applyEndpointType",
-      value: function applyEndpointType(ep, t) {
-        if (t.cssClass) {
-          var canvas = getEndpointCanvas(ep.endpoint);
-          if (canvas) {
-            var classes = Array.isArray(t.cssClass) ? t.cssClass : [t.cssClass];
-            this.addClass(canvas, classes.join(" "));
-          }
-        }
-      }
-    }, {
-      key: "destroyEndpoint",
-      value: function destroyEndpoint(ep) {
-        var anchorClass = this.endpointAnchorClassPrefix + (ep.currentAnchorClass ? "-" + ep.currentAnchorClass : "");
-        this.removeClass(ep.element, anchorClass);
-        cleanup(ep.endpoint);
-      }
-    }, {
-      key: "renderEndpoint",
-      value: function renderEndpoint(ep, paintStyle) {
-        var renderer = endpointMap[ep.endpoint.type];
-        if (renderer != null) {
-          SvgEndpoint.paint(ep.endpoint, renderer, paintStyle);
-        } else {
-          log("jsPlumb: no endpoint renderer found for type [" + ep.endpoint.type + "]");
-        }
-      }
-    }, {
-      key: "removeEndpointClass",
-      value: function removeEndpointClass(ep, c) {
-        var canvas = getEndpointCanvas(ep.endpoint);
-        if (canvas != null) {
-          this.removeClass(canvas, c);
-        }
-      }
-    }, {
-      key: "getEndpointClass",
-      value: function getEndpointClass(ep) {
-        var canvas = getEndpointCanvas(ep.endpoint);
-        if (canvas != null) {
-          return canvas.className;
-        } else {
-          return "";
-        }
-      }
-    }, {
-      key: "setEndpointHover",
-      value: function setEndpointHover(endpoint, hover, endpointIndex, doNotCascade) {
-        if (endpoint != null && (hover === false || !this.currentlyDragging && !this.isHoverSuspended())) {
-          var canvas = getEndpointCanvas(endpoint.endpoint);
-          if (canvas != null) {
-            if (endpoint.hoverClass != null) {
-              if (hover) {
-                this.addClass(canvas, endpoint.hoverClass);
-              } else {
-                this.removeClass(canvas, endpoint.hoverClass);
-              }
-            }
-            if (endpointIndex === 0 || endpointIndex === 1) {
-              var genericHoverClass = endpointIndex === 0 ? this.hoverSourceClass : this.hoverTargetClass;
-              if (hover) {
-                this.addClass(canvas, genericHoverClass);
-              } else {
-                this.removeClass(canvas, genericHoverClass);
-              }
-            }
-          }
-          if (endpoint.hoverPaintStyle != null) {
-            endpoint.paintStyleInUse = hover ? endpoint.hoverPaintStyle : endpoint.paintStyle;
-            if (!this._suspendDrawing) {
-              this.renderEndpoint(endpoint, endpoint.paintStyleInUse);
-            }
-          }
-          if (!doNotCascade) {
-            for (var i = 0; i < endpoint.connections.length; i++) {
-              this.setConnectorHover(endpoint.connections[i].connector, hover, endpoint);
-            }
-          }
-        }
-      }
-    }, {
-      key: "setEndpointVisible",
-      value: function setEndpointVisible(ep, v) {
-        setVisible(ep.endpoint, v);
-      }
-    }, {
-      key: "setGroupVisible",
-      value: function setGroupVisible(group, state) {
-        var m = group.el.querySelectorAll(SELECTOR_MANAGED_ELEMENT);
-        for (var i = 0; i < m.length; i++) {
-          if (state) {
-            this.show(m[i], true);
-          } else {
-            this.hide(m[i], true);
-          }
-        }
-      }
-    }, {
-      key: "deleteConnection",
-      value: function deleteConnection(connection, params) {
-        if (connection != null && connection.deleted !== true) {
-          if (connection.endpoints[0].deleted !== true) {
-            this.setEndpointHover(connection.endpoints[0], false, 0, true);
-          }
-          if (connection.endpoints[1].deleted !== true) {
-            this.setEndpointHover(connection.endpoints[1], false, 1, true);
-          }
-          return _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "deleteConnection", this).call(this, connection, params);
-        } else {
-          return false;
-        }
-      }
-    }, {
-      key: "addSourceSelector",
-      value: function addSourceSelector(selector, params, exclude) {
-        this.addDragFilter(selector);
-        return _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "addSourceSelector", this).call(this, selector, params, exclude);
-      }
-    }, {
-      key: "removeSourceSelector",
-      value: function removeSourceSelector(selector) {
-        this.removeDragFilter(selector.selector);
-        _get$2(_getPrototypeOf$6(BrowserJsPlumbInstance.prototype), "removeSourceSelector", this).call(this, selector);
-      }
-    }]);
-    return BrowserJsPlumbInstance;
-  }(JsPlumbInstance);
-
-  var CIRCLE = "circle";
-  var register$2 = function register() {
-    registerEndpointRenderer(DotEndpoint.type, {
-      makeNode: function makeNode(ep, style) {
-        return _node(CIRCLE, {
-          "cx": ep.w / 2,
-          "cy": ep.h / 2,
-          "r": ep.radius
-        });
-      },
-      updateNode: function updateNode(ep, node) {
-        _attr(node, {
-          "cx": "" + ep.w / 2,
-          "cy": "" + ep.h / 2,
-          "r": "" + ep.radius
-        });
-      }
-    });
-  };
-
-  var RECT = "rect";
-  var register$1 = function register() {
-    registerEndpointRenderer(RectangleEndpoint.type, {
-      makeNode: function makeNode(ep, style) {
-        return _node(RECT, {
-          "width": ep.w,
-          "height": ep.h
-        });
-      },
-      updateNode: function updateNode(ep, node) {
-        _attr(node, {
-          "width": ep.w,
-          "height": ep.h
-        });
-      }
-    });
-  };
-
-  var BLANK_ATTRIBUTES = {
-    "width": 10,
-    "height": 0,
-    "fill": "transparent",
-    "stroke": "transparent"
-  };
-  var register = function register() {
-    registerEndpointRenderer(BlankEndpoint.type, {
-      makeNode: function makeNode(ep, style) {
-        return _node("rect", BLANK_ATTRIBUTES);
-      },
-      updateNode: function updateNode(ep, node) {
-        _attr(node, BLANK_ATTRIBUTES);
-      }
-    });
-  };
-
-  register$2();
-  register();
-  register$1();
-  var _jsPlumbInstanceIndex = 0;
-  function getInstanceIndex() {
-    var i = _jsPlumbInstanceIndex + 1;
-    _jsPlumbInstanceIndex++;
-    return i;
-  }
-  function newInstance$2(defaults) {
-    return new BrowserJsPlumbInstance(getInstanceIndex(), defaults);
-  }
-
-  function _classCallCheck$b(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$b(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$b(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$b(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$b(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineProperty$b(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  var Classes = {
-    DIALOG: "jtk-dialog",
-    UNDERLAY: "jtk-dialog-underlay",
-    OVERLAY: "jtk-dialog-overlay",
-    TITLE: "jtk-dialog-title",
-    CONTENT: "jtk-dialog-content",
-    BUTTONS: "jtk-dialog-buttons",
-    OVERLAY_VISIBLE: "jtk-dialog-overlay-visible",
-    BUTTON: "jtk-dialog-button",
-    BUTTON_OK: "jtk-dialog-button-ok",
-    BUTTON_CANCEL: "jtk-dialog-button-cancel",
-    OVERLAY_TOP: "jtk-dialog-overlay-top",
-    OVERLAY_BOTTOM: "jtk-dialog-overlay-bottom",
-    OVERLAY_LEFT: "jtk-dialog-overlay-left",
-    OVERLAY_RIGHT: "jtk-dialog-overlay-right",
-    OVERLAY_X: "jtk-dialog-overlay-x",
-    OVERLAY_Y: "jtk-dialog-overlay-y"
-  };
-  var Attributes = {
-    POSITION: "data-position",
-    AXIS: "data-axis",
-    JTK_CANCEL: "jtk-cancel",
-    JTK_COMMIT: "jtk-commit",
-    MULTIPLE: "multiple",
-    JTK: "jtk-att",
-    TITLE: "title",
-    FOCUS: "jtk-focus",
-    TYPE: "type",
-    CANCEL: "cancel",
-    ID: "id"
-  };
-  var Values = {
-    BLOCK: "block",
-    VISIBLE: "visible",
-    HIDDEN: "hidden",
-    FIXED: "fixed",
-    ABSOLUTE: "absolute",
-    TOP: "top",
-    BOTTOM: "bottom",
-    X: "x",
-    Y: "y",
-    TRUE: "true",
-    FALSE: "false",
-    NONE: "none",
-    PX: "px"
-  };
-  var Events = {
-    RESIZE: "resize",
-    CLICK: "click",
-    KEYUP: "keyup",
-    SCROLL: "scroll"
-  };
-  var Elements = {
-    BUTTON: "button",
-    DIV: "div",
-    TEXT: "TEXT",
-    RADIO: "RADIO",
-    CHECKBOX: "CHECKBOX",
-    SELECT: "SELECT",
-    TEXTAREA: "TEXTAREA",
-    COLOR: "COLOR",
-    HIDDEN: "HIDDEN",
-    INPUT: "INPUT"
-  }; // export function classes(...classes:Array<string>):string {
-  //     return classes.join(" ")
-  // }
-
-  function attSel(att) {
-    return ["[", att, "]"].join("");
-  }
-
-  var _getHandlers2, _setHandlers2, _clearHandlers2;
-  /**
-   Methods to bind/unbind datasets from the DOM.
-   */
-
-  var _getHandlers = (_getHandlers2 = {}, _defineProperty$b(_getHandlers2, Elements.TEXT, function (el) {
-    return el.value;
-  }), _defineProperty$b(_getHandlers2, Elements.RADIO, function (el) {
-    if (el.checked) return el.value;
-  }), _defineProperty$b(_getHandlers2, Elements.CHECKBOX, function (el) {
-    if (el.checked) return true;
-  }), _defineProperty$b(_getHandlers2, Elements.SELECT, function (el) {
-    var selectedOptions = el.selectedOptions,
-        multiple = el.getAttribute(Attributes.MULTIPLE);
-
-    if (multiple) {
-      var o = [];
-
-      for (var i = 0; i < selectedOptions.length; i++) {
-        o.push(selectedOptions[i].value);
-      }
-
-      return o;
-    } else {
-      return el.selectedIndex !== -1 ? el.options[el.selectedIndex].value : null;
-    }
-  }), _defineProperty$b(_getHandlers2, Elements.TEXTAREA, function (el) {
-    return el.value;
-  }), _defineProperty$b(_getHandlers2, Elements.COLOR, function (el) {
-    return el.value;
-  }), _defineProperty$b(_getHandlers2, Elements.HIDDEN, function (el) {
-    return el.value;
-  }), _getHandlers2);
-  /**
-   * Extracts a dataset from the given element by finding child elements that have a `jtk-att` attribute set, and extracting from those elements
-   * their value. When the same `jtk-att` value appears more than once as a child of `el`, the values are stored in an array for that field.
-   * @param el - Element to extract values from.
-   * @param unresolvedElementGetter - Optional function to use when an element with an unknown tag has a `jtk-att` declared on it. This function is given the element and whatever it
-   * returns - even null - will be set on the outgoing data.
-   */
-
-  function extract(el, unresolvedElementGetter) {
-    var atts = el.querySelectorAll(attSel(Attributes.JTK)),
-        out = {};
-
-    for (var i = 0; i < atts.length; i++) {
-      var _v = extractValueFromElement(atts[i], unresolvedElementGetter);
-
-      if (_v != null) {
-        var a = atts[i].getAttribute(Attributes.JTK);
-        var existing = data(out, a);
-
-        if (existing != null) {
-          if (!Array.isArray(existing)) {
-            existing = [existing];
-            data(out, a, existing);
-          }
-
-          existing.push(_v);
-        } else {
-          data(out, a, _v);
-        }
-      }
-    }
-
-    return out;
-  }
-  /**
-   * Extract the value represented by the given element.
-   * @param el - Element to extract value from.
-   * @param unresolvedElementGetter- Optional function to use when an element with an unknown tag has a `jtk-att` declared on it. This function is given the element and whatever it
-   * returns - even null - will be the return value.
-   */
-
-  function extractValueFromElement(el, unresolvedElementGetter) {
-    var t = el.tagName.toUpperCase(),
-        tt = t === Elements.INPUT ? (el.getAttribute(Attributes.TYPE) || Elements.TEXT).toUpperCase() : t,
-        handler = _getHandlers[tt];
-    var value;
-
-    if (handler != null) {
-      value = handler(el);
-    } else {
-      if (unresolvedElementGetter != null) {
-        value = unresolvedElementGetter(el);
-      }
-    }
-
-    return value;
-  }
-  /**
-   * Apply the given object to the given DOM element. This method will find all child elements of `el` that have a `jtk-att`
-   * attribute set, and then attempt to set the value of any found DOM element with a value extracted from `dataset`.
-   * @param dataset
-   * @param el
-   * @param autoCommitHandler
-   */
-
-  function apply(dataset, el, autoCommitHandler, unresolvedElementSetter) {
-    var atts = el.querySelectorAll(attSel(Attributes.JTK));
-
-    var _loop = function _loop(i) {
-      var t = atts[i].tagName.toUpperCase(),
-          tt = t === Elements.INPUT ? (atts[i].getAttribute(Attributes.TYPE) || Elements.TEXT).toUpperCase() : t,
-          a = atts[i].getAttribute(Attributes.JTK),
-          v = data(dataset, a);
-
-      if (v != null) {
-        var handler = _setHandlers[tt];
-
-        if (handler != null) {
-          handler(atts[i], v);
-        } else {
-          if (unresolvedElementSetter != null) {
-            unresolvedElementSetter(atts[i], v);
-          } // for unresolved element types we don't offer auto commit.
-
-
-          return "continue";
-        }
-      }
-
-      if (autoCommitHandler != null) {
-        // ENABLE COMMIT VIA enter key (or ctrl+enter in text area).
-        if (atts[i].getAttribute(Attributes.JTK_COMMIT)) {
-          if (t === Elements.INPUT) {
-            atts[i].addEventListener(Events.KEYUP, function (e) {
-              if (e.keyCode === 10 || e.keyCode === 13) {
-                autoCommitHandler(atts[i]);
-              }
-            });
-          } else if (t === Elements.TEXTAREA) {
-            atts[i].addEventListener(Events.KEYUP, function (e) {
-              if (e.ctrlKey && (e.keyCode === 10 || e.keyCode === 13)) {
-                autoCommitHandler(atts[i]);
-              }
-            });
-          }
-        }
-      }
-    };
-
-    for (var i = 0; i < atts.length; i++) {
-      var _ret = _loop(i);
-
-      if (_ret === "continue") continue;
-    }
-  }
-  function clear(els, source) {
-    for (var i = 0; i < els.length; i++) {
-      if (els[i] === source) {
-        continue;
-      }
-
-      var t = els[i].tagName.toUpperCase(),
-          tt = t === Elements.INPUT ? (els[i].getAttribute(Attributes.TYPE) || Elements.TEXT).toUpperCase() : t,
-          ch = _clearHandlers[tt];
-
-      if (ch) {
-        ch(els[i]);
-      }
-    }
-  }
-
-  var _setHandlers = (_setHandlers2 = {}, _defineProperty$b(_setHandlers2, Elements.TEXT, function (el, v) {
-    el.value = v;
-  }), _defineProperty$b(_setHandlers2, Elements.RADIO, function (el, v) {
-    el.checked = el.value == v;
-  }), _defineProperty$b(_setHandlers2, Elements.CHECKBOX, function (el, v) {
-    el.checked = v == true;
-  }), _defineProperty$b(_setHandlers2, Elements.SELECT, function (el, v) {
-    var multiple = el.getAttribute(Attributes.MULTIPLE);
-
-    for (var i = 0; i < el.options.length; i++) {
-      if (multiple) {
-        if (v.indexOf(el.options[i].value) > -1) {
-          el.options[i].selected = true;
-        }
-      } else {
-        if (el.options[i].value === v) {
-          el.selectedIndex = i;
-          return;
-        }
-      }
-    }
-  }), _defineProperty$b(_setHandlers2, Elements.TEXTAREA, function (el, v) {
-    el.value = v;
-  }), _defineProperty$b(_setHandlers2, Elements.COLOR, function (el, v) {
-    el.value = v;
-  }), _defineProperty$b(_setHandlers2, Elements.HIDDEN, function (el, v) {
-    el.value = v;
-  }), _setHandlers2);
-
-  var _clearHandlers = (_clearHandlers2 = {}, _defineProperty$b(_clearHandlers2, Elements.TEXT, function (el) {
-    el.value = "";
-  }), _defineProperty$b(_clearHandlers2, Elements.RADIO, function (el) {
-    el.checked = false;
-  }), _defineProperty$b(_clearHandlers2, Elements.CHECKBOX, function (el) {
-    el.checked = false;
-  }), _defineProperty$b(_clearHandlers2, Elements.SELECT, function (el) {
-    el.selectedIndex = -1;
-  }), _defineProperty$b(_clearHandlers2, Elements.TEXTAREA, function (el) {
-    el.value = "";
-  }), _defineProperty$b(_clearHandlers2, Elements.COLOR, function (el) {
-    el.value = "";
-  }), _defineProperty$b(_clearHandlers2, Elements.HIDDEN, function (el) {
-    el.value = "";
-  }), _clearHandlers2);
-
-  var _proxy = function _proxy(fn, data, el) {
-    try {
-      if (fn != null) {
-        fn.apply(fn, Array.prototype.slice.apply(arguments, [1]));
-      }
-    } catch (e) {}
-  };
-
-  /**
-   * Simple dialog library. Created for use in the Toolkit demonstrations.
-   */
-  var Dialogs = /*#__PURE__*/function () {
-    /**
-     * Initialize all the dialogs found on the page.
-     * @param params Method parameters
-     * @param params.dialogs Optional map of dialog IDs to [content, title, isCancelable] arrays. Use this
-     * instead of providing a selector if you wish to supply dialog information via JS and not as templates in the HTML.
-     * @param params.selector Selector identifying dialog elements. If not provided, the value '.jtk-dialog' is used by default.
-     * @param params.globals Optional object of global callbacks, keyed by event id.
-     * @param params.labels Optional object of button labels. See documentation.
-     */
-    function Dialogs(params) {
-      var _this = this;
-
-      _classCallCheck$b(this, Dialogs);
-
-      _defineProperty$b(this, "eventManager", void 0);
-
-      _defineProperty$b(this, "cache", void 0);
-
-      _defineProperty$b(this, "current", void 0);
-
-      _defineProperty$b(this, "underlay", void 0);
-
-      _defineProperty$b(this, "overlay", void 0);
-
-      _defineProperty$b(this, "title", void 0);
-
-      _defineProperty$b(this, "content", void 0);
-
-      _defineProperty$b(this, "buttons", void 0);
-
-      _defineProperty$b(this, "onOK", void 0);
-
-      _defineProperty$b(this, "onCancel", void 0);
-
-      _defineProperty$b(this, "onOpen", void 0);
-
-      _defineProperty$b(this, "onMaybeClose", void 0);
-
-      _defineProperty$b(this, "onClose", void 0);
-
-      _defineProperty$b(this, "btnOk", void 0);
-
-      _defineProperty$b(this, "btnCancel", void 0);
-
-      _defineProperty$b(this, "labels", {
-        ok: "OK",
-        cancel: "Cancel"
-      });
-
-      _defineProperty$b(this, "container", document.body);
-
-      _defineProperty$b(this, "visible", false);
-
-      _defineProperty$b(this, "knockle", void 0);
-
-      _defineProperty$b(this, "globals", {});
-
-      _defineProperty$b(this, "reposition", true);
-
-      _defineProperty$b(this, "templates", {});
-
-      _defineProperty$b(this, "_positioners", {
-        x: function x(docElem, isBody, s) {
-          var dw = _this.container.clientWidth,
-              l = (dw - s.w) / 2,
-              scrollLeft = window.pageXOffset || docElem.scrollLeft || document.body.scrollLeft;
-
-          if (l < 0) {
-            l = 10;
-          }
-
-          scrollLeft = isBody ? scrollLeft : _this.container.scrollLeft;
-          _this.overlay.style.left = l + scrollLeft + Values.PX;
-        },
-        y: function y(docElem, isBody, s) {
-          var dh = _this.container.clientHeight,
-              t = 0.1 * dh;
-          var scrollTop = window.pageYOffset || docElem.scrollTop || document.body.scrollTop;
-
-          if (t < 0) {
-            t = 10;
-          }
-
-          scrollTop = isBody ? scrollTop : _this.container.scrollTop;
-          _this.overlay.style.top = t + scrollTop + Values.PX;
-        }
-      });
-
-      params = params || {};
-      this.cache = {};
-      this.eventManager = new EventManager();
-      this.knockle = new BrowserUiKnockle({
-        templateResolver: function templateResolver(id) {
-          return _this.templates[id] || document.getElementById(id).innerHTML;
-        }
-      }, function (tagName, tag) {
-        return null;
-      }, function (tagName) {
-        return null;
-      });
-
-      if (params.dialogs) {
-        for (var d in params.dialogs) {
-          this.templates[d] = params.dialogs[d].template;
-          this.cache[d] = {
-            content: this.templates[d],
-            title: params.dialogs[d].title || "",
-            cancelable: params.dialogs[d].cancelable !== false
-          };
-        }
-      } else {
-        var sel = params.selector || cls(Classes.DIALOG),
-            els = document.querySelectorAll(sel);
-
-        for (var i = 0; i < els.length; i++) {
-          var id = els[i].getAttribute(Attributes.ID);
-
-          if (id != null) {
-            this.cache[id] = {
-              content: els[i].innerHTML,
-              title: els[i].getAttribute(Attributes.TITLE) || "",
-              el: els[i],
-              cancelable: els[i].getAttribute(Attributes.CANCEL) !== Values.FALSE
-            };
-          }
-        }
-      } // override default labels if labels provided
-
-
-      if (params.labels) {
-        extend(this.labels, params.labels);
-      }
-
-      if (params.globals) {
-        extend(this.globals, params.globals);
-      }
-
-      this.underlay = document.createElement(Elements.DIV);
-      this.underlay.className = Classes.UNDERLAY;
-      this.eventManager.on(this.underlay, Events.CLICK, function () {
-        _this._close(true);
-      });
-      this.overlay = document.createElement(Elements.DIV);
-      this.overlay.className = Classes.OVERLAY;
-      this.title = document.createElement(Elements.DIV);
-      this.title.className = Classes.TITLE;
-      this.overlay.appendChild(this.title);
-      this.content = document.createElement(Elements.DIV);
-      this.content.className = Classes.CONTENT;
-      this.overlay.appendChild(this.content);
-      this.buttons = document.createElement(Elements.DIV);
-      this.buttons.className = Classes.BUTTONS;
-      this.overlay.appendChild(this.buttons);
-    }
-
-    _createClass$b(Dialogs, [{
-      key: "_positionOverlay",
-      value: function _positionOverlay() {
-        if (this.visible) {
-          var docElem = document.documentElement,
-              s = size(this.overlay),
-              isBody = this.container == document.body,
-              axis = this.overlay.getAttribute(Attributes.AXIS);
-          this.underlay.style.position = isBody ? Values.FIXED : Values.ABSOLUTE;
-
-          this._positioners[axis](docElem, isBody, s);
-        }
-      }
-    }, {
-      key: "_resolveContainer",
-      value: function _resolveContainer(c) {
-        if (c == null) return document.body;else if (typeof c === "string") return document.getElementById(c);else return c;
-      }
-    }, {
-      key: "_setCurrent",
-      value: function _setCurrent(params) {
-        var _this2 = this;
-
-        var i;
-        if (!params.id || !this.cache[params.id]) return;
-        this.reposition = params.reposition !== false;
-        this.onOK = params.onOK;
-        this.onCancel = params.onCancel;
-        this.onOpen = params.onOpen;
-        this.onMaybeClose = params.onMaybeClose;
-        this.onClose = params.onClose;
-        var position = params.position || Values.TOP,
-            positionClass = [Classes.OVERLAY, position].join("-"),
-            axis = position === Values.TOP || position === Values.BOTTOM ? Values.X : Values.Y,
-            axisClass = [Classes.OVERLAY, axis].join("-");
-
-        this._createButtons(params);
-
-        this.container = this._resolveContainer(params.container);
-        var d = params.data || {},
-            t = this.knockle.template(params.id, d);
-        this.title.innerHTML = params.title || this.cache[params.id].title || "";
-        this.content.innerHTML = "";
-        var childNodeCount = t.childNodes.length;
-
-        for (i = 0; i < childNodeCount; i++) {
-          this.content.appendChild(t.childNodes[0]);
-        }
-
-        this.container.appendChild(this.underlay);
-        this.container.appendChild(this.overlay);
-        addClass(this.overlay, positionClass);
-        addClass(this.overlay, axisClass);
-        this.underlay.style.display = Values.BLOCK;
-        this.overlay.style.display = Values.BLOCK;
-        this.overlay.setAttribute(Attributes.POSITION, position);
-        this.overlay.setAttribute(Attributes.AXIS, axis); // hide/show cancel button
-
-        var cancelVisibleState = this.cache[params.id].cancelable ? Values.VISIBLE : Values.HIDDEN;
-        var cancelButtons = this.buttons.querySelectorAll("[jtk-cancel='true']");
-
-        for (i = 0; i < cancelButtons.length; i++) {
-          cancelButtons[i].style.visibility = cancelVisibleState;
-        }
-
-        this.visible = true;
-
-        this._positionOverlay();
-
-        apply(d, this.content, params.autoCommit !== false ? function (e) {
-          _this2._close();
-        } : null);
-
-        this.eventManager.on(document, Events.KEYUP, this.keyListener); // on window resize/scroll, ensure dialog stays in the middle.
-
-        if (this.reposition) {
-          this.eventManager.on(window, Events.RESIZE, this._positionOverlay);
-          this.eventManager.on(window, Events.SCROLL, this._positionOverlay);
-        } // attach a clear button/clear all button handler
-
-
-        this.eventManager.on(this.overlay, Events.CLICK, "[jtk-clear]", function (e) {
-          var a = _this2.overlay.getAttribute("jtk-att");
-
-          if (a) {
-            _this2.clear(_this2.overlay.querySelectorAll("[jtk-att='" + a + "']:not([jtk-clear])"), _this2);
-          }
-        });
-        this.eventManager.on(this.overlay, Events.CLICK, "[jtk-clear-all]", function (e) {
-          _this2.clear(_this2.overlay.querySelectorAll("[jtk-att]:not([jtk-clear])"), _this2);
-        });
-        this.globals.onOpen && this.globals.onOpen(this.overlay);
-        this.onOpen && this.onOpen(this.overlay);
-        addClass(this.overlay, Classes.OVERLAY_VISIBLE); // perhaps set the focus
-
-        try {
-          var focusNode = this.content.querySelector("[jtk-focus]");
-          focusNode && setTimeout(function () {
-            focusNode.focus();
-          }, 0);
-        } catch (e) {} // old IE throws error if you try to focus a hidden el. so this is just in case.
-
-      }
-    }, {
-      key: "keyListener",
-      value: function keyListener(e) {
-        if (e.keyCode == 27) {
-          this._close(true);
-        }
-      }
-    }, {
-      key: "_createButtons",
-      value: function _createButtons(params) {
-        var _this3 = this;
-
-        this.buttons.innerHTML = "";
-
-        if (params.buttons) {
-          var btn;
-
-          for (var i = 0; i < params.buttons.length; i++) {
-            btn = params.buttons[i];
-            this.buttons.appendChild(btn);
-
-            if (btn.getAttribute(Attributes.JTK_COMMIT) === Values.TRUE) {
-              this.eventManager.on(btn, Events.CLICK, function () {
-                _this3._close();
-              });
-            } else if (btn.getAttribute(Attributes.JTK_CANCEL) === Values.TRUE) {
-              this.eventManager.on(btn, Events.CLICK, function () {
-                _this3._close(true);
-              });
-            }
-          }
-        } else {
-          this.btnOk = document.createElement(Elements.BUTTON);
-          this.btnOk.className = classList(Classes.BUTTON, Classes.BUTTON_OK);
-          this.btnOk.innerHTML = this.labels.ok;
-          this.buttons.appendChild(this.btnOk);
-          this.eventManager.on(this.btnOk, Events.CLICK, function () {
-            _this3._close();
-          });
-          this.btnCancel = document.createElement(Elements.BUTTON);
-          this.btnCancel.className = classList(Classes.BUTTON, Classes.BUTTON_CANCEL);
-          this.btnCancel.innerHTML = this.labels.cancel;
-          this.btnCancel.setAttribute(Attributes.JTK_CANCEL, Values.TRUE);
-          this.buttons.appendChild(this.btnCancel);
-          this.eventManager.on(this.btnCancel, Events.CLICK, function () {
-            _this3._close(true);
-          }); // set labels:
-
-          this.btnOk.innerHTML = params.labels ? params.labels.ok || this.labels.ok : this.labels.ok;
-          this.btnCancel.innerHTML = params.labels ? params.labels.cancel || this.labels.cancel : this.labels.cancel;
-        }
-      }
-    }, {
-      key: "_cleanupButtons",
-      value: function _cleanupButtons() {
-        var buttonList = this.buttons.children;
-
-        for (var i = 0; i < buttonList.length; i++) {
-          buttonList[i].parentNode.removeChild(buttonList[i]);
-        }
-      }
-      /**
-       * Show the dialog with the given id, optionally rendering it with some provided data.
-       * @param params Method parameters
-       * @param params.id ID of the dialog to show
-       * @param params.data Optional data to render the dialog template with.
-       * @param params.title Title for the dialog. If not supplied, the dialog's title will come from the `title` attribute of the associated template, if any. Otherwise it will be blank.
-       * @param params.onOpen Optional function to run once the dialog has opened.
-       * @param params.onOK Optional function to run when the user presses OK.
-       * @param params.onCancel Optional function to run when the user presses cancel.
-       * @param params.onClose Optional function to call when the dialog is closed, regardless of how it was closed.
-       * @param params.onMaybeClose Optional function that will be called prior to `onOK` being called, with the same data that will be passed to `onOK`. Returning false from this function causes the dilaog to remain open.
-       */
-
-    }, {
-      key: "show",
-      value: function show(params) {
-        this._setCurrent(params);
-      }
-      /**
-       * Hide the current dialog as if the cancel button was pressed.
-       */
-
-    }, {
-      key: "hide",
-      value: function hide() {
-        this._close(true);
-      }
-      /**
-       * Clears the given set
-       */
-
-    }, {
-      key: "clear",
-      value: function clear$1(els, source) {
-        clear(els, source);
-      }
-      /**
-       * applies the given data object to the given element, using `jtk-att` as the match attributes
-       */
-
-    }, {
-      key: "apply",
-      value: function apply$1(data, el) {
-        apply(data, el);
-      }
-      /**
-       * extracts a data object from the given element, using `jtk-att` as the match attributes
-       */
-
-    }, {
-      key: "extract",
-      value: function extract$1(el) {
-        return extract(el);
-      }
-    }, {
-      key: "_close",
-      value: function _close(wasCancelled) {
-        var data = wasCancelled ? null : extract(this.content);
-        if (!wasCancelled && this.onMaybeClose != null && this.onMaybeClose(data) === false) return;
-        this.visible = false;
-        this.underlay.style.display = Values.NONE;
-        this.overlay.style.display = Values.NONE;
-        this.eventManager.off(document, Events.KEYUP, this.keyListener); // on window resize/scroll, ensure dialog stays in the middle.
-
-        this.eventManager.off(window, Events.RESIZE, this._positionOverlay);
-        this.eventManager.off(window, Events.SCROLL, this._positionOverlay);
-        removeClass(this.overlay, Classes.OVERLAY_VISIBLE);
-        removeClass(this.overlay, Classes.OVERLAY_TOP);
-        removeClass(this.overlay, Classes.OVERLAY_BOTTOM);
-        removeClass(this.overlay, Classes.OVERLAY_LEFT);
-        removeClass(this.overlay, Classes.OVERLAY_RIGHT);
-        removeClass(this.overlay, Classes.OVERLAY_X);
-        removeClass(this.overlay, Classes.OVERLAY_Y);
-        this.overlay.setAttribute(Attributes.POSITION, "");
-        this.overlay.setAttribute(Attributes.AXIS, "");
-        this.container.removeChild(this.underlay);
-        this.container.removeChild(this.overlay);
-
-        this._cleanupButtons();
-
-        if (wasCancelled) {
-          _proxy(this.globals.onCancel, this.content);
-
-          _proxy(this.onCancel, this.content);
-        } else {
-          _proxy(this.globals.onOK, data, this.content);
-
-          _proxy(this.onOK, data, this.content);
-        }
-
-        _proxy(this.globals.onClose);
-
-        _proxy(this.onClose);
-
-        this.onOK = this.onCancel = this.onOpen = this.onClose = this.onMaybeClose = this.current = null;
-      }
-    }]);
-
-    return Dialogs;
-  }();
-
-  /**
-   * Provides a lightweight dialog library. This package was created for use in the jsPlumb Toolkit demonstrations, and is not
-   * fully featured. Licensees are welcome to use this package in their own applications, but this package does not take priority
-   * as far as development of new features are concerned - since the Toolkit is generally one component of a larger application,
-   * there's generally a dialog solution for that app, and no need for these dialogs.
-   *
-   * @package @jsplumbtoolkit/dialogs
-   */
-  function newInstance$1(params) {
-    return new Dialogs(params);
-  }
-
-  function _classCallCheck$a(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties$a(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass$a(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties$a(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties$a(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _defineProperty$a(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function _inherits$5(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) _setPrototypeOf$5(subClass, superClass);
-  }
-
-  function _getPrototypeOf$5(o) {
-    _getPrototypeOf$5 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf$5(o);
-  }
-
-  function _setPrototypeOf$5(o, p) {
-    _setPrototypeOf$5 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf$5(o, p);
-  }
-
-  function _isNativeReflectConstruct$5() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
-
-    try {
-      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function _assertThisInitialized$5(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return self;
-  }
-
-  function _possibleConstructorReturn$5(self, call) {
-    if (call && (typeof call === "object" || typeof call === "function")) {
-      return call;
-    } else if (call !== void 0) {
-      throw new TypeError("Derived constructors may only return object or undefined");
-    }
-
-    return _assertThisInitialized$5(self);
-  }
-
-  function _createSuper$5(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct$5();
-
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf$5(Derived),
-          result;
-
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf$5(this).constructor;
-
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
-      }
-
-      return _possibleConstructorReturn$5(this, result);
-    };
-  }
-
-  function _superPropBase$1(object, property) {
-    while (!Object.prototype.hasOwnProperty.call(object, property)) {
-      object = _getPrototypeOf$5(object);
-      if (object === null) break;
-    }
-
-    return object;
-  }
-
-  function _get$1(target, property, receiver) {
-    if (typeof Reflect !== "undefined" && Reflect.get) {
-      _get$1 = Reflect.get;
-    } else {
-      _get$1 = function _get(target, property, receiver) {
-        var base = _superPropBase$1(target, property);
-
-        if (!base) return;
-        var desc = Object.getOwnPropertyDescriptor(base, property);
-
-        if (desc.get) {
-          return desc.get.call(receiver);
-        }
-
-        return desc.value;
-      };
-    }
-
-    return _get$1(target, property, receiver || target);
-  }
-
-  function _slicedToArray$1(arr, i) {
-    return _arrayWithHoles$1(arr) || _iterableToArrayLimit$1(arr, i) || _unsupportedIterableToArray$1(arr, i) || _nonIterableRest$1();
-  }
-
-  function _toConsumableArray(arr) {
-    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray$1(arr) || _nonIterableSpread();
-  }
-
-  function _arrayWithoutHoles(arr) {
-    if (Array.isArray(arr)) return _arrayLikeToArray$1(arr);
-  }
-
-  function _arrayWithHoles$1(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArray(iter) {
-    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-  }
-
-  function _iterableToArrayLimit$1(arr, i) {
-    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-    if (_i == null) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-
-    var _s, _e;
-
-    try {
-      for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _unsupportedIterableToArray$1(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray$1(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$1(o, minLen);
-  }
-
-  function _arrayLikeToArray$1(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-
-  function _nonIterableSpread() {
+  function _nonIterableSpread$1() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
-  function _nonIterableRest$1() {
+  function _nonIterableRest$2() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
@@ -27212,12 +24510,12 @@
    */
   var AttributeExtractor = /*#__PURE__*/function () {
     function AttributeExtractor(el) {
-      _classCallCheck$a(this, AttributeExtractor);
+      _classCallCheck$c(this, AttributeExtractor);
 
       this.el = el;
     }
 
-    _createClass$a(AttributeExtractor, [{
+    _createClass$c(AttributeExtractor, [{
       key: "value",
       value: function value(name, _default) {
         var v = this.el.getAttribute(name);
@@ -27245,16 +24543,16 @@
 
   var ObjectValueExtractor = /*#__PURE__*/function () {
     function ObjectValueExtractor(obj, stripPrefix) {
-      _classCallCheck$a(this, ObjectValueExtractor);
+      _classCallCheck$c(this, ObjectValueExtractor);
 
       this.obj = obj;
 
-      _defineProperty$a(this, "stripPrefix", void 0);
+      _defineProperty$b(this, "stripPrefix", void 0);
 
       this.stripPrefix = stripPrefix || "";
     }
 
-    _createClass$a(ObjectValueExtractor, [{
+    _createClass$c(ObjectValueExtractor, [{
       key: "value",
       value: function value(name, _default) {
         var v = this.obj[name.replace(this.stripPrefix, "").replace(/(\-\w)/g, function (m) {
@@ -27278,29 +24576,29 @@
 
   var Layer = /*#__PURE__*/function () {
     function Layer(background, params, zoom) {
-      _classCallCheck$a(this, Layer);
+      _classCallCheck$c(this, Layer);
 
-      _defineProperty$a(this, "scaledImageSize", void 0);
+      _defineProperty$b(this, "scaledImageSize", void 0);
 
-      _defineProperty$a(this, "scaledImageSizeH", void 0);
+      _defineProperty$b(this, "scaledImageSizeH", void 0);
 
-      _defineProperty$a(this, "container", void 0);
+      _defineProperty$b(this, "container", void 0);
 
-      _defineProperty$a(this, "zoom", void 0);
+      _defineProperty$b(this, "zoom", void 0);
 
-      _defineProperty$a(this, "specs", void 0);
+      _defineProperty$b(this, "specs", void 0);
 
-      _defineProperty$a(this, "url", void 0);
+      _defineProperty$b(this, "url", void 0);
 
-      _defineProperty$a(this, "urlGenerator", void 0);
+      _defineProperty$b(this, "urlGenerator", void 0);
 
-      _defineProperty$a(this, "apparentZoom", void 0);
+      _defineProperty$b(this, "apparentZoom", void 0);
 
-      _defineProperty$a(this, "xTiles", void 0);
+      _defineProperty$b(this, "xTiles", void 0);
 
-      _defineProperty$a(this, "yTiles", void 0);
+      _defineProperty$b(this, "yTiles", void 0);
 
-      _defineProperty$a(this, "_images", []);
+      _defineProperty$b(this, "_images", []);
 
       var iwh = Math.pow(2, params.options.maxZoom - zoom) * params.options.tileSize.w;
       var iwhh = Math.pow(2, params.options.maxZoom - zoom) * params.options.tileSize.h;
@@ -27340,7 +24638,7 @@
       }
     }
 
-    _createClass$a(Layer, [{
+    _createClass$c(Layer, [{
       key: "_url",
       value: function _url(z, x, y) {
         return this.url.replace("{z}", z + "").replace("{x}", x + "").replace("{y}", y + "");
@@ -27397,41 +24695,41 @@
 
   var TiledBackground = /*#__PURE__*/function () {
     function TiledBackground(params) {
-      _classCallCheck$a(this, TiledBackground);
+      _classCallCheck$c(this, TiledBackground);
 
-      _defineProperty$a(this, "canvas", void 0);
+      _defineProperty$b(this, "canvas", void 0);
 
-      _defineProperty$a(this, "viewport", void 0);
+      _defineProperty$b(this, "viewport", void 0);
 
-      _defineProperty$a(this, "layers", []);
+      _defineProperty$b(this, "layers", []);
 
-      _defineProperty$a(this, "currentLayer", void 0);
+      _defineProperty$b(this, "currentLayer", void 0);
 
-      _defineProperty$a(this, "widgetZoom", void 0);
+      _defineProperty$b(this, "widgetZoom", void 0);
 
-      _defineProperty$a(this, "zoomWidget", void 0);
+      _defineProperty$b(this, "zoomWidget", void 0);
 
-      _defineProperty$a(this, "getWidthOf", void 0);
+      _defineProperty$b(this, "getWidthOf", void 0);
 
-      _defineProperty$a(this, "getHeightOf", void 0);
+      _defineProperty$b(this, "getHeightOf", void 0);
 
-      _defineProperty$a(this, "width", void 0);
+      _defineProperty$b(this, "width", void 0);
 
-      _defineProperty$a(this, "height", void 0);
+      _defineProperty$b(this, "height", void 0);
 
-      _defineProperty$a(this, "tileSize", void 0);
+      _defineProperty$b(this, "tileSize", void 0);
 
-      _defineProperty$a(this, "panDebounceTimeout", void 0);
+      _defineProperty$b(this, "panDebounceTimeout", void 0);
 
-      _defineProperty$a(this, "zoomDebounceTimeout", void 0);
+      _defineProperty$b(this, "zoomDebounceTimeout", void 0);
 
-      _defineProperty$a(this, "maxZoom", void 0);
+      _defineProperty$b(this, "maxZoom", void 0);
 
-      _defineProperty$a(this, "urlGenerator", void 0);
+      _defineProperty$b(this, "urlGenerator", void 0);
 
-      _defineProperty$a(this, "_debounceUpdateZoom", void 0);
+      _defineProperty$b(this, "_debounceUpdateZoom", void 0);
 
-      _defineProperty$a(this, "_doEnsureVisibleTiles", void 0);
+      _defineProperty$b(this, "_doEnsureVisibleTiles", void 0);
 
       if (params.options.maxZoom == null) throw new Error("Parameter `maxZoom` not set; cannot initialize TiledBackground");
       if (!params.options.tileSize) throw new Error("Parameter `tileSize not set; cannot initialize TiledBackground. It should be in the form {w:width, h:height}.");
@@ -27465,7 +24763,7 @@
     } // maps the current widget zoom to a zoom layer from our set. Returns the layer index.
 
 
-    _createClass$a(TiledBackground, [{
+    _createClass$c(TiledBackground, [{
       key: "_mapZoomToLayer",
       value: function _mapZoomToLayer() {
         if (this.widgetZoom <= this.layers[0].apparentZoom) return 0;else if (this.widgetZoom >= this.layers[this.layers.length - 1].apparentZoom) return this.layers.length - 1;else {
@@ -27568,17 +24866,17 @@
   }();
 
   var AbsoluteTiledBackground = /*#__PURE__*/function (_TiledBackground) {
-    _inherits$5(AbsoluteTiledBackground, _TiledBackground);
+    _inherits$7(AbsoluteTiledBackground, _TiledBackground);
 
-    var _super = _createSuper$5(AbsoluteTiledBackground);
+    var _super = _createSuper$7(AbsoluteTiledBackground);
 
     function AbsoluteTiledBackground(params) {
-      _classCallCheck$a(this, AbsoluteTiledBackground);
+      _classCallCheck$c(this, AbsoluteTiledBackground);
 
       return _super.call(this, params);
     }
 
-    _createClass$a(AbsoluteTiledBackground, [{
+    _createClass$c(AbsoluteTiledBackground, [{
       key: "getTileSpecs",
       value: function getTileSpecs(zoom) {
         var divisor = Math.pow(2, this.maxZoom - zoom); // how much to divide the dimensions by when calculating image dimensions
@@ -27598,13 +24896,13 @@
     function SimpleBackground(params) {
       var _this = this;
 
-      _classCallCheck$a(this, SimpleBackground);
+      _classCallCheck$c(this, SimpleBackground);
 
-      _defineProperty$a(this, "canvas", void 0);
+      _defineProperty$b(this, "canvas", void 0);
 
-      _defineProperty$a(this, "onBackgroundReady", void 0);
+      _defineProperty$b(this, "onBackgroundReady", void 0);
 
-      _defineProperty$a(this, "backgroundImage", void 0);
+      _defineProperty$b(this, "backgroundImage", void 0);
 
       this.canvas = params.canvas;
 
@@ -27624,7 +24922,7 @@
       this.backgroundImage.src = params.img ? params.img.src : params.url;
     }
 
-    _createClass$a(SimpleBackground, [{
+    _createClass$c(SimpleBackground, [{
       key: "owns",
       value: function owns(el) {
         return el === this.canvas;
@@ -27651,17 +24949,17 @@
   }();
 
   var LogarithmicTiledBackground = /*#__PURE__*/function (_TiledBackground) {
-    _inherits$5(LogarithmicTiledBackground, _TiledBackground);
+    _inherits$7(LogarithmicTiledBackground, _TiledBackground);
 
-    var _super = _createSuper$5(LogarithmicTiledBackground);
+    var _super = _createSuper$7(LogarithmicTiledBackground);
 
     function LogarithmicTiledBackground(params) {
-      _classCallCheck$a(this, LogarithmicTiledBackground);
+      _classCallCheck$c(this, LogarithmicTiledBackground);
 
       return _super.call(this, params);
     }
 
-    _createClass$a(LogarithmicTiledBackground, [{
+    _createClass$c(LogarithmicTiledBackground, [{
       key: "getTileSpecs",
       value: function getTileSpecs(zoom) {
         var arx = this.width > this.height ? 1 : this.width / this.height,
@@ -27683,14 +24981,14 @@
   var FixTop = "top";
   var FixedLayer = /*#__PURE__*/function () {
     function FixedLayer(panZoom) {
-      _classCallCheck$a(this, FixedLayer);
+      _classCallCheck$c(this, FixedLayer);
 
       this.panZoom = panZoom;
 
-      _defineProperty$a(this, "fixedElements", {});
+      _defineProperty$b(this, "fixedElements", {});
     }
 
-    _createClass$a(FixedLayer, [{
+    _createClass$c(FixedLayer, [{
       key: "_fixElements",
       value: function _fixElements(elId) {
         var _this = this;
@@ -27767,21 +25065,21 @@
    * @internal
    */
   var BaseSurfaceLayoutAdapter = /*#__PURE__*/function (_AbstractLayoutAdapte) {
-    _inherits$5(BaseSurfaceLayoutAdapter, _AbstractLayoutAdapte);
+    _inherits$7(BaseSurfaceLayoutAdapter, _AbstractLayoutAdapte);
 
-    var _super = _createSuper$5(BaseSurfaceLayoutAdapter);
+    var _super = _createSuper$7(BaseSurfaceLayoutAdapter);
 
     function BaseSurfaceLayoutAdapter(surface) {
       var _this;
 
-      _classCallCheck$a(this, BaseSurfaceLayoutAdapter);
+      _classCallCheck$c(this, BaseSurfaceLayoutAdapter);
 
       _this = _super.call(this);
       _this.surface = surface;
       return _this;
     }
 
-    _createClass$a(BaseSurfaceLayoutAdapter, [{
+    _createClass$c(BaseSurfaceLayoutAdapter, [{
       key: "getOffset",
       value: function getOffset(el) {
         return this.surface.getOffset(el);
@@ -27814,21 +25112,21 @@
    */
 
   var CanvasLayoutAdapter = /*#__PURE__*/function (_BaseSurfaceLayoutAda) {
-    _inherits$5(CanvasLayoutAdapter, _BaseSurfaceLayoutAda);
+    _inherits$7(CanvasLayoutAdapter, _BaseSurfaceLayoutAda);
 
-    var _super = _createSuper$5(CanvasLayoutAdapter);
+    var _super = _createSuper$7(CanvasLayoutAdapter);
 
     function CanvasLayoutAdapter(surface) {
       var _this;
 
-      _classCallCheck$a(this, CanvasLayoutAdapter);
+      _classCallCheck$c(this, CanvasLayoutAdapter);
 
       _this = _super.call(this, surface);
       _this.surface = surface;
       return _this;
     }
 
-    _createClass$a(CanvasLayoutAdapter, [{
+    _createClass$c(CanvasLayoutAdapter, [{
       key: "filter",
       value: function filter(obj) {
         return obj.group == null;
@@ -27858,14 +25156,14 @@
    */
 
   var GroupLayoutAdapter = /*#__PURE__*/function (_BaseSurfaceLayoutAda) {
-    _inherits$5(GroupLayoutAdapter, _BaseSurfaceLayoutAda);
+    _inherits$7(GroupLayoutAdapter, _BaseSurfaceLayoutAda);
 
-    var _super = _createSuper$5(GroupLayoutAdapter);
+    var _super = _createSuper$7(GroupLayoutAdapter);
 
     function GroupLayoutAdapter(group, surface) {
       var _this;
 
-      _classCallCheck$a(this, GroupLayoutAdapter);
+      _classCallCheck$c(this, GroupLayoutAdapter);
 
       _this = _super.call(this, surface);
       _this.group = group;
@@ -27873,7 +25171,7 @@
       return _this;
     }
 
-    _createClass$a(GroupLayoutAdapter, [{
+    _createClass$c(GroupLayoutAdapter, [{
       key: "getElements",
       value: function getElements() {
         return this.group.getMembers();
@@ -27923,27 +25221,27 @@
     function PinchListener(_params) {
       var _this = this;
 
-      _classCallCheck$a(this, PinchListener);
+      _classCallCheck$c(this, PinchListener);
 
-      _defineProperty$a(this, "isPointerDevice", void 0);
+      _defineProperty$b(this, "isPointerDevice", void 0);
 
-      _defineProperty$a(this, "isTouchDevice", void 0);
+      _defineProperty$b(this, "isTouchDevice", void 0);
 
-      _defineProperty$a(this, "center", void 0);
+      _defineProperty$b(this, "center", void 0);
 
-      _defineProperty$a(this, "radius", void 0);
+      _defineProperty$b(this, "radius", void 0);
 
-      _defineProperty$a(this, "startRadius", void 0);
+      _defineProperty$b(this, "startRadius", void 0);
 
-      _defineProperty$a(this, "onPinchStart", void 0);
+      _defineProperty$b(this, "onPinchStart", void 0);
 
-      _defineProperty$a(this, "onPinch", void 0);
+      _defineProperty$b(this, "onPinch", void 0);
 
-      _defineProperty$a(this, "onPinchEnd", void 0);
+      _defineProperty$b(this, "onPinchEnd", void 0);
 
-      _defineProperty$a(this, "eventManager", void 0);
+      _defineProperty$b(this, "eventManager", void 0);
 
-      _defineProperty$a(this, "listenerTypes", {
+      _defineProperty$b(this, "listenerTypes", {
         "pointer": function pointer(params) {
           var anchorMap = {},
               anchors = [],
@@ -28124,7 +25422,7 @@
       }
     }
 
-    _createClass$a(PinchListener, [{
+    _createClass$c(PinchListener, [{
       key: "_fire",
       value: function _fire(handler) {
         handler(this.center, this.startRadius, this.radius, this.radius / this.startRadius);
@@ -28235,139 +25533,139 @@
     function PanZoom(surface, params) {
       var _this = this;
 
-      _classCallCheck$a(this, PanZoom);
+      _classCallCheck$c(this, PanZoom);
 
       this.surface = surface;
 
-      _defineProperty$a(this, "canvasElement", void 0);
+      _defineProperty$b(this, "canvasElement", void 0);
 
-      _defineProperty$a(this, "viewportElement", void 0);
+      _defineProperty$b(this, "viewportElement", void 0);
 
-      _defineProperty$a(this, "_doWheelZoom", void 0);
+      _defineProperty$b(this, "_doWheelZoom", void 0);
 
-      _defineProperty$a(this, "eventManager", void 0);
+      _defineProperty$b(this, "eventManager", void 0);
 
-      _defineProperty$a(this, "pinchListener", void 0);
+      _defineProperty$b(this, "pinchListener", void 0);
 
-      _defineProperty$a(this, "position", {
+      _defineProperty$b(this, "position", {
         x: 0,
         y: 0
       });
 
-      _defineProperty$a(this, "zoom", void 0);
+      _defineProperty$b(this, "zoom", void 0);
 
-      _defineProperty$a(this, "transformOrigin", {
+      _defineProperty$b(this, "transformOrigin", {
         x: 0,
         y: 0
       });
 
-      _defineProperty$a(this, "panning", false);
+      _defineProperty$b(this, "panning", false);
 
-      _defineProperty$a(this, "pinchZooming", false);
+      _defineProperty$b(this, "pinchZooming", false);
 
-      _defineProperty$a(this, "zooming", false);
+      _defineProperty$b(this, "zooming", false);
 
-      _defineProperty$a(this, "zoomingWithWheel", false);
+      _defineProperty$b(this, "zoomingWithWheel", false);
 
-      _defineProperty$a(this, "downAt", void 0);
+      _defineProperty$b(this, "downAt", void 0);
 
-      _defineProperty$a(this, "_viewportElementSize", void 0);
+      _defineProperty$b(this, "_viewportElementSize", void 0);
 
-      _defineProperty$a(this, "_canvasElementSize", void 0);
+      _defineProperty$b(this, "_canvasElementSize", void 0);
 
-      _defineProperty$a(this, "zoomRange", void 0);
+      _defineProperty$b(this, "zoomRange", void 0);
 
-      _defineProperty$a(this, "zoomAtZoomStart", void 0);
+      _defineProperty$b(this, "zoomAtZoomStart", void 0);
 
-      _defineProperty$a(this, "maximumZoomTravel", 150);
+      _defineProperty$b(this, "maximumZoomTravel", 150);
 
-      _defineProperty$a(this, "distanceAtZoomStart", void 0);
+      _defineProperty$b(this, "distanceAtZoomStart", void 0);
 
-      _defineProperty$a(this, "lastDistance", void 0);
+      _defineProperty$b(this, "lastDistance", void 0);
 
-      _defineProperty$a(this, "canvasAtPanStart", void 0);
+      _defineProperty$b(this, "canvasAtPanStart", void 0);
 
-      _defineProperty$a(this, "lastMouseX", -1);
+      _defineProperty$b(this, "lastMouseX", -1);
 
-      _defineProperty$a(this, "lastMouseY", -1);
+      _defineProperty$b(this, "lastMouseY", -1);
 
-      _defineProperty$a(this, "lastMovedAt", null);
+      _defineProperty$b(this, "lastMovedAt", null);
 
-      _defineProperty$a(this, "lastVelocity", 0);
+      _defineProperty$b(this, "lastVelocity", 0);
 
-      _defineProperty$a(this, "lastAcceleration", 0);
+      _defineProperty$b(this, "lastAcceleration", 0);
 
-      _defineProperty$a(this, "onZoom", void 0);
+      _defineProperty$b(this, "onZoom", void 0);
 
-      _defineProperty$a(this, "onMaybeZoom", void 0);
+      _defineProperty$b(this, "onMaybeZoom", void 0);
 
-      _defineProperty$a(this, "onPan", void 0);
+      _defineProperty$b(this, "onPan", void 0);
 
-      _defineProperty$a(this, "onMouseDown", void 0);
+      _defineProperty$b(this, "onMouseDown", void 0);
 
-      _defineProperty$a(this, "onMouseUp", void 0);
+      _defineProperty$b(this, "onMouseUp", void 0);
 
-      _defineProperty$a(this, "onMouseMove", void 0);
+      _defineProperty$b(this, "onMouseMove", void 0);
 
-      _defineProperty$a(this, "onSetTransformOrigin", void 0);
+      _defineProperty$b(this, "onSetTransformOrigin", void 0);
 
-      _defineProperty$a(this, "clamp", void 0);
+      _defineProperty$b(this, "clamp", void 0);
 
-      _defineProperty$a(this, "clampZoom", void 0);
+      _defineProperty$b(this, "clampZoom", void 0);
 
-      _defineProperty$a(this, "panDistance", void 0);
+      _defineProperty$b(this, "panDistance", void 0);
 
-      _defineProperty$a(this, "enablePan", void 0);
+      _defineProperty$b(this, "enablePan", void 0);
 
-      _defineProperty$a(this, "directRender", void 0);
+      _defineProperty$b(this, "directRender", void 0);
 
-      _defineProperty$a(this, "enableWheelZoom", void 0);
+      _defineProperty$b(this, "enableWheelZoom", void 0);
 
-      _defineProperty$a(this, "enableAnimation", void 0);
+      _defineProperty$b(this, "enableAnimation", void 0);
 
-      _defineProperty$a(this, "wheelFilter", void 0);
+      _defineProperty$b(this, "wheelFilter", void 0);
 
-      _defineProperty$a(this, "wheelZoomRequiresMetaKey", void 0);
+      _defineProperty$b(this, "wheelZoomRequiresMetaKey", void 0);
 
-      _defineProperty$a(this, "wheelDirection", void 0);
+      _defineProperty$b(this, "wheelDirection", void 0);
 
-      _defineProperty$a(this, "wheelSensitivity", void 0);
+      _defineProperty$b(this, "wheelSensitivity", void 0);
 
-      _defineProperty$a(this, "wheelPan", void 0);
+      _defineProperty$b(this, "wheelPan", void 0);
 
-      _defineProperty$a(this, "wheelPanAxis", void 0);
+      _defineProperty$b(this, "wheelPanAxis", void 0);
 
-      _defineProperty$a(this, "background", void 0);
+      _defineProperty$b(this, "background", void 0);
 
-      _defineProperty$a(this, "fixedLayer", void 0);
+      _defineProperty$b(this, "fixedLayer", void 0);
 
-      _defineProperty$a(this, "_mouseMove", void 0);
+      _defineProperty$b(this, "_mouseMove", void 0);
 
-      _defineProperty$a(this, "_mouseMoveEnd", void 0);
+      _defineProperty$b(this, "_mouseMoveEnd", void 0);
 
-      _defineProperty$a(this, "_mouseMoveReset", void 0);
+      _defineProperty$b(this, "_mouseMoveReset", void 0);
 
-      _defineProperty$a(this, "viewport", void 0);
+      _defineProperty$b(this, "viewport", void 0);
 
-      _defineProperty$a(this, "consumeRightClick", void 0);
+      _defineProperty$b(this, "consumeRightClick", void 0);
 
-      _defineProperty$a(this, "smartMinimumZoom", void 0);
+      _defineProperty$b(this, "smartMinimumZoom", void 0);
 
-      _defineProperty$a(this, "_renderingSuspended", void 0);
+      _defineProperty$b(this, "_renderingSuspended", void 0);
 
-      _defineProperty$a(this, "idFunction", void 0);
+      _defineProperty$b(this, "idFunction", void 0);
 
-      _defineProperty$a(this, "enabled", void 0);
+      _defineProperty$b(this, "enabled", void 0);
 
-      _defineProperty$a(this, "clampToBackground", void 0);
+      _defineProperty$b(this, "clampToBackground", void 0);
 
-      _defineProperty$a(this, "clampToBackgroundExtents", void 0);
+      _defineProperty$b(this, "clampToBackgroundExtents", void 0);
 
-      _defineProperty$a(this, "filter", void 0);
+      _defineProperty$b(this, "filter", void 0);
 
-      _defineProperty$a(this, "_suspendMap", {});
+      _defineProperty$b(this, "_suspendMap", {});
 
-      _defineProperty$a(this, "handlers", _defineProperty$a({
+      _defineProperty$b(this, "handlers", _defineProperty$b({
         "start": function start(e, touches) {
           if (_this.pinchZooming) return;
           var target = e.srcElement || e.target;
@@ -28586,7 +25884,7 @@
     } // ------------------------ these are the variables/functions used to keep track of the content bounds --------------------
 
 
-    _createClass$a(PanZoom, [{
+    _createClass$c(PanZoom, [{
       key: "_setCanvasPosition",
       value: function _setCanvasPosition(params) {
         this.position = this._clamp(params.x, params.y);
@@ -28702,7 +26000,7 @@
       key: "_animateTransform",
       value: function _animateTransform(duration, onComplete) {
         if (this.canvasElement.animate != null) {
-          var frames = _defineProperty$a({}, TRANSFORM, this._constructTransformProperty());
+          var frames = _defineProperty$b({}, TRANSFORM, this._constructTransformProperty());
 
           this._cssAnimation(frames, duration, onComplete);
         } else {
@@ -28726,7 +26024,7 @@
       key: "_animateTransformOrigin",
       value: function _animateTransformOrigin(duration, onComplete) {
         if (this.canvasElement.animate != null) {
-          this._cssAnimation(_defineProperty$a({}, TRANSFORM_ORIGIN, this._constructTransformOriginProperty()), duration, onComplete);
+          this._cssAnimation(_defineProperty$b({}, TRANSFORM_ORIGIN, this._constructTransformOriginProperty()), duration, onComplete);
         } else {
           this._writeTransformOrigin();
         }
@@ -28739,7 +26037,7 @@
         if (this.canvasElement.animate != null) {
           var _this$canvasElement$a;
 
-          var anim = this.canvasElement.animate((_this$canvasElement$a = {}, _defineProperty$a(_this$canvasElement$a, TRANSFORM_ORIGIN, this._constructTransformOriginProperty()), _defineProperty$a(_this$canvasElement$a, TRANSFORM, this._constructTransformProperty()), _this$canvasElement$a), {
+          var anim = this.canvasElement.animate((_this$canvasElement$a = {}, _defineProperty$b(_this$canvasElement$a, TRANSFORM_ORIGIN, this._constructTransformOriginProperty()), _defineProperty$b(_this$canvasElement$a, TRANSFORM, this._constructTransformProperty()), _this$canvasElement$a), {
             duration: duration || 250
           });
 
@@ -30430,17 +27728,17 @@
    */
 
   var BrowserUIBase = /*#__PURE__*/function (_JsPlumbToolkit) {
-    _inherits$5(BrowserUIBase, _JsPlumbToolkit);
+    _inherits$7(BrowserUIBase, _JsPlumbToolkit);
 
-    var _super = _createSuper$5(BrowserUIBase);
+    var _super = _createSuper$7(BrowserUIBase);
 
     function BrowserUIBase() {
-      _classCallCheck$a(this, BrowserUIBase);
+      _classCallCheck$c(this, BrowserUIBase);
 
       return _super.apply(this, arguments);
     }
 
-    _createClass$a(BrowserUIBase, [{
+    _createClass$c(BrowserUIBase, [{
       key: "loadData",
       value: function loadData(options) {
         ajax(options);
@@ -30595,25 +27893,25 @@
      * @param _jsPlumb
      */
     function BrowserUIModel(toolkit, dataModel, viewOptions, _jsPlumb) {
-      _classCallCheck$a(this, BrowserUIModel);
+      _classCallCheck$c(this, BrowserUIModel);
 
       this.toolkit = toolkit;
       this.viewOptions = viewOptions;
 
-      _defineProperty$a(this, "defMap", {
+      _defineProperty$b(this, "defMap", {
         nodes: new Map(),
         edges: new Map(),
         groups: new Map(),
         ports: new Map()
       });
 
-      _defineProperty$a(this, "nodes", void 0);
+      _defineProperty$b(this, "nodes", void 0);
 
-      _defineProperty$a(this, "edges", void 0);
+      _defineProperty$b(this, "edges", void 0);
 
-      _defineProperty$a(this, "groups", void 0);
+      _defineProperty$b(this, "groups", void 0);
 
-      _defineProperty$a(this, "ports", void 0);
+      _defineProperty$b(this, "ports", void 0);
 
       this.viewOptions = this.viewOptions || {};
       this.nodes = this.viewOptions.nodes || {};
@@ -30665,7 +27963,7 @@
       }
     }
 
-    _createClass$a(BrowserUIModel, [{
+    _createClass$c(BrowserUIModel, [{
       key: "getEdgeDefinition",
       value: function getEdgeDefinition(typeId) {
         if (typeId == null) {
@@ -30788,7 +28086,7 @@
      * @param surface The surface that constructed this path.
      */
     function UIPath(path, surface) {
-      _classCallCheck$a(this, UIPath);
+      _classCallCheck$c(this, UIPath);
 
       this.path = path;
       this.surface = surface;
@@ -30798,7 +28096,7 @@
      */
 
 
-    _createClass$a(UIPath, [{
+    _createClass$c(UIPath, [{
       key: "getVertexCount",
       value: function getVertexCount() {
         return this.path.getVertexCount();
@@ -31018,31 +28316,31 @@
   }
 
   var MagnetizeProfile = function MagnetizeProfile(opts, gridProfile) {
-    _classCallCheck$a(this, MagnetizeProfile);
+    _classCallCheck$c(this, MagnetizeProfile);
 
     this.gridProfile = gridProfile;
 
-    _defineProperty$a(this, "afterGroupCollapse", void 0);
+    _defineProperty$b(this, "afterGroupCollapse", void 0);
 
-    _defineProperty$a(this, "afterGroupExpand", void 0);
+    _defineProperty$b(this, "afterGroupExpand", void 0);
 
-    _defineProperty$a(this, "afterGroupResize", void 0);
+    _defineProperty$b(this, "afterGroupResize", void 0);
 
-    _defineProperty$a(this, "afterGroupShrink", void 0);
+    _defineProperty$b(this, "afterGroupShrink", void 0);
 
-    _defineProperty$a(this, "afterGroupGrow", void 0);
+    _defineProperty$b(this, "afterGroupGrow", void 0);
 
-    _defineProperty$a(this, "afterLayout", void 0);
+    _defineProperty$b(this, "afterLayout", void 0);
 
-    _defineProperty$a(this, "afterDrag", void 0);
+    _defineProperty$b(this, "afterDrag", void 0);
 
-    _defineProperty$a(this, "constant", void 0);
+    _defineProperty$b(this, "constant", void 0);
 
-    _defineProperty$a(this, "constrainToViewport", void 0);
+    _defineProperty$b(this, "constrainToViewport", void 0);
 
-    _defineProperty$a(this, "repositionDraggedElement", void 0);
+    _defineProperty$b(this, "repositionDraggedElement", void 0);
 
-    _defineProperty$a(this, "grid", void 0);
+    _defineProperty$b(this, "grid", void 0);
 
     if (opts != null) {
       this.afterDrag = opts.afterDrag === true;
@@ -31067,13 +28365,13 @@
   };
 
   var GridProfile = function GridProfile(opts) {
-    _classCallCheck$a(this, GridProfile);
+    _classCallCheck$c(this, GridProfile);
 
-    _defineProperty$a(this, "grid", void 0);
+    _defineProperty$b(this, "grid", void 0);
 
-    _defineProperty$a(this, "snap", false);
+    _defineProperty$b(this, "snap", false);
 
-    _defineProperty$a(this, "fitGroupsToGrid", false);
+    _defineProperty$b(this, "fitGroupsToGrid", false);
 
     if (opts != null) {
       this.snap = opts.snap === true;
@@ -31083,118 +28381,118 @@
   };
 
   var Surface = /*#__PURE__*/function (_OptimisticEventGener) {
-    _inherits$5(Surface, _OptimisticEventGener);
+    _inherits$7(Surface, _OptimisticEventGener);
 
-    var _super = _createSuper$5(Surface);
+    var _super = _createSuper$7(Surface);
 
     function Surface(params, templateRenderer) {
       var _this;
 
-      _classCallCheck$a(this, Surface);
+      _classCallCheck$c(this, Surface);
 
       _this = _super.call(this);
       _this.templateRenderer = templateRenderer;
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_debug", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_debug", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "magnetizeProfile", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "magnetizeProfile", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "gridProfile", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "gridProfile", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "viewport", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "viewport", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_layoutMap", new Map());
+      _defineProperty$b(_assertThisInitialized$7(_this), "_layoutMap", new Map());
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "dataSource", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "dataSource", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "toolkitInstance", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "toolkitInstance", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_layout", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_layout", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "container", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "container", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "containerId", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "containerId", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "containerElement", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "containerElement", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "canvasElement", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "canvasElement", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "logicalPorts", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "logicalPorts", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_storePositionsInModel", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_storePositionsInModel", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "decorators", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "decorators", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "vertexList", []);
+      _defineProperty$b(_assertThisInitialized$7(_this), "vertexList", []);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "connMap", {});
+      _defineProperty$b(_assertThisInitialized$7(_this), "connMap", {});
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "unrenderedEdges", []);
+      _defineProperty$b(_assertThisInitialized$7(_this), "unrenderedEdges", []);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "nodeRenderer", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "nodeRenderer", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "portRenderer", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "portRenderer", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "groupRenderer", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "groupRenderer", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_suspendRendering", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_suspendRendering", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_refreshAutomatically", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_refreshAutomatically", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "objectFilter", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "objectFilter", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_modelTopAttribute", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_modelTopAttribute", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_modelLeftAttribute", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_modelLeftAttribute", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "elementsDraggable", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "elementsDraggable", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "enhancedView", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "enhancedView", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "dragGroupAssigner", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "dragGroupAssigner", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_ignoreToolkitEvents", false);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_ignoreToolkitEvents", false);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "view", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "view", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "dragOptions", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "dragOptions", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "refreshLayoutOnEdgeConnect", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "refreshLayoutOnEdgeConnect", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "jsplumb", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "jsplumb", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "id", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "id", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "panZoom", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "panZoom", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "contentBounds", null);
+      _defineProperty$b(_assertThisInitialized$7(_this), "contentBounds", null);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "plugins", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "plugins", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "pluginMap", new Map());
+      _defineProperty$b(_assertThisInitialized$7(_this), "pluginMap", new Map());
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "wheelReverse", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "wheelReverse", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "directRender", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "directRender", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "zoomToFitOnLoad", void 0);
+      _defineProperty$b(_assertThisInitialized$7(_this), "zoomToFitOnLoad", void 0);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "mode", SurfaceMode.PAN);
+      _defineProperty$b(_assertThisInitialized$7(_this), "mode", SurfaceMode.PAN);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "autoExitSelectMode", true);
+      _defineProperty$b(_assertThisInitialized$7(_this), "autoExitSelectMode", true);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_pendingDragGroupAssignments", []);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_pendingDragGroupAssignments", []);
 
-      _defineProperty$a(_assertThisInitialized$5(_this), "_boundToolkitEvents", []);
+      _defineProperty$b(_assertThisInitialized$7(_this), "_boundToolkitEvents", []);
 
       var jsPlumbParams = merge(params.defaults || {}, {
         container: params.container,
         managedElementsSelector: att(ATTRIBUTE_MANAGED, ATTRIBUTE_JTK_PORT)
       });
       _this.logicalPorts = params.logicalPorts === true;
-      _this.jsplumb = params.jsPlumbInstance || newInstance$2(jsPlumbParams);
+      _this.jsplumb = params.jsPlumbInstance || newInstance$1(jsPlumbParams);
       _this.viewport = _this.jsplumb.viewport;
-      _this.decorators = _initialiseDecorators(params.decorators, _assertThisInitialized$5(_this), params.container);
+      _this.decorators = _initialiseDecorators(params.decorators, _assertThisInitialized$7(_this), params.container);
       _this._debug = params.debug === true;
       _this.container = params.container;
       _this.dataSource = params.dataSource;
@@ -31219,20 +28517,20 @@
       _this.gridProfile = new GridProfile(params.grid);
       _this.magnetizeProfile = new MagnetizeProfile(params.magnetize, _this.gridProfile);
       _this._layout = Layouts.get(EmptyLayout.type, {
-        adapter: new CanvasLayoutAdapter(_assertThisInitialized$5(_this)),
+        adapter: new CanvasLayoutAdapter(_assertThisInitialized$7(_this)),
         toolkit: _this.toolkitInstance,
         container: params.container,
         options: {}
       });
       _this._storePositionsInModel = params.storePositionsInModel !== false;
 
-      _this.jsplumb.bind(INTERCEPT_BEFORE_START_DETACH, _this.beforeStartDetach.bind(_assertThisInitialized$5(_this)));
+      _this.jsplumb.bind(INTERCEPT_BEFORE_START_DETACH, _this.beforeStartDetach.bind(_assertThisInitialized$7(_this)));
 
-      _this.jsplumb.bind(INTERCEPT_BEFORE_DETACH, _this.beforeDetach.bind(_assertThisInitialized$5(_this)));
+      _this.jsplumb.bind(INTERCEPT_BEFORE_DETACH, _this.beforeDetach.bind(_assertThisInitialized$7(_this)));
 
-      _this.jsplumb.bind(INTERCEPT_BEFORE_DRAG, _this.beforeDrag.bind(_assertThisInitialized$5(_this)));
+      _this.jsplumb.bind(INTERCEPT_BEFORE_DRAG, _this.beforeDrag.bind(_assertThisInitialized$7(_this)));
 
-      _this.jsplumb.bind(INTERCEPT_BEFORE_DROP, _this.beforeDrop.bind(_assertThisInitialized$5(_this))); // *************** events ********************************
+      _this.jsplumb.bind(INTERCEPT_BEFORE_DROP, _this.beforeDrop.bind(_assertThisInitialized$7(_this))); // *************** events ********************************
 
 
       if (params.events) {
@@ -31302,7 +28600,7 @@
           if (t === _this.containerElement || t === _this.canvasElement) {
             var a = e.button === 2 && alias2 != null ? alias2 : alias;
 
-            _this.fire(a, _assertThisInitialized$5(_this), e);
+            _this.fire(a, _assertThisInitialized$7(_this), e);
           }
         };
 
@@ -31314,7 +28612,7 @@
       _canvasBind(EVENT_DBL_TAP, EVENT_CANVAS_DBL_CLICK);
 
       _this.zoomToFitOnLoad = params.zoomToFit === true;
-      _this.panZoom = new PanZoom(_assertThisInitialized$5(_this), {
+      _this.panZoom = new PanZoom(_assertThisInitialized$7(_this), {
         viewport: _this.viewport,
         viewportElement: _this.containerElement,
         canvasElement: _this.canvasElement,
@@ -31437,7 +28735,7 @@
           e: params.e,
           type: vertex.objectType,
           originalPosition: params.originalPosition,
-          renderer: _assertThisInitialized$5(_this)
+          renderer: _assertThisInitialized$7(_this)
         };
 
         if (_this.magnetizeProfile.constant && !isNodeInsideAGroup(dragInfo.vertex) && !isNestedGroup(dragInfo.vertex)) {
@@ -31473,14 +28771,14 @@
                 e: params.e,
                 type: vertex.objectType,
                 originalPosition: e.originalPos,
-                renderer: _assertThisInitialized$5(_this)
+                renderer: _assertThisInitialized$7(_this)
               };
               var isNestedElement = isNodeInsideAGroup(dragInfo.vertex) || isNestedGroup(dragInfo.vertex);
               e.redrawResult.c.forEach(function (c) {
                 var edge = c.edge;
 
                 if (edge != null && edge.geometry != null) {
-                  _this.dataSource.setEdgeGeometry(edge, c.connector.exportGeometry(), _assertThisInitialized$5(_this));
+                  _this.dataSource.setEdgeGeometry(edge, c.connector.exportGeometry(), _assertThisInitialized$7(_this));
                 }
               });
               var layoutToUse = isNestedElement ? _this._layoutMap.get(dragInfo.vertex.group.id) : _this._layout;
@@ -31557,7 +28855,7 @@
       return _this;
     }
 
-    _createClass$a(Surface, [{
+    _createClass$c(Surface, [{
       key: "_getWheelOptions",
       value:
       /**
@@ -31986,13 +29284,13 @@
         var _this4 = this,
             _modes;
 
-        var modes = (_modes = {}, _defineProperty$a(_modes, SurfaceMode.PAN, function () {
+        var modes = (_modes = {}, _defineProperty$b(_modes, SurfaceMode.PAN, function () {
           _this4.panZoom.setEnabled(true);
-        }), _defineProperty$a(_modes, SurfaceMode.SELECT, function () {
+        }), _defineProperty$b(_modes, SurfaceMode.SELECT, function () {
           _this4.jsplumb.clearDragSelection();
 
           _this4.panZoom.setEnabled(false);
-        }), _defineProperty$a(_modes, SurfaceMode.DISABLED, function () {
+        }), _defineProperty$b(_modes, SurfaceMode.DISABLED, function () {
           _this4.jsplumb.clearDragSelection();
 
           _this4.panZoom.setEnabled(false);
@@ -32725,7 +30023,7 @@
           objects[_key2] = arguments[_key2];
         }
 
-        (_this$jsplumb = this.jsplumb).removeFromDragGroup.apply(_this$jsplumb, _toConsumableArray(objects.map(function (o) {
+        (_this$jsplumb = this.jsplumb).removeFromDragGroup.apply(_this$jsplumb, _toConsumableArray$1(objects.map(function (o) {
           return _this12.getObjectInfo(o).el;
         }).filter(function (e) {
           return e != null;
@@ -32749,7 +30047,7 @@
           objects[_key3 - 1] = arguments[_key3];
         }
 
-        (_this$jsplumb2 = this.jsplumb).addToDragGroup.apply(_this$jsplumb2, [spec].concat(_toConsumableArray(objects.map(function (o) {
+        (_this$jsplumb2 = this.jsplumb).addToDragGroup.apply(_this$jsplumb2, [spec].concat(_toConsumableArray$1(objects.map(function (o) {
           return _this13.getObjectInfo(o).el;
         }).filter(function (e) {
           return e != null;
@@ -33602,7 +30900,7 @@
           });
         });
         forEach([[EVENT_ELEMENT_CLICK, EVENT_CLICK], [EVENT_ELEMENT_TAP, EVENT_TAP], [EVENT_ELEMENT_DBL_TAP, EVENT_DBL_TAP], [EVENT_ELEMENT_DBL_CLICK, EVENT_DBL_CLICK], [EVENT_ELEMENT_MOUSE_OUT, EVENT_MOUSEOUT], [EVENT_ELEMENT_MOUSE_OVER, EVENT_MOUSEOVER], [EVENT_ELEMENT_MOUSE_MOVE, EVENT_MOUSEMOVE], [EVENT_ELEMENT_MOUSE_UP, EVENT_MOUSEUP], [EVENT_ELEMENT_MOUSE_DOWN, EVENT_MOUSEDOWN], [EVENT_ELEMENT_CONTEXTMENU, EVENT_CONTEXTMENU]], function (_ref) {
-          var _ref2 = _slicedToArray$1(_ref, 2),
+          var _ref2 = _slicedToArray$2(_ref, 2),
               boundEvent = _ref2[0],
               outputEvent = _ref2[1];
 
@@ -33611,7 +30909,7 @@
           });
         });
         forEach([[EVENT_ENDPOINT_CLICK, EVENT_CLICK], [EVENT_ENDPOINT_DBL_CLICK, EVENT_DBL_CLICK]], function (_ref3) {
-          var _ref4 = _slicedToArray$1(_ref3, 2),
+          var _ref4 = _slicedToArray$2(_ref3, 2),
               boundEvent = _ref4[0],
               outputEvent = _ref4[1];
 
@@ -33678,7 +30976,7 @@
         if (localEvents.indexOf(evt) === -1) {
           this.jsplumb.bind(evt, fn);
         } else {
-          _get$1(_getPrototypeOf$5(Surface.prototype), "bind", this).call(this, evt, fn);
+          _get$1(_getPrototypeOf$7(Surface.prototype), "bind", this).call(this, evt, fn);
         }
 
         return this;
@@ -35056,7 +32354,7 @@
 
 
         forEach(specs, function (_ref5) {
-          var _ref6 = _slicedToArray$1(_ref5, 2),
+          var _ref6 = _slicedToArray$2(_ref5, 2),
               def = _ref6[0],
               element = _ref6[1];
 
@@ -36327,7 +33625,7 @@
     return Surface;
   }(OptimisticEventGenerator);
 
-  _defineProperty$a(Surface, "type", "Surface");
+  _defineProperty$b(Surface, "type", "Surface");
 
   var rendererMap = {};
   var SurfacePlugins = {
@@ -36346,6 +33644,1947 @@
       rendererMap[name] = sp;
     }
   };
+
+  function _classCallCheck$b(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties$b(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass$b(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$b(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$b(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty$a(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _inherits$6(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf$6(subClass, superClass);
+  }
+
+  function _getPrototypeOf$6(o) {
+    _getPrototypeOf$6 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf$6(o);
+  }
+
+  function _setPrototypeOf$6(o, p) {
+    _setPrototypeOf$6 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf$6(o, p);
+  }
+
+  function _isNativeReflectConstruct$6() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function _assertThisInitialized$6(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn$6(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
+    }
+
+    return _assertThisInitialized$6(self);
+  }
+
+  function _createSuper$6(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct$6();
+
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf$6(Derived),
+          result;
+
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf$6(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn$6(this, result);
+    };
+  }
+
+  function _slicedToArray$1(arr, i) {
+    return _arrayWithHoles$1(arr) || _iterableToArrayLimit$1(arr, i) || _unsupportedIterableToArray$1(arr, i) || _nonIterableRest$1();
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray$1(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray$1(arr);
+  }
+
+  function _arrayWithHoles$1(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+  }
+
+  function _iterableToArrayLimit$1(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+
+    var _s, _e;
+
+    try {
+      for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _unsupportedIterableToArray$1(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray$1(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$1(o, minLen);
+  }
+
+  function _arrayLikeToArray$1(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function _nonIterableRest$1() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function extendWithCallback(o1, o2, cb) {
+    for (var o in o2) {
+      o1[o] = o2[o];
+      if (cb) cb(o, o1[o]);
+    }
+
+    return o1;
+  }
+  function filterEmpty(l) {
+    return l.filter(function (e) {
+      return e != null && fastTrim(e).length > 0;
+    });
+  }
+  function eachNotEmpty(strings, fn) {
+    for (var i = 0; i < strings.length; i++) {
+      var t = strings[i];
+
+      if (t == null || t.length === 0) {
+        continue;
+      } else {
+        fn(i, t);
+      }
+    }
+  }
+
+  function parseAttributes(d, attributesRe) {
+    if (d == null) {
+      return d;
+    } else {
+      var parts = d.replace("/>", ">").split(/^<|>$/)[1].split(attributesRe);
+      return filterEmpty(parts);
+    }
+  }
+  function peek(a) {
+    return a.length > 0 ? a[a.length - 1] : null;
+  }
+  function isLoopPresent(stack) {
+    if (stack == null || stack.length === 0) {
+      return false;
+    } else {
+      for (var i = stack.length - 1; i > -1; i--) {
+        if (stack[i].type === "each") return true;
+      }
+    }
+
+    return false;
+  }
+  function _addBinding(bindingId, match, entry, predicate, instance) {
+    var u = uuid(),
+        b = {
+      w: match,
+      e: [],
+      u: u
+    };
+    instance.bindings[u] = b;
+
+    var fnBody = function fnBody() {
+      return predicate != null ? "try {  if(" + predicate + ") { out = out.replace(this.e[k][0], eval(this.e[k][1])); } else out=''; } catch(__) { out='';}" : "try { out = out.replace(this.e[k][0], eval(this.e[k][1])); } catch(__) { out=out.replace(this.e[k][0], '');}";
+    };
+
+    var prefix = function prefix() {
+      return predicate != null ? "var out='';try { with($data) { if (" + predicate + ") out = this.w; else return null; }}catch(_){return null;}" : "var out = this.w;";
+    };
+
+    b.reapply = new Function("$data", prefix() + "for (var k = 0; k < this.e.length; k++) { with($data) { " + fnBody() + " }} return out;");
+    entry.bindings[bindingId] = b;
+    match.replace(/\$\{([^\}]*)\}/g, function (term, content, _loc, _whole) {
+      b.e.push([term, content]);
+      return "";
+    });
+    return u;
+  }
+  function _bindOneAtt(id, value, output, predicate, instance) {
+    output.atts[id] = value;
+
+    _addBinding(id, value, output, predicate, instance);
+  }
+  function parseAtts(el, instance) {
+    var p = parseAttributes(el, instance.attributesRe),
+        o = {
+      el: fastTrim(p[0]),
+      atts: {},
+      bindings: {}
+    };
+
+    var _maybeBindAttribute = function _maybeBindAttribute(_p, predicate) {
+      // if not an inline if, parse a normal attribute.
+      var m = _p.match(/([^=]+)=['"](.*)['"]/);
+
+      if (m == null && predicate == null) {
+        o.atts[_p] = "";
+      } else if (m == null) {
+        _bindOneAtt(_p, "", o, predicate, instance);
+      } else {
+        _bindOneAtt(m[1], m[2], o, predicate, instance);
+      }
+
+      return m;
+    };
+
+    for (var i = 1; i < p.length; i++) {
+      var _p = fastTrim(p[i]);
+
+      if (_p != null && _p.length > 0) {
+        // test if this is an inline IF statement. if so, its content should be run back through the attribute
+        // parser to get its constituent parts.
+        var isInlineIf = _p.match(instance.inlineIfRe);
+
+        if (isInlineIf) {
+          var parts = isInlineIf[2].split(instance.attributesRe); // add each part one by one using the code below but with the predicate attached.
+
+          for (var j = 0; j < parts.length; j++) {
+            var __p = fastTrim(parts[j]);
+
+            if (__p != null && __p.length > 0) {
+              _maybeBindAttribute(__p, isInlineIf[1]); // bind the attribute with the given predicate.
+
+            }
+          }
+        } else {
+          _maybeBindAttribute(_p);
+        }
+      }
+    }
+
+    return o;
+  }
+  var AbstractEntry = function AbstractEntry(instance) {
+    _classCallCheck$b(this, AbstractEntry);
+
+    this.instance = instance;
+
+    _defineProperty$a(this, "type", void 0);
+
+    _defineProperty$a(this, "tag", void 0);
+
+    _defineProperty$a(this, "remove", void 0);
+
+    _defineProperty$a(this, "uuid", void 0);
+
+    _defineProperty$a(this, "children", []);
+
+    _defineProperty$a(this, "elements", []);
+
+    _defineProperty$a(this, "bindings", void 0);
+
+    _defineProperty$a(this, "context", void 0);
+
+    _defineProperty$a(this, "functionBody", void 0);
+
+    _defineProperty$a(this, "precompile", void 0);
+
+    _defineProperty$a(this, "postcompile", void 0);
+
+    this.uuid = uuid();
+    instance.entries[this.uuid] = this;
+  };
+
+  /**
+   * @internal
+   */
+  var TextEntry = /*#__PURE__*/function (_AbstractEntry) {
+    _inherits$6(TextEntry, _AbstractEntry);
+
+    var _super = _createSuper$6(TextEntry);
+
+    function TextEntry(options, instance) {
+      var _this;
+
+      _classCallCheck$b(this, TextEntry);
+
+      _this = _super.call(this, instance);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "type", "text");
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "value", void 0);
+
+      _this.value = options.value;
+      _this.bindings = {};
+      return _this;
+    }
+
+    _createClass$b(TextEntry, [{
+      key: "_getBoundValue",
+      value: function _getBoundValue() {
+        return "_rotors.bind(__knockleData[0], '" + this.bindings["__element"].u + "', typeof $key !== 'undefined' ? $key : null, typeof $value !== 'undefined' ? $value : null)";
+      }
+    }, {
+      key: "compile",
+      value: function compile() {
+        return this.instance.getExecutionContent(this._getBoundValue(), this.uuid, true) + ";_rotors.pet(_eid, '" + this.uuid + "');";
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        entry.el.nodeValue = newEntry.el.nodeValue;
+        return {
+          added: [],
+          removed: [],
+          elements: []
+        };
+      }
+    }]);
+
+    return TextEntry;
+  }(AbstractEntry);
+
+  function emptyUpdateResult() {
+    return {
+      added: [],
+      removed: [],
+      elements: []
+    };
+  }
+  function _findChild(valuesToFind, newEntry) {
+    for (var i = 0; i < newEntry.children.length; i++) {
+      var allMatch = true;
+
+      for (var k in valuesToFind) {
+        if (valuesToFind[k] !== newEntry.children[i][k]) {
+          allMatch = false;
+          break;
+        }
+      }
+
+      if (allMatch) return newEntry.children[i];
+    }
+  }
+
+  function _updateParent(instance, entry, newEntry, fieldIds, parent) {
+    var visitedChildren = {},
+        missingChildren = [],
+        newChild,
+        child,
+        newChildren = [],
+        r = {
+      added: [],
+      removed: [],
+      elements: []
+    },
+        _r;
+
+    var cacheKey = function cacheKey(child) {
+      var k = "";
+
+      for (var i = 0; i < fieldIds.length; i++) {
+        k += child[fieldIds[i]];
+      }
+
+      return k;
+    };
+
+    if (newEntry.children.length > 0) {
+      for (var i = 0; i < entry.children.length; i++) {
+        child = entry.children[i];
+        var match = {};
+
+        for (var k = 0; k < fieldIds.length; k++) {
+          match[fieldIds[k]] = child[fieldIds[k]];
+        }
+
+        newChild = _findChild(match, newEntry);
+
+        if (newChild == null) {
+          missingChildren.push(child);
+        } else {
+          visitedChildren[cacheKey(child)] = true;
+          _r = instance.updateFrom(child, newChild, null);
+          Array.prototype.push.apply(r.added, _r.added);
+          Array.prototype.push.apply(r.removed, _r.removed);
+        }
+      }
+    } else {
+      Array.prototype.push.apply(missingChildren, entry.children);
+    } // remove the missing children
+
+
+    var _missingMap = {};
+
+    for (var _i = 0; _i < missingChildren.length; _i++) {
+      missingChildren[_i].el.parentNode && missingChildren[_i].el.parentNode.removeChild(missingChildren[_i].el);
+      _missingMap[missingChildren[_i].index] = true;
+    } // update the list of children for the entry, to remove the ones that were missing from the latest run.
+
+
+    var filtered = entry.children.filter(function (c) {
+      return _missingMap[c.index] !== true;
+    });
+    entry.children = filtered; // get, if possible, the last child element rendered.
+
+    var lastRendered = entry.children.length > 0 ? entry.children[entry.children.length - 1].el : null;
+
+    for (var _i2 = 0; _i2 < newEntry.children.length; _i2++) {
+      child = newEntry.children[_i2];
+
+      if (!visitedChildren[cacheKey(child)]) {
+        // a new child. needs to be inserted into the DOM somewhere, either as a sibling of the last element rendered,
+        // or if none rendered, then a sibling of the parents last child, or if none of those, a child of the parent
+        entry.children.push(child);
+        newChildren.push(child);
+      }
+    }
+
+    if (newChildren.length > 0) {
+      for (var _i3 = 0; _i3 < newChildren.length; _i3++) {
+        if (lastRendered != null) {
+          lastRendered.parentNode.insertBefore(newChildren[_i3].el, lastRendered.nextSibling);
+        } else if (parent != null) {
+          parent.el.appendChild(newChildren[_i3].el);
+        } else {
+          console.log("Knockle: couldnt insert child, nothing to insert after");
+        }
+
+        lastRendered = newChildren[_i3].el;
+      }
+    }
+
+    Array.prototype.push.apply(r.added, newChildren);
+    Array.prototype.push.apply(r.removed, missingChildren);
+    return r;
+  }
+
+  var CommentEntry = /*#__PURE__*/function (_AbstractEntry) {
+    _inherits$6(CommentEntry, _AbstractEntry);
+
+    var _super = _createSuper$6(CommentEntry);
+
+    function CommentEntry(comment, instance) {
+      var _this;
+
+      _classCallCheck$b(this, CommentEntry);
+
+      _this = _super.call(this, instance);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "type", "comment");
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "comment", void 0);
+
+      _this.comment = comment;
+      return _this;
+    }
+
+    _createClass$b(CommentEntry, [{
+      key: "compile",
+      value: function compile() {
+        return "";
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        return emptyUpdateResult();
+      }
+    }]);
+
+    return CommentEntry;
+  }(AbstractEntry);
+
+  var ElementEntry = /*#__PURE__*/function (_AbstractEntry) {
+    _inherits$6(ElementEntry, _AbstractEntry);
+
+    var _super = _createSuper$6(ElementEntry);
+
+    function ElementEntry(ta, instance, templateResolver, stack, parseIdStack) {
+      var _this;
+
+      _classCallCheck$b(this, ElementEntry);
+
+      _this = _super.call(this, instance); //const ta =
+
+      _this.templateResolver = templateResolver;
+      _this.stack = stack;
+      _this.parseIdStack = parseIdStack;
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "type", "element");
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "namespace", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "atts", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "custom", void 0);
+
+      var p = ta.el.split(":");
+      _this.tag = ta.el;
+
+      if (p.length === 2) {
+        _this.namespace = p[0];
+      }
+
+      _this.atts = ta.atts;
+      _this.bindings = ta.bindings;
+      _this.remove = false;
+      return _this;
+    }
+
+    _createClass$b(ElementEntry, [{
+      key: "compile",
+      value: function compile(isCustomScope) {
+        var customTag = this.instance.getCustomTag(this.tag);
+
+        if (customTag) {
+          var fb = customTag.getFunctionBody(this.instance, this); //var renderCb = _rotors.customTags[this.tag] ? "_rotors.customTags['" + this.tag + "'].rendered(_le, _rotors, __knockleData[0]);" : "_rotors.globalTags['" + this.tag + "'].rendered(_le, _rotors, data[0]);"
+
+          var renderCb = "_rotors.customTagRendered('" + this.tag + "', _le, __knockleData[0]);";
+
+          for (var c = 0; c < this.children.length; c++) {
+            if (this.children[c].precompile) {
+              fb += this.children[c].precompile(this.instance);
+            }
+
+            fb += this.children[c].compile();
+
+            if (this.children[c].postcompile) {
+              fb += this.children[c].postcompile(this.instance);
+            }
+          }
+
+          fb += "_le=_els.pop();" + renderCb + "_rotors.pet(_eid,'" + this.uuid + "');";
+          return fb;
+        }
+
+        var fp = "/* element entry " + this.uuid + " */;"; // custom elements may set `remove` to true, meaning they behave as an element but their element should not appear in the output.
+
+        if (this.remove !== true) {
+          fp += this.instance.getExecutionContent(this.tag, this.uuid, false, this.namespace);
+          var bracketAtt, bracketExpression;
+
+          for (var a in this.atts) {
+            if (this.atts.hasOwnProperty(a)) {
+              var attExpr = void 0;
+
+              if (this.bindings[a] != null) {
+                attExpr = "_rotors.bind(__knockleData[0], '" + this.bindings[a].u + "');";
+                bracketAtt = a.match(/\(([^)]+)\)/);
+
+                if (bracketAtt) {
+                  var commandName = bracketAtt[1];
+                  var command = this.atts[a];
+                  bracketExpression = ";if(__a!=null){_rotors.addCommand(_eid,e,\"" + commandName + "\",\"" + command + "\");}";
+                }
+              } else {
+                // a static attribute value.
+                attExpr = "'" + this.atts[a] + "'";
+              }
+
+              var suffix = bracketAtt ? bracketExpression : ";if(__a!=null) {_rotors.setAttribute(e,'" + a + "',__a || '');}";
+              fp += "__a=" + attExpr + suffix;
+            }
+          }
+        }
+
+        for (var i = 0; i < this.children.length; i++) {
+          if (this.children[i].precompile) {
+            fp += this.children[i].precompile();
+          }
+
+          var fn = this.children[i].compile();
+          fp += fn;
+          this.children[i].functionBody = fn;
+
+          if (this.children[i].postcompile) {
+            fp += this.children[i].postcompile();
+          }
+        }
+
+        if (this.remove !== true && !isCustomScope) {
+          fp += "_le=_els.pop();";
+          fp += "_rotors.pet(_eid, '" + this.uuid + "');";
+        }
+
+        return fp;
+      }
+    }, {
+      key: "_applyStyles",
+      value: function _applyStyles(el, styles) {
+        styles.split(";").forEach(function (s) {
+          var ss = s.indexOf(":"),
+              prop = s.substring(0, ss);
+          el.style[prop] = s.substring(ss + 1);
+        });
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        var a,
+            v,
+            r = emptyUpdateResult(),
+            _r; // update the attributes/class/style of the element.
+
+
+        for (a in this.atts) {
+          if (this.atts.hasOwnProperty(a) && a !== "class") {
+            v = newEntry.el.getAttribute(a);
+
+            if (v) {
+              if (a === "style" && entry.el.style != null) {
+                this._applyStyles(entry.el, v);
+              } else {
+                entry.el.setAttribute(a, v);
+              }
+            } else {
+              entry.el.removeAttribute(a);
+            }
+          }
+        }
+
+        if (this.originalCustomTag) {
+          var customTag = this.instance.getCustomTag(this.originalCustomTag);
+
+          if (customTag) {
+            r.elements.push([entry.el, customTag]);
+          }
+        }
+
+        for (var i = 0; i < entry.children.length; i++) {
+          _r = this.instance.updateFrom(entry.children[i], newEntry.children[i], entry);
+          Array.prototype.push.apply(r.removed, _r.removed);
+          Array.prototype.push.apply(r.added, _r.added);
+          Array.prototype.push.apply(r.elements, _r.elements);
+        }
+
+        if (entry.el._RotorsUpdate) {
+          var updaters = this.instance.updaters[entry.el._RotorsUpdate];
+
+          for (var u = 0; u < updaters.length; u++) {
+            updaters[u](entry.el);
+          }
+        }
+
+        return r;
+      }
+    }]);
+
+    return ElementEntry;
+  }(AbstractEntry);
+
+  var elementMap = {};
+  var Elements = {
+    construct: function construct(tag, ta, instance, templateResolver, stack, parseIdStack) {
+      var c = elementMap[tag];
+
+      if (!c) {
+        throw {
+          message: "Knockle: unknown element '" + tag + "'"
+        };
+      } else {
+        return new c(ta, instance, templateResolver, stack, parseIdStack);
+      }
+    },
+    register: function register(name, conn) {
+      elementMap[name] = conn;
+    },
+    exists: function exists(tag) {
+      return elementMap[tag] != null;
+    }
+  };
+
+  var CustomTag = function CustomTag(instance, tagName, options) {
+    var _this = this;
+
+    _classCallCheck$b(this, CustomTag);
+
+    this.instance = instance;
+    this.tagName = tagName;
+    this.options = options;
+
+    _defineProperty$a(this, "template", void 0);
+
+    _defineProperty$a(this, "getFunctionBody", void 0);
+
+    _defineProperty$a(this, "getFunctionEnd", void 0);
+
+    _defineProperty$a(this, "rendered", void 0);
+
+    _defineProperty$a(this, "updated", void 0);
+
+    var combineAttributes = function combineAttributes(ast, fromParseTree) {
+      var out = [];
+
+      var _loop = function _loop(i) {
+        var newAstEntry = extend({}, ast[i]);
+        newAstEntry.compile = ast[i].compile;
+        out.push(newAstEntry);
+        extendWithCallback(newAstEntry.atts, fromParseTree.atts, function (k, v) {
+          _bindOneAtt(k, v, newAstEntry, null, _this.instance);
+        });
+      };
+
+      for (var i = 0; i < ast.length; i++) {
+        _loop(i);
+      }
+
+      return out;
+    };
+
+    this.template = options.template;
+
+    this.getFunctionBody = function (knockle, parseTree) {
+      var ast = knockle.parse(_this.template, null, {
+        originalCustomTag: parseTree.tag,
+        context: parseTree.context,
+        customParent: parseTree
+      });
+      var atts = combineAttributes(ast, parseTree);
+      return knockle.compile(atts, false, true, true);
+    };
+
+    this.getFunctionEnd = function () {
+      return ";_els.pop();";
+    };
+
+    this.rendered = options.rendered || function (el, data, instance) {};
+
+    this.updated = options.updated || function (el, data, instance) {};
+  };
+
+  var globalTags = {};
+  var registerGlobalTag = function registerGlobalTag(tagName, tag) {
+    if (globalTags[tagName] == null) {
+      globalTags[tagName] = tag;
+    } else {
+      throw new Error("Tag '" + tagName + "' already registered");
+    }
+  };
+  var getCustomTag = function getCustomTag(tagName) {
+    return globalTags[tagName];
+  };
+  var Knockle = /*#__PURE__*/function () {
+    function Knockle(options, registerGlobalTag, getGlobalTag) {
+      _classCallCheck$b(this, Knockle);
+
+      this.registerGlobalTag = registerGlobalTag;
+      this.getGlobalTag = getGlobalTag;
+
+      _defineProperty$a(this, "templateResolver", void 0);
+
+      _defineProperty$a(this, "defaultTemplate", void 0);
+
+      _defineProperty$a(this, "entries", void 0);
+
+      _defineProperty$a(this, "bindings", void 0);
+
+      _defineProperty$a(this, "customTags", {});
+
+      _defineProperty$a(this, "cache", new Map());
+
+      _defineProperty$a(this, "templateCache", new Map());
+
+      _defineProperty$a(this, "openRe", new RegExp("<([^\/>]*?)>$|<([^\/].*[^\/])>$"));
+
+      _defineProperty$a(this, "closeRe", new RegExp("^<\/([^>]+)>"));
+
+      _defineProperty$a(this, "openCloseRe", new RegExp("<(.*)(\/>$)"));
+
+      _defineProperty$a(this, "tokenizerRe", /(<[^\^>]+\/>)|(<!--[\s\S]*?-->)|(<[\/a-zA-Z0-9\-:]+(?:\s*[\(a-zA-Z\-\)]+=\"[^\"]*\"|\s*[a-zA-Z\-]+='[^']+'|\s*[\(a-zA-Z\-\)]|\s*\{\{.*\}\})*>)/);
+
+      _defineProperty$a(this, "commentRe", /<!--[\s\S]*?-->/);
+
+      _defineProperty$a(this, "attributesRe", /([\(a-zA-Z0-9\-_:\)]+="[^"]*")|\s+([\(a-zA-Z0-9\-_:\)]+(?=\s.|$))|(\{\{if [^(?:\}\})]+\}\}.*\{\{\/if\}\})/);
+
+      _defineProperty$a(this, "inlineIfRe", /\{\{if ([^\}]+)\}\}(.*)\{\{\/if\}\}/);
+
+      _defineProperty$a(this, "singleExpressionRe", /^[\s]*\$\{([^\}]*)\}[\s]*$/);
+
+      _defineProperty$a(this, "_fnPreamble", "__knockleData=[__knockleData||{}];var frag=_rotors.cf(),_els=[],e,_le,__a,$value,$key,_eid = _rotors.nec();_els.push(frag);");
+
+      _defineProperty$a(this, "_fnSuffix", ";_rotors.pushCommands(_eid,frag);return frag;");
+
+      _defineProperty$a(this, "isBrowser", true);
+
+      _defineProperty$a(this, "executions", void 0);
+
+      _defineProperty$a(this, "updaters", {});
+
+      _defineProperty$a(this, "_templates", void 0);
+
+      _defineProperty$a(this, "namespaceHandlers", {});
+
+      _defineProperty$a(this, "namespaces", {});
+
+      options = options || {};
+
+      this.getGlobalTag = getGlobalTag || function (tag) {
+        return globalTags[tag];
+      };
+
+      this._templates = options.templates || {};
+      this.entries = {};
+      this.bindings = {};
+      this.executions = {};
+      this.defaultTemplate = options.defaultTemplate;
+      this.templateResolver = options.templateResolver || this._getDefaultTemplateResolver();
+    }
+
+    _createClass$b(Knockle, [{
+      key: "resolveTemplate",
+      value: function resolveTemplate(id) {
+        if (this._templates[id] != null) {
+          return this._templates[id];
+        } else {
+          return this.templateResolver(id);
+        }
+      }
+    }, {
+      key: "bind",
+      value: function bind(fromObj, id) {
+        var b = this.bindings[id];
+
+        if (b == null) {
+          return "";
+        } else {
+          return b.reapply(fromObj);
+        }
+      }
+      /**
+       * Add a command - this is called during execution of a template. See pushCommands below.
+       * @param executionId
+       * @param el
+       * @param command
+       * @param action
+       */
+
+    }, {
+      key: "addCommand",
+      value: function addCommand(executionId, el, command, action) {
+        this.executions[executionId].commands = this.executions[executionId].commands || {};
+        this.executions[executionId].commands[command] = this.executions[executionId].commands[command] || [];
+        this.executions[executionId].commands[command].push({
+          element: el,
+          command: command,
+          action: action
+        });
+      }
+      /**
+       * At the end of an execution this is called - any commands found during the execution are transferred to the fragment
+       * that was created.
+       * @param executionId
+       * @param el
+       */
+
+    }, {
+      key: "pushCommands",
+      value: function pushCommands(executionId, el) {
+        el.commands = this.executions[executionId].commands;
+      }
+    }, {
+      key: "setAttribute",
+      value: function setAttribute(el, a, v) {
+        var p = a.split(":");
+
+        if (p.length === 1 || this.namespaces[p[0]] == null) {
+          el.setAttribute(p[0], v);
+        } else {
+          el.setAttributeNS(this.namespaces[p[0]], p[1], v);
+        }
+      }
+    }, {
+      key: "clearCache",
+      value: function clearCache() {
+        this.cache.clear();
+        this.templateCache.clear();
+      }
+    }, {
+      key: "nec",
+      value: function nec() {
+        var _eid = uuid();
+
+        this.executions[_eid] = {
+          "current": [{
+            children: []
+          }]
+        };
+        return _eid;
+      } //traceExecution
+
+    }, {
+      key: "te",
+      value: function te(el, eid, entryId, loopIndex) {
+        var __ec = {
+          el: el,
+          children: [],
+          id: entryId,
+          index: loopIndex
+        };
+        this.executions[eid].current[0].children.push(__ec);
+        var key = entryId + (loopIndex != null ? "-" + loopIndex : "");
+        this.executions[eid][key] = __ec;
+        this.executions[eid].current.unshift(__ec);
+      } //popExecutionTrace
+
+    }, {
+      key: "pet",
+      value: function pet(eid) {
+        this.executions[eid].current = this.executions[eid].current.splice(1);
+      }
+    }, {
+      key: "parseAttributes",
+      value: function parseAttributes$1(el) {
+        return parseAttributes(el, this.attributesRe);
+      }
+    }, {
+      key: "getExecutionContent",
+      value: function getExecutionContent(content, uuid, isTextNode, namespace) {
+        var p = namespace != null ? this.namespaceHandlers[namespace](content) : isTextNode ? "e=_rotors.ctn(" + content + ");" : "e=_rotors.ce('" + content + "');";
+        return p + "_rotors.peek(_els).appendChild(e);" + (isTextNode ? "" : "_els.push(e);") + // if a text node, dont push onto the stack, it can have no children
+        "e._rotors=_rotors.entries['" + uuid + "'];" + // _rotors.entries[uuid] is the Rotors Element (from the AST) that is creating the DOM element
+        // here. it may be executing inside a loop, in which case this is NOT a reference to the r-each, it is a reference to the child content in the
+        // loop. So there may be multiple dom elements that reference this rotors Element. We distinguish between these via the inclusion of the
+        // `_rotorsLoopId`, if it is set. That is the ID of the r-each.
+        //"if (typeof _rotorsLoopId != 'undefined'){_rotors.entries[_rotorsLoopId].elements.push(e);}else{_rotors.entries['" + uuid + "'].elements.push(e);}"
+        "e._rotorsEid=_eid;" + "if(typeof _rotorsLoopId !== 'undefined') {e._rotorsLoopId=_rotorsLoopId;e._rotorsLoopContext=_rotorsLoopContext;e._rotorsKey=$key;}" + "_rotors.te(e, _eid, '" + uuid + "', typeof $key != 'undefined' ? $key  : null);";
+      }
+    }, {
+      key: "_wrapCache",
+      value: function _wrapCache(resolver, forceReload) {
+        var _this = this;
+
+        return function (id) {
+          var t = forceReload ? null : _this.cache.get(id);
+
+          if (t == null) {
+            t = resolver(id);
+          }
+
+          if (t == null) {
+            t = _this.defaultTemplate;
+          }
+
+          if (t != null) {
+            _this.cache.set(id, t);
+          }
+
+          return t;
+        };
+      }
+    }, {
+      key: "constructElement",
+      value: function constructElement(tag, ta, templateResolver, stack, parseIdStack) {
+        return Elements.construct(tag, ta, this, templateResolver, stack, parseIdStack);
+      }
+    }, {
+      key: "isCustomElement",
+      value: function isCustomElement(tag) {
+        return Elements.exists(tag);
+      }
+    }, {
+      key: "parse",
+      value: function parse(str, templateResolver, extraProperties, parseIdStack) {
+        var _this2 = this;
+
+        parseIdStack = parseIdStack || []; //templateResolver = this._wrapCache(templateResolver || this.templateResolver, null)
+
+        templateResolver = this._wrapCache(templateResolver || function (id) {
+          return _this2.resolveTemplate(id);
+        }, null);
+
+        var stack = [],
+            results = [],
+            _test = function _test(token, re) {
+          var m = token.match(re);
+          return m == null ? null : m;
+        },
+            _peek = function _peek() {
+          return stack.length > 0 ? stack[stack.length - 1] : null;
+        },
+            _isBalanced = function _isBalanced(endTag) {
+          var p = _peek();
+
+          return p != null && p.tag === endTag;
+        },
+            _push = function _push(el, doNotSetCurrent) {
+          if (stack.length > 0) _peek().children.push(el);
+          if (!doNotSetCurrent) stack.push(el); // push to stack, unless told not to
+          else if (stack.length === 0) results.push(el); // if not pushing to stack and the stack is empty, must push to results or we'll lose this one.
+        },
+            _pushChild = function _pushChild(el) {
+          _push(el, true);
+        },
+            _pop = function _pop() {
+          var r = stack.pop();
+
+          if (stack.length === 0 && !r.remove) {
+            results.push(r);
+          } else {
+            if (r.remove) {
+              // remove the entry (and therefore all its children) from the children of its parent.
+              var parent = _peek();
+
+              if (parent) parent.children.pop();
+            }
+          }
+
+          return r;
+        },
+            _openElementHandler = function _openElementHandler(t, m, templateResolver, parseStack) {
+          var ta = parseAtts(t, _this2);
+
+          if (_this2.isCustomElement(ta.el)) {
+            return _this2.constructElement(ta.el, ta, templateResolver, stack, parseIdStack);
+          } else {
+            return new ElementEntry(ta, _this2, templateResolver, stack, parseIdStack);
+          }
+        },
+            tagHandlers = [{
+          re: this.commentRe,
+          handler: function handler(t, m, templateResolver, instance, parseStack) {
+            //_rotors.debug("comment", t, m)
+            _push(new CommentEntry(t, instance), true);
+          }
+        }, {
+          re: this.openRe,
+          handler: function handler(t, m, templateResolver, instance, parseStack) {
+            var ee = _openElementHandler(t, m, templateResolver);
+
+            _push(ee, ee.remove);
+          }
+        }, {
+          re: this.closeRe,
+          handler: function handler(t, m, templateResolver, instance, parseStack) {
+            if (m[1] === "r-tmpl") {
+              return;
+            }
+
+            if (!_isBalanced(m[1])) {
+              throw new TypeError("Unbalanced closing tag '" + m[1] + "'; opening tag was '" + _pop().tag + "'");
+            } else _pop();
+          }
+        }, {
+          re: this.openCloseRe,
+          handler: function handler(t, m, templateResolver, instance, parseStack) {
+            //_rotors.debug("open and close element", t, m)
+            var ee = _openElementHandler(t, m, templateResolver);
+
+            _push(ee, true);
+          }
+        }, {
+          re: /.*/,
+          handler: function handler(t, m, templateResolver, instance, parseStack) {
+            //_rotors.debug("text node", t)
+            var te = new TextEntry({
+              value: t
+            }, _this2);
+
+            _pushChild(te);
+
+            _addBinding("__element", t, te, null, _this2);
+          }
+        }];
+
+        eachNotEmpty(fastTrim(str).split(this.tokenizerRe), function (index, item) {
+          var trimmed = fastTrim(item);
+
+          for (var j = 0; j < tagHandlers.length; j++) {
+            //item = _trim(item)
+            var m = _test(trimmed, tagHandlers[j].re);
+
+            if (m) {
+              tagHandlers[j].handler(item, m, templateResolver, _this2, parseIdStack);
+              break;
+            }
+          }
+        }); //if (results.length == 0)
+        //  what to do? malformed, seemingly.
+
+        if (results.length > 0 && extraProperties) {
+          for (var prop in extraProperties) {
+            results[0][prop] = extraProperties[prop];
+          }
+        }
+
+        return results;
+      }
+    }, {
+      key: "compile",
+      value: function compile(ast, precompileOnly, functionBodyOnly, isCustomScope) {
+        // create data stack, fragment (which in browser is a DocumentFragment and on the server a Fakement, a stack
+        // for the current parent element, and a execution id, which is a globally unique id that will be in scope for
+        // every function executed in this template, and can subsequently be used to retrieve all of the elements associated
+        // with a particular execution of this template function,
+        var items = [],
+            fn;
+
+        for (var i = 0; i < ast.length; i++) {
+          var content = "";
+
+          if (ast[i].precompile) {
+            content += ast[i].precompile(this);
+          }
+
+          fn = ast[i].compile(isCustomScope);
+          content += fn;
+          ast[i].functionBody = fn;
+
+          if (ast[i].postcompile) {
+            content += ast[i].postcompile(this);
+          }
+
+          items.push(content);
+        }
+
+        var fb = items.join("");
+        if (functionBodyOnly) return fb;
+
+        var f = this._compileSingle(fb),
+            _r = this;
+
+        if (!precompileOnly) {
+          var _cf = function _cf(data) {
+            return f.apply(this, [data, _r]);
+          };
+
+          _cf.functionBody = fb;
+          return _cf;
+        } else {
+          return f;
+        }
+      }
+    }, {
+      key: "_compileSingle",
+      value: function _compileSingle(fb) {
+        return new Function("__knockleData,_rotors", this._fnPreamble + fb + this._fnSuffix);
+      } // compiles then executes a single function body using the given data
+
+    }, {
+      key: "_executeSingle",
+      value: function _executeSingle(fb, data) {
+        return this._compileSingle(fb)(data, this);
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        var handler = this.entries[entry.id];
+        return handler.updateFrom(entry, newEntry, parent);
+      }
+    }, {
+      key: "getTemplate",
+      value: function getTemplate(id) {
+        return this.templateCache.get(id);
+      }
+    }, {
+      key: "addTemplate",
+      value: function addTemplate(id, content) {
+        this._templates[id] = content;
+      }
+    }, {
+      key: "template",
+      value: function template(id, data, templateResolver, forceReload) {
+        var _this3 = this;
+
+        var cachedTemplate = !forceReload ? this.templateCache.get(id) : null;
+
+        if (cachedTemplate != null) {
+          return cachedTemplate(data);
+        } else {
+          templateResolver = this._wrapCache(templateResolver || function (id) {
+            return _this3.resolveTemplate(id);
+          }, forceReload);
+          var content = templateResolver(id);
+
+          if (content != null) {
+            var p = this.parse(content, templateResolver, null, [id]),
+                c = this.compile(p);
+            this.templateCache.set(id, c);
+            return c(data);
+          } else {
+            return this.cf();
+          }
+        }
+      }
+    }, {
+      key: "peek",
+      value: function peek$1(stack) {
+        return peek(stack);
+      }
+      /**
+       * Get, or set, a value from/to an object.
+       * @param inObj Object to operate on
+       * @param path Path to the value to get/set
+       * @param value If null, this method gets a value. Otherwise, this method sets a value.
+       */
+
+    }, {
+      key: "data",
+      value: function data$1(inObj, path, value) {
+        return data(inObj, path, value);
+      }
+    }, {
+      key: "each",
+      value: function each(l, fn, loopUuid, ctx, key) {
+        var i;
+
+        if (Array.isArray(l)) {
+          for (i = 0; i < l.length; i++) {
+            fn(l[i], loopUuid, i, ctx, key);
+          }
+        } else {
+          for (i in l) {
+            if (l.hasOwnProperty(i)) {
+              fn({
+                "$key": i,
+                "$value": l[i]
+              }, loopUuid, i, ctx, key);
+            }
+          }
+        }
+      }
+    }, {
+      key: "update",
+      value: function update(el, data) {
+        var _this4 = this;
+
+        var eid = el._rotorsEid,
+            executionContext,
+            rootEntry,
+            _rotors,
+            rootRotorsEntry;
+
+        if (eid == null || el._rotors == null) return; // otherwise, retrieve the context and get the entry for this specific element.
+        else {
+          _rotors = el._rotors.instance;
+          executionContext = _rotors.executions[eid];
+          var idx = el._rotorsKey,
+              key = el._rotors.uuid + (idx != null ? "-" + idx : "");
+          rootEntry = executionContext[key];
+          rootRotorsEntry = _rotors.entries[rootEntry.id];
+        }
+
+        var newFrag = _rotors._executeSingle(rootRotorsEntry.customParent ? rootRotorsEntry.customParent.functionBody : rootRotorsEntry.functionBody, data),
+            newRoot = newFrag.childNodes[0],
+            newEid = newRoot._rotorsEid,
+            newExecutionContext = _rotors.executions[newEid],
+            newRootEntry = newExecutionContext[newRoot._rotors.uuid]; // recurse down from the root entry and merge in the new version of each entry.
+        // r-each might result in elements being added or removed, as might r-if
+
+
+        var result = this.updateFrom(rootEntry, newRootEntry, null);
+        result.elements.forEach(function (_ref) {
+          var _ref2 = _slicedToArray$1(_ref, 2),
+              el = _ref2[0],
+              tag = _ref2[1];
+
+          tag.updated(el, data, _this4);
+        });
+        return result;
+      }
+    }, {
+      key: "onUpdate",
+      value: function onUpdate(el, fn) {
+        if (el._rotors == null) return;
+        var _rotors = el._rotors.instance;
+        el._RotorsUpdate = el._RotorsUpdate || uuid();
+        _rotors.updaters[el._RotorsUpdate] = _rotors.updaters[el._RotorsUpdate] || [];
+
+        _rotors.updaters[el._RotorsUpdate].push(fn);
+      }
+    }, {
+      key: "copyChildNodes",
+      value: function copyChildNodes(from, to) {
+        var j = from.childNodes.length;
+
+        for (var i = 0; i < j; i++) {
+          to.appendChild(from.childNodes[0]);
+        }
+      }
+      /**
+       * Removes the given element from this Knockle instance, and optionally removes it from the DOM too.
+       * @param el Element to remove.
+       * @param removeFromDOM Whether or not to also remove from the DOM.
+       */
+
+    }, {
+      key: "remove",
+      value: function remove(el, removeFromDOM) {
+        if (el._RotorsUpdate && this.updaters[el._RotorsUpdate]) {
+          delete this.updaters[el._RotorsUpdate];
+        }
+
+        if (el._rotorsEid && this.executions[el._rotorsEid]) {
+          delete this.executions[el._rotorsEid];
+        }
+
+        if (removeFromDOM) {
+          el.parentNode && el.parentNode.removeChild(el);
+        }
+      }
+    }, {
+      key: "registerTag",
+      value: function registerTag(tagName, handlers, isGlobal) {
+        var tag = new CustomTag(this, tagName, handlers);
+
+        if (isGlobal) {
+          this.registerGlobalTag(tagName, tag);
+        } else {
+          this.customTags[tagName] = tag;
+        }
+      }
+    }, {
+      key: "getCustomTag",
+      value: function getCustomTag(tagName) {
+        return this.customTags[tagName] || this.getGlobalTag(tagName);
+      }
+    }, {
+      key: "customTagRendered",
+      value: function customTagRendered(tagName, el, data) {
+        var t = this.getCustomTag(tagName);
+
+        if (t) {
+          t.rendered(el, data, this);
+        }
+      }
+    }]);
+
+    return Knockle;
+  }();
+
+  /**
+   * An `r-each` tag.
+   * @internal
+   */
+
+  var EachEntry = /*#__PURE__*/function (_ElementEntry) {
+    _inherits$6(EachEntry, _ElementEntry);
+
+    var _super = _createSuper$6(EachEntry);
+
+    function EachEntry(data, instance, templateResolver, stack, parseIdStack) {
+      var _this;
+
+      _classCallCheck$b(this, EachEntry);
+
+      _this = _super.call(this, data, instance, templateResolver, stack, parseIdStack);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "key", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "type", "each");
+
+      _this.context = data.atts["in"];
+      _this.key = data.atts["key"];
+      _this.tag = "r-each";
+      return _this;
+    }
+
+    _createClass$b(EachEntry, [{
+      key: "compile",
+      value: function compile() {
+        var _this2 = this;
+
+        var _getChildContent = function _getChildContent() {
+          var out = "function(item, _rotorsLoopId, _rotorsLoopIndex, _rotorsLoopContext, _key) { ";
+          out += "__knockleData.unshift(item);$value=item;";
+          out += "$key=_key ? _rotors.data($value, _key) : _rotorsLoopIndex;";
+
+          for (var i = 0; i < _this2.children.length; i++) {
+            var cfb = _this2.children[i].compile();
+
+            _this2.children[i].functionBody = cfb;
+            out += cfb;
+          }
+
+          out += "__knockleData.splice(0,1);";
+          out += "}";
+          return out;
+        };
+
+        var l1 = ";_rotors.te(null, _eid, '" + this.uuid + "');";
+        var l2 = this.context ? ";__knockleData.unshift(_rotors.data(__knockleData[0], \"" + this.context + "\"));" : "";
+        var l3 = "_rotors.each(__knockleData[0], " + _getChildContent() + ",'" + this.uuid + "', '" + this.context.replace(/'/g, "\\'") + "'," + (typeof this.key == 'undefined' ? "null);" : "'" + this.key + "');");
+        var l4 = this.context ? ";__knockleData.splice(0, 1);" : "";
+        var l5 = ";_rotors.pet(_eid, '" + this.uuid + "');";
+        return l1 + l2 + l3 + l4 + l5;
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        var updates = _updateParent(this.instance, entry, newEntry, ["id", "index"], parent);
+
+        var childEntry,
+            domEl = null; // newEntry.children has the order we want. ensure they are in the correct order.
+
+        for (var i = 0; i < newEntry.children.length; i++) {
+          childEntry = _findChild({
+            index: newEntry.children[i].index,
+            id: newEntry.children[i].id
+          }, entry);
+
+          if (childEntry && childEntry.el) {
+            if (domEl != null) {
+              domEl.parentNode.insertBefore(childEntry.el, domEl.nextSibling);
+            }
+
+            domEl = childEntry.el;
+          }
+        }
+
+        return updates;
+      }
+    }]);
+
+    return EachEntry;
+  }(ElementEntry);
+  Elements.register("r-each", EachEntry);
+
+  var IfEntry = /*#__PURE__*/function (_ElementEntry) {
+    _inherits$6(IfEntry, _ElementEntry);
+
+    var _super = _createSuper$6(IfEntry);
+
+    function IfEntry(data, instance, templateResolver, stack, parseIdStack) {
+      var _this;
+
+      _classCallCheck$b(this, IfEntry);
+
+      _this = _super.call(this, data, instance, templateResolver, stack, parseIdStack);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "type", "if");
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "test", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "happyFlowChildren", void 0);
+
+      _this.test = data.atts["test"];
+      _this.tag = "r-if";
+      return _this;
+    }
+
+    _createClass$b(IfEntry, [{
+      key: "compile",
+      value: function compile() {
+        var c = "",
+            _else = "",
+            i;
+        var happyFlow = this.happyFlowChildren || this.children;
+
+        for (i = 0; i < happyFlow.length; i++) {
+          c += happyFlow[i].compile() + ";";
+        }
+
+        if (this.happyFlowChildren != null) {
+          // if happy flow was set, then `children` is unhappy flow.
+          _else = "else {";
+
+          for (i = 0; i < this.children.length; i++) {
+            _else += this.children[i].compile() + ";";
+          }
+
+          _else += "}";
+        }
+
+        var l1 = ";_rotors.te(null, _eid, '" + this.uuid + "');";
+        return l1 + "with (__knockleData[0]) { if(" + this.test + ") { " + c + " }" + _else + "}_rotors.pet(_eid);";
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        return _updateParent(this.instance, entry, this.flatMap(newEntry), ["id"], parent);
+      } //
+      // flattens the given Execution to extract the child elements from any nested tags like r-each or r-if. only
+      // one level of nesting is supported.
+      //
+
+    }, {
+      key: "flatMap",
+      value: function flatMap(entry) {
+        var mappedChildren = [];
+        entry.children.forEach(function (c) {
+          if (c.el == null) {
+            mappedChildren.push.apply(mappedChildren, _toConsumableArray(c.children));
+          } else {
+            mappedChildren.push(c);
+          }
+        });
+        return {
+          el: entry.el,
+          index: entry.index,
+          id: entry.id,
+          children: mappedChildren
+        };
+      }
+    }]);
+
+    return IfEntry;
+  }(ElementEntry);
+  Elements.register("r-if", IfEntry);
+
+  var ElseEntry = /*#__PURE__*/function (_ElementEntry) {
+    _inherits$6(ElseEntry, _ElementEntry);
+
+    var _super = _createSuper$6(ElseEntry);
+
+    function ElseEntry(ta, instance, templateResolver, stack, parseIdStack) {
+      var _this;
+
+      _classCallCheck$b(this, ElseEntry);
+
+      _this = _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
+      var ifStatement = peek(stack);
+
+      if (ifStatement != null) {
+        if (ifStatement instanceof IfEntry) {
+          ifStatement.happyFlowChildren = ifStatement.children;
+          ifStatement.children = [];
+        }
+      }
+
+      _this.remove = true;
+      _this.tag = "r-else";
+      return _this;
+    }
+
+    _createClass$b(ElseEntry, [{
+      key: "compile",
+      value: function compile() {
+        return "";
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        return emptyUpdateResult();
+      }
+    }]);
+
+    return ElseEntry;
+  }(ElementEntry);
+  Elements.register("r-else", ElseEntry);
+
+  var TmplEntry = /*#__PURE__*/function (_ElementEntry) {
+    _inherits$6(TmplEntry, _ElementEntry);
+
+    var _super = _createSuper$6(TmplEntry);
+
+    function TmplEntry(ta, instance, templateResolver, stack, parseIdStack) {
+      var _this;
+
+      _classCallCheck$b(this, TmplEntry);
+
+      _this = _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "templateId", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "lookup", void 0);
+
+      _defineProperty$a(_assertThisInitialized$6(_this), "default", void 0);
+
+      _this.context = ta.atts["context"];
+      _this.type = "template";
+      _this.remove = true;
+
+      if (!ta.atts["lookup"]) {
+        _this.templateId = ta.atts["id"];
+        var insideLoop = isLoopPresent(stack);
+
+        if (parseIdStack.indexOf(_this.templateId) !== -1) {
+          if (!insideLoop) {
+            throw new TypeError("recursive template call [" + _this.templateId + "]");
+          } else {
+            _this.compile = function () {
+              return ";eval(_rotors.getTemplate('" + _this.templateId + "').functionBody);";
+            };
+          }
+        } else {
+          // insert the nested ast. this means resolving the template, creating an ast, and inserting all
+          // the entries. also, push the template id on the parse stack, to avoid recursing on the same
+          // template
+          var _nested = templateResolver(_this.templateId);
+
+          parseIdStack.push(_this.templateId);
+
+          var nestedAst = _this.instance.parse(_nested, templateResolver, null, parseIdStack); // if not in the template cache, compile it and add it.
+
+
+          if (_this.instance.templateCache.get(_this.templateId) == null) {
+            _this.instance.templateCache.set(_this.templateId, _this.instance.compile(nestedAst));
+          } // write context in to nested ast roots
+
+
+          for (var i = 0; i < nestedAst.length; i++) {
+            nestedAst[i].context = _this.context;
+          } //_rotors.debug("nested ast", nestedAst)
+
+
+          _this.children = nestedAst;
+          parseIdStack.pop();
+        }
+      } else {
+        _this.lookup = ta.atts["lookup"];
+        _this["default"] = ta.atts["default"] || "";
+
+        _this.compile = function () {
+          return ";with(__knockleData[0]){var tlid=eval(\"" + _this.lookup.replace(/[\$\{\}]/g, "") + "\");}" + "if (_rotors.templateCache[tlid] == null){var ___t = _rotors.resolveTemplate(tlid) || _rotors.resolveTemplate(\"" + _this["default"] + "\");_rotors.templateCache[tlid]=_rotors.compile(_rotors.parse(___t));} eval(_rotors.templateCache[tlid].functionBody);";
+        };
+      }
+
+      _this.precompile = function () {
+        return _this.context ? ";__knockleData.unshift(_rotors.data(__knockleData[0], \"" + _this.context + "\"));" : "";
+      };
+
+      _this.postcompile = function () {
+        return _this.context ? ";__knockleData.splice(0, 1);" : "";
+      };
+
+      return _this;
+    }
+
+    _createClass$b(TmplEntry, [{
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        return {
+          added: [],
+          removed: [],
+          elements: []
+        };
+      }
+    }]);
+
+    return TmplEntry;
+  }(ElementEntry);
+  Elements.register("r-tmpl", TmplEntry);
+
+  var HtmlEntry = /*#__PURE__*/function (_ElementEntry) {
+    _inherits$6(HtmlEntry, _ElementEntry);
+
+    var _super = _createSuper$6(HtmlEntry);
+
+    function HtmlEntry(ta, instance, templateResolver, stack, parseIdStack) {
+      _classCallCheck$b(this, HtmlEntry);
+
+      return _super.call(this, ta, instance, templateResolver, stack, parseIdStack);
+    }
+
+    _createClass$b(HtmlEntry, [{
+      key: "compile",
+      value: function compile() {
+        // r-html is expected to have a text node of the form ${key}, where `key` is the key in the data to retrieve and
+        // render as html. if there is no such text node, or it is not of the correct form, the error is logged and
+        // the html insertion stops.
+        try {
+          var key = this.children[0].bindings.__element.e[0][1];
+          return ";var __hp=_rotors.parse(__knockleData[0]." + key + "),__hc=_rotors.compile(__hp,true);var __f=__hc(__knockleData[0], _rotors);_rotors.copyChildNodes(__f, _rotors.peek(_els));";
+        } catch (e) {
+          //_rotors.maybeDebug("Could not find key to bind for r-html element. Should be in the form <r-html>${key}</r-html> ('key' can be anything)")
+          return "";
+        }
+      }
+    }, {
+      key: "updateFrom",
+      value: function updateFrom(entry, newEntry, parent) {
+        return emptyUpdateResult();
+      }
+    }]);
+
+    return HtmlEntry;
+  }(ElementEntry);
+  Elements.register("r-html", HtmlEntry);
+
+  function _classCallCheck$a(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties$a(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass$a(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties$a(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties$a(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _inherits$5(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf$5(subClass, superClass);
+  }
+
+  function _getPrototypeOf$5(o) {
+    _getPrototypeOf$5 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf$5(o);
+  }
+
+  function _setPrototypeOf$5(o, p) {
+    _setPrototypeOf$5 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf$5(o, p);
+  }
+
+  function _isNativeReflectConstruct$5() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function _assertThisInitialized$5(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn$5(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
+    }
+
+    return _assertThisInitialized$5(self);
+  }
+
+  function _createSuper$5(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct$5();
+
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf$5(Derived),
+          result;
+
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf$5(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn$5(this, result);
+    };
+  }
+
+  var SVG_NAMESPACE = "svg";
+  var XLINK_NAMESPACE = "xlink";
+  /**
+   * Default implementation of TemplateResolver for use in browsers.
+   * @param tid
+   * @internal
+   */
+
+  function InBrowserTemplateResolver(tid) {
+    var d = document.getElementById(tid);
+    return d != null ? d.innerHTML : null;
+  }
+  /**
+   * Implementation of Knockle for use with the browser-ui package.
+   * @internal
+   */
+
+  var BrowserUiKnockle = /*#__PURE__*/function (_Knockle) {
+    _inherits$5(BrowserUiKnockle, _Knockle);
+
+    var _super = _createSuper$5(BrowserUiKnockle);
+
+    function BrowserUiKnockle(options, registerGlobalTag, getGlobalTag) {
+      var _this;
+
+      _classCallCheck$a(this, BrowserUiKnockle);
+
+      _this = _super.call(this, options, registerGlobalTag, getGlobalTag);
+
+      _this.namespaceHandlers[SVG_NAMESPACE] = function (tag) {
+        return "e = document.createElementNS('http://www.w3.org/2000/svg', '" + tag.split(":")[1] + "');" + "e.setAttribute('version', '1.1');" + "e.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');";
+      };
+
+      _this.namespaces[XLINK_NAMESPACE] = "http://www.w3.org/1999/xlink";
+      return _this;
+    }
+    /**
+     * create an element with the given tag name
+     * @internal
+     * @param tag
+     */
+
+
+    _createClass$a(BrowserUiKnockle, [{
+      key: "ce",
+      value: function ce(tag) {
+        return document.createElement(tag);
+      }
+      /**
+       * create a fragment
+       * @internal
+       */
+
+    }, {
+      key: "cf",
+      value: function cf() {
+        return document.createDocumentFragment();
+      }
+      /**
+       * create a text node
+       * @internal
+       * @param value
+       */
+
+    }, {
+      key: "ctn",
+      value: function ctn(value) {
+        return document.createTextNode(value);
+      }
+      /**
+       * @internal
+       * @private
+       */
+
+    }, {
+      key: "_getDefaultTemplateResolver",
+      value: function _getDefaultTemplateResolver() {
+        return InBrowserTemplateResolver;
+      }
+    }]);
+
+    return BrowserUiKnockle;
+  }(Knockle);
+  /**
+   * @internal
+   * @param options
+   */
+
+  function newKnockleInstance(options) {
+    return new BrowserUiKnockle(options || {}, registerGlobalTag, getCustomTag);
+  }
 
   function _classCallCheck$9(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -43136,6 +42375,7 @@
   var jsRenderer;
   var copiedNodes = [];
   var isPasting = false;
+  var lastCtrlVTime = 0; // Initialize a variable to store the last execution time
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -43144,25 +42384,27 @@
     var ignoreFirstLoadCall = true; // ------------------------- dialogs -------------------------------------
 
     console.log("Inside initJsPlumb. CanEdit is ", canEdit);
-    newInstance$1({
-      dialogs: {
-        dlgText: {
-          template: '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
-          title: "Enter Text",
-          cancelable: true
+    /*   const dialogs = Dialogs.newInstance({ 
+        dialogs: {
+          dlgText: {
+            template:
+              '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
+            title: "Enter Text",
+            cancelable: true,
+          },
+          dlgConfirm: {
+            template: "${msg}",
+            title: "Please Confirm",
+            cancelable: true,
+          },
+          dlgMessage: {
+            template: "${msg}",
+            title: "Message",
+            cancelable: false,
+          },
         },
-        dlgConfirm: {
-          template: "${msg}",
-          title: "Please Confirm",
-          cancelable: true
-        },
-        dlgMessage: {
-          template: "${msg}",
-          title: "Message",
-          cancelable: false
-        }
-      }
-    });
+      }); */
+
     /*   function showEdgeEditDialog(
         data: ObjectData,
         continueFunction: Function,
@@ -43310,13 +42552,13 @@
 
     var renderer = toolkit.render(canvasElement, {
       view: {
-        nodes: (_nodes = {}, _defineProperty$i(_nodes, SELECTABLE, {
+        nodes: (_nodes = {}, _defineProperty$h(_nodes, SELECTABLE, {
           events: {
             tap: function tap(params) {
               toolkit.toggleSelection(params.obj);
             }
           }
-        }), _defineProperty$i(_nodes, CONDITION, {
+        }), _defineProperty$h(_nodes, CONDITION, {
           parent: SELECTABLE,
           templateId: "tmplCondition",
           events: {
@@ -43327,7 +42569,7 @@
               }]);
             }
           }
-        }), _defineProperty$i(_nodes, BRANCH, {
+        }), _defineProperty$h(_nodes, BRANCH, {
           parent: SELECTABLE,
           templateId: "tmplBranch",
           events: {
@@ -43338,7 +42580,7 @@
               }]);
             }
           }
-        }), _defineProperty$i(_nodes, TARIFF, {
+        }), _defineProperty$h(_nodes, TARIFF, {
           parent: SELECTABLE,
           templateId: "tmplTariff",
           events: {
@@ -43349,7 +42591,7 @@
               }]);
             }
           }
-        }), _defineProperty$i(_nodes, CAIR_TARIFF, {
+        }), _defineProperty$h(_nodes, CAIR_TARIFF, {
           parent: SELECTABLE,
           templateId: "tmplCairTariff",
           events: {
@@ -43360,7 +42602,7 @@
               }]);
             }
           }
-        }), _defineProperty$i(_nodes, PRICING_PRODUCT, {
+        }), _defineProperty$h(_nodes, PRICING_PRODUCT, {
           parent: SELECTABLE,
           templateId: "tmplPricingProduct",
           events: {
@@ -43371,7 +42613,7 @@
               }]);
             }
           }
-        }), _defineProperty$i(_nodes, JOUNAL_NODE, {
+        }), _defineProperty$h(_nodes, JOUNAL_NODE, {
           parent: SELECTABLE,
           templateId: "tmplJournal",
           events: {
@@ -43385,7 +42627,7 @@
         }), _nodes),
         // There are two edge types defined - 'yes' and 'no', sharing a common
         // parent.
-        edges: (_edges = {}, _defineProperty$i(_edges, DEFAULT$1, {
+        edges: (_edges = {}, _defineProperty$h(_edges, DEFAULT$1, {
           anchor: AnchorLocations.ContinuousTopBottom,
           endpoint: BlankEndpoint.type,
           connector: {
@@ -43435,13 +42677,13 @@
               length: 10
             }
           }]
-        }), _defineProperty$i(_edges, RESPONSE, {
+        }), _defineProperty$h(_edges, RESPONSE, {
           parent: DEFAULT$1
         }), _edges),
-        ports: (_ports = {}, _defineProperty$i(_ports, SOURCE, {
+        ports: (_ports = {}, _defineProperty$h(_ports, SOURCE, {
           maxConnections: -1,
           edgeType: RESPONSE
-        }), _defineProperty$i(_ports, TARGET, {
+        }), _defineProperty$h(_ports, TARGET, {
           maxConnections: -1,
           isTarget: true
         }), _ports)
@@ -43469,7 +42711,7 @@
           h: 20
         }
       },
-      events: _defineProperty$i({}, EVENT_CANVAS_CLICK, function (e) {
+      events: _defineProperty$h({}, EVENT_CANVAS_CLICK, function (e) {
         toolkit.clearSelection();
         edgeEditor.stopEditing();
       }),
@@ -43808,6 +43050,15 @@
         if (event.ctrlKey && event.code === "KeyV") {
           /* console.log("CTRL+V was pressed " + new Date().toLocaleString()); */
           // Custom logic for CTRL+V
+          var currentTime = new Date().getTime(); // Get the current time in milliseconds
+
+          if (currentTime - lastCtrlVTime < 1000) {
+            // If the last execution was less than 1 second ago, prevent execution
+            return;
+          } // Update the last execution time
+
+
+          lastCtrlVTime = currentTime;
           var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
           var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
           var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
@@ -43826,7 +43077,6 @@
   function copySelectedNodes() {
     if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
       isPasting = true;
-      var finishedCounter = 0;
       copiedNodes.forEach(function (originData) {
         // Copy the node data (excluding the ID, which should be unique)
         var nodeData = Object.assign({}, originData);
@@ -43850,7 +43100,6 @@
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-            finishedCounter++;
           });
         } else if (nodeData.type === CAIR_TARIFF) {
           copyTariffNodeWithCallback({
@@ -43862,26 +43111,13 @@
             nodeData.ruleNumber = ruleNumber;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-            finishedCounter++;
           });
-        } else if (nodeData.type === PRICING_PRODUCT) {
-          /*       copyProductNodeWithCallback({ name: "nodeId", value: originData.id }, function(nodeId:string,text:string) {
-                  nodeData.id = nodeId;
-                  nodeData.text = text;
-                  let newNode = jsToolkit.addNode(nodeData);
-                  jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   
-                }); */
-          finishedCounter++;
-        } else {
+        } else if (nodeData.type === PRICING_PRODUCT) ; else {
           nodeData.id = uuid();
           var newNode = jsToolkit.addNode(nodeData);
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          finishedCounter++;
         }
       });
-
-      while (finishedCounter != copiedNodes.length) {// pasted not finished
-      }
 
       var _exportData3 = JSON.stringify(jsToolkit.exportData());
 
