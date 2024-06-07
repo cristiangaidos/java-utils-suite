@@ -43825,6 +43825,7 @@
   function copySelectedNodes() {
     if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
       isPasting = true;
+      var finishedCounter = 0;
       copiedNodes.forEach(function (originData) {
         // Copy the node data (excluding the ID, which should be unique)
         var nodeData = Object.assign({}, originData);
@@ -43848,6 +43849,7 @@
             nodeData.text = text;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            finishedCounter++;
           });
         } else if (nodeData.type === CAIR_TARIFF) {
           copyTariffNodeWithCallback({
@@ -43859,13 +43861,26 @@
             nodeData.ruleNumber = ruleNumber;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            finishedCounter++;
           });
-        } else if (nodeData.type === PRICING_PRODUCT) ; else {
+        } else if (nodeData.type === PRICING_PRODUCT) {
+          /*       copyProductNodeWithCallback({ name: "nodeId", value: originData.id }, function(nodeId:string,text:string) {
+                  nodeData.id = nodeId;
+                  nodeData.text = text;
+                  let newNode = jsToolkit.addNode(nodeData);
+                  jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   
+                }); */
+          finishedCounter++;
+        } else {
           nodeData.id = uuid();
           var newNode = jsToolkit.addNode(nodeData);
           jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          finishedCounter++;
         }
       });
+
+      while (finishedCounter != copiedNodes.length) {// pasted not finished
+      }
 
       var _exportData3 = JSON.stringify(jsToolkit.exportData());
 
