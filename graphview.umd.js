@@ -43414,9 +43414,7 @@
                 edgeEditor.startEditing(p.edge, {
                   deleteButton: true,
                   onMaybeDelete: function onMaybeDelete(edge, connection, doDelete) {
-                    showGraphViewConfirmEdgeDeleteDialog(function () {
-                      toolkit.removeEdge(edge);
-                    });
+                    showGraphViewConfirmEdgeDeleteDialog(edge);
                     /* dialogs.show({
                       id: "dlgConfirm",
                       data: {
