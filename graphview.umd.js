@@ -43144,7 +43144,7 @@
     var ignoreFirstLoadCall = true; // ------------------------- dialogs -------------------------------------
 
     console.log("Inside initJsPlumb. CanEdit is ", canEdit);
-    var dialogs = newInstance$1({
+    newInstance$1({
       dialogs: {
         dlgText: {
           template: '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
@@ -43414,13 +43414,15 @@
                 edgeEditor.startEditing(p.edge, {
                   deleteButton: true,
                   onMaybeDelete: function onMaybeDelete(edge, connection, doDelete) {
-                    dialogs.show({
+                    showGraphViewConfirmEdgeDeleteDialog(function () {
+                    });
+                    /* dialogs.show({
                       id: "dlgConfirm",
                       data: {
-                        msg: "Delete Edge"
+                        msg: "Delete Edge",
                       },
-                      onOK: doDelete
-                    });
+                      onOK: doDelete,
+                    }); */
                   }
                 });
               }
