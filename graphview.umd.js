@@ -4,6 +4,42 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.QPSCoreGraphView = {}));
 })(this, (function (exports) { 'use strict';
 
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+      var info = gen[key](arg);
+      var value = info.value;
+    } catch (error) {
+      reject(error);
+      return;
+    }
+
+    if (info.done) {
+      resolve(value);
+    } else {
+      Promise.resolve(value).then(_next, _throw);
+    }
+  }
+
+  function _asyncToGenerator(fn) {
+    return function () {
+      var self = this,
+          args = arguments;
+      return new Promise(function (resolve, reject) {
+        var gen = fn.apply(self, args);
+
+        function _next(value) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+        }
+
+        function _throw(err) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+        }
+
+        _next(undefined);
+      });
+    };
+  }
+
   function _defineProperty$h(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -17,6 +53,80 @@
     }
 
     return obj;
+  }
+
+  function _unsupportedIterableToArray$5(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray$5(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$5(o, minLen);
+  }
+
+  function _arrayLikeToArray$5(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+
+    if (!it) {
+      if (Array.isArray(o) || (it = _unsupportedIterableToArray$5(o)) || allowArrayLike && o && typeof o.length === "number") {
+        if (it) o = it;
+        var i = 0;
+
+        var F = function () {};
+
+        return {
+          s: F,
+          n: function () {
+            if (i >= o.length) return {
+              done: true
+            };
+            return {
+              done: false,
+              value: o[i++]
+            };
+          },
+          e: function (e) {
+            throw e;
+          },
+          f: F
+        };
+      }
+
+      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+
+    var normalCompletion = true,
+        didErr = false,
+        err;
+    return {
+      s: function () {
+        it = it.call(o);
+      },
+      n: function () {
+        var step = it.next();
+        normalCompletion = step.done;
+        return step;
+      },
+      e: function (e) {
+        didErr = true;
+        err = e;
+      },
+      f: function () {
+        try {
+          if (!normalCompletion && it.return != null) it.return();
+        } finally {
+          if (didErr) throw err;
+        }
+      }
+    };
   }
 
   function filterList(list, value, missingIsFalse) {
@@ -42697,6 +42807,7 @@
             x: 60,
             y: 60
           },
+          absoluteBacked: true,
 
           /* rootNode: "1", */
           magnetize: true
@@ -43052,8 +43163,8 @@
           // Custom logic for CTRL+V
           var currentTime = new Date().getTime(); // Get the current time in milliseconds
 
-          if (currentTime - lastCtrlVTime < 1000) {
-            // If the last execution was less than 1 second ago, prevent execution
+          if (currentTime - lastCtrlVTime < 500) {
+            // If the last execution was less than 0.5 second ago, prevent execution
             return;
           } // Update the last execution time
 
@@ -43075,65 +43186,143 @@
   }
 
   function copySelectedNodes() {
-    if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
-      isPasting = true;
-      copiedNodes.forEach(function (originData) {
-        // Copy the node data (excluding the ID, which should be unique)
-        var nodeData = Object.assign({}, originData);
-        delete nodeData.id; // Ensure the new node gets a unique ID
-        // Retrieve and modify the position
-
-        var originalPosition = jsRenderer.getCoordinates(originData.id);
-        var newPosition = {
-          x: originalPosition.x + 15,
-          // Shift 10 pixels to the right
-          y: originalPosition.y + 15 // Shift 10 pixels down
-
-        };
-
-        if (nodeData.type === TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === CAIR_TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text, ruleNumber) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.ruleNumber = ruleNumber;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === PRICING_PRODUCT) ; else {
-          nodeData.id = uuid();
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        }
-      });
-
-      var _exportData3 = JSON.stringify(jsToolkit.exportData());
-
-      transferGraphData([{
-        name: "exportData",
-        value: _exportData3
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-      isPasting = false;
-    }
+    return _copySelectedNodes.apply(this, arguments);
   }
   /*   ready(() => {
       callDOMReady(true);
     }); */
+
+
+  function _copySelectedNodes() {
+    _copySelectedNodes = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var _iterator, _step, originData, nodeData, originalPosition, newPosition, newNode, _exportData3;
+
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (!(copiedNodes && copiedNodes.length > 0 && !isPasting)) {
+                _context.next = 35;
+                break;
+              }
+
+              isPasting = true;
+              _iterator = _createForOfIteratorHelper(copiedNodes);
+              _context.prev = 3;
+
+              _iterator.s();
+
+            case 5:
+              if ((_step = _iterator.n()).done) {
+                _context.next = 24;
+                break;
+              }
+
+              originData = _step.value;
+              // Copy the node data (excluding the ID, which should be unique)
+              nodeData = Object.assign({}, originData);
+              delete nodeData.id; // Ensure the new node gets a unique ID
+              // Retrieve and modify the position
+
+              originalPosition = jsRenderer.getCoordinates(originData.id);
+              newPosition = {
+                x: originalPosition.x + 15,
+                // Shift 10 pixels to the right
+                y: originalPosition.y + 15 // Shift 10 pixels down
+
+              };
+
+              if (!(nodeData.type === TARIFF)) {
+                _context.next = 16;
+                break;
+              }
+
+              _context.next = 14;
+              return copyTariffNodeWithCallback({
+                name: "nodeId",
+                value: originData.id
+              }, function (nodeId, text) {
+                nodeData.id = nodeId;
+                nodeData.text = text;
+                var newNode = jsToolkit.addNode(nodeData);
+                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+              });
+
+            case 14:
+              _context.next = 22;
+              break;
+
+            case 16:
+              if (!(nodeData.type === CAIR_TARIFF)) {
+                _context.next = 21;
+                break;
+              }
+
+              _context.next = 19;
+              return copyTariffNodeWithCallback({
+                name: "nodeId",
+                value: originData.id
+              }, function (nodeId, text, ruleNumber) {
+                nodeData.id = nodeId;
+                nodeData.text = text;
+                nodeData.ruleNumber = ruleNumber;
+                var newNode = jsToolkit.addNode(nodeData);
+                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+              });
+
+            case 19:
+              _context.next = 22;
+              break;
+
+            case 21:
+              if (nodeData.type === PRICING_PRODUCT) ; else {
+                nodeData.id = uuid();
+                newNode = jsToolkit.addNode(nodeData);
+                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+              }
+
+            case 22:
+              _context.next = 5;
+              break;
+
+            case 24:
+              _context.next = 29;
+              break;
+
+            case 26:
+              _context.prev = 26;
+              _context.t0 = _context["catch"](3);
+
+              _iterator.e(_context.t0);
+
+            case 29:
+              _context.prev = 29;
+
+              _iterator.f();
+
+              return _context.finish(29);
+
+            case 32:
+              //
+              _exportData3 = JSON.stringify(jsToolkit.exportData());
+              transferGraphData([{
+                name: "exportData",
+                value: _exportData3
+              }, {
+                name: "lastConnectedNodeId",
+                value: null
+              }]);
+              isPasting = false;
+
+            case 35:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[3, 26, 29, 32]]);
+    }));
+    return _copySelectedNodes.apply(this, arguments);
+  }
 
   exports.initJsPlumb = initJsPlumb;
 
