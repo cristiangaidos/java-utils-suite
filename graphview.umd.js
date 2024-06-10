@@ -42553,8 +42553,7 @@
       view: {
         nodes: (_nodes = {}, _defineProperty$h(_nodes, SELECTABLE, {
           events: {
-            tap: function tap(params) {
-              toolkit.toggleSelection(params.obj);
+            tap: function tap(params) {//toolkit.toggleSelection(params.obj);
             }
           }
         }), _defineProperty$h(_nodes, CONDITION, {
@@ -42822,10 +42821,10 @@
     toolkit.bind(EVENT_NODE_UPDATED, onNodeUpdate);
     toolkit.bind(EVENT_NODE_ADDED, function (params) {
       var node = params.node;
-      params.eventInfo; // Attach click handler to the node element
+      var nodeElement = renderer.getRenderedElement(node.id); // Attach click handler to the node element
 
-      node.addEventListener("click", function (eventInfo) {
-        handleNodeClick(node, eventInfo);
+      nodeElement.addEventListener("click", function (event) {
+        handleNodeClick(node, event);
       });
     });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
