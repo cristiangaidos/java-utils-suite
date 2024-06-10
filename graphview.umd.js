@@ -4,42 +4,6 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.QPSCoreGraphView = {}));
 })(this, (function (exports) { 'use strict';
 
-  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-    try {
-      var info = gen[key](arg);
-      var value = info.value;
-    } catch (error) {
-      reject(error);
-      return;
-    }
-
-    if (info.done) {
-      resolve(value);
-    } else {
-      Promise.resolve(value).then(_next, _throw);
-    }
-  }
-
-  function _asyncToGenerator(fn) {
-    return function () {
-      var self = this,
-          args = arguments;
-      return new Promise(function (resolve, reject) {
-        var gen = fn.apply(self, args);
-
-        function _next(value) {
-          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-        }
-
-        function _throw(err) {
-          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-        }
-
-        _next(undefined);
-      });
-    };
-  }
-
   function _defineProperty$h(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -42495,35 +42459,34 @@
 
     console.log("Inside initJsPlumb. CanEdit is ", canEdit);
     /*   const dialogs = Dialogs.newInstance({ 
-        dialogs: {
-          dlgText: {
-            template:
-              '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
-            title: "Enter Text",
-            cancelable: true,
-          },
-          dlgConfirm: {
-            template: "${msg}",
-            title: "Please Confirm",
-            cancelable: true,
-          },
-          dlgMessage: {
-            template: "${msg}",
-            title: "Message",
-            cancelable: false,
-          },
+      dialogs: {
+        dlgText: {
+          template:
+            '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
+          title: "Enter Text",
+          cancelable: true,
         },
-      }); */
+        dlgConfirm: {
+          template: "${msg}",
+          title: "Please Confirm",
+          cancelable: true,
+        },
+        dlgMessage: {
+          template: "${msg}",
+          title: "Message",
+          cancelable: false,
+        },
+      },
+    }); */
 
     /*   function showEdgeEditDialog(
-        data: ObjectData,
-        continueFunction: Function,
-        abortFunction?: CancelFunction
-      ) {
-        continueFunction({ label: data.text || "" });
-        const exportData = JSON.stringify(toolkit.exportData());
-        transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
-    
+      data: ObjectData,
+      continueFunction: Function,
+      abortFunction?: CancelFunction
+    ) {
+      continueFunction({ label: data.text || "" });
+      const exportData = JSON.stringify(toolkit.exportData());
+      transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
       } */
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
@@ -42916,8 +42879,8 @@
         ignoreFirstLoadCall = false;
       } else {
         /*       toolkit.getNodes().forEach(node => {
-                toolkit.updateNode(node.id, {w:'180'});
-              }); */
+          toolkit.updateNode(node.id, {w:'180'});
+        }); */
         adjustFontSizeOnAllNodes(true);
         console.log("Load finished " + new Date().toLocaleString());
         isLoading = false;
@@ -42952,10 +42915,10 @@
     }); // Load the data.
 
     /*    toolkit.load({
-        url: `./copyright.json?q=${uuid()}`,
-        onload:() => {
-            renderer.zoomToFit()
-        }
+      url: `./copyright.json?q=${uuid()}`,
+      onload:() => {
+          renderer.zoomToFit()
+      }
     }) */
     // listener for mode change on renderer.
 
@@ -43129,7 +43092,26 @@
 
         resizeText();
       }
-    }
+    } // Assuming jsToolkit is your jsPlumbToolkit instance and jsRenderer is the renderer instance
+
+
+    jsRenderer.bind("canvasClick", function (event) {
+      // Clear selection on canvas click
+      jsToolkit.clearSelection();
+    });
+    jsRenderer.bind("nodeClick", function (params) {
+      var node = params.node;
+      var event = params.e;
+
+      if (event.ctrlKey || event.shiftKey) {
+        // If Ctrl or Shift is pressed, add to the selection
+        jsToolkit.addToSelection(node);
+      } else {
+        // Otherwise, clear selection and select the clicked node
+        jsToolkit.clearSelection();
+        jsToolkit.addToSelection(node);
+      }
+    });
   }
 
   function initJsPlumb(canEdit) {
@@ -43186,143 +43168,92 @@
   }
 
   function copySelectedNodes() {
-    return _copySelectedNodes.apply(this, arguments);
+    if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
+      isPasting = true;
+
+      var _iterator = _createForOfIteratorHelper(copiedNodes),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var originData = _step.value;
+          // Copy the node data (excluding the ID, which should be unique)
+          var nodeData = Object.assign({}, originData);
+          delete nodeData.id; // Ensure the new node gets a unique ID
+          // Retrieve and modify the position
+
+          var originalPosition = jsRenderer.getCoordinates(originData.id);
+          var newPosition = {
+            x: originalPosition.x + 15,
+            // Shift 10 pixels to the right
+            y: originalPosition.y + 15 // Shift 10 pixels down
+
+          };
+
+          if (nodeData.type === TARIFF) {
+            copyTariffNodeWithCallback({
+              name: "nodeId",
+              value: originData.id
+            }, function (nodeId, text) {
+              nodeData.id = nodeId;
+              nodeData.text = text;
+              nodeData.left = newPosition.x;
+              nodeData.top = newPosition.y;
+              var newNode = jsToolkit.addNode(nodeData);
+              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            });
+          } else if (nodeData.type === CAIR_TARIFF) {
+            copyTariffNodeWithCallback({
+              name: "nodeId",
+              value: originData.id
+            }, function (nodeId, text, ruleNumber) {
+              nodeData.id = nodeId;
+              nodeData.text = text;
+              nodeData.ruleNumber = ruleNumber;
+              nodeData.left = newPosition.x;
+              nodeData.top = newPosition.y;
+              var newNode = jsToolkit.addNode(nodeData);
+              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+            });
+          } else if (nodeData.type === PRICING_PRODUCT) {
+            /*       copyProductNodeWithCallback({ name: "nodeId", value: originData.id }, function(nodeId:string,text:string) {
+                    nodeData.id = nodeId;
+                    nodeData.text = text;
+                    nodeData.left = newPosition.x;
+                    nodeData.top = newPosition.y;
+                    let newNode = jsToolkit.addNode(nodeData);
+                    jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   
+                  }); */
+          } else {
+            nodeData.id = uuid();
+            nodeData.left = newPosition.x;
+            nodeData.top = newPosition.y;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          }
+        } //
+
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      var _exportData3 = JSON.stringify(jsToolkit.exportData());
+
+      transferGraphData([{
+        name: "exportData",
+        value: _exportData3
+      }, {
+        name: "lastConnectedNodeId",
+        value: null
+      }]);
+      isPasting = false;
+    }
   }
   /*   ready(() => {
       callDOMReady(true);
     }); */
-
-
-  function _copySelectedNodes() {
-    _copySelectedNodes = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var _iterator, _step, originData, nodeData, originalPosition, newPosition, newNode, _exportData3;
-
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              if (!(copiedNodes && copiedNodes.length > 0 && !isPasting)) {
-                _context.next = 35;
-                break;
-              }
-
-              isPasting = true;
-              _iterator = _createForOfIteratorHelper(copiedNodes);
-              _context.prev = 3;
-
-              _iterator.s();
-
-            case 5:
-              if ((_step = _iterator.n()).done) {
-                _context.next = 24;
-                break;
-              }
-
-              originData = _step.value;
-              // Copy the node data (excluding the ID, which should be unique)
-              nodeData = Object.assign({}, originData);
-              delete nodeData.id; // Ensure the new node gets a unique ID
-              // Retrieve and modify the position
-
-              originalPosition = jsRenderer.getCoordinates(originData.id);
-              newPosition = {
-                x: originalPosition.x + 15,
-                // Shift 10 pixels to the right
-                y: originalPosition.y + 15 // Shift 10 pixels down
-
-              };
-
-              if (!(nodeData.type === TARIFF)) {
-                _context.next = 16;
-                break;
-              }
-
-              _context.next = 14;
-              return copyTariffNodeWithCallback({
-                name: "nodeId",
-                value: originData.id
-              }, function (nodeId, text) {
-                nodeData.id = nodeId;
-                nodeData.text = text;
-                var newNode = jsToolkit.addNode(nodeData);
-                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-              });
-
-            case 14:
-              _context.next = 22;
-              break;
-
-            case 16:
-              if (!(nodeData.type === CAIR_TARIFF)) {
-                _context.next = 21;
-                break;
-              }
-
-              _context.next = 19;
-              return copyTariffNodeWithCallback({
-                name: "nodeId",
-                value: originData.id
-              }, function (nodeId, text, ruleNumber) {
-                nodeData.id = nodeId;
-                nodeData.text = text;
-                nodeData.ruleNumber = ruleNumber;
-                var newNode = jsToolkit.addNode(nodeData);
-                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-              });
-
-            case 19:
-              _context.next = 22;
-              break;
-
-            case 21:
-              if (nodeData.type === PRICING_PRODUCT) ; else {
-                nodeData.id = uuid();
-                newNode = jsToolkit.addNode(nodeData);
-                jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-              }
-
-            case 22:
-              _context.next = 5;
-              break;
-
-            case 24:
-              _context.next = 29;
-              break;
-
-            case 26:
-              _context.prev = 26;
-              _context.t0 = _context["catch"](3);
-
-              _iterator.e(_context.t0);
-
-            case 29:
-              _context.prev = 29;
-
-              _iterator.f();
-
-              return _context.finish(29);
-
-            case 32:
-              //
-              _exportData3 = JSON.stringify(jsToolkit.exportData());
-              transferGraphData([{
-                name: "exportData",
-                value: _exportData3
-              }, {
-                name: "lastConnectedNodeId",
-                value: null
-              }]);
-              isPasting = false;
-
-            case 35:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, null, [[3, 26, 29, 32]]);
-    }));
-    return _copySelectedNodes.apply(this, arguments);
-  }
 
   exports.initJsPlumb = initJsPlumb;
 
