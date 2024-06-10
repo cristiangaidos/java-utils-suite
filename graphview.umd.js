@@ -19,80 +19,6 @@
     return obj;
   }
 
-  function _unsupportedIterableToArray$5(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray$5(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$5(o, minLen);
-  }
-
-  function _arrayLikeToArray$5(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-
-  function _createForOfIteratorHelper(o, allowArrayLike) {
-    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-
-    if (!it) {
-      if (Array.isArray(o) || (it = _unsupportedIterableToArray$5(o)) || allowArrayLike && o && typeof o.length === "number") {
-        if (it) o = it;
-        var i = 0;
-
-        var F = function () {};
-
-        return {
-          s: F,
-          n: function () {
-            if (i >= o.length) return {
-              done: true
-            };
-            return {
-              done: false,
-              value: o[i++]
-            };
-          },
-          e: function (e) {
-            throw e;
-          },
-          f: F
-        };
-      }
-
-      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-    }
-
-    var normalCompletion = true,
-        didErr = false,
-        err;
-    return {
-      s: function () {
-        it = it.call(o);
-      },
-      n: function () {
-        var step = it.next();
-        normalCompletion = step.done;
-        return step;
-      },
-      e: function (e) {
-        didErr = true;
-        err = e;
-      },
-      f: function () {
-        try {
-          if (!normalCompletion && it.return != null) it.return();
-        } finally {
-          if (didErr) throw err;
-        }
-      }
-    };
-  }
-
   function filterList(list, value, missingIsFalse) {
     if (list === "*") {
       return true;
@@ -42894,6 +42820,14 @@
 
 
     toolkit.bind(EVENT_NODE_UPDATED, onNodeUpdate);
+    toolkit.bind(EVENT_NODE_ADDED, function (params) {
+      var node = params.node;
+      params.eventInfo; // Attach click handler to the node element
+
+      node.addEventListener("click", function (eventInfo) {
+        handleNodeClick(node, eventInfo);
+      });
+    });
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
     });
@@ -43099,7 +43033,7 @@
       // Clear selection on canvas click
       jsToolkit.clearSelection();
     });
-    jsRenderer.bind("nodeClick", function (params) {
+    jsRenderer.bind(EVENT_SELECT, function (params) {
       var node = params.node;
       var event = params.e;
 
@@ -43111,7 +43045,18 @@
         jsToolkit.clearSelection();
         jsToolkit.addToSelection(node);
       }
-    });
+    }); // Function to handle node click
+
+    function handleNodeClick(node, event) {
+      if (event.ctrlKey || event.shiftKey) {
+        // If Ctrl or Shift is pressed, add to the selection
+        jsToolkit.addToSelection(node);
+      } else {
+        // Otherwise, clear selection and select the clicked node
+        jsToolkit.clearSelection();
+        jsToolkit.addToSelection(node);
+      }
+    }
   }
 
   function initJsPlumb(canEdit) {
@@ -43170,74 +43115,53 @@
   function copySelectedNodes() {
     if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
       isPasting = true;
+      copiedNodes.forEach(function (originData) {
+        // Copy the node data (excluding the ID, which should be unique)
+        var nodeData = Object.assign({}, originData);
+        delete nodeData.id; // Ensure the new node gets a unique ID
+        // Retrieve and modify the position
 
-      var _iterator = _createForOfIteratorHelper(copiedNodes),
-          _step;
+        var originalPosition = jsRenderer.getCoordinates(originData.id);
+        var newPosition = {
+          x: originalPosition.x + 15,
+          // Shift 10 pixels to the right
+          y: originalPosition.y + 15 // Shift 10 pixels down
 
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var originData = _step.value;
-          // Copy the node data (excluding the ID, which should be unique)
-          var nodeData = Object.assign({}, originData);
-          delete nodeData.id; // Ensure the new node gets a unique ID
-          // Retrieve and modify the position
+        };
 
-          var originalPosition = jsRenderer.getCoordinates(originData.id);
-          var newPosition = {
-            x: originalPosition.x + 15,
-            // Shift 10 pixels to the right
-            y: originalPosition.y + 15 // Shift 10 pixels down
-
-          };
-
-          if (nodeData.type === TARIFF) {
-            copyTariffNodeWithCallback({
-              name: "nodeId",
-              value: originData.id
-            }, function (nodeId, text) {
-              nodeData.id = nodeId;
-              nodeData.text = text;
-              nodeData.left = newPosition.x;
-              nodeData.top = newPosition.y;
-              var newNode = jsToolkit.addNode(nodeData);
-              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-            });
-          } else if (nodeData.type === CAIR_TARIFF) {
-            copyTariffNodeWithCallback({
-              name: "nodeId",
-              value: originData.id
-            }, function (nodeId, text, ruleNumber) {
-              nodeData.id = nodeId;
-              nodeData.text = text;
-              nodeData.ruleNumber = ruleNumber;
-              nodeData.left = newPosition.x;
-              nodeData.top = newPosition.y;
-              var newNode = jsToolkit.addNode(nodeData);
-              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-            });
-          } else if (nodeData.type === PRICING_PRODUCT) {
-            /*       copyProductNodeWithCallback({ name: "nodeId", value: originData.id }, function(nodeId:string,text:string) {
-                    nodeData.id = nodeId;
-                    nodeData.text = text;
-                    nodeData.left = newPosition.x;
-                    nodeData.top = newPosition.y;
-                    let newNode = jsToolkit.addNode(nodeData);
-                    jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   
-                  }); */
-          } else {
-            nodeData.id = uuid();
+        if (nodeData.type === TARIFF) {
+          copyTariffNodeWithCallback({
+            name: "nodeId",
+            value: originData.id
+          }, function (nodeId, text) {
+            nodeData.id = nodeId;
+            nodeData.text = text;
             nodeData.left = newPosition.x;
             nodeData.top = newPosition.y;
             var newNode = jsToolkit.addNode(nodeData);
             jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          }
-        } //
-
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
+          });
+        } else if (nodeData.type === CAIR_TARIFF) {
+          copyTariffNodeWithCallback({
+            name: "nodeId",
+            value: originData.id
+          }, function (nodeId, text, ruleNumber) {
+            nodeData.id = nodeId;
+            nodeData.text = text;
+            nodeData.ruleNumber = ruleNumber;
+            nodeData.left = newPosition.x;
+            nodeData.top = newPosition.y;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          });
+        } else if (nodeData.type === PRICING_PRODUCT) ; else {
+          nodeData.id = uuid();
+          nodeData.left = newPosition.x;
+          nodeData.top = newPosition.y;
+          var newNode = jsToolkit.addNode(nodeData);
+          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+        }
+      }); //
 
       var _exportData3 = JSON.stringify(jsToolkit.exportData());
 
