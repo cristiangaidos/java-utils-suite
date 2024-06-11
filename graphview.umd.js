@@ -19,6 +19,80 @@
     return obj;
   }
 
+  function _unsupportedIterableToArray$5(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray$5(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray$5(o, minLen);
+  }
+
+  function _arrayLikeToArray$5(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+
+  function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+
+    if (!it) {
+      if (Array.isArray(o) || (it = _unsupportedIterableToArray$5(o)) || allowArrayLike && o && typeof o.length === "number") {
+        if (it) o = it;
+        var i = 0;
+
+        var F = function () {};
+
+        return {
+          s: F,
+          n: function () {
+            if (i >= o.length) return {
+              done: true
+            };
+            return {
+              done: false,
+              value: o[i++]
+            };
+          },
+          e: function (e) {
+            throw e;
+          },
+          f: F
+        };
+      }
+
+      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+
+    var normalCompletion = true,
+        didErr = false,
+        err;
+    return {
+      s: function () {
+        it = it.call(o);
+      },
+      n: function () {
+        var step = it.next();
+        normalCompletion = step.done;
+        return step;
+      },
+      e: function (e) {
+        didErr = true;
+        err = e;
+      },
+      f: function () {
+        try {
+          if (!normalCompletion && it.return != null) it.return();
+        } finally {
+          if (didErr) throw err;
+        }
+      }
+    };
+  }
+
   function filterList(list, value, missingIsFalse) {
     if (list === "*") {
       return true;
@@ -43042,23 +43116,106 @@
           var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
 
           if (!(dialogBranch || dialogCondition || dialogJournal)) {
-            copySelectedNodes(copiedNodes, isPasting).then(function () {
-              isPasting = false;
-              var exportData = JSON.stringify(jsToolkit.exportData());
-              transferGraphData([{
-                name: "exportData",
-                value: exportData
-              }, {
-                name: "lastConnectedNodeId",
-                value: null
-              }]);
-            });
+            copySelectedNodes(copiedNodes, isPasting);
             jsToolkit.getSelection().clear();
           }
           /* console.log("Nodes pasted " + new Date().toLocaleString()); */
 
         }
       });
+    }
+  }
+
+  function copySelectedNodes(nodeList, allowedPasting) {
+    if (nodeList && nodeList.length > 0 && !allowedPasting) {
+      var isAwaitingCallback = false;
+
+      var _iterator = _createForOfIteratorHelper(nodeList),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var originData = _step.value;
+
+          while (isAwaitingCallback) {// wait for callback to return from previous node
+          } // Copy the node data (excluding the ID, which should be unique)
+
+
+          var nodeData = Object.assign({}, originData);
+          delete nodeData.id; // Ensure the new node gets a unique ID
+          // Retrieve and modify the position
+
+          var originalPosition = jsRenderer.getCoordinates(originData.id);
+          var newPosition = {
+            x: originalPosition.x + 15,
+            // Shift 10 pixels to the right
+            y: originalPosition.y + 15 // Shift 10 pixels down
+
+          };
+
+          if (nodeData.type === "tariff") {
+            isAwaitingCallback = true;
+            copyTariffNodeWithCallback({
+              name: "nodeId",
+              value: originData.id
+            }, function (nodeId, text) {
+              nodeData.id = nodeId;
+              nodeData.text = text;
+              nodeData.left = newPosition.x;
+              nodeData.top = newPosition.y;
+              var newNode = jsToolkit.addNode(nodeData);
+              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+              isAwaitingCallback = false;
+            });
+          } else if (nodeData.type === "cairTariff") {
+            isAwaitingCallback = true;
+            copyTariffNodeWithCallback({
+              name: "nodeId",
+              value: originData.id
+            }, function (nodeId, text, ruleNumber) {
+              nodeData.id = nodeId;
+              nodeData.text = text;
+              nodeData.ruleNumber = ruleNumber;
+              nodeData.left = newPosition.x;
+              nodeData.top = newPosition.y;
+              var newNode = jsToolkit.addNode(nodeData);
+              jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+              isAwaitingCallback = false;
+            });
+          } else if (nodeData.type === "pricingProduct") {
+            /*       copyProductNodeWithCallback({ name: "nodeId", value: originData.id }, function(nodeId:string,text:string) {
+                    nodeData.id = nodeId;
+                    nodeData.text = text;
+                    nodeData.left = newPosition.x;
+                    nodeData.top = newPosition.y;
+                    let newNode = jsToolkit.addNode(nodeData);
+                    jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);   
+                  }); */
+          } else {
+            nodeData.id = uuid();
+            nodeData.left = newPosition.x;
+            nodeData.top = newPosition.y;
+            var newNode = jsToolkit.addNode(nodeData);
+            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      isPasting = false;
+
+      var _exportData3 = JSON.stringify(jsToolkit.exportData());
+
+      transferGraphData([{
+        name: "exportData",
+        value: _exportData3
+      }, {
+        name: "lastConnectedNodeId",
+        value: null
+      }]);
     }
   }
 
