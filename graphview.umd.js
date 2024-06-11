@@ -43005,10 +43005,27 @@
       addCopyPasteListeners(canEdit);
     });
   }
+  function jsPlumbUuid() {
+    return uuid();
+  }
 
   function addCopyPasteListeners(canEdit) {
     if (canEdit) {
       document.addEventListener("keydown", function (event) {
+        // Check if the pressed key is the delete key (keyCode 46) or (key 8 for backspace)
+        if (event.key === "Backspace" || event.key === "Delete") {
+          // Get the currently selected nodes
+          jsToolkit.getSelection().getNodes().forEach;
+
+          if (jsToolkit.getSelection().getNodes().length === 1 && jsToolkit.getSelection().getEdges().length === 0) {
+            showGraphViewConfirmDialog(jsToolkit.getSelection().getNodeAt(0));
+          }
+
+          if (jsToolkit.getSelection().getNodes().length === 0 && jsToolkit.getSelection().getEdges().length === 1) {
+            showGraphViewConfirmEdgeDeleteDialog(jsToolkit.getSelection().getEdgeAt(0));
+          }
+        }
+
         if (event.ctrlKey && event.code === "KeyC") {
           /* console.log("CTRL+C was pressed " + new Date().toLocaleString()); */
           // Custom logic for CTRL+C
@@ -43030,7 +43047,7 @@
           // Custom logic for CTRL+V
           var currentTime = new Date().getTime(); // Get the current time in milliseconds
 
-          if (currentTime - lastCtrlVTime < 500) {
+          if (currentTime - lastCtrlVTime < 700) {
             // If the last execution was less than 0.5 second ago, prevent execution
             return;
           } // Update the last execution time
@@ -43042,8 +43059,18 @@
           var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
 
           if (!(dialogBranch || dialogCondition || dialogJournal)) {
-            copySelectedNodes(copiedNodes, isPasting);
-            jsToolkit.getSelection().clear();
+            copySelectedNodes(copiedNodes, isPasting).then(function () {
+              var exportData = JSON.stringify(jsToolkit.exportData());
+              transferGraphData([{
+                name: "exportData",
+                value: exportData
+              }, {
+                name: "lastConnectedNodeId",
+                value: null
+              }]);
+              isPasting = false;
+              jsToolkit.getSelection().clear();
+            });
           }
           /* console.log("Nodes pasted " + new Date().toLocaleString()); */
 
@@ -43052,71 +43079,8 @@
     }
   }
 
-  function copySelectedNodes(nodeList, allowedPasting) {
-    if (nodeList && nodeList.length > 0 && !allowedPasting) {
-      nodeList.forEach(function (originData) {
-
-
-        var nodeData = Object.assign({}, originData);
-        delete nodeData.id; // Ensure the new node gets a unique ID
-        // Retrieve and modify the position
-
-        var originalPosition = jsRenderer.getCoordinates(originData.id);
-        var newPosition = {
-          x: originalPosition.x + 15,
-          // Shift 10 pixels to the right
-          y: originalPosition.y + 15 // Shift 10 pixels down
-
-        };
-
-        if (nodeData.type === "tariff") {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.left = newPosition.x;
-            nodeData.top = newPosition.y;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === "cairTariff") {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text, ruleNumber) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.ruleNumber = ruleNumber;
-            nodeData.left = newPosition.x;
-            nodeData.top = newPosition.y;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === "pricingProduct") ; else {
-          nodeData.id = uuid();
-          nodeData.left = newPosition.x;
-          nodeData.top = newPosition.y;
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        }
-      });
-      isPasting = false;
-
-      var _exportData3 = JSON.stringify(jsToolkit.exportData());
-
-      transferGraphData([{
-        name: "exportData",
-        value: _exportData3
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-    }
-  }
-
   exports.initJsPlumb = initJsPlumb;
+  exports.jsPlumbUuid = jsPlumbUuid;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
