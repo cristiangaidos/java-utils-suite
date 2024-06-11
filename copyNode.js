@@ -1,4 +1,4 @@
-async function copySelectedNodes(nodeList, allowedPasting) {
+async function copySelectedNodes(nodeList, allowedPasting) { 
     if (nodeList && nodeList.length > 0 && !allowedPasting) {
         for (var originData of nodeList) {
             // Copy the node data (excluding the ID, which should be unique)
