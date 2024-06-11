@@ -42381,39 +42381,8 @@
     var _nodes, _edges, _ports;
 
     var isLoading = true;
-    var ignoreFirstLoadCall = true; // ------------------------- dialogs -------------------------------------
-
-    console.log("Inside initJsPlumb. CanEdit is ", canEdit);
-    /*   const dialogs = Dialogs.newInstance({ 
-      dialogs: {
-        dlgText: {
-          template:
-            '<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
-          title: "Enter Text",
-          cancelable: true,
-        },
-        dlgConfirm: {
-          template: "${msg}",
-          title: "Please Confirm",
-          cancelable: true,
-        },
-        dlgMessage: {
-          template: "${msg}",
-          title: "Message",
-          cancelable: false,
-        },
-      },
-    }); */
-
-    /*   function showEdgeEditDialog(
-      data: ObjectData,
-      continueFunction: Function,
-      abortFunction?: CancelFunction
-    ) {
-      continueFunction({ label: data.text || "" });
-      const exportData = JSON.stringify(toolkit.exportData());
-      transferGraphData([{ name: "exportData", value: exportData },{ name: "lastConnectedNodeId", value: null }]);
-      } */
+    var ignoreFirstLoadCall = true;
+    console.log("Inside initJsPlumb. CanEdit is ", canEdit); // ------------------------- dialogs -------------------------------------
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
 
@@ -42485,8 +42454,7 @@
         }
       },
       edgeFactory: function edgeFactory(type, data, continueCallback, abortCallback) {
-        continueCallback(data); //showEdgeEditDialog(data, continueCallback, abortCallback);
-
+        continueCallback(data);
         return true;
       },
       beforeConnect: function beforeConnect(source, target, edgeType) {
@@ -42524,14 +42492,11 @@
         return false;
       },
       doNotUpdateOriginalData: false,
-
-      /* autoSaveDebounceTimeout:100, */
       autoSave: true,
       autoSaveHandler: function autoSaveHandler(toolkitInstance) {
         if (!isLoading) {
           console.log("Autosave called");
-          var exportData = JSON.stringify(toolkitInstance.exportData()); // adjustFontSizeOnAllNodes();
-
+          var exportData = JSON.stringify(toolkitInstance.exportData());
           transferGraphData([{
             name: "exportData",
             value: exportData
@@ -42655,13 +42620,6 @@
                   deleteButton: true,
                   onMaybeDelete: function onMaybeDelete(edge, connection, doDelete) {
                     showGraphViewConfirmEdgeDeleteDialog(edge);
-                    /* dialogs.show({
-                      id: "dlgConfirm",
-                      data: {
-                        msg: "Delete Edge",
-                      },
-                      onOK: doDelete,
-                    }); */
                   }
                 });
               }
@@ -42696,8 +42654,6 @@
             y: 60
           },
           absoluteBacked: true,
-
-          /* rootNode: "1", */
           magnetize: true
         }
       },
@@ -42796,16 +42752,11 @@
           value: null
         }]);
       }
-      /*   onEdgeRemoved([{ name: "originNodeId", value:  edgeParams.edge.source.data.id }, { name: "targetNodeId", value:  edgeParams.edge.target.data.id }]); */
-
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
       if (ignoreFirstLoadCall) {
         ignoreFirstLoadCall = false;
       } else {
-        /*       toolkit.getNodes().forEach(node => {
-          toolkit.updateNode(node.id, {w:'180'});
-        }); */
         adjustFontSizeOnAllNodes(true);
         console.log("Load finished " + new Date().toLocaleString());
         isLoading = false;
@@ -42845,15 +42796,7 @@
         renderer.zoomToFit();
         console.log("Load started " + new Date().toLocaleString());
       }
-    }); // Load the data.
-
-    /*    toolkit.load({
-      url: `./copyright.json?q=${uuid()}`,
-      onload:() => {
-          renderer.zoomToFit()
-      }
-    }) */
-    // listener for mode change on renderer.
+    }); // listener for mode change on renderer.
 
     renderer.bind(EVENT_SURFACE_MODE_CHANGED, function (mode) {
       forEach(controls.querySelectorAll("[mode]"), function (e) {
@@ -42877,9 +42820,7 @@
       if (toolkit.getNodeCount() === 0 || confirm("Clear flowchart?")) {
         toolkit.clear();
       }
-    }); //
-    // node delete button.
-    //
+    });
 
     if (canEdit) {
       /*  console.log("CanEdit is now ", canEdit); */
@@ -43101,7 +43042,17 @@
           var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal");
 
           if (!(dialogBranch || dialogCondition || dialogJournal)) {
-            copySelectedNodes();
+            copySelectedNodes(copiedNodes, isPasting).then(function () {
+              isPasting = false;
+              var exportData = JSON.stringify(jsToolkit.exportData());
+              transferGraphData([{
+                name: "exportData",
+                value: exportData
+              }, {
+                name: "lastConnectedNodeId",
+                value: null
+              }]);
+            });
             jsToolkit.getSelection().clear();
           }
           /* console.log("Nodes pasted " + new Date().toLocaleString()); */
@@ -43110,73 +43061,6 @@
       });
     }
   }
-
-  function copySelectedNodes() {
-    if (copiedNodes && copiedNodes.length > 0 && !isPasting) {
-      isPasting = true;
-      copiedNodes.forEach(function (originData) {
-        // Copy the node data (excluding the ID, which should be unique)
-        var nodeData = Object.assign({}, originData);
-        delete nodeData.id; // Ensure the new node gets a unique ID
-        // Retrieve and modify the position
-
-        var originalPosition = jsRenderer.getCoordinates(originData.id);
-        var newPosition = {
-          x: originalPosition.x + 15,
-          // Shift 10 pixels to the right
-          y: originalPosition.y + 15 // Shift 10 pixels down
-
-        };
-
-        if (nodeData.type === TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.left = newPosition.x;
-            nodeData.top = newPosition.y;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === CAIR_TARIFF) {
-          copyTariffNodeWithCallback({
-            name: "nodeId",
-            value: originData.id
-          }, function (nodeId, text, ruleNumber) {
-            nodeData.id = nodeId;
-            nodeData.text = text;
-            nodeData.ruleNumber = ruleNumber;
-            nodeData.left = newPosition.x;
-            nodeData.top = newPosition.y;
-            var newNode = jsToolkit.addNode(nodeData);
-            jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-          });
-        } else if (nodeData.type === PRICING_PRODUCT) ; else {
-          nodeData.id = uuid();
-          nodeData.left = newPosition.x;
-          nodeData.top = newPosition.y;
-          var newNode = jsToolkit.addNode(nodeData);
-          jsRenderer.setPosition(newNode, newPosition.x, newPosition.y);
-        }
-      }); //
-
-      var _exportData3 = JSON.stringify(jsToolkit.exportData());
-
-      transferGraphData([{
-        name: "exportData",
-        value: _exportData3
-      }, {
-        name: "lastConnectedNodeId",
-        value: null
-      }]);
-      isPasting = false;
-    }
-  }
-  /*   ready(() => {
-      callDOMReady(true);
-    }); */
 
   exports.initJsPlumb = initJsPlumb;
 
