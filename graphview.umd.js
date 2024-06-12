@@ -42379,6 +42379,12 @@
   // Cair Tooltip handling
 
   var cairTooltip;
+  var grossCoverageTitle;
+  var beslTitle;
+  var rateTitle;
+  var formulaTitle;
+  var descriptionTitle;
+  var noFormulaTitle;
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -42386,6 +42392,12 @@
     var isLoading = true;
     var ignoreFirstLoadCall = true;
     cairTooltip = document.getElementById('cairTooltipGraphView');
+    grossCoverageTitle = document.getElementById('grossCoverageTitleGraphView');
+    beslTitle = document.getElementById('beslTitleGraphView');
+    rateTitle = document.getElementById('rateTitleGraphView');
+    formulaTitle = document.getElementById('formulaTitleGraphView');
+    descriptionTitle = document.getElementById('descriptionTitleGraphView');
+    noFormulaTitle = document.getElementById('noFormulaTitleGraphView');
     console.log("Inside initJsPlumb. CanEdit is ", canEdit); // ------------------------- dialogs -------------------------------------
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
@@ -42796,42 +42808,70 @@
     });
 
     function showCairTariffTooltip(event, node) {
-      /*     let htmlContent = `<strong>Node ID: ${node.ruleNumber} / ${node.text}</strong><br>`;
-          htmlContent += '<table>';
-          htmlContent += '<tr>';
-          htmlContent += '<td colspan="4" style="border: 2px white solid">';
-          htmlContent += '';
-          htmlContent += '</tr>';
-      
-          htmlContent += '<tr>'; */
+      var htmlContent = '<table>';
+      htmlContent += '<tr>';
+      htmlContent += '<td colspan="4" style="border: 2px white solid">';
+      htmlContent += '<span style="color: white; font-weight: bold; padding-left: 5px">';
+      htmlContent += "".concat(grossCoverageTitle.textContent, " </span>: <span style=\"color:white\"> ").concat(node.grossCoverageAmount, "% </span></td>");
+      htmlContent += '</tr>';
 
-      /*     node.tariffDetails.forEach((detail: { besl: any; rate: any; formula: any; description: any; }) => {
-              htmlContent += `<li>
-                  <strong>Besl:</strong> ${detail.besl}<br>
-                  <strong>Rate:</strong> ${detail.rate}<br>
-                  <strong>Formula:</strong> ${detail.formula}<br>
-                  <strong>Description:</strong> ${detail.description}
-              </li>`;
-          }); */
+      if (node.noFormula) {
+        htmlContent += '<tr>';
+        htmlContent += '<td colspan="4" style="border: 2px white solid"><span style="color: white; font-weight: bold; padding-left: 5px>"';
+        htmlContent += "".concat(noFormulaTitle, " </td>");
+        htmlContent += '</tr>';
+      } else {
+        htmlContent += '<tr>';
+        htmlContent += '<td style="text-align:left; border: 2px solid white">';
+        htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
+        htmlContent += "".concat(rateTitle);
+        htmlContent += '</spa></td>';
+        htmlContent += '<td style="text-align:left; border: 2px solid white">';
+        htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
+        htmlContent += "".concat(beslTitle);
+        htmlContent += '</spa></td>';
+        htmlContent += '<td style="text-align:left; border: 2px solid white">';
+        htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
+        htmlContent += "".concat(descriptionTitle);
+        htmlContent += '</spa></td>';
+        htmlContent += '<td style="text-align:left; border: 2px solid white">';
+        htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
+        htmlContent += "".concat(formulaTitle);
+        htmlContent += '</spa></td>';
+        htmlContent += '<tr>';
+      }
 
-      /*     htmlContent += '</tr>';
-          htmlContent += '</table>';
-          cairTooltip.innerHTML = htmlContent; */
+      node.tariffDetails.forEach(function (detail) {
+        htmlContent += '</tr>';
+        htmlContent += '<td style="text-align: left; border: 2px solid white">';
+        htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
+        htmlContent += "".concat(detail.rate);
+        htmlContent += '</span></td>';
+        htmlContent += '<td style="text-align: left; border: 2px solid white">';
+        htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
+        htmlContent += "".concat(detail.besl);
+        htmlContent += '</span></td>';
+        htmlContent += '<td style="text-align: left; border: 2px solid white">';
+        htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
+        htmlContent += "".concat(detail.description);
+        htmlContent += '</span></td>';
+        htmlContent += '<td style="text-align: left; border: 2px solid white">';
+        htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
+        htmlContent += "".concat(detail.formula);
+        htmlContent += '</span></td>';
+        htmlContent += '<tr>';
+      });
+      htmlContent += '</table>';
+      cairTooltip.innerHTML = htmlContent;
       cairTooltip.style.left = "".concat(event.pageX + 10, "px");
       cairTooltip.style.top = "".concat(event.pageY - 10, "px");
       cairTooltip.style.display = 'block';
-      updateFocusedCairTariffNode({
-        name: "focusedCairTariffNodeId",
-        value: node.id
-      });
+      /* updateFocusedCairTariffNode( { name: "focusedCairTariffNodeId", value: node.id }); */
     }
 
     function hideTariffTooltip(node) {
       cairTooltip.style.display = 'none';
-      updateFocusedCairTariffNode({
-        name: "focusedCairTariffNodeId",
-        value: null
-      });
+      /* updateFocusedCairTariffNode( { name: "focusedCairTariffNodeId", value: null }); */
     }
 
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
