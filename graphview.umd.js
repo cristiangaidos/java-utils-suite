@@ -42385,6 +42385,7 @@
   var formulaTitle;
   var descriptionTitle;
   var noFormulaTitle;
+  var isTooltipEnabled;
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
@@ -42398,6 +42399,7 @@
     formulaTitle = document.getElementById('formulaTitleGraphView');
     descriptionTitle = document.getElementById('descriptionTitleGraphView');
     noFormulaTitle = document.getElementById('noFormulaTitleGraphView');
+    isTooltipEnabled = document.getElementById('isTooltipEnabledGraphView');
     console.log("Inside initJsPlumb. CanEdit is ", canEdit); // ------------------------- dialogs -------------------------------------
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
@@ -42794,7 +42796,7 @@
         handleNodeClick(node.data, event);
       });
 
-      if (node.type === CAIR_TARIFF) {
+      if (node.type === CAIR_TARIFF && isTooltipEnabled && isTooltipEnabled.textContent === "true") {
         nodeElement.addEventListener("mouseover", function (event) {
           showCairTariffTooltip(event, node);
         });
@@ -42870,13 +42872,11 @@
         cairTooltip.style.left = "".concat(event.pageX + 10, "px");
         cairTooltip.style.top = "".concat(event.pageY - 10, "px");
         cairTooltip.style.display = "block";
-        /* updateFocusedCairTariffNode( { name: "focusedCairTariffNodeId", value: node.id }); */
       }
     }
 
     function hideTariffTooltip(node) {
       cairTooltip.style.display = 'none';
-      /* updateFocusedCairTariffNode( { name: "focusedCairTariffNodeId", value: null }); */
     }
 
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
