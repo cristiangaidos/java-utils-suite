@@ -42793,7 +42793,7 @@
       var nodeElement = renderer.getRenderedElement(node.id); // Attach click handler to the node element
 
       nodeElement.addEventListener("click", function (event) {
-        handleNodeClick(node.data, event);
+        handleNodeClick(node, event);
       });
 
       if (node.type === CAIR_TARIFF && isTooltipEnabled && isTooltipEnabled.textContent === "true") {
