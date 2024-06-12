@@ -42779,7 +42779,7 @@
       var nodeElement = renderer.getRenderedElement(node.id); // Attach click handler to the node element
 
       nodeElement.addEventListener("click", function (event) {
-        handleNodeClick(node, event);
+        handleNodeClick(node.data, event);
       });
 
       if (node.type === CAIR_TARIFF) {
@@ -42789,27 +42789,43 @@
         nodeElement.addEventListener("mousemove", function (event) {
           showCairTariffTooltip(event, node);
         });
-        nodeElement.addEventListener("mouseout", function () {
-          hideTariffTooltip();
+        nodeElement.addEventListener("mouseout", function (node) {
+          hideTariffTooltip(node);
         });
       }
     });
 
     function showCairTariffTooltip(event, node) {
-      var htmlContent = "<strong>Node ID: ".concat(node.ruleNumber, " / ").concat(node.text, "</strong><br>");
-      htmlContent += '<ul>';
-      node.tariffDetails.forEach(function (detail) {
-        htmlContent += "<li>\n            <strong>Besl:</strong> ".concat(detail.besl, "<br>\n            <strong>Rate:</strong> ").concat(detail.rate, "<br>\n            <strong>Formula:</strong> ").concat(detail.formula, "<br>\n            <strong>Description:</strong> ").concat(detail.description, "\n        </li>");
-      });
-      htmlContent += '</ul>';
-      cairTooltip.innerHTML = htmlContent;
+      /*     let htmlContent = `<strong>Node ID: ${node.ruleNumber} / ${node.text}</strong><br>`;
+          htmlContent += '<table>';
+          htmlContent += '<tr>';
+          htmlContent += '<td colspan="4" style="border: 2px white solid">';
+          htmlContent += '';
+          htmlContent += '</tr>';
+      
+          htmlContent += '<tr>'; */
+
+      /*     node.tariffDetails.forEach((detail: { besl: any; rate: any; formula: any; description: any; }) => {
+              htmlContent += `<li>
+                  <strong>Besl:</strong> ${detail.besl}<br>
+                  <strong>Rate:</strong> ${detail.rate}<br>
+                  <strong>Formula:</strong> ${detail.formula}<br>
+                  <strong>Description:</strong> ${detail.description}
+              </li>`;
+          }); */
+
+      /*     htmlContent += '</tr>';
+          htmlContent += '</table>';
+          cairTooltip.innerHTML = htmlContent; */
       cairTooltip.style.left = "".concat(event.pageX + 10, "px");
       cairTooltip.style.top = "".concat(event.pageY - 10, "px");
       cairTooltip.style.display = 'block';
+      updateFocusedCairTariffNode(node.id);
     }
 
-    function hideTariffTooltip() {
+    function hideTariffTooltip(node) {
       cairTooltip.style.display = 'none';
+      updateFocusedCairTariffNode(node.id);
     }
 
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
