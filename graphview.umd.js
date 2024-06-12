@@ -42813,7 +42813,7 @@
         htmlContent += "<tr>";
         htmlContent += '<td colspan="4" style="border: 2px white solid">';
         htmlContent += '<span style="color: white; font-weight: bold; padding-left: 5px">';
-        htmlContent += "".concat(grossCoverageTitle.textContent, " </span>: <span style=\"color:white\"> ").concat(node.grossCoverageAmount.textContent, "% </span></td>");
+        htmlContent += "".concat(grossCoverageTitle.textContent, " </span>: <span style=\"color:white\"> ").concat(node.data.grossCoverageAmount, "% </span></td>");
         htmlContent += "</tr>";
 
         if (node.data.noFormula) {
@@ -42826,25 +42826,25 @@
           htmlContent += '<td style="text-align:left; border: 2px solid white">';
           htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
           htmlContent += "".concat(rateTitle.textContent);
-          htmlContent += "</spa></td>";
+          htmlContent += "</span></td>";
           htmlContent += '<td style="text-align:left; border: 2px solid white">';
           htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
           htmlContent += "".concat(beslTitle.textContent);
-          htmlContent += "</spa></td>";
+          htmlContent += "</span></td>";
           htmlContent += '<td style="text-align:left; border: 2px solid white">';
           htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
           htmlContent += "".concat(descriptionTitle.textContent);
-          htmlContent += "</spa></td>";
+          htmlContent += "</span></td>";
           htmlContent += '<td style="text-align:left; border: 2px solid white">';
           htmlContent += '<span style="color:white; font-weight:bold;padding-left: 5px;padding-right: 5px">';
           htmlContent += "".concat(formulaTitle.textContent);
-          htmlContent += "</spa></td>";
-          htmlContent += "<tr>";
+          htmlContent += "</span></td>";
+          htmlContent += "</tr>";
         }
 
         if (node.data.tariffDetails) {
           node.data.tariffDetails.forEach(function (detail) {
-            htmlContent += "</tr>";
+            htmlContent += "<tr>";
             htmlContent += '<td style="text-align: left; border: 2px solid white">';
             htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
             htmlContent += "".concat(detail.rate);
@@ -42861,7 +42861,7 @@
             htmlContent += '<span style="color: white; text-align: left; padding-left: 5px; padding-right: 5 px">';
             htmlContent += "".concat(detail.formula);
             htmlContent += "</span></td>";
-            htmlContent += "<tr>";
+            htmlContent += "</tr>";
           });
         }
 
