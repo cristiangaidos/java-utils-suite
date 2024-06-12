@@ -42790,7 +42790,7 @@
           showCairTariffTooltip(event, node);
         });
         nodeElement.addEventListener("mouseout", function (node) {
-          hideTariffTooltip(node);
+          hideTariffTooltip();
         });
       }
     });
@@ -42820,12 +42820,18 @@
       cairTooltip.style.left = "".concat(event.pageX + 10, "px");
       cairTooltip.style.top = "".concat(event.pageY - 10, "px");
       cairTooltip.style.display = 'block';
-      updateFocusedCairTariffNode(node.id);
+      updateFocusedCairTariffNode({
+        name: "focusedCairTariffNodeId",
+        value: node.id
+      });
     }
 
     function hideTariffTooltip(node) {
       cairTooltip.style.display = 'none';
-      updateFocusedCairTariffNode(node.id);
+      updateFocusedCairTariffNode({
+        name: "focusedCairTariffNodeId",
+        value: null
+      });
     }
 
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
