@@ -42376,12 +42376,16 @@
   var copiedNodes = [];
   var isPasting = false;
   var lastCtrlVTime = 0; // Initialize a variable to store the last execution time
+  // Cair Tooltip handling
+
+  var cairTooltip;
 
   function callDOMReady(canEdit) {
     var _nodes, _edges, _ports;
 
     var isLoading = true;
     var ignoreFirstLoadCall = true;
+    cairTooltip = document.getElementById('cairTooltipGraphView');
     console.log("Inside initJsPlumb. CanEdit is ", canEdit); // ------------------------- dialogs -------------------------------------
     // ------------------------- / dialogs ----------------------------------
     // get the various dom elements
@@ -42777,12 +42781,43 @@
       nodeElement.addEventListener("click", function (event) {
         handleNodeClick(node, event);
       });
+
+      if (node.type === CAIR_TARIFF) {
+        nodeElement.addEventListener("mouseover", function (event) {
+          showCairTariffTooltip(event, node);
+        });
+        nodeElement.addEventListener("mousemove", function (event) {
+          showCairTariffTooltip(event, node);
+        });
+        nodeElement.addEventListener("mouseout", function () {
+          hideTariffTooltip();
+        });
+      }
     });
+
+    function showCairTariffTooltip(event, node) {
+      var htmlContent = "<strong>Node ID: ".concat(node.ruleNumber, " / ").concat(node.text, "</strong><br>");
+      htmlContent += '<ul>';
+      node.tariffDetails.forEach(function (detail) {
+        htmlContent += "<li>\n            <strong>Besl:</strong> ".concat(detail.besl, "<br>\n            <strong>Rate:</strong> ").concat(detail.rate, "<br>\n            <strong>Formula:</strong> ").concat(detail.formula, "<br>\n            <strong>Description:</strong> ").concat(detail.description, "\n        </li>");
+      });
+      htmlContent += '</ul>';
+      cairTooltip.innerHTML = htmlContent;
+      cairTooltip.style.left = "".concat(event.pageX + 10, "px");
+      cairTooltip.style.top = "".concat(event.pageY - 10, "px");
+      cairTooltip.style.display = 'block';
+    }
+
+    function hideTariffTooltip() {
+      cairTooltip.style.display = 'none';
+    }
+
     renderer.on(controls, EVENT_TAP, "[undo]", function () {
       toolkit.undo();
     });
     renderer.on(controls, EVENT_TAP, "[layout]", function () {
       renderer.relayout();
+      renderer.repaintEverything();
     });
     renderer.on(controls, EVENT_TAP, "[redo]", function () {
       toolkit.redo();
@@ -43047,8 +43082,8 @@
           // Custom logic for CTRL+V
           var currentTime = new Date().getTime(); // Get the current time in milliseconds
 
-          if (currentTime - lastCtrlVTime < 700) {
-            // If the last execution was less than 0.5 second ago, prevent execution
+          if (currentTime - lastCtrlVTime < 1000) {
+            // If the last execution was less than 1 second ago, prevent execution
             return;
           } // Update the last execution time
 
