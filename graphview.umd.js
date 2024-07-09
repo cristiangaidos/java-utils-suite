@@ -43080,14 +43080,12 @@
     }); // Function to handle node click
 
     function handleNodeClick(node, event) {
-      if (event.ctrlKey || event.shiftKey) {
-        // If Ctrl or Shift is pressed, add to the selection
-        jsToolkit.addToSelection(node);
-      } else {
-        // Otherwise, clear selection and select the clicked node
+      if (!event.ctrlKey || !event.shiftKey) {
         jsToolkit.clearSelection();
-        jsToolkit.addToSelection(node);
+        edgeEditor.stopEditing();
       }
+
+      jsToolkit.addToSelection(node);
     }
   }
 
