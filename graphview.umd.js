@@ -43080,7 +43080,7 @@
     }); // Function to handle node click
 
     function handleNodeClick(node, event) {
-      if (!event.ctrlKey && !event.shiftKey) {
+      if (!event.ctrlKey && !event.shiftKey || jsToolkit.getSelection().getEdges().length > 0) {
         jsToolkit.clearSelection();
         edgeEditor.stopEditing();
       }
