@@ -42779,6 +42779,10 @@
         console.log("Load finished " + new Date().toLocaleString());
         isLoading = false;
       }
+    }); // Listen for the layout:end event to handle post-layout logic
+
+    toolkit.bind("layout:start", function (info) {
+      console.log("Layout started", info); // Custom logic after layout completes
     }); // Define a function to handle node updates
 
     function onNodeUpdate(params) {
@@ -43114,8 +43118,11 @@
   function addCopyPasteListeners(canEdit) {
     if (canEdit) {
       document.addEventListener("keydown", function (event) {
-        // Check if the pressed key is the delete key (keyCode 46) or (key 8 for backspace)
-        if (event.key === "Backspace" || event.key === "Delete") {
+        var dialogBranch = document.getElementById("breadCrumbAndDialogForm:graphViewBranchNodeDialog_modal");
+        var dialogCondition = document.getElementById("breadCrumbAndDialogForm:editConditionNodeDialog_modal");
+        var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal"); // Check if the pressed key is the delete key (keyCode 46) or (key 8 for backspace)
+
+        if ((event.key === "Backspace" || event.key === "Delete") && !(dialogBranch || dialogCondition || dialogJournal)) {
           // Get the currently selected nodes
           jsToolkit.getSelection().getNodes().forEach;
 
