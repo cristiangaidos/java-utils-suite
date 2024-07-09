@@ -42633,6 +42633,8 @@
           // hover paint style for this edge type.
           events: {
             click: function click(p) {
+              handleEdgeClick(p);
+
               if (canEdit) {
                 edgeEditor.startEditing(p.edge, {
                   deleteButton: true,
@@ -42738,11 +42740,6 @@
       }
 
       var lastConnectedNodeId = null;
-      var edgeElement = renderer.getRenderedElement(edgeParams.edge.id); // Attach click handler to the node element
-
-      edgeElement.addEventListener("click", function (event) {
-        handleEdgeClick(edgeParams.edge, event);
-      });
 
       if (edgeParams.addedByMouse) {
         lastConnectedNodeId = edgeParams.edge.target.data.id;
@@ -43093,15 +43090,9 @@
     } // Function to handle node click
 
 
-    function handleEdgeClick(edge, event) {
-      if (event.ctrlKey || event.shiftKey) {
-        // If Ctrl or Shift is pressed, add to the selection
-        jsToolkit.addToSelection(edge);
-      } else {
-        // Otherwise, clear selection and select the clicked node
-        jsToolkit.clearSelection();
-        jsToolkit.addToSelection(edge);
-      }
+    function handleEdgeClick(edge) {
+      jsToolkit.clearSelection();
+      jsToolkit.addToSelection(edge);
     }
   }
 
