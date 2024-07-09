@@ -42676,7 +42676,7 @@
         }
       },
       refreshLayoutOnEdgeConnect: false,
-      refreshAutomatically: true,
+      refreshAutomatically: false,
       elementsDraggable: true,
       grid: {
         size: {
@@ -42779,10 +42779,6 @@
         console.log("Load finished " + new Date().toLocaleString());
         isLoading = false;
       }
-    }); // Listen for the layout:end event to handle post-layout logic
-
-    toolkit.bind("layout:start", function (info) {
-      console.log("Layout started", info); // Custom logic after layout completes
     }); // Define a function to handle node updates
 
     function onNodeUpdate(params) {
@@ -43082,14 +43078,19 @@
     jsRenderer.bind(EVENT_SELECT, function (params) {
       var node = params.node;
       var event = params.e;
+      var edge = params.edge;
 
-      if (event.ctrlKey || event.shiftKey) {
-        // If Ctrl or Shift is pressed, add to the selection
-        jsToolkit.addToSelection(node);
-      } else {
-        // Otherwise, clear selection and select the clicked node
+      if (!event.ctrlKey && !event.shiftKey) {
+        // If Ctrl or Shift is not pressed, clear selection and select the clicked node
         jsToolkit.clearSelection();
+      }
+
+      if (node) {
         jsToolkit.addToSelection(node);
+      }
+
+      if (edge) {
+        jsToolkit.addToSelection(edge);
       }
     }); // Function to handle node click
 
@@ -43123,9 +43124,6 @@
         var dialogJournal = document.getElementById("breadCrumbAndDialogForm:editJournalNodeDialog_modal"); // Check if the pressed key is the delete key (keyCode 46) or (key 8 for backspace)
 
         if ((event.key === "Backspace" || event.key === "Delete") && !(dialogBranch || dialogCondition || dialogJournal)) {
-          // Get the currently selected nodes
-          jsToolkit.getSelection().getNodes().forEach;
-
           if (jsToolkit.getSelection().getNodes().length === 1 && jsToolkit.getSelection().getEdges().length === 0) {
             showGraphViewConfirmDialog(jsToolkit.getSelection().getNodeAt(0));
           }
@@ -43136,7 +43134,6 @@
         }
 
         if (event.ctrlKey && event.code === "KeyC") {
-          /* console.log("CTRL+C was pressed " + new Date().toLocaleString()); */
           // Custom logic for CTRL+C
           // Clear the clipboard if nodes selected
           if (jsToolkit.getSelection().getNodes().length > 0) {
@@ -43148,11 +43145,9 @@
             var nodeData = Object.assign({}, node.data);
             copiedNodes.push(nodeData);
           });
-          /* console.log("Nodes copied " + new Date().toLocaleString()); */
         }
 
         if (event.ctrlKey && event.code === "KeyV") {
-          /* console.log("CTRL+V was pressed " + new Date().toLocaleString()); */
           // Custom logic for CTRL+V
           var currentTime = new Date().getTime(); // Get the current time in milliseconds
 
@@ -43181,8 +43176,6 @@
               jsToolkit.getSelection().clear();
             });
           }
-          /* console.log("Nodes pasted " + new Date().toLocaleString()); */
-
         }
       });
     }
