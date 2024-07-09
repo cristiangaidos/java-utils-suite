@@ -42738,6 +42738,11 @@
       }
 
       var lastConnectedNodeId = null;
+      var edgeElement = renderer.getRenderedElement(edgeParams.edge.id); // Attach click handler to the node element
+
+      edgeElement.addEventListener("click", function (event) {
+        handleEdgeClick(edgeParams.edge, event);
+      });
 
       if (edgeParams.addedByMouse) {
         lastConnectedNodeId = edgeParams.edge.target.data.id;
@@ -43074,24 +43079,6 @@
     jsRenderer.bind("canvasClick", function (event) {
       // Clear selection on canvas click
       jsToolkit.clearSelection();
-    });
-    jsRenderer.bind(EVENT_SELECT, function (params) {
-      var node = params.node;
-      var event = params.e;
-      var edge = params.edge;
-
-      if (!event.ctrlKey && !event.shiftKey) {
-        // If Ctrl or Shift is not pressed, clear selection and select the clicked node
-        jsToolkit.clearSelection();
-      }
-
-      if (node) {
-        jsToolkit.addToSelection(node);
-      }
-
-      if (edge) {
-        jsToolkit.addToSelection(edge);
-      }
     }); // Function to handle node click
 
     function handleNodeClick(node, event) {
@@ -43102,6 +43089,18 @@
         // Otherwise, clear selection and select the clicked node
         jsToolkit.clearSelection();
         jsToolkit.addToSelection(node);
+      }
+    } // Function to handle node click
+
+
+    function handleEdgeClick(edge, event) {
+      if (event.ctrlKey || event.shiftKey) {
+        // If Ctrl or Shift is pressed, add to the selection
+        jsToolkit.addToSelection(edge);
+      } else {
+        // Otherwise, clear selection and select the clicked node
+        jsToolkit.clearSelection();
+        jsToolkit.addToSelection(edge);
       }
     }
   }
