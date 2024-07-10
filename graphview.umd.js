@@ -42476,9 +42476,10 @@
         return true;
       },
       beforeConnect: function beforeConnect(source, target, edgeType) {
-        var hasEdges = false;
+        var hasEdges = false; // Eliminate connections to self and circular conections between 2 nodes
+
         toolkit.getAllEdgesFor(target).forEach(function (e) {
-          if (e.target === target) {
+          if (e.target === target || e.target === source) {
             hasEdges = true;
           }
         });
