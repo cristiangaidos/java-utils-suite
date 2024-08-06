@@ -42741,6 +42741,10 @@
         edgeParams.edge.target.data.conditionNodeId = edgeParams.edge.source.data.id;
       }
 
+      if (edgeParams.edge.target.data.type === TARIFF || edgeParams.edge.target.data.type === CAIR_TARIFF || edgeParams.edge.target.data.type === PRICING_PRODUCT) {
+        edgeParams.edge.source.data.resultId = edgeParams.edge.target.data.id;
+      }
+
       var lastConnectedNodeId = null;
 
       if (edgeParams.addedByMouse) {
@@ -42763,17 +42767,20 @@
       if (edgeParams.edge.target.data.type === BRANCH) {
         edgeParams.edge.target.data.parentCondition = null;
         edgeParams.edge.target.data.conditionNodeId = null;
-
-        var _exportData2 = JSON.stringify(toolkit.exportData());
-
-        transferGraphData([{
-          name: "exportData",
-          value: _exportData2
-        }, {
-          name: "lastConnectedNodeId",
-          value: null
-        }]);
       }
+
+      if (edgeParams.edge.source.data.type === BRANCH) {
+        edgeParams.edge.source.data.resultId = null;
+      }
+
+      var exportData = JSON.stringify(toolkit.exportData());
+      transferGraphData([{
+        name: "exportData",
+        value: exportData
+      }, {
+        name: "lastConnectedNodeId",
+        value: null
+      }]);
     });
     toolkit.bind(EVENT_DATA_LOAD_END, function () {
       if (ignoreFirstLoadCall) {
