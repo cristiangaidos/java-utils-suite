@@ -42482,7 +42482,17 @@
           if (e.target === target || e.target === source) {
             hasEdges = true;
           }
-        });
+        }); // Get all edges connected to the source node
+
+        var edges = toolkit.getAllEdgesFor(source); // Filter the edges to get outgoing connections (where the node is the source)
+
+        var childConnections = edges.filter(function (edge) {
+          return edge.source.id === source.id;
+        }); // Only conditions are allowed to have multiple child nodes
+
+        if (source.data.type != CONDITION && childConnections.length > 0) {
+          return false;
+        }
 
         if (hasEdges) {
           return false;
